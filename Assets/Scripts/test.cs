@@ -11,11 +11,13 @@ public class test : MonoBehaviour
     DictationRecognizer _dr;
 
     public Text _subtitle;
+    public Image _loading;
 
 
     // Use this for initialization
     void Awake()
     {
+
         _dr = new DictationRecognizer();
 
         _dr.DictationHypothesis += _dr_hypothesis;
@@ -26,25 +28,27 @@ public class test : MonoBehaviour
 
         _dr.Start();
 
+        _loading.gameObject.SetActive(false);
+
         Debug.Log("init complete");
     }
 
     private void _dr_dictationComplete(DictationCompletionCause cause)
     {
-        _dr.Stop();
-
         this._subtitle.text = "";
         Debug.Log("Dictation complete");
     }
 
     private void _dr_result(string text, ConfidenceLevel confidence)
     {
+        _loading.gameObject.SetActive(false);
         this._subtitle.text = text;
         Debug.Log("Displaying result");
     }
 
     private void _dr_hypothesis(string text)
     {
+        _loading.gameObject.SetActive(true);
         Debug.Log("Thinking...");
     }
 
