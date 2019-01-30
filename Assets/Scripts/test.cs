@@ -14,7 +14,7 @@ public class test : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         _dr = new DictationRecognizer();
 
@@ -23,6 +23,8 @@ public class test : MonoBehaviour
         _dr.DictationResult += _dr_result;
 
         _dr.DictationComplete += _dr_dictationComplete;
+
+        _dr.Start();
 
         Debug.Log("init complete");
     }
