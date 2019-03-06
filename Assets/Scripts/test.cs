@@ -37,12 +37,13 @@ public class test : MonoBehaviour
         _loading.gameObject.SetActive(false);
         _complete.gameObject.SetActive(false);
 
+        this._subtitle.text = "Start complete!";
+
         Debug.Log("init complete");
     }
 
     private void _dr_dictationComplete(DictationCompletionCause cause)
     {
-        this._subtitle.text = "";
         Debug.Log("Dictation complete");
     }
 
