@@ -14,6 +14,7 @@ namespace os
 
         static il2cpp_hresult_t CreateHStringReference(const utils::StringView<Il2CppNativeChar>& str, Il2CppHStringHeader* header, Il2CppHString* hstring);
         static il2cpp_hresult_t CreateHString(const utils::StringView<Il2CppChar>& str, Il2CppHString* hstring);
+<<<<<<< HEAD
 #if !IL2CPP_TARGET_WINDOWS // Il2CppChar and Il2CppNativeChar are the same on Windows
         static il2cpp_hresult_t CreateHString(const utils::StringView<Il2CppNativeChar>& str, Il2CppHString* hstring);
 #endif
@@ -27,6 +28,13 @@ namespace os
         static il2cpp_hresult_t PromoteHStringBuffer(void* bufferHandle, Il2CppHString* hstring);
         static il2cpp_hresult_t DeleteHStringBuffer(void* bufferHandle);
 
+=======
+        static il2cpp_hresult_t DeleteHString(Il2CppHString hstring);
+
+        static const Il2CppChar* GetHStringBuffer(Il2CppHString hstring, uint32_t* length);
+        static Il2CppString* HStringToManagedString(Il2CppHString hstring);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static Il2CppIRestrictedErrorInfo* GetRestrictedErrorInfo();
         static void OriginateLanguageException(Il2CppException* ex, Il2CppString* exceptionString);
 

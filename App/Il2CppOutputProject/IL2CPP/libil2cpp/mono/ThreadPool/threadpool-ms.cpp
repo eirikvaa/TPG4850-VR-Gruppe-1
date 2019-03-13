@@ -700,9 +700,13 @@ Il2CppAsyncResult* threadpool_ms_begin_invoke (Il2CppDomain *domain, Il2CppObjec
 
 	lazy_initialize ();
 
+<<<<<<< HEAD
 	MethodInfo *invoke = NULL;
 	if (il2cpp::vm::Class::HasParent(method->klass, il2cpp_defaults.multicastdelegate_class))
 		invoke = (MethodInfo*)il2cpp::vm::Class::GetMethodFromName(method->klass, "Invoke", -1);
+=======
+	MethodInfo *invoke = (MethodInfo*)il2cpp::vm::Class::GetMethodFromName(method->declaring_type, "Invoke", -1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 	message = mono_method_call_message_new (method, params, invoke, (params != NULL) ? (&async_callback) : NULL, (params != NULL) ? (&state) : NULL);
 
@@ -898,7 +902,11 @@ void ves_icall_System_Threading_ThreadPool_NotifyWorkItemProgressNative (void)
 void ves_icall_System_Threading_ThreadPool_ReportThreadStatus (bool is_working)
 {
 	// Mono raises a not implemented exception
+<<<<<<< HEAD
 	IL2CPP_NOT_IMPLEMENTED_ICALL(ves_icall_System_Threading_ThreadPool_PostQueuedCompletionStatus);
+=======
+	NOT_IMPLEMENTED_ICALL(ves_icall_System_Threading_ThreadPool_PostQueuedCompletionStatus);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	IL2CPP_UNREACHABLE;
 }
 
@@ -910,7 +918,11 @@ bool ves_icall_System_Threading_ThreadPool_RequestWorkerThread (void)
 bool ves_icall_System_Threading_ThreadPool_PostQueuedCompletionStatus (Il2CppNativeOverlapped *native_overlapped)
 {
 	// Mono raises a not implemented exception
+<<<<<<< HEAD
 	IL2CPP_NOT_IMPLEMENTED_ICALL(ves_icall_System_Threading_ThreadPool_PostQueuedCompletionStatus);
+=======
+	NOT_IMPLEMENTED_ICALL(ves_icall_System_Threading_ThreadPool_PostQueuedCompletionStatus);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	IL2CPP_UNREACHABLE;
 }
 

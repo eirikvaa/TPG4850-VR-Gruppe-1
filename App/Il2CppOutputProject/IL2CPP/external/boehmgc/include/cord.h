@@ -58,11 +58,15 @@
 #include <stddef.h>
 #include <stdio.h>
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   extern "C" {
 #endif
 
 #if defined(GC_DLL) && !defined(CORD_NOT_DLL)
+=======
+#ifdef GC_DLL
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   /* Same as for GC_API in gc_config_macros.h.  */
 # ifdef CORD_BUILD
 #   if defined(__MINGW32__) || defined(__CEGCC__)
@@ -70,8 +74,13 @@
 #   elif defined(_MSC_VER) || defined(__DMC__) || defined(__BORLANDC__) \
          || defined(__CYGWIN__) || defined(__WATCOMC__)
 #     define CORD_API extern __declspec(dllexport)
+<<<<<<< HEAD
 #   elif defined(__GNUC__) && !defined(GC_NO_VISIBILITY) \
          && (__GNUC__ >= 4 || defined(GC_VISIBILITY_HIDDEN_SET))
+=======
+#   elif defined(__GNUC__) && (__GNUC__ >= 4 \
+                               || defined(GC_VISIBILITY_HIDDEN_SET))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     /* Only matters if used in conjunction with -fvisibility=hidden option. */
 #     define CORD_API extern __attribute__((__visibility__("default")))
 #   endif
@@ -173,10 +182,13 @@ CORD_API int CORD_riter4(CORD x, size_t i, CORD_iter_fn f1, void * client_data);
 /* A simpler version that starts at the end:    */
 CORD_API int CORD_riter(CORD x, CORD_iter_fn f1, void * client_data);
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   } /* extern "C" */
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* Functions that operate on cord positions.  The easy way to traverse  */
 /* cords.  A cord position is logically a pair consisting of a cord     */
 /* and an index into that cord.  But it is much faster to retrieve a    */
@@ -189,10 +201,13 @@ CORD_API int CORD_riter(CORD x, CORD_iter_fn f1, void * client_data);
 /* definitions.  The former may evaluate their argument more than once. */
 #include "cord_pos.h"
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   extern "C" {
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /*
         Visible definitions from above:
 
@@ -324,9 +339,12 @@ CORD_API size_t CORD_chr(CORD x, size_t i, int c);
 /* must be < CORD_len(x).                                               */
 CORD_API size_t CORD_rchr(CORD x, size_t i, int c);
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   } /* extern "C" */
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* The following are also not primitive, but are implemented in         */
 /* cordprnt.c.  They provide functionality similar to the ANSI C        */
@@ -357,10 +375,13 @@ CORD_API size_t CORD_rchr(CORD x, size_t i, int c);
 
 #include <stdarg.h>
 
+<<<<<<< HEAD
 # ifdef __cplusplus
     extern "C" {
 # endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 CORD_API int CORD_sprintf(CORD * out, CORD format, ...);
 CORD_API int CORD_vsprintf(CORD * out, CORD format, va_list args);
 CORD_API int CORD_fprintf(FILE * f, CORD format, ...);
@@ -368,10 +389,13 @@ CORD_API int CORD_vfprintf(FILE * f, CORD format, va_list args);
 CORD_API int CORD_printf(CORD format, ...);
 CORD_API int CORD_vprintf(CORD format, va_list args);
 
+<<<<<<< HEAD
 # ifdef __cplusplus
     } /* extern "C" */
 # endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif /* CORD_NO_IO */
 
 #endif /* CORD_H */

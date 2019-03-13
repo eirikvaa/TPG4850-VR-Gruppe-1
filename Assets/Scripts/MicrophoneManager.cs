@@ -44,7 +44,6 @@ public class MicrophoneManager : MonoBehaviour
 
     private void _dr_dictationComplete(DictationCompletionCause cause)
     {
-        this._subtitle.text = "";
         Debug.Log("Dictation complete");
     }
 

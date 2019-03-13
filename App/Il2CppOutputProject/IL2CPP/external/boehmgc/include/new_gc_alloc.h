@@ -12,15 +12,24 @@
  */
 
 //
+<<<<<<< HEAD
 // This is a revision of gc_allocator.h for SGI STL versions > 3.0.
 // Unlike earlier versions, it supplements the standard (STL) alloc.h
+=======
+// This is a revision of gc_alloc.h for SGI STL versions > 3.0
+// Unlike earlier versions, it supplements the standard "alloc.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 // instead of replacing it.
 //
 // This is sloppy about variable names used in header files.
 // It also doesn't yet understand the new header file names or
 // namespaces.
 //
+<<<<<<< HEAD
 // This assumes the collector has been compiled with -DGC_ATOMIC_UNCOLLECTABLE.
+=======
+// This assumes the collector has been compiled with -DATOMIC_UNCOLLECTABLE.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 // The user should also consider -DREDIRECT_MALLOC=GC_uncollectable_malloc,
 // to ensure that object allocated through malloc are traced.
 //
@@ -48,6 +57,7 @@
 
 #include "gc.h"
 
+<<<<<<< HEAD
 #if GC_GNUC_PREREQ(3, 0)
 # include <bits/stl_alloc.h>
 # ifndef __STL_BEGIN_NAMESPACE
@@ -59,11 +69,29 @@
 # endif
 #else
 # include <stack>   // A more portable way to get stl_alloc.h file.
+=======
+#if (__GNUC__ < 3)
+# include <stack>  // A more portable way to get stl_alloc.h .
+#else
+# include <bits/stl_alloc.h>
+# ifndef __STL_BEGIN_NAMESPACE
+# define __STL_BEGIN_NAMESPACE namespace std {
+# define __STL_END_NAMESPACE };
+# endif
+#ifndef __STL_USE_STD_ALLOCATORS
+#define __STL_USE_STD_ALLOCATORS
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 /* A hack to deal with gcc 3.1.  If you are using gcc3.1 and later,     */
 /* you should probably really use gc_allocator.h instead.               */
+<<<<<<< HEAD
 #if GC_GNUC_PREREQ(3, 1)
+=======
+#if defined (__GNUC__) && \
+    (__GNUC__ > 3 || (__GNUC__ == 3 && (__GNUC_MINOR__ >= 1)))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # define simple_alloc __simple_alloc
 #endif
 
@@ -72,11 +100,30 @@
 #include <stddef.h>
 #include <string.h>
 
+<<<<<<< HEAD
 // We can't include gc_priv.h, since that pulls in way too much stuff.
 #include "gc_alloc_ptrs.h"
 
 #define GC_generic_malloc_words_small(lw, k) \
                         GC_generic_malloc((lw) * sizeof(GC_word), k)
+=======
+// The following need to match collector data structures.
+// We can't include gc_priv.h, since that pulls in way too much stuff.
+// This should eventually be factored out into another include file.
+
+extern "C" {
+    GC_API void ** const GC_objfreelist_ptr;
+    GC_API void ** const GC_aobjfreelist_ptr;
+    GC_API void ** const GC_uobjfreelist_ptr;
+    GC_API void ** const GC_auobjfreelist_ptr;
+
+    GC_API void GC_CALL GC_incr_bytes_allocd(size_t bytes);
+    GC_API void GC_CALL GC_incr_bytes_freed(size_t bytes);
+
+    GC_API char * GC_CALL GC_generic_malloc_words_small(size_t word, int kind);
+                /* FIXME: Doesn't exist anymore.        */
+}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 // Object kinds; must match PTRFREE, NORMAL, UNCOLLECTABLE, and
 // AUNCOLLECTABLE in gc_priv.h.
@@ -86,6 +133,7 @@ enum { GC_PTRFREE = 0, GC_NORMAL = 1, GC_UNCOLLECTABLE = 2,
 
 enum { GC_max_fast_bytes = 255 };
 
+<<<<<<< HEAD
 enum { GC_byte_alignment = 8 };
 
 #if defined(CPPCHECK)
@@ -95,6 +143,13 @@ enum { GC_byte_alignment = 8 };
   enum { GC_bytes_per_word = sizeof(char *) };
   enum { GC_word_alignment = GC_byte_alignment/GC_bytes_per_word };
 #endif
+=======
+enum { GC_bytes_per_word = sizeof(char *) };
+
+enum { GC_byte_alignment = 8 };
+
+enum { GC_word_alignment = GC_byte_alignment/GC_bytes_per_word };
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 inline void * &GC_obj_link(void * p)
 {   return *reinterpret_cast<void **>(p);  }
@@ -182,9 +237,14 @@ class single_client_gc_alloc_template {
             void * op;
 
             if (n > GC_max_fast_bytes) return GC_malloc(n);
+<<<<<<< HEAD
             flh = &GC_objfreelist_ptr[nwords];
             op = *flh;
             if (0 == op) {
+=======
+            flh = GC_objfreelist_ptr + nwords;
+            if (0 == (op = *flh)) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return GC_aux::GC_out_of_line_malloc(nwords, GC_NORMAL);
             }
             *flh = GC_obj_link(op);
@@ -198,9 +258,14 @@ class single_client_gc_alloc_template {
             void * op;
 
             if (n > GC_max_fast_bytes) return GC_malloc_atomic(n);
+<<<<<<< HEAD
             flh = &GC_aobjfreelist_ptr[nwords];
             op = *flh;
             if (0 == op) {
+=======
+            flh = GC_aobjfreelist_ptr + nwords;
+            if (0 == (op = *flh)) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return GC_aux::GC_out_of_line_malloc(nwords, GC_PTRFREE);
             }
             *flh = GC_obj_link(op);
@@ -209,12 +274,22 @@ class single_client_gc_alloc_template {
         }
         static void deallocate(void *p, size_t n)
         {
+<<<<<<< HEAD
             if (n > GC_max_fast_bytes)  {
                 GC_free(p);
             } else {
                 size_t nwords = GC_round_up(n);
                 void ** flh = &GC_objfreelist_ptr[nwords];
 
+=======
+            size_t nwords = GC_round_up(n);
+            void ** flh;
+
+            if (n > GC_max_fast_bytes)  {
+                GC_free(p);
+            } else {
+                flh = GC_objfreelist_ptr + nwords;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 GC_obj_link(p) = *flh;
                 memset(reinterpret_cast<char *>(p) + GC_bytes_per_word, 0,
                        GC_bytes_per_word * (nwords - 1));
@@ -224,12 +299,22 @@ class single_client_gc_alloc_template {
         }
         static void ptr_free_deallocate(void *p, size_t n)
         {
+<<<<<<< HEAD
             if (n > GC_max_fast_bytes) {
                 GC_free(p);
             } else {
                 size_t nwords = GC_round_up(n);
                 void ** flh = &GC_aobjfreelist_ptr[nwords];
 
+=======
+            size_t nwords = GC_round_up(n);
+            void ** flh;
+
+            if (n > GC_max_fast_bytes) {
+                GC_free(p);
+            } else {
+                flh = GC_aobjfreelist_ptr + nwords;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 GC_obj_link(p) = *flh;
                 *flh = p;
                 GC_aux::GC_bytes_recently_freed += nwords * GC_bytes_per_word;
@@ -250,9 +335,14 @@ class single_client_traceable_alloc_template {
             void * op;
 
             if (n > GC_max_fast_bytes) return GC_malloc_uncollectable(n);
+<<<<<<< HEAD
             flh = &GC_uobjfreelist_ptr[nwords];
             op = *flh;
             if (0 == op) {
+=======
+            flh = GC_uobjfreelist_ptr + nwords;
+            if (0 == (op = *flh)) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return GC_aux::GC_out_of_line_malloc(nwords, GC_UNCOLLECTABLE);
             }
             *flh = GC_obj_link(op);
@@ -267,9 +357,14 @@ class single_client_traceable_alloc_template {
             void * op;
 
             if (n > GC_max_fast_bytes) return GC_malloc_atomic_uncollectable(n);
+<<<<<<< HEAD
             flh = &GC_auobjfreelist_ptr[nwords];
             op = *flh;
             if (0 == op) {
+=======
+            flh = GC_auobjfreelist_ptr + nwords;
+            if (0 == (op = *flh)) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return GC_aux::GC_out_of_line_malloc(nwords, GC_AUNCOLLECTABLE);
             }
             *flh = GC_obj_link(op);
@@ -279,12 +374,22 @@ class single_client_traceable_alloc_template {
         }
         static void deallocate(void *p, size_t n)
         {
+<<<<<<< HEAD
             if (n > GC_max_fast_bytes)  {
                 GC_free(p);
             } else {
                 size_t nwords = GC_round_up_uncollectable(n);
                 void ** flh = &GC_uobjfreelist_ptr[nwords];
 
+=======
+            size_t nwords = GC_round_up_uncollectable(n);
+            void ** flh;
+
+            if (n > GC_max_fast_bytes)  {
+                GC_free(p);
+            } else {
+                flh = GC_uobjfreelist_ptr + nwords;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 GC_obj_link(p) = *flh;
                 *flh = p;
                 GC_aux::GC_uncollectable_bytes_recently_freed +=
@@ -293,12 +398,22 @@ class single_client_traceable_alloc_template {
         }
         static void ptr_free_deallocate(void *p, size_t n)
         {
+<<<<<<< HEAD
             if (n > GC_max_fast_bytes) {
                 GC_free(p);
             } else {
                 size_t nwords = GC_round_up_uncollectable(n);
                 void ** flh = &GC_auobjfreelist_ptr[nwords];
 
+=======
+            size_t nwords = GC_round_up_uncollectable(n);
+            void ** flh;
+
+            if (n > GC_max_fast_bytes) {
+                GC_free(p);
+            } else {
+                flh = GC_auobjfreelist_ptr + nwords;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 GC_obj_link(p) = *flh;
                 *flh = p;
                 GC_aux::GC_uncollectable_bytes_recently_freed +=

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 #if !NET_4_0
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if ENABLE_UNIT_TESTS
 
 #include "il2cpp-config.h"
@@ -8,6 +11,10 @@
 #include "../TimeZone-c-api.h"
 #include "../../TimeZone.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 SUITE(TimeZone)
 {
     static const int32_t INVALID_YEAR = -45;
@@ -105,4 +112,7 @@ SUITE(TimeZone)
 }
 
 #endif // ENABLE_UNIT_TESTS
+<<<<<<< HEAD
 #endif // !4_0
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

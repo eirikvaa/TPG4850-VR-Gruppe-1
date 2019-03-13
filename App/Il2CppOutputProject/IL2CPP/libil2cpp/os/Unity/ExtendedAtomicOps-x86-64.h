@@ -7,6 +7,18 @@
 #   include <emmintrin.h>
 #endif
 
+<<<<<<< HEAD
+=======
+static inline void atomic_pause()
+{
+#if defined(_MSC_VER)
+    _mm_pause();
+#else
+    __asm__ __volatile__ ("pause");
+#endif
+}
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 static inline void atomic_thread_fence(memory_order_relaxed_t)
 {
 }
@@ -305,7 +317,11 @@ static inline atomic_word2 atomic_load_explicit(const volatile atomic_word2* p, 
     return r;
 */
     atomic_word2 r;
+<<<<<<< HEAD
     r.v = ::_mm_load_si128((const __m128i*)p);
+=======
+    r.v = _mm_load_si128((const __m128i*)p);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     return r;
 }
 
@@ -315,7 +331,11 @@ static inline void atomic_store_explicit(volatile atomic_word2* p, atomic_word2 
     atomic_word2 c = v;
     while(!atomic_compare_exchange_strong_explicit(p, &c, v, o, o)) {};
 */
+<<<<<<< HEAD
     ::_mm_store_si128((__m128i*)&p->v, v.v);
+=======
+    _mm_store_si128((__m128i*)&p->v, v.v);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 static inline atomic_word2 atomic_exchange_explicit(volatile atomic_word2* p, atomic_word2 newval, int)

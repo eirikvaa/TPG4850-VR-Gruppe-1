@@ -9,7 +9,11 @@
 
 
 #if !defined(GC_AMIGA_DEF) && !defined(GC_AMIGA_SB) && !defined(GC_AMIGA_DS) && !defined(GC_AMIGA_AM)
+<<<<<<< HEAD
 # include "private/gc_priv.h"
+=======
+# include "gc_priv.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # include <stdio.h>
 # include <signal.h>
 # define GC_AMIGA_DEF
@@ -40,7 +44,11 @@
    Find the base of the stack.
 ******************************************************************/
 
+<<<<<<< HEAD
 ptr_t GC_get_main_stack_base(void)
+=======
+ptr_t GC_get_main_stack_base()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     struct Process *proc = (struct Process*)SysBase->ThisTask;
 
@@ -57,6 +65,37 @@ ptr_t GC_get_main_stack_base(void)
     }
 }
 
+<<<<<<< HEAD
+=======
+#if 0 /* old version */
+ptr_t GC_get_stack_base()
+{
+    extern struct WBStartup *_WBenchMsg;
+    extern long __base;
+    extern long __stack;
+    struct Task *task;
+    struct Process *proc;
+    struct CommandLineInterface *cli;
+    long size;
+
+    if ((task = FindTask(0)) == 0) {
+        GC_err_puts("Cannot find own task structure\n");
+        ABORT("task missing");
+    }
+    proc = (struct Process *)task;
+    cli = BADDR(proc->pr_CLI);
+
+    if (_WBenchMsg != 0 || cli == 0) {
+        size = (char *)task->tc_SPUpper - (char *)task->tc_SPLower;
+    } else {
+        size = cli->cli_DefaultStack * 4;
+    }
+    return (ptr_t)(__base + GC_max(size, __stack));
+}
+#endif
+
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 
@@ -65,13 +104,23 @@ ptr_t GC_get_main_stack_base(void)
    Register data segments.
 ******************************************************************/
 
+<<<<<<< HEAD
    void GC_register_data_segments(void)
+=======
+   void GC_register_data_segments()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
    {
      struct Process     *proc;
      struct CommandLineInterface *cli;
      BPTR myseglist;
      ULONG *data;
 
+<<<<<<< HEAD
+=======
+     int        num;
+
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #    ifdef __GNUC__
         ULONG dataSegSize;
         GC_bool found_segment = FALSE;
@@ -87,9 +136,16 @@ ptr_t GC_get_main_stack_base(void)
 
         /* Reference: Amiga Guru Book Pages: 538ff,565,573
                      and XOper.asm */
+<<<<<<< HEAD
         myseglist = proc->pr_SegList;
         if (proc->pr_Task.tc_Node.ln_Type==NT_PROCESS) {
           if (proc->pr_CLI != NULL) {
+=======
+        if (proc->pr_Task.tc_Node.ln_Type==NT_PROCESS) {
+          if (proc->pr_CLI == NULL) {
+            myseglist = proc->pr_SegList;
+          } else {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             /* ProcLoaded       'Loaded as a command: '*/
             cli = BADDR(proc->pr_CLI);
             myseglist = cli->cli_Module;
@@ -104,11 +160,19 @@ ptr_t GC_get_main_stack_base(void)
 
         /* xoper hunks Shell Process */
 
+<<<<<<< HEAD
         for (data = (ULONG *)BADDR(myseglist); data != NULL;
              data = (ULONG *)BADDR(data[0])) {
           if ((ULONG)GC_register_data_segments < (ULONG)(&data[1])
               || (ULONG)GC_register_data_segments > (ULONG)(&data[1])
                                                     + data[-1]) {
+=======
+        num=0;
+        for (data = (ULONG *)BADDR(myseglist); data != NULL;
+             data = (ULONG *)BADDR(data[0])) {
+          if (((ULONG) GC_register_data_segments < (ULONG) &data[1]) ||
+              ((ULONG) GC_register_data_segments > (ULONG) &data[1] + data[-1])) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #             ifdef __GNUC__
                 if (dataSegSize == data[-1]) {
                   found_segment = TRUE;
@@ -117,13 +181,66 @@ ptr_t GC_get_main_stack_base(void)
               GC_add_roots_inner((char *)&data[1],
                                  ((char *)&data[1]) + data[-1], FALSE);
           }
+<<<<<<< HEAD
+=======
+          ++num;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         } /* for */
 #       ifdef __GNUC__
            if (!found_segment) {
              ABORT("Can`t find correct Segments.\nSolution: Use an newer version of ixemul.library");
            }
 #       endif
+<<<<<<< HEAD
    }
+=======
+  }
+
+#if 0 /* old version */
+  void GC_register_data_segments()
+  {
+    extern struct WBStartup *_WBenchMsg;
+    struct Process      *proc;
+    struct CommandLineInterface *cli;
+    BPTR myseglist;
+    ULONG *data;
+
+    if ( _WBenchMsg != 0 ) {
+        if ((myseglist = _WBenchMsg->sm_Segment) == 0) {
+            GC_err_puts("No seglist from workbench\n");
+            return;
+        }
+    } else {
+        if ((proc = (struct Process *)FindTask(0)) == 0) {
+            GC_err_puts("Cannot find process structure\n");
+            return;
+        }
+        if ((cli = BADDR(proc->pr_CLI)) == 0) {
+            GC_err_puts("No CLI\n");
+            return;
+        }
+        if ((myseglist = cli->cli_Module) == 0) {
+            GC_err_puts("No seglist from CLI\n");
+            return;
+        }
+    }
+
+    for (data = (ULONG *)BADDR(myseglist); data != 0;
+         data = (ULONG *)BADDR(data[0])) {
+#        ifdef AMIGA_SKIP_SEG
+           if (((ULONG) GC_register_data_segments < (ULONG) &data[1]) ||
+           ((ULONG) GC_register_data_segments > (ULONG) &data[1] + data[-1])) {
+#        else
+           {
+#        endif /* AMIGA_SKIP_SEG */
+          GC_add_roots_inner((char *)&data[1],
+                             ((char *)&data[1]) + data[-1], FALSE);
+         }
+    }
+  }
+#endif /* old version */
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #endif
 
@@ -208,6 +325,10 @@ int ncur151=0;
 
 void GC_amiga_free_all_mem(void){
         struct GC_Amiga_AllocedMemoryHeader *gc_am=(struct GC_Amiga_AllocedMemoryHeader *)(~(int)(GC_AMIGAMEM));
+<<<<<<< HEAD
+=======
+        struct GC_Amiga_AllocedMemoryHeader *temp;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef GC_AMIGA_PRINTSTATS
         printf("\n\n"
@@ -222,11 +343,19 @@ void GC_amiga_free_all_mem(void){
         printf("GC_gcollect was called %d times to avoid returning NULL or start allocating with the MEMF_ANY flag.\n",numcollects);
         printf("%d of them was a success. (the others had to use allocation from the OS.)\n",nullretries);
         printf("\n");
+<<<<<<< HEAD
         printf("Succeeded forcing %d gc-allocations (%d bytes) of chip-mem to be fast-mem.\n",succ,succ2);
         printf("Failed forcing %d gc-allocations (%d bytes) of chip-mem to be fast-mem.\n",nsucc,nsucc2);
         printf("\n");
         printf(
                 "Number of retries before succeeding a chip->fast force:\n"
+=======
+        printf("Succeded forcing %d gc-allocations (%d bytes) of chip-mem to be fast-mem.\n",succ,succ2);
+        printf("Failed forcing %d gc-allocations (%d bytes) of chip-mem to be fast-mem.\n",nsucc,nsucc2);
+        printf("\n");
+        printf(
+                "Number of retries before succeding a chip->fast force:\n"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 "0: %d, 1: %d, 2-9: %d, 10-49: %d, 50-149: %d, >150: %d\n",
                 cur0,cur1,cur10,cur50,cur150,cur151
         );
@@ -238,7 +367,11 @@ void GC_amiga_free_all_mem(void){
 #endif
 
         while(gc_am!=NULL){
+<<<<<<< HEAD
                 struct GC_Amiga_AllocedMemoryHeader *temp = gc_am->next;
+=======
+                temp=gc_am->next;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 FreeMem(gc_am,gc_am->size);
                 gc_am=(struct GC_Amiga_AllocedMemoryHeader *)(~(int)(temp));
         }
@@ -261,8 +394,11 @@ size_t latestsize;
 #endif
 
 
+<<<<<<< HEAD
 #ifdef GC_AMIGA_FASTALLOC
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /*
  * The actual function that is called with the GET_MEM macro.
  *
@@ -273,10 +409,18 @@ void *GC_amiga_get_mem(size_t size){
 
 #ifndef GC_AMIGA_ONLYFAST
         if(GC_amiga_dontalloc==TRUE){
+<<<<<<< HEAD
                 return NULL;
         }
 
         /* We really don't want to use chip-mem, but if we must, then as little as possible. */
+=======
+//              printf("rejected, size: %d, latestsize: %d\n",size,latestsize);
+                return NULL;
+        }
+
+        // We really don't want to use chip-mem, but if we must, then as little as possible.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if(GC_AMIGA_MEMF==(MEMF_ANY|MEMF_CLEAR) && size>100000 && latestsize<50000) return NULL;
 #endif
 
@@ -287,6 +431,11 @@ void *GC_amiga_get_mem(size_t size){
         gc_am->size=size + sizeof(struct GC_Amiga_AllocedMemoryHeader);
         GC_AMIGAMEM=(struct GC_Amiga_AllocedMemoryHeader *)(~(int)(gc_am));
 
+<<<<<<< HEAD
+=======
+//      printf("Allocated %d (%d) bytes at address: %x. Latest: %d\n",size,tot,gc_am,latestsize);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef GC_AMIGA_PRINTSTATS
         if((char *)gc_am<chipmax){
                 allochip+=size;
@@ -299,7 +448,11 @@ void *GC_amiga_get_mem(size_t size){
 
 }
 
+<<<<<<< HEAD
 #endif
+=======
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 
 #ifndef GC_AMIGA_ONLYFAST
@@ -341,6 +494,10 @@ void *GC_amiga_rec_alloc(size_t size,void *(*AllocFunction)(size_t size2),const 
 
         if (((char *)ret)<=chipmax && ret!=NULL && (rec<(size>500000?9:size/5000))){
                 ret=GC_amiga_rec_alloc(size,AllocFunction,rec+1);
+<<<<<<< HEAD
+=======
+//              GC_free(ret2);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return ret;
@@ -354,16 +511,26 @@ void *GC_amiga_rec_alloc(size_t size,void *(*AllocFunction)(size_t size2),const 
 
 
 void *GC_amiga_allocwrapper_any(size_t size,void *(*AllocFunction)(size_t size2)){
+<<<<<<< HEAD
         void *ret;
 
         GC_amiga_dontalloc=TRUE; /* Pretty tough thing to do, but its indeed necessary. */
+=======
+        void *ret,*ret2;
+
+        GC_amiga_dontalloc=TRUE;        // Pretty tough thing to do, but its indeed necessary.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         latestsize=size;
 
         ret=(*AllocFunction)(size);
 
         if(((char *)ret) <= chipmax){
                 if(ret==NULL){
+<<<<<<< HEAD
                         /* Give GC access to allocate memory. */
+=======
+                        //Give GC access to allocate memory.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef GC_AMIGA_GC
                         if(!GC_dont_gc){
                                 GC_gcollect();
@@ -372,9 +539,14 @@ void *GC_amiga_allocwrapper_any(size_t size,void *(*AllocFunction)(size_t size2)
 #endif
                                 ret=(*AllocFunction)(size);
                         }
+<<<<<<< HEAD
                         if(ret==NULL)
 #endif
                         {
+=======
+#endif
+                        if(ret==NULL){
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                                 GC_amiga_dontalloc=FALSE;
                                 ret=(*AllocFunction)(size);
                                 if(ret==NULL){
@@ -390,6 +562,7 @@ void *GC_amiga_allocwrapper_any(size_t size,void *(*AllocFunction)(size_t size2)
                 }
 #ifdef GC_AMIGA_RETRY
                 else{
+<<<<<<< HEAD
                         void *ret2;
                         /* We got chip-mem. Better try again and again and again etc., we might get fast-mem sooner or later... */
                         /* Using gctest to check the effectiveness of doing this, does seldom give a very good result. */
@@ -397,6 +570,15 @@ void *GC_amiga_allocwrapper_any(size_t size,void *(*AllocFunction)(size_t size2)
                         if(
                                 AllocFunction!=GC_malloc_uncollectable
 #ifdef GC_ATOMIC_UNCOLLECTABLE
+=======
+                        /* We got chip-mem. Better try again and again and again etc., we might get fast-mem sooner or later... */
+                        /* Using gctest to check the effectiveness of doing this, does seldom give a very good result. */
+                        /* However, real programs doesn't normally rapidly allocate and deallocate. */
+//                      printf("trying to force... %d bytes... ",size);
+                        if(
+                                AllocFunction!=GC_malloc_uncollectable
+#ifdef ATOMIC_UNCOLLECTABLE
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                                 && AllocFunction!=GC_malloc_atomic_uncollectable
 #endif
                         ){
@@ -416,10 +598,18 @@ void *GC_amiga_allocwrapper_any(size_t size,void *(*AllocFunction)(size_t size2)
 #endif
                         }
                         if(((char *)ret2)>chipmax){
+<<<<<<< HEAD
+=======
+//                              printf("Succeeded.\n");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                                 GC_free(ret);
                                 ret=ret2;
                         }else{
                                 GC_free(ret2);
+<<<<<<< HEAD
+=======
+//                              printf("But did not succeed.\n");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                         }
                 }
 #endif
@@ -438,7 +628,11 @@ void GC_amiga_set_toany(void (*func)(void)){
         GC_amiga_toany=func;
 }
 
+<<<<<<< HEAD
 #endif /* !GC_AMIGA_ONLYFAST */
+=======
+#endif // !GC_AMIGA_ONLYFAST
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 
 void *GC_amiga_allocwrapper_fast(size_t size,void *(*AllocFunction)(size_t size2)){
@@ -447,7 +641,12 @@ void *GC_amiga_allocwrapper_fast(size_t size,void *(*AllocFunction)(size_t size2
         ret=(*AllocFunction)(size);
 
         if(ret==NULL){
+<<<<<<< HEAD
                 /* Enable chip-mem allocation. */
+=======
+                // Enable chip-mem allocation.
+//              printf("ret==NULL\n");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef GC_AMIGA_GC
                 if(!GC_dont_gc){
                         GC_gcollect();
@@ -456,9 +655,14 @@ void *GC_amiga_allocwrapper_fast(size_t size,void *(*AllocFunction)(size_t size2
 #endif
                         ret=(*AllocFunction)(size);
                 }
+<<<<<<< HEAD
                 if(ret==NULL)
 #endif
                 {
+=======
+#endif
+                if(ret==NULL){
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef GC_AMIGA_ONLYFAST
                         GC_AMIGA_MEMF=MEMF_ANY | MEMF_CLEAR;
                         if(GC_amiga_toany!=NULL) (*GC_amiga_toany)();
@@ -478,13 +682,21 @@ void *GC_amiga_allocwrapper_fast(size_t size,void *(*AllocFunction)(size_t size2
 
 void *GC_amiga_allocwrapper_firsttime(size_t size,void *(*AllocFunction)(size_t size2)){
         atexit(&GC_amiga_free_all_mem);
+<<<<<<< HEAD
         chipmax=(char *)SysBase->MaxLocMem; /* For people still having SysBase in chip-mem, this might speed up a bit. */
+=======
+        chipmax=(char *)SysBase->MaxLocMem;             // For people still having SysBase in chip-mem, this might speed up a bit.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         GC_amiga_allocwrapper_do=GC_amiga_allocwrapper_fast;
         return GC_amiga_allocwrapper_fast(size,AllocFunction);
 }
 
 
+<<<<<<< HEAD
 #endif /* GC_AMIGA_FASTALLOC */
+=======
+#endif //GC_AMIGA_FASTALLOC
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 
 
@@ -499,8 +711,12 @@ void *GC_amiga_realloc(void *old_object,size_t new_size_in_bytes){
         void *ret;
         latestsize=new_size_in_bytes;
         ret=GC_realloc(old_object,new_size_in_bytes);
+<<<<<<< HEAD
         if(ret==NULL && new_size_in_bytes != 0
            && GC_AMIGA_MEMF==(MEMF_FAST | MEMF_CLEAR)){
+=======
+        if(ret==NULL && GC_AMIGA_MEMF==(MEMF_FAST | MEMF_CLEAR)){
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 /* Out of fast-mem. */
 #ifdef GC_AMIGA_GC
                 if(!GC_dont_gc){
@@ -510,9 +726,14 @@ void *GC_amiga_realloc(void *old_object,size_t new_size_in_bytes){
 #endif
                         ret=GC_realloc(old_object,new_size_in_bytes);
                 }
+<<<<<<< HEAD
                 if(ret==NULL)
 #endif
                 {
+=======
+#endif
+                if(ret==NULL){
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef GC_AMIGA_ONLYFAST
                         GC_AMIGA_MEMF=MEMF_ANY | MEMF_CLEAR;
                         if(GC_amiga_toany!=NULL) (*GC_amiga_toany)();
@@ -526,7 +747,11 @@ void *GC_amiga_realloc(void *old_object,size_t new_size_in_bytes){
                 }
 #endif
         }
+<<<<<<< HEAD
         if(ret==NULL && new_size_in_bytes != 0){
+=======
+        if(ret==NULL){
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 WARN("Out of Memory!  Returning NIL!\n", 0);
         }
 #ifdef GC_AMIGA_PRINTSTATS
@@ -538,4 +763,8 @@ void *GC_amiga_realloc(void *old_object,size_t new_size_in_bytes){
 #endif
 }
 
+<<<<<<< HEAD
 #endif /* GC_AMIGA_AM */
+=======
+#endif //GC_AMIGA_AM
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

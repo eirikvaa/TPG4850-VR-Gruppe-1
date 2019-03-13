@@ -27,15 +27,23 @@
  */
 
 #include <stdio.h>
+<<<<<<< HEAD
 #include <stdlib.h> /* for exit() */
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "gc.h"
 #include "cord.h"
 
 #ifdef THINK_C
 #define MACINTOSH
+<<<<<<< HEAD
 #endif
 #include <ctype.h>
+=======
+#include <ctype.h>
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #if (defined(__BORLANDC__) || defined(__CYGWIN__)) && !defined(WIN32)
     /* If this is DOS or win16, we'll fail anyway.      */
@@ -65,16 +73,22 @@
 #       define COLS 80
 #else
 #  include <curses.h>
+<<<<<<< HEAD
 #  include <unistd.h> /* for sleep() */
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define de_error(s) { fprintf(stderr, s); sleep(2); }
 #endif
 #include "de_cmds.h"
 
+<<<<<<< HEAD
 #define OUT_OF_MEMORY do { \
                         fprintf(stderr, "Out of memory\n"); \
                         exit(3); \
                       } while (0)
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* List of line number to position mappings, in descending order. */
 /* There may be holes.                                            */
 typedef struct LineMapRep {
@@ -124,27 +138,43 @@ void invalidate_map(int i)
 
 /* Reduce the number of map entries to save space for huge files. */
 /* This also affects maps in histories.                           */
+<<<<<<< HEAD
 void prune_map(void)
+=======
+void prune_map()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     line_map map = current_map;
     int start_line = map -> line;
 
     current_map_size = 0;
+<<<<<<< HEAD
     do {
+=======
+    for(; map != 0; map = map -> previous) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         current_map_size++;
         if (map -> line < start_line - LINES && map -> previous != 0) {
             map -> previous = map -> previous -> previous;
         }
+<<<<<<< HEAD
         map = map -> previous;
     } while (map != 0);
 }
 
+=======
+    }
+}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* Add mapping entry */
 void add_map(int line, size_t pos)
 {
     line_map new_map = GC_NEW(struct LineMapRep);
 
+<<<<<<< HEAD
     if (NULL == new_map) OUT_OF_MEMORY;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (current_map_size >= MAX_MAP_SIZE) prune_map();
     new_map -> line = line;
     new_map -> pos = pos;
@@ -164,6 +194,10 @@ size_t line_pos(int i, int *c)
 {
     int j;
     size_t cur;
+<<<<<<< HEAD
+=======
+    size_t next;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     line_map map = current_map;
 
     while (map -> line > i) map = map -> previous;
@@ -175,11 +209,18 @@ size_t line_pos(int i, int *c)
         if (++j > current_map -> line) add_map(j, cur);
     }
     if (c != 0) {
+<<<<<<< HEAD
         size_t next = CORD_chr(current, cur, '\n');
 
         if (next == CORD_NOT_FOUND) next = current_len - 1;
         if (next < cur + *c) {
             *c = (int)(next - cur);
+=======
+        next = CORD_chr(current, cur, '\n');
+        if (next == CORD_NOT_FOUND) next = current_len - 1;
+        if (next < cur + *c) {
+            *c = next - cur;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
         cur += *c;
     }
@@ -190,7 +231,10 @@ void add_hist(CORD s)
 {
     history new_file = GC_NEW(struct HistoryRep);
 
+<<<<<<< HEAD
     if (NULL == new_file) OUT_OF_MEMORY;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     new_file -> file_contents = current = s;
     current_len = CORD_len(s);
     new_file -> previous = now;
@@ -216,28 +260,46 @@ int screen_size = 0;
 /* terribly appropriate for tabs.                                                                       */
 void replace_line(int i, CORD s)
 {
+<<<<<<< HEAD
     CORD_pos p;
 #   if !defined(MACINTOSH)
         size_t len = CORD_len(s);
 #   endif
+=======
+    register int c;
+    CORD_pos p;
+    size_t len = CORD_len(s);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (screen == 0 || LINES > screen_size) {
         screen_size = LINES;
         screen = (CORD *)GC_MALLOC(screen_size * sizeof(CORD));
+<<<<<<< HEAD
         if (NULL == screen) OUT_OF_MEMORY;
     }
 #   if !defined(MACINTOSH)
         /* A gross workaround for an apparent curses bug: */
         if (i == LINES-1 && len == (unsigned)COLS) {
             s = CORD_substr(s, 0, len - 1);
+=======
+    }
+#   if !defined(MACINTOSH)
+        /* A gross workaround for an apparent curses bug: */
+        if (i == LINES-1 && len == COLS) {
+            s = CORD_substr(s, 0, CORD_len(s) - 1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 #   endif
     if (CORD_cmp(screen[i], s) != 0) {
         move(i, 0); clrtoeol(); move(i,0);
 
         CORD_FOR (p, s) {
+<<<<<<< HEAD
             int c = CORD_pos_fetch(p) & 0x7f;
 
+=======
+            c = CORD_pos_fetch(p) & 0x7f;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             if (iscntrl(c)) {
                 standout(); addch(c + 0x40); standend();
             } else {
@@ -271,7 +333,11 @@ CORD retrieve_line(CORD s, size_t pos, unsigned column)
 
     CORD retrieve_screen_line(int i)
     {
+<<<<<<< HEAD
         size_t pos;
+=======
+        register size_t pos;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         invalidate_map(dis_line + LINES);       /* Prune search */
         pos = line_pos(dis_line + i, 0);
@@ -283,12 +349,20 @@ CORD retrieve_line(CORD s, size_t pos, unsigned column)
 /* Display the visible section of the current file       */
 void redisplay(void)
 {
+<<<<<<< HEAD
     int i;
+=======
+    register int i;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     invalidate_map(dis_line + LINES);   /* Prune search */
     for (i = 0; i < LINES; i++) {
         if (need_redisplay == ALL || need_redisplay == i) {
+<<<<<<< HEAD
             size_t pos = line_pos(dis_line + i, 0);
+=======
+            register size_t pos = line_pos(dis_line + i, 0);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             if (pos == CORD_NOT_FOUND) break;
             replace_line(i, retrieve_line(current, pos, dis_col));
@@ -305,7 +379,11 @@ int dis_granularity;
 
 /* Update dis_line, dis_col, and dis_pos to make cursor visible.        */
 /* Assumes line, col, dis_line, dis_pos are in bounds.                  */
+<<<<<<< HEAD
 void normalize_display(void)
+=======
+void normalize_display()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     int old_line = dis_line;
     int old_col = dis_col;
@@ -343,12 +421,20 @@ void fix_cursor(void)
 
 /* Make sure line, col, and dis_pos are somewhere inside file.  */
 /* Recompute file_pos.  Assumes dis_pos is accurate or past eof */
+<<<<<<< HEAD
 void fix_pos(void)
 {
     int my_col = col;
 
     if ((size_t)line > current_len)
         line = (int)current_len;
+=======
+void fix_pos()
+{
+    int my_col = col;
+
+    if ((size_t)line > current_len) line = current_len;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     file_pos = line_pos(line, &my_col);
     if (file_pos == CORD_NOT_FOUND) {
         for (line = current_map -> line, file_pos = current_map -> pos;
@@ -429,7 +515,11 @@ void do_command(int c)
                 if (file_pos > new_pos) break;
                 line++;
             }
+<<<<<<< HEAD
             col = (int)(new_pos - line_pos(line, 0));
+=======
+            col = new_pos - line_pos(line, 0);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             file_pos = new_pos;
             fix_cursor();
         } else {
@@ -460,8 +550,12 @@ void do_command(int c)
             locate_mode = 1;
             break;
           case TOP:
+<<<<<<< HEAD
             line = col = 0;
             file_pos = 0;
+=======
+            line = col = file_pos = 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             break;
           case UP:
             if (line != 0) {
@@ -492,7 +586,11 @@ void do_command(int c)
                 break;
             }
             col--; file_pos--;
+<<<<<<< HEAD
             /* FALLTHRU */
+=======
+            /* fall through: */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
           case DEL:
             if (file_pos == current_len-1) break;
                 /* Can't delete trailing newline */
@@ -554,11 +652,17 @@ void generic_init(void)
     if ((f = fopen(arg_file_name, "rb")) == NULL) {
         initial = "\n";
     } else {
+<<<<<<< HEAD
         size_t len;
 
         initial = CORD_from_file(f);
         len = CORD_len(initial);
         if (0 == len || CORD_fetch(initial, len - 1) != '\n') {
+=======
+        initial = CORD_from_file(f);
+        if (initial == CORD_EMPTY
+            || CORD_fetch(initial, CORD_len(initial)-1) != '\n') {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             initial = CORD_cat(initial, "\n");
         }
     }
@@ -572,6 +676,7 @@ void generic_init(void)
 
 #ifndef WIN32
 
+<<<<<<< HEAD
 int main(int argc, char **argv)
 {
     int c;
@@ -596,20 +701,56 @@ int main(int argc, char **argv)
     buf = GC_MALLOC_ATOMIC(8192);
     if (NULL == buf) OUT_OF_MEMORY;
     setvbuf(stdout, (char *)buf, _IOFBF, 8192);
+=======
+main(argc, argv)
+int argc;
+char ** argv;
+{
+    int c;
+
+#if defined(MACINTOSH)
+        console_options.title = "\pDumb Editor";
+        cshow(stdout);
+        argc = ccommand(&argv);
+#endif
+    GC_INIT();
+
+    if (argc != 2) goto usage;
+    arg_file_name = argv[1];
+    setvbuf(stdout, GC_MALLOC_ATOMIC(8192), _IOFBF, 8192);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     initscr();
     noecho(); nonl(); cbreak();
     generic_init();
     while ((c = getchar()) != QUIT) {
+<<<<<<< HEAD
         if (c == EOF) break;
         do_command(c);
     }
+=======
+                if (c == EOF) break;
+            do_command(c);
+    }
+done:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     move(LINES-1, 0);
     clrtoeol();
     refresh();
     nl();
     echo();
     endwin();
+<<<<<<< HEAD
     return 0;
+=======
+    exit(0);
+usage:
+    fprintf(stderr, "Usage: %s file\n", argv[0]);
+    fprintf(stderr, "Cursor keys: ^B(left) ^F(right) ^P(up) ^N(down)\n");
+    fprintf(stderr, "Undo: ^U    Write to <file>.new: ^W");
+    fprintf(stderr, "Quit:^D  Repeat count: ^R[n]\n");
+    fprintf(stderr, "Top: ^T   Locate (search, find): ^L text ^L\n");
+    exit(1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 #endif  /* !WIN32 */

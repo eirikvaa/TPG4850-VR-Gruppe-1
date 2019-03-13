@@ -41,7 +41,10 @@ typedef int32_t InteropDataIndex;
 const TypeIndex kTypeIndexInvalid = -1;
 const TypeDefinitionIndex kTypeDefinitionIndexInvalid = -1;
 const DefaultValueDataIndex kDefaultValueIndexNull = -1;
+<<<<<<< HEAD
 const CustomAttributeIndex kCustomAttributeIndexInvalid = -1;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 const EventIndex kEventIndexInvalid = -1;
 const FieldIndex kFieldIndexInvalid = -1;
 const MethodIndex kMethodIndexInvalid = -1;
@@ -77,7 +80,10 @@ enum Il2CppMetadataUsage
     kIl2CppMetadataUsageMethodRef,
 };
 
+<<<<<<< HEAD
 #ifdef __cplusplus
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 static inline Il2CppMetadataUsage GetEncodedIndexType(EncodedMethodIndex index)
 {
     return (Il2CppMetadataUsage)((index & 0xE0000000) >> 29);
@@ -88,26 +94,40 @@ static inline uint32_t GetDecodedMethodIndex(EncodedMethodIndex index)
     return index & 0x1FFFFFFFU;
 }
 
+<<<<<<< HEAD
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 struct Il2CppImage;
 struct Il2CppType;
 struct Il2CppTypeDefinitionMetadata;
 
+<<<<<<< HEAD
 typedef union Il2CppRGCTXDefinitionData
+=======
+union Il2CppRGCTXDefinitionData
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     int32_t rgctxDataDummy;
     MethodIndex methodIndex;
     TypeIndex typeIndex;
+<<<<<<< HEAD
 } Il2CppRGCTXDefinitionData;
 
 typedef enum Il2CppRGCTXDataType
+=======
+};
+
+enum Il2CppRGCTXDataType
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     IL2CPP_RGCTX_DATA_INVALID,
     IL2CPP_RGCTX_DATA_TYPE,
     IL2CPP_RGCTX_DATA_CLASS,
     IL2CPP_RGCTX_DATA_METHOD,
     IL2CPP_RGCTX_DATA_ARRAY,
+<<<<<<< HEAD
 } Il2CppRGCTXDataType;
 
 typedef struct Il2CppRGCTXDefinition
@@ -126,6 +146,27 @@ typedef struct Il2CppTypeDefinition
 {
     StringIndex nameIndex;
     StringIndex namespaceIndex;
+=======
+};
+
+struct Il2CppRGCTXDefinition
+{
+    Il2CppRGCTXDataType type;
+    Il2CppRGCTXDefinitionData data;
+};
+
+struct Il2CppInterfaceOffsetPair
+{
+    TypeIndex interfaceTypeIndex;
+    int32_t offset;
+};
+
+struct Il2CppTypeDefinition
+{
+    StringIndex nameIndex;
+    StringIndex namespaceIndex;
+    CustomAttributeIndex customAttributeIndex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     TypeIndex byvalTypeIndex;
     TypeIndex byrefTypeIndex;
 
@@ -168,6 +209,7 @@ typedef struct Il2CppTypeDefinition
     // 07-10 - One of nine possible PackingSize values (0, 1, 2, 4, 8, 16, 32, 64, or 128)
     uint32_t bitfield;
     uint32_t token;
+<<<<<<< HEAD
 } Il2CppTypeDefinition;
 
 typedef struct Il2CppFieldDefinition
@@ -178,17 +220,37 @@ typedef struct Il2CppFieldDefinition
 } Il2CppFieldDefinition;
 
 typedef struct Il2CppFieldDefaultValue
+=======
+};
+
+struct Il2CppFieldDefinition
+{
+    StringIndex nameIndex;
+    TypeIndex typeIndex;
+    CustomAttributeIndex customAttributeIndex;
+    uint32_t token;
+};
+
+struct Il2CppFieldDefaultValue
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     FieldIndex fieldIndex;
     TypeIndex typeIndex;
     DefaultValueDataIndex dataIndex;
+<<<<<<< HEAD
 } Il2CppFieldDefaultValue;
 
 typedef struct Il2CppFieldMarshaledSize
+=======
+};
+
+struct Il2CppFieldMarshaledSize
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     FieldIndex fieldIndex;
     TypeIndex typeIndex;
     int32_t size;
+<<<<<<< HEAD
 } Il2CppFieldMarshaledSize;
 
 typedef struct Il2CppFieldRef
@@ -205,18 +267,47 @@ typedef struct Il2CppParameterDefinition
 } Il2CppParameterDefinition;
 
 typedef struct Il2CppParameterDefaultValue
+=======
+};
+
+struct Il2CppFieldRef
+{
+    TypeIndex typeIndex;
+    FieldIndex fieldIndex; // local offset into type fields
+};
+
+struct Il2CppParameterDefinition
+{
+    StringIndex nameIndex;
+    uint32_t token;
+    CustomAttributeIndex customAttributeIndex;
+    TypeIndex typeIndex;
+};
+
+struct Il2CppParameterDefaultValue
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     ParameterIndex parameterIndex;
     TypeIndex typeIndex;
     DefaultValueDataIndex dataIndex;
+<<<<<<< HEAD
 } Il2CppParameterDefaultValue;
 
 typedef struct Il2CppMethodDefinition
+=======
+};
+
+struct Il2CppMethodDefinition
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     StringIndex nameIndex;
     TypeDefinitionIndex declaringType;
     TypeIndex returnType;
     ParameterIndex parameterStart;
+<<<<<<< HEAD
+=======
+    CustomAttributeIndex customAttributeIndex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     GenericContainerIndex genericContainerIndex;
     MethodIndex methodIndex;
     MethodIndex invokerIndex;
@@ -228,32 +319,55 @@ typedef struct Il2CppMethodDefinition
     uint16_t iflags;
     uint16_t slot;
     uint16_t parameterCount;
+<<<<<<< HEAD
 } Il2CppMethodDefinition;
 
 typedef struct Il2CppEventDefinition
+=======
+};
+
+struct Il2CppEventDefinition
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     StringIndex nameIndex;
     TypeIndex typeIndex;
     MethodIndex add;
     MethodIndex remove;
     MethodIndex raise;
+<<<<<<< HEAD
     uint32_t token;
 } Il2CppEventDefinition;
 
 typedef struct Il2CppPropertyDefinition
+=======
+    CustomAttributeIndex customAttributeIndex;
+    uint32_t token;
+};
+
+struct Il2CppPropertyDefinition
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     StringIndex nameIndex;
     MethodIndex get;
     MethodIndex set;
     uint32_t attrs;
+<<<<<<< HEAD
     uint32_t token;
 } Il2CppPropertyDefinition;
 
 typedef struct Il2CppMethodSpec
+=======
+    CustomAttributeIndex customAttributeIndex;
+    uint32_t token;
+};
+
+struct Il2CppMethodSpec
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     MethodIndex methodDefinitionIndex;
     GenericInstIndex classIndexIndex;
     GenericInstIndex methodIndexIndex;
+<<<<<<< HEAD
 } Il2CppMethodSpec;
 
 typedef struct Il2CppStringLiteral
@@ -278,6 +392,31 @@ typedef struct Il2CppGenericMethodFunctionsDefinitions
 const int kPublicKeyByteLength = PUBLIC_KEY_BYTE_LENGTH;
 
 typedef struct Il2CppAssemblyNameDefinition
+=======
+};
+
+struct Il2CppStringLiteral
+{
+    uint32_t length;
+    StringLiteralIndex dataIndex;
+};
+
+struct Il2CppGenericMethodIndices
+{
+    MethodIndex methodIndex;
+    MethodIndex invokerIndex;
+};
+
+struct Il2CppGenericMethodFunctionsDefinitions
+{
+    GenericMethodIndex genericMethodIndex;
+    Il2CppGenericMethodIndices indices;
+};
+
+const int kPublicKeyByteLength = 8;
+
+struct Il2CppAssemblyName
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     StringIndex nameIndex;
     StringIndex cultureIndex;
@@ -290,10 +429,17 @@ typedef struct Il2CppAssemblyNameDefinition
     int32_t minor;
     int32_t build;
     int32_t revision;
+<<<<<<< HEAD
     uint8_t public_key_token[PUBLIC_KEY_BYTE_LENGTH];
 } Il2CppAssemblyNameDefinition;
 
 typedef struct Il2CppImageDefinition
+=======
+    uint8_t publicKeyToken[kPublicKeyByteLength];
+};
+
+struct Il2CppImageDefinition
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     StringIndex nameIndex;
     AssemblyIndex assemblyIndex;
@@ -306,6 +452,7 @@ typedef struct Il2CppImageDefinition
 
     MethodIndex entryPointIndex;
     uint32_t token;
+<<<<<<< HEAD
 
     CustomAttributeIndex customAttributeStart;
     uint32_t customAttributeCount;
@@ -353,6 +500,51 @@ typedef struct Il2CppWindowsRuntimeTypeNamePair
 
 #pragma pack(push, p1,4)
 typedef struct Il2CppGlobalMetadataHeader
+=======
+};
+
+struct Il2CppAssembly
+{
+    ImageIndex imageIndex;
+    CustomAttributeIndex customAttributeIndex;
+    int32_t referencedAssemblyStart;
+    int32_t referencedAssemblyCount;
+    Il2CppAssemblyName aname;
+};
+
+struct Il2CppMetadataUsageList
+{
+    uint32_t start;
+    uint32_t count;
+};
+
+struct Il2CppMetadataUsagePair
+{
+    uint32_t destinationIndex;
+    uint32_t encodedSourceIndex;
+};
+
+struct Il2CppCustomAttributeTypeRange
+{
+    int32_t start;
+    int32_t count;
+};
+
+struct Il2CppRange
+{
+    int32_t start;
+    int32_t length;
+};
+
+struct Il2CppWindowsRuntimeTypeNamePair
+{
+    StringIndex nameIndex;
+    TypeIndex typeIndex;
+};
+
+#pragma pack(push, p1,4)
+struct Il2CppGlobalMetadataHeader
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     int32_t sanity;
     int32_t version;
@@ -422,13 +614,21 @@ typedef struct Il2CppGlobalMetadataHeader
     int32_t windowsRuntimeTypeNamesSize;
     int32_t exportedTypeDefinitionsOffset; // TypeDefinitionIndex
     int32_t exportedTypeDefinitionsCount;
+<<<<<<< HEAD
 } Il2CppGlobalMetadataHeader;
+=======
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #pragma pack(pop, p1)
 
 #if RUNTIME_MONO
 
 #pragma pack(push, p1,4)
+<<<<<<< HEAD
 typedef struct Il2CppGlobalMonoMetadataHeader
+=======
+struct Il2CppGlobalMonoMetadataHeader
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     int32_t sanity;
     int32_t version;
@@ -462,6 +662,10 @@ typedef struct Il2CppGlobalMonoMetadataHeader
     int32_t metaDataUsagePairsTableCount;
     int32_t assemblyNameTableOffset; // assembly names
     int32_t assemblyNameTableCount;
+<<<<<<< HEAD
 } Il2CppGlobalMonoMetadataHeader;
+=======
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #pragma pack(pop, p1)
 #endif

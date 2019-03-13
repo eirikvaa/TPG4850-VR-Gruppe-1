@@ -6,7 +6,11 @@
 #include "gc/GCHandle.h"
 #include "metadata/Il2CppTypeCompare.h"
 #include "metadata/Il2CppTypeHash.h"
+<<<<<<< HEAD
 #include "os/ReaderWriterLock.h"
+=======
+#include "os/Mutex.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/Array.h"
 #include "vm/Class.h"
 #include "vm/Field.h"
@@ -85,13 +89,18 @@ namespace il2cpp
 {
 namespace vm
 {
+<<<<<<< HEAD
     static il2cpp::os::ReaderWriterLock s_ReflectionICallsLock;
+=======
+    static il2cpp::os::FastMutex s_ReflectionICallsMutex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     Il2CppReflectionAssembly* Reflection::GetAssemblyObject(const Il2CppAssembly *assembly)
     {
         static Il2CppClass *System_Reflection_Assembly;
         Il2CppReflectionAssembly *res;
 
+<<<<<<< HEAD
         AssemblyMap::key_type::wrapped_type key(assembly, (Il2CppClass*)NULL);
         AssemblyMap::data_type value = NULL;
 
@@ -100,6 +109,14 @@ namespace vm
             if (s_AssemblyMap->TryGetValue(key, &value))
                 return value;
         }
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        AssemblyMap::key_type::wrapped_type key(assembly, (Il2CppClass*)NULL);
+        AssemblyMap::data_type value = NULL;
+        if (s_AssemblyMap->TryGetValue(key, &value))
+            return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (!System_Reflection_Assembly)
 #if !NET_4_0
@@ -110,11 +127,16 @@ namespace vm
         res = (Il2CppReflectionAssembly*)Object::New(System_Reflection_Assembly);
         res->assembly = assembly;
 
+<<<<<<< HEAD
         il2cpp::os::ReaderWriterAutoLock lockExclusive(&s_ReflectionICallsLock, true);
         if (s_AssemblyMap->TryGetValue(key, &value))
             return value;
 
         s_AssemblyMap->Add(key, res);
+=======
+        s_AssemblyMap->Add(key, res);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return res;
     }
 
@@ -131,6 +153,7 @@ namespace vm
         Il2CppReflectionField *res;
         static Il2CppClass *monofield_klass;
 
+<<<<<<< HEAD
         FieldMap::key_type::wrapped_type key(field, klass);
         FieldMap::data_type value = NULL;
 
@@ -139,6 +162,14 @@ namespace vm
             if (s_FieldMap->TryGetValue(key, &value))
                 return value;
         }
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        FieldMap::key_type::wrapped_type key(field, klass);
+        FieldMap::data_type value = NULL;
+        if (s_FieldMap->TryGetValue(key, &value))
+            return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (!monofield_klass)
             monofield_klass = Class::FromName(il2cpp_defaults.corlib, "System.Reflection", "MonoField");
@@ -149,6 +180,7 @@ namespace vm
         res->attrs = field->type->attrs;
         IL2CPP_OBJECT_SETREF(res, type, GetTypeObject(field->type));
 
+<<<<<<< HEAD
         il2cpp::os::ReaderWriterAutoLock lockExclusive(&s_ReflectionICallsLock, true);
         if (s_FieldMap->TryGetValue(key, &value))
             return value;
@@ -160,6 +192,11 @@ namespace vm
     const MethodInfo* Reflection::GetMethod(const Il2CppReflectionMethod* method)
     {
         return method->method;
+=======
+        s_FieldMap->Add(key, res);
+
+        return res;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 /*
@@ -177,6 +214,7 @@ namespace vm
         Il2CppClass *klass;
         Il2CppReflectionMethod *ret;
 
+<<<<<<< HEAD
 #if !NET_4_0
         if (method->is_inflated)
         {
@@ -190,6 +228,19 @@ namespace vm
                 if (s_MethodMap->TryGetValue(key, &value))
                     return value;
             }
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+#if !NET_4_0
+        if (method->is_inflated)
+        {
+            refclass = method->declaring_type;
+
+            MethodMap::key_type::wrapped_type key(method, refclass);
+            MethodMap::data_type value = NULL;
+            if (s_MethodMap->TryGetValue(key, &value))
+                return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             if ((*method->name == '.') && (!strcmp(method->name, ".ctor") || !strcmp(method->name, ".cctor")))
             {
@@ -208,6 +259,7 @@ namespace vm
             gret->base.method = method;
 
             IL2CPP_OBJECT_SETREF(gret, base.name, String::New(method->name));
+<<<<<<< HEAD
             IL2CPP_OBJECT_SETREF(gret, base.reftype, GetTypeObject(&refclass->byval_arg));
 
             ret = &gret->base;
@@ -217,11 +269,20 @@ namespace vm
                 return value;
 
             s_MethodMap->Add(key, ret);
+=======
+            IL2CPP_OBJECT_SETREF(gret, base.reftype, GetTypeObject(refclass->byval_arg));
+
+            ret = &gret->base;
+
+            s_MethodMap->Add(key, ret);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return ret;
         }
 #endif
 
         if (!refclass)
+<<<<<<< HEAD
             refclass = method->klass;
 
         MethodMap::key_type::wrapped_type key(method, refclass);
@@ -232,6 +293,14 @@ namespace vm
             if (s_MethodMap->TryGetValue(key, &value))
                 return value;
         }
+=======
+            refclass = method->declaring_type;
+
+        MethodMap::key_type::wrapped_type key(method, refclass);
+        MethodMap::data_type value = NULL;
+        if (s_MethodMap->TryGetValue(key, &value))
+            return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (*method->name == '.' && (strcmp(method->name, ".ctor") == 0 || strcmp(method->name, ".cctor") == 0))
         {
@@ -247,6 +316,7 @@ namespace vm
         }
         ret = (Il2CppReflectionMethod*)Object::New(klass);
         ret->method = method;
+<<<<<<< HEAD
         IL2CPP_OBJECT_SETREF(ret, reftype, GetTypeObject(&refclass->byval_arg));
 
         il2cpp::os::ReaderWriterAutoLock lockExclusive(&s_ReflectionICallsLock, true);
@@ -254,6 +324,12 @@ namespace vm
             return value;
 
         s_MethodMap->Add(key, ret);
+=======
+        IL2CPP_OBJECT_SETREF(ret, reftype, GetTypeObject(refclass->byval_arg));
+
+        s_MethodMap->Add(key, ret);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return ret;
     }
 
@@ -263,6 +339,7 @@ namespace vm
         Il2CppReflectionModule *res;
         //char* basename;
 
+<<<<<<< HEAD
         ModuleMap::key_type::wrapped_type key(image, (Il2CppClass*)NULL);
         ModuleMap::data_type value = NULL;
 
@@ -271,6 +348,14 @@ namespace vm
             if (s_ModuleMap->TryGetValue(key, &value))
                 return value;
         }
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        ModuleMap::key_type::wrapped_type key(image, (Il2CppClass*)NULL);
+        ModuleMap::data_type value = NULL;
+        if (s_ModuleMap->TryGetValue(key, &value))
+            return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (!System_Reflection_Module)
         {
@@ -283,10 +368,17 @@ namespace vm
         res = (Il2CppReflectionModule*)Object::New(System_Reflection_Module);
 
         res->image = image;
+<<<<<<< HEAD
         IL2CPP_OBJECT_SETREF(res, assembly, (Il2CppReflectionAssembly*)Reflection::GetAssemblyObject(image->assembly));
 
         IL2CPP_OBJECT_SETREF(res, fqname, String::New(image->name));
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Reflection::GetModuleObject, "Missing Module fields need set");
+=======
+        IL2CPP_OBJECT_SETREF(res, assembly, (Il2CppReflectionAssembly*)Reflection::GetAssemblyObject(MetadataCache::GetAssemblyFromIndex(image->assemblyIndex)));
+
+        IL2CPP_OBJECT_SETREF(res, fqname, String::New(image->name));
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(Reflection::GetModuleObject, "Missing Module fields need set");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         //basename = g_path_get_basename (image->name);
         //IL2CPP_OBJECT_SETREF (res, name, String::New (basename));
         IL2CPP_OBJECT_SETREF(res, name, String::New(image->name));
@@ -308,10 +400,13 @@ namespace vm
             }
         }*/
 
+<<<<<<< HEAD
         il2cpp::os::ReaderWriterAutoLock lockExclusive(&s_ReflectionICallsLock, true);
         if (s_ModuleMap->TryGetValue(key, &value))
             return value;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         s_ModuleMap->Add(key, res);
         return res;
     }
@@ -321,6 +416,7 @@ namespace vm
         Il2CppReflectionProperty *res;
         static Il2CppClass *monoproperty_klass;
 
+<<<<<<< HEAD
         PropertyMap::key_type::wrapped_type key(property, klass);
         PropertyMap::data_type value = NULL;
 
@@ -329,6 +425,14 @@ namespace vm
             if (s_PropertyMap->TryGetValue(key, &value))
                 return value;
         }
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        PropertyMap::key_type::wrapped_type key(property, klass);
+        PropertyMap::data_type value = NULL;
+        if (s_PropertyMap->TryGetValue(key, &value))
+            return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (!monoproperty_klass)
             monoproperty_klass = Class::FromName(il2cpp_defaults.corlib, "System.Reflection", "MonoProperty");
@@ -336,11 +440,16 @@ namespace vm
         res->klass = klass;
         res->property = property;
 
+<<<<<<< HEAD
         il2cpp::os::ReaderWriterAutoLock lockExclusive(&s_ReflectionICallsLock, true);
         if (s_PropertyMap->TryGetValue(key, &value))
             return value;
 
         s_PropertyMap->Add(key, res);
+=======
+        s_PropertyMap->Add(key, res);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return res;
     }
 
@@ -349,6 +458,7 @@ namespace vm
         Il2CppReflectionEvent* result;
         static Il2CppClass* monoproperty_klass = Class::FromName(il2cpp_defaults.corlib, "System.Reflection", "MonoEvent");
 
+<<<<<<< HEAD
         EventMap::key_type::wrapped_type key(event, klass);
         EventMap::data_type value = NULL;
 
@@ -368,11 +478,28 @@ namespace vm
             return value;
 
         s_EventMap->Add(key, result);
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        EventMap::key_type::wrapped_type key(event, klass);
+        EventMap::data_type value = NULL;
+        if (s_EventMap->TryGetValue(key, &value))
+            return value;
+
+        Il2CppReflectionMonoEvent* monoEvent = reinterpret_cast<Il2CppReflectionMonoEvent*>(Object::New(monoproperty_klass));
+        monoEvent->eventInfo = event;
+        monoEvent->reflectedType = Reflection::GetTypeObject(klass->byval_arg);
+        result = reinterpret_cast<Il2CppReflectionEvent*>(monoEvent);
+
+        s_EventMap->Add(key, result);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return result;
     }
 
     Il2CppReflectionType* Reflection::GetTypeObject(const Il2CppType *type)
     {
+<<<<<<< HEAD
         Il2CppReflectionType* object = NULL;
 
         {
@@ -393,6 +520,19 @@ namespace vm
             return object;
 
         s_TypeMap->Add(type, typeObject);
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        Il2CppReflectionType* object = NULL;
+        if (s_TypeMap->TryGetValue(type, &object))
+            return object;
+
+        Il2CppReflectionType* typeObject = (Il2CppReflectionType*)Object::New(il2cpp_defaults.monotype_class);
+        typeObject->type = type;
+
+        s_TypeMap->Add(type, typeObject);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return typeObject;
     }
 
@@ -445,7 +585,13 @@ namespace vm
         Il2CppArray *res = NULL;
         Il2CppReflectionMethod *member = NULL;
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Reflection::GetParamObjects, "Work in progress!");
+=======
+        il2cpp::os::FastAutoLock lock(&s_ReflectionICallsMutex);
+
+        NOT_IMPLEMENTED_NO_ASSERT(Reflection::GetParamObjects, "Work in progress!");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (!System_Reflection_ParameterInfo_array)
         {
@@ -473,12 +619,17 @@ namespace vm
 
         ParametersMap::key_type::wrapped_type key(method, refclass);
         ParametersMap::data_type value;
+<<<<<<< HEAD
 
         {
             il2cpp::os::ReaderWriterAutoLock lockShared(&s_ReflectionICallsLock);
             if (s_ParametersMap->TryGetValue(key, &value))
                 return value;
         }
+=======
+        if (s_ParametersMap->TryGetValue(key, &value))
+            return value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         member = GetMethodObject(method, refclass);
         res = Array::NewSpecific(System_Reflection_ParameterInfo_array, method->parameters_count);
@@ -509,22 +660,33 @@ namespace vm
             il2cpp_array_setref(res, i, param);
         }
 
+<<<<<<< HEAD
         il2cpp::os::ReaderWriterAutoLock lockExclusive(&s_ReflectionICallsLock, true);
         if (s_ParametersMap->TryGetValue(key, &value))
             return value;
 
         s_ParametersMap->Add(key, res);
+=======
+        s_ParametersMap->Add(key, res);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return res;
     }
 
 // TODO: move this somewhere else
     bool Reflection::IsType(Il2CppObject *obj)
     {
+<<<<<<< HEAD
 #if NET_4_0
         return (obj->klass == il2cpp_defaults.runtimetype_class);
 #else
         return (obj->klass == il2cpp_defaults.monotype_class);
 #endif
+=======
+        if (obj->klass->image == il2cpp_defaults.corlib)
+            return strcmp(obj->klass->name, "MonoType") == 0 && strcmp(obj->klass->namespaze, "System") == 0;
+        return false;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     static bool IsMethod(Il2CppObject *obj)
@@ -605,27 +767,47 @@ namespace vm
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(Il2CppClass *klass)
     {
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(klass->image, klass->token);
+=======
+        return MetadataCache::GenerateCustomAttributesCache(klass->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(const MethodInfo *method)
     {
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(method->klass->image, method->token);
+=======
+        return MetadataCache::GenerateCustomAttributesCache(method->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(const PropertyInfo *property)
     {
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(property->parent->image, property->token);
+=======
+        return MetadataCache::GenerateCustomAttributesCache(property->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(FieldInfo *field)
     {
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(field->parent->image, field->token);
+=======
+        return MetadataCache::GenerateCustomAttributesCache(field->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(const EventInfo *event)
     {
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(event->parent->image, event->token);
+=======
+        return MetadataCache::GenerateCustomAttributesCache(event->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(Il2CppReflectionParameter *parameter)
@@ -635,7 +817,11 @@ namespace vm
         if (method->method->parameters == NULL)
             return NULL;
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Reflection::GetCustomAttributesCacheFor, "-1 represents the return value. Need to emit custom attribute information for that.")
+=======
+        NOT_IMPLEMENTED_NO_ASSERT(Reflection::GetCustomAttributesCacheFor, "-1 represents the return value. Need to emit custom attribute information for that.")
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (parameter->PositionImpl == -1)
             return NULL;
 
@@ -644,31 +830,54 @@ namespace vm
             methodWithParameterAttributeInformation = method->method->genericMethod->methodDefinition;
 
         const ::ParameterInfo* info = &methodWithParameterAttributeInformation->parameters[parameter->PositionImpl];
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(methodWithParameterAttributeInformation->klass->image, info->token);
     }
 
     bool Reflection::HasAttribute(Il2CppReflectionParameter *parameter, Il2CppClass* attribute)
+=======
+        return MetadataCache::GenerateCustomAttributesCache(info->customAttributeIndex);
+    }
+
+    CustomAttributeTypeCache* Reflection::GetCustomAttributeTypeCacheFor(Il2CppReflectionParameter *parameter)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         Il2CppReflectionMethod* method = (Il2CppReflectionMethod*)parameter->MemberImpl;
 
         if (method->method->parameters == NULL)
+<<<<<<< HEAD
             return false;
 
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Reflection::GetCustomAttributeTypeCacheFor, "-1 represents the return value. Need to emit custom attribute information for that.")
         if (parameter->PositionImpl == -1)
             return false;
+=======
+            return NULL;
+
+        NOT_IMPLEMENTED_NO_ASSERT(Reflection::GetCustomAttributeTypeCacheFor, "-1 represents the return value. Need to emit custom attribute information for that.")
+        if (parameter->PositionImpl == -1)
+            return NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         const MethodInfo* methodWithParameterAttributeInformation = method->method;
         if (method->method->is_inflated)
             methodWithParameterAttributeInformation = method->method->genericMethod->methodDefinition;
 
         const ::ParameterInfo* info = &methodWithParameterAttributeInformation->parameters[parameter->PositionImpl];
+<<<<<<< HEAD
         return MetadataCache::HasAttribute(methodWithParameterAttributeInformation->klass->image, info->token, attribute);
+=======
+        return MetadataCache::GenerateCustomAttributeTypeCache(info->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttributesCacheFor(const Il2CppAssembly *assembly)
     {
+<<<<<<< HEAD
         return MetadataCache::GenerateCustomAttributesCache(assembly->image, assembly->token);
+=======
+        return MetadataCache::GenerateCustomAttributesCache(assembly->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     CustomAttributesCache* Reflection::GetCustomAttrsInfo(Il2CppObject *obj)
@@ -698,6 +907,7 @@ namespace vm
         return GetCustomAttributesCacheFor(klass);
     }
 
+<<<<<<< HEAD
     bool Reflection::HasAttribute(Il2CppObject *obj, Il2CppClass* attribute)
     {
         if (IsMethod(obj) || IsCMethod(obj) || IsGenericMethod(obj) || IsGenericCMethod(obj))
@@ -717,11 +927,33 @@ namespace vm
 
         if (IsAssembly(obj))
             return MetadataCache::HasAttribute((((Il2CppReflectionAssembly*)obj)->assembly)->image, (((Il2CppReflectionAssembly*)obj)->assembly)->token, attribute);
+=======
+    CustomAttributeTypeCache* Reflection::GetCustomAttrsTypeInfo(Il2CppObject *obj)
+    {
+        if (IsMethod(obj) || IsCMethod(obj) || IsGenericMethod(obj) || IsGenericCMethod(obj))
+            return MetadataCache::GenerateCustomAttributeTypeCache((((Il2CppReflectionMethod*)obj)->method)->customAttributeIndex);
+
+        if (IsProperty(obj))
+            return MetadataCache::GenerateCustomAttributeTypeCache((((Il2CppReflectionProperty*)obj)->property)->customAttributeIndex);
+
+        if (IsField(obj))
+            return MetadataCache::GenerateCustomAttributeTypeCache((((Il2CppReflectionField*)obj)->field)->customAttributeIndex);
+
+        if (IsEvent(obj))
+            return MetadataCache::GenerateCustomAttributeTypeCache((((Il2CppReflectionMonoEvent*)obj)->eventInfo)->customAttributeIndex);
+
+        if (IsParameter(obj))
+            return GetCustomAttributeTypeCacheFor((Il2CppReflectionParameter*)obj);
+
+        if (IsAssembly(obj))
+            return MetadataCache::GenerateCustomAttributeTypeCache((((Il2CppReflectionAssembly*)obj)->assembly)->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         Il2CppClass *klass = IsType(obj)
             ? Class::FromSystemType((Il2CppReflectionType*)obj)
             : obj->klass;
 
+<<<<<<< HEAD
         return MetadataCache::HasAttribute(klass->image, klass->token, attribute);
     }
 
@@ -754,6 +986,9 @@ namespace vm
             il2cpp_array_setref(result, i, cache->attributes[i]);
 
         return result;
+=======
+        return MetadataCache::GenerateCustomAttributeTypeCache(klass->customAttributeIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Reflection::Initialize()
@@ -770,19 +1005,73 @@ namespace vm
         s_MonoAssemblyNameMap = new MonoAssemblyNameMap();
     }
 
+<<<<<<< HEAD
     bool Reflection::HasAttribute(FieldInfo *field, Il2CppClass *attribute)
     {
         return MetadataCache::HasAttribute(field->parent->image, field->token, attribute);
+=======
+    bool Reflection::CustomAttrsHasAttr(CustomAttributeTypeCache *ainfo, Il2CppClass *attr_klass)
+    {
+        IL2CPP_ASSERT(ainfo);
+        IL2CPP_ASSERT(attr_klass);
+
+        int i;
+        Il2CppClass *klass;
+
+        for (i = 0; i < ainfo->count; ++i)
+        {
+            klass = ainfo->attributeTypes[i];
+
+            if (Class::HasParent(klass, attr_klass) || (Class::IsInterface(attr_klass) && Class::IsAssignableFrom(attr_klass, klass)))
+                return true;
+        }
+        return false;
+    }
+
+    bool Reflection::HasAttribute(Il2CppObject *obj, Il2CppClass *attribute)
+    {
+        CustomAttributeTypeCache* attrs = GetCustomAttrsTypeInfo(obj);
+        if (!attrs)
+            return false;
+
+        return CustomAttrsHasAttr(attrs, attribute);
+    }
+
+    bool Reflection::HasAttribute(FieldInfo *field, Il2CppClass *attribute)
+    {
+        CustomAttributeTypeCache* attrs = MetadataCache::GenerateCustomAttributeTypeCache(field->customAttributeIndex);
+        if (!attrs)
+            return false;
+
+
+        return CustomAttrsHasAttr(attrs, attribute);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Reflection::HasAttribute(const MethodInfo *method, Il2CppClass *attribute)
     {
+<<<<<<< HEAD
         return MetadataCache::HasAttribute(method->klass->image, method->token, attribute);
+=======
+        CustomAttributeTypeCache* attrs = MetadataCache::GenerateCustomAttributeTypeCache(method->customAttributeIndex);
+        if (!attrs)
+            return false;
+
+        return CustomAttrsHasAttr(attrs, attribute);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Reflection::HasAttribute(Il2CppClass *klass, Il2CppClass *attribute)
     {
+<<<<<<< HEAD
         return MetadataCache::HasAttribute(klass->image, klass->token, attribute);
+=======
+        CustomAttributeTypeCache* attrs = MetadataCache::GenerateCustomAttributeTypeCache(klass->customAttributeIndex);
+        if (!attrs)
+            return false;
+
+        return CustomAttrsHasAttr(attrs, attribute);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppClass* Reflection::TypeGetHandle(Il2CppReflectionType* ref)

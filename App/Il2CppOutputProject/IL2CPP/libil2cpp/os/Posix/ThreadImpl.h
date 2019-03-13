@@ -45,7 +45,10 @@ namespace os
         void SetPriority(ThreadPriority priority);
         ThreadPriority GetPriority();
         void SetStackSize(size_t newsize);
+<<<<<<< HEAD
         static int GetMaxStackSize();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         /// Handle any pending APCs.
         /// NOTE: Can only be called on current thread.

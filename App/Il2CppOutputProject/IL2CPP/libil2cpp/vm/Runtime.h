@@ -31,9 +31,13 @@ namespace vm
         static void SetConfigDir(const char *path);
         static void SetConfigUtf16(const Il2CppChar* executablePath);
         static void SetConfig(const char* executablePath);
+<<<<<<< HEAD
         static void SetUnityTlsInterface(const void* unitytlsInterface);
         static std::string GetConfigDir();
         static const void* GetUnityTlsInterface();
+=======
+        static std::string GetConfigDir();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static const char *GetFrameworkVersion();
         static const MethodInfo* GetDelegateInvoke(Il2CppClass* klass);
         static Il2CppObject* DelegateInvoke(Il2CppDelegate *obj, void **params, Il2CppException **exc);
@@ -58,9 +62,12 @@ namespace vm
         static const char *GetBundledMachineConfig();
         static void RegisterBundledMachineConfig(const char *config_xml);
 
+<<<<<<< HEAD
         static int32_t GetExitCode();
         static void SetExitCode(int32_t value);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     private:
         static void CallUnhandledExceptionDelegate(Il2CppDomain* domain, Il2CppDelegate* delegate, Il2CppException* exc);
         static Il2CppObject* CreateUnhandledExceptionEventArgs(Il2CppException* exc);

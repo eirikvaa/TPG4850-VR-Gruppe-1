@@ -22,10 +22,13 @@
 # error darwin_semaphore.h included with GC_DARWIN_THREADS not defined
 #endif
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   extern "C" {
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* This is a very simple semaphore implementation for Darwin.  It is    */
 /* implemented in terms of pthread calls so it is not async signal      */
 /* safe.  But this is not a problem because signals are not used to     */
@@ -38,6 +41,7 @@ typedef struct {
 } sem_t;
 
 GC_INLINE int sem_init(sem_t *sem, int pshared, int value) {
+<<<<<<< HEAD
     if (pshared != 0) {
         errno = EPERM; /* unsupported */
         return -1;
@@ -49,10 +53,22 @@ GC_INLINE int sem_init(sem_t *sem, int pshared, int value) {
       (void)pthread_mutex_destroy(&sem->mutex);
       return -1;
     }
+=======
+    int ret;
+    if(pshared)
+        ABORT("sem_init with pshared set");
+    sem->value = value;
+
+    ret = pthread_mutex_init(&sem->mutex,NULL);
+    if(ret < 0) return -1;
+    ret = pthread_cond_init(&sem->cond,NULL);
+    if(ret < 0) return -1;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     return 0;
 }
 
 GC_INLINE int sem_post(sem_t *sem) {
+<<<<<<< HEAD
     if (pthread_mutex_lock(&sem->mutex) != 0)
       return -1;
     sem->value++;
@@ -85,4 +101,39 @@ GC_INLINE int sem_destroy(sem_t *sem) {
   } /* extern "C" */
 #endif
 
+=======
+    if(pthread_mutex_lock(&sem->mutex) < 0)
+        return -1;
+    sem->value++;
+    if(pthread_cond_signal(&sem->cond) < 0) {
+        pthread_mutex_unlock(&sem->mutex);
+        return -1;
+    }
+    if(pthread_mutex_unlock(&sem->mutex) < 0)
+        return -1;
+    return 0;
+}
+
+GC_INLINE int sem_wait(sem_t *sem) {
+    if(pthread_mutex_lock(&sem->mutex) < 0)
+        return -1;
+    while(sem->value == 0) {
+        pthread_cond_wait(&sem->cond,&sem->mutex);
+    }
+    sem->value--;
+    if(pthread_mutex_unlock(&sem->mutex) < 0)
+        return -1;
+    return 0;
+}
+
+GC_INLINE int sem_destroy(sem_t *sem) {
+    int ret;
+    ret = pthread_cond_destroy(&sem->cond);
+    if(ret < 0) return -1;
+    ret = pthread_mutex_destroy(&sem->mutex);
+    if(ret < 0) return -1;
+    return 0;
+}
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif

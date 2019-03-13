@@ -33,6 +33,7 @@ namespace os
         return kWaitStatusFailure;
     }
 
+<<<<<<< HEAD
     WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addresses)
     {
         SOCKET_NOT_IMPLEMENTED
@@ -41,6 +42,9 @@ namespace os
     }
 
     WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, int32_t &family, std::vector<std::string> &aliases, std::vector<void*> &addr_list, int32_t &addr_size)
+=======
+    WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         SOCKET_NOT_IMPLEMENTED
 

@@ -2,7 +2,11 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Assets">
+<<<<<<< HEAD
       <UniqueIdentifier>{97c2b126-414a-4c91-9970-4afef910506f}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{95cef3a6-62b8-4120-9ebf-40b7da9548ba}</UniqueIdentifier>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     </Filter>
     <ClCompile Include="App.cpp" />
     <ClInclude Include="App.h" />
@@ -20,9 +24,12 @@
     <None Include="Assets\Square44x44Logo.scale-200.png">
       <Filter>Assets</Filter>
     </None>
+<<<<<<< HEAD
     <None Include="Assets\Square44x44Logo.targetsize-24.png">
       <Filter>Assets</Filter>
     </None>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <None Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <Filter>Assets</Filter>
     </None>

@@ -5,10 +5,13 @@
 #  include "cord.h"
 # endif
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   extern "C" {
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* Extensible cords are strings that may be destructively appended to.  */
 /* They allow fast construction of cords from characters that are       */
 /* being read from a stream.                                            */
@@ -69,8 +72,11 @@ void CORD_ec_flush_buf(CORD_ec x);
 /* original.                                                            */
 void CORD_ec_append_cord(CORD_ec x, CORD s);
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   } /* extern "C" */
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # endif /* EC_H */

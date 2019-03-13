@@ -30,7 +30,11 @@
 #include <sys/poll.h>
 #include <sys/stat.h>
 
+<<<<<<< HEAD
 #if IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_NOVA
+=======
+#if IL2CPP_TARGET_LINUX || IL2CPP_TARGET_ANDROID || IL2CPP_TARGET_TIZEN
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <sys/sendfile.h>
 #endif
 
@@ -41,7 +45,10 @@
 #include "os/Posix/PosixHelpers.h"
 #include "os/Posix/SocketImpl.h"
 #include "os/Posix/ThreadImpl.h"
+<<<<<<< HEAD
 #include "utils/Memory.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/StringUtils.h"
 #include "vm/Exception.h"
 
@@ -62,6 +69,7 @@ namespace os
         return false;
     }
 
+<<<<<<< HEAD
 #define IFCONF_BUFF_SIZE 1024
 #ifndef _SIZEOF_ADDR_IFREQ
 #define _SIZEOF_ADDR_IFREQ(ifr) (sizeof (struct ifreq))
@@ -146,12 +154,76 @@ namespace os
             }
 
             //ignore interfaces that are down
+=======
+    static struct in_addr *get_local_ips(int32_t family, int32_t *nips)
+    {
+        const int32_t max_ifaces = 50; // 50 interfaces should be enough ...
+
+        *nips = 0;
+
+        if (family != AF_INET)
+            return NULL;
+
+        int32_t addr_size = 0;
+        int32_t offset = 0;
+        if (family == AF_INET)
+        {
+            addr_size = sizeof(struct in_addr);
+            offset = offsetof(struct sockaddr_in, sin_addr);
+#if IL2CPP_SUPPORT_IPV6
+        }
+        else if (family == AF_INET6)
+        {
+            addr_size = sizeof(struct in6_addr);
+            offset = offsetof(struct sockaddr_in6, sin6_addr);
+#endif
+        }
+        else
+        {
+            return NULL;
+        }
+
+        int32_t fd = socket(family, SOCK_STREAM, 0);
+
+        struct ifconf ifc;
+        ifc.ifc_len = max_ifaces * sizeof(struct ifreq);
+        ifc.ifc_buf = (char*)malloc(ifc.ifc_len);
+
+        if (ioctl(fd, SIOCGIFCONF, &ifc) < 0)
+        {
+            close(fd);
+            free(ifc.ifc_buf);
+            return NULL;
+        }
+
+        int32_t count = ifc.ifc_len / sizeof(struct ifreq);
+        *nips = count;
+        if (count == 0)
+        {
+            free(ifc.ifc_buf);
+            close(fd);
+            return NULL;
+        }
+
+        int32_t i;
+        struct ifreq *ifr;
+        struct ifreq iflags;
+        bool ignore_loopback = false;
+
+        for (i = 0, ifr = ifc.ifc_req; i < *nips; i++, ifr++)
+        {
+            strcpy(iflags.ifr_name, ifr->ifr_name);
+            if (ioctl(fd, SIOCGIFFLAGS, &iflags) < 0)
+                continue;
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             if ((iflags.ifr_flags & IFF_UP) == 0)
             {
                 ifr->ifr_name[0] = '\0';
                 continue;
             }
 
+<<<<<<< HEAD
             //If we have a non-loopback iface, don't return any loopback
             if ((iflags.ifr_flags & IFF_LOOPBACK) == 0)
             {
@@ -187,6 +259,37 @@ namespace os
         free(ifc.ifc_buf);
         close(fd);
         return (struct in_addr*)result;
+=======
+            if ((iflags.ifr_flags & IFF_LOOPBACK) == 0)
+                ignore_loopback = true;
+        }
+
+        close(fd);
+
+        uint8_t *result = (uint8_t*)malloc(addr_size * count);
+        uint8_t *tmp_ptr = result;
+
+        for (i = 0, ifr = ifc.ifc_req; i < count; i++, ifr++)
+        {
+            if (ifr->ifr_name[0] == '\0')
+            {
+                (*nips)--;
+                continue;
+            }
+
+            if (ignore_loopback && is_loopback(family, ((uint8_t*)&ifr->ifr_addr) + offset))
+            {
+                (*nips)--;
+                continue;
+            }
+
+            memcpy(tmp_ptr, ((uint8_t*)&ifr->ifr_addr) + offset, addr_size);
+            tmp_ptr += addr_size;
+        }
+
+        free(ifc.ifc_buf);
+        return (struct in_addr *)result;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     static bool hostent_get_info(struct hostent *he, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
@@ -318,7 +421,10 @@ namespace os
     {
         if (add_local_ips)
         {
+<<<<<<< HEAD
             bool any_local_ips_added = false;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             int nlocal_in = 0;
             int nlocal_in6 = 0;
             in_addr* local_in = (struct in_addr *)get_local_ips(AF_INET, &nlocal_in);
@@ -332,7 +438,10 @@ namespace os
                         char addr[16];
                         inet_ntop(AF_INET, &local_in[i], addr, sizeof(addr));
                         addr_list.push_back(std::string(addr));
+<<<<<<< HEAD
                         any_local_ips_added = true;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     }
                 }
 
@@ -343,19 +452,26 @@ namespace os
                         char addr[48];
                         const char* ret = inet_ntop(AF_INET6, &local_in6[i], addr, sizeof(addr));
                         if (ret != NULL)
+<<<<<<< HEAD
                         {
                             addr_list.push_back(std::string(addr));
                             any_local_ips_added = true;
                         }
+=======
+                            addr_list.push_back(std::string(addr));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     }
                 }
             }
 
             free(local_in);
             free(local_in6);
+<<<<<<< HEAD
 
             if (any_local_ips_added)
                 return;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         bool nameSet = false;
@@ -493,7 +609,11 @@ namespace os
 #endif
     }
 
+<<<<<<< HEAD
     WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addresses)
+=======
+    WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         char this_hostname[256] = {0};
 
@@ -507,7 +627,11 @@ namespace os
         }
 
 #if IL2CPP_SUPPORT_IPV6
+<<<<<<< HEAD
         return GetAddressInfo(hostname, add_local_ips, name, addresses);
+=======
+        return GetAddressInfo(hostname, add_local_ips, name, addr_list);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #else
         struct hostent *he = NULL;
         if (*hostname)
@@ -517,13 +641,19 @@ namespace os
             return kWaitStatusFailure;
 
         return (add_local_ips
+<<<<<<< HEAD
                 ? hostent_get_info_with_local_ips(he, name, aliases, addresses)
                 : hostent_get_info(he, name, aliases, addresses))
+=======
+                ? hostent_get_info_with_local_ips(he, name, aliases, addr_list)
+                : hostent_get_info(he, name, aliases, addr_list))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             ? kWaitStatusSuccess
             : kWaitStatusFailure;
 #endif
     }
 
+<<<<<<< HEAD
     static bool HasAnyIPv4Addresses(const std::vector<std::string>& addresses)
     {
         for (std::vector<std::string>::const_iterator it = addresses.begin(); it != addresses.end(); ++it)
@@ -580,6 +710,8 @@ namespace os
         return result;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     WaitStatus SocketImpl::GetHostName(std::string &name)
     {
         char hostname[256];

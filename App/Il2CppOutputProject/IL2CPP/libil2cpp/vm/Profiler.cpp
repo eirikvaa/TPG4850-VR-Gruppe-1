@@ -23,9 +23,12 @@ namespace vm
         Il2CppProfileGCResizeFunc gcHeapResizeCallback;
 
         Il2CppProfileFileIOFunc fileioCallback;
+<<<<<<< HEAD
 
         Il2CppProfileThreadFunc threadStartCallback;
         Il2CppProfileThreadFunc threadEndCallback;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 
     typedef il2cpp::utils::dynamic_array<ProfilerDesc*> ProfilersVec;
@@ -80,6 +83,7 @@ namespace vm
         s_profilers.back()->fileioCallback = callback;
     }
 
+<<<<<<< HEAD
     void Profiler::InstallThread(Il2CppProfileThreadFunc start, Il2CppProfileThreadFunc end)
     {
         if (!s_profilers.size())
@@ -88,6 +92,8 @@ namespace vm
         s_profilers.back()->threadEndCallback = end;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void Profiler::Allocation(Il2CppObject *obj, Il2CppClass *klass)
     {
         for (ProfilersVec::const_iterator iter = s_profilers.begin(); iter != s_profilers.end(); iter++)
@@ -141,6 +147,7 @@ namespace vm
                 (*iter)->fileioCallback((*iter)->profiler, kind, count);
         }
     }
+<<<<<<< HEAD
 
     void Profiler::ThreadStart(unsigned long tid)
     {
@@ -168,6 +175,8 @@ namespace vm
                 (*iter)->shutdownCallback((*iter)->profiler);
         }
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } /* namespace vm */
 } /* namespace il2cpp */
 

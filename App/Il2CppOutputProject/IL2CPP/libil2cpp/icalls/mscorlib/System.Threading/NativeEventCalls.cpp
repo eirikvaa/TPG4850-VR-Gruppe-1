@@ -48,7 +48,11 @@ namespace Threading
 
     intptr_t NativeEventCalls::OpenEvent_internal(Il2CppString* name, EventWaitHandleRights rights, MonoIOError* error)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(NativeEventCalls::OpenEvent_internal);
+=======
+        NOT_IMPLEMENTED_ICALL(NativeEventCalls::OpenEvent_internal);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return intptr_t();
     }
 
@@ -69,7 +73,11 @@ namespace Threading
 
     intptr_t NativeEventCalls::OpenEvent_internal(Il2CppString* name, EventWaitHandleRights rights, int32_t* errorCode)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(NativeEventCalls::OpenEvent_internal);
+=======
+        NOT_IMPLEMENTED_ICALL(NativeEventCalls::OpenEvent_internal);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return intptr_t();
     }
 

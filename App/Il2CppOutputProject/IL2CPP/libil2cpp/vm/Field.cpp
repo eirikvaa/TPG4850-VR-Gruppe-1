@@ -14,7 +14,10 @@
 #include "il2cpp-tabledefs.h"
 #include "utils/MemoryRead.h"
 #include "vm-utils/BlobReader.h"
+<<<<<<< HEAD
 #include "Thread.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 using namespace il2cpp::utils;
 
@@ -22,6 +25,12 @@ namespace il2cpp
 {
 namespace vm
 {
+<<<<<<< HEAD
+=======
+    static void
+    set_value(const Il2CppType *type, void *dest, void *value, bool deref_pointer);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     const char* Field::GetName(FieldInfo *field)
     {
         return field->name;
@@ -51,7 +60,11 @@ namespace vm
         IL2CPP_ASSERT(!(field->type->attrs & FIELD_ATTRIBUTE_STATIC));
 
         src = (char*)obj + field->offset;
+<<<<<<< HEAD
         SetValueRaw(field->type, value, src, true);
+=======
+        set_value(field->type, value, src, true);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     uint32_t Field::GetToken(const FieldInfo *field)
@@ -61,11 +74,14 @@ namespace vm
 
     Il2CppObject* Field::GetValueObject(FieldInfo *field, Il2CppObject *obj)
     {
+<<<<<<< HEAD
         return GetValueObjectForThread(field, obj, il2cpp::vm::Thread::Current());
     }
 
     Il2CppObject* Field::GetValueObjectForThread(FieldInfo *field, Il2CppObject *obj, Il2CppThread *thread)
     {
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         Il2CppClass* fieldType = Class::FromIl2CppType(field->type);
 
         if (field->type->attrs & FIELD_ATTRIBUTE_LITERAL)
@@ -89,6 +105,7 @@ namespace vm
         {
             if (field->offset == THREAD_STATIC_FIELD_OFFSET)
             {
+<<<<<<< HEAD
                 Runtime::ClassInit(field->parent);
                 int threadStaticFieldOffset = MetadataCache::GetThreadLocalStaticOffsetForField(field);
                 void* threadStaticData = Thread::GetThreadStaticDataForThread(field->parent->thread_static_fields_offset, thread);
@@ -99,6 +116,14 @@ namespace vm
                 Runtime::ClassInit(field->parent);
                 fieldAddress = static_cast<uint8_t*>(field->parent->static_fields) + field->offset;
             }
+=======
+                NOT_IMPLEMENTED_NO_ASSERT(Field::GetValueObject, "Field::GetValueObject is not implemented for thread-static fields");
+                return NULL;
+            }
+
+            Runtime::ClassInit(field->parent);
+            fieldAddress = static_cast<uint8_t*>(field->parent->static_fields) + field->offset;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
         else
         {
@@ -131,7 +156,11 @@ namespace vm
         IL2CPP_ASSERT(!(field->type->attrs & FIELD_ATTRIBUTE_STATIC));
 
         dest = (char*)obj + field->offset;
+<<<<<<< HEAD
         SetValueRaw(field->type, dest, value, false);
+=======
+        set_value(field->type, dest, value, false);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Field::GetDefaultFieldValue(FieldInfo *field, void *value)
@@ -145,6 +174,7 @@ namespace vm
 
     void Field::StaticGetValue(FieldInfo *field, void *value)
     {
+<<<<<<< HEAD
         // ensure parent is initialized so that static fields memory has been allocated
         Class::SetupFields(field->parent);
 
@@ -172,6 +202,8 @@ namespace vm
 
     void Field::StaticGetValueInternal(FieldInfo* field, void* value, void* threadStaticData)
     {
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         void *src = NULL;
 
         IL2CPP_ASSERT(field->type->attrs & FIELD_ATTRIBUTE_STATIC);
@@ -187,25 +219,37 @@ namespace vm
 
         if (field->offset == THREAD_STATIC_FIELD_OFFSET)
         {
+<<<<<<< HEAD
             IL2CPP_ASSERT(NULL != threadStaticData);
             int threadStaticFieldOffset = MetadataCache::GetThreadLocalStaticOffsetForField(field);
             src = ((char*)threadStaticData) + threadStaticFieldOffset;
+=======
+            // Thread static
+            NOT_IMPLEMENTED_NO_ASSERT(Field::StaticGetValue, "Field::StaticGetValue is not implemented for thread-static fields");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
         else
         {
             src = ((char*)field->parent->static_fields) + field->offset;
         }
 
+<<<<<<< HEAD
         SetValueRaw(field->type, value, src, true);
+=======
+        set_value(field->type, value, src, true);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Field::StaticSetValue(FieldInfo *field, void *value)
     {
+<<<<<<< HEAD
         StaticSetValueForThread(field, value, il2cpp::vm::Thread::Current());
     }
 
     void Field::StaticSetValueForThread(FieldInfo* field, void* value, Il2CppThread* thread)
     {
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         void *dest = NULL;
 
         IL2CPP_ASSERT(field->type->attrs & FIELD_ATTRIBUTE_STATIC);
@@ -216,16 +260,25 @@ namespace vm
 
         if (field->offset == THREAD_STATIC_FIELD_OFFSET)
         {
+<<<<<<< HEAD
             int threadStaticFieldOffset = MetadataCache::GetThreadLocalStaticOffsetForField(field);
             void* threadStaticData = Thread::GetThreadStaticDataForThread(field->parent->thread_static_fields_offset, thread);
             dest = ((char*)threadStaticData) + threadStaticFieldOffset;
+=======
+            NOT_IMPLEMENTED_NO_ASSERT(Field::StaticSetValue, "Field::SetValueObject is not implemented for thread-static fields");
+            return;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
         else
         {
             dest = ((char*)field->parent->static_fields) + field->offset;
         }
 
+<<<<<<< HEAD
         SetValueRaw(field->type, dest, value, false);
+=======
+        set_value(field->type, dest, value, false);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Field::SetInstanceFieldValueObject(Il2CppObject* objectInstance, FieldInfo* field, Il2CppObject* value)
@@ -236,7 +289,12 @@ namespace vm
         // Object write barrier needed here
     }
 
+<<<<<<< HEAD
     void Field::SetValueRaw(const Il2CppType *type, void *dest, void *value, bool deref_pointer)
+=======
+    static void
+    set_value(const Il2CppType *type, void *dest, void *value, bool deref_pointer)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         int t;
         if (type->byref)
@@ -344,7 +402,11 @@ namespace vm
                 }
                 return;
             case IL2CPP_TYPE_GENERICINST:
+<<<<<<< HEAD
                 t = GenericClass::GetTypeDefinition(type->data.generic_class)->byval_arg.type;
+=======
+                t = GenericClass::GetTypeDefinition(type->data.generic_class)->byval_arg->type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 goto handle_enum;
             default:
                 IL2CPP_ASSERT(0);
@@ -360,7 +422,11 @@ namespace vm
         }
         else if (field->type->attrs & FIELD_ATTRIBUTE_HAS_FIELD_RVA)
         {
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Field::GetData, "This works for array initialization data. Revisit any other RVA use case.");
+=======
+            NOT_IMPLEMENTED_NO_ASSERT(Field::GetData, "This works for array initialization data. Revisit any other RVA use case.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             const Il2CppType* type = NULL;
             return Class::GetFieldDefaultValue(field, &type);
         }
@@ -394,7 +460,11 @@ namespace vm
         if ((field->type->attrs & FIELD_ATTRIBUTE_STATIC) == 0)
             return false;
 
+<<<<<<< HEAD
         if (field->offset != THREAD_STATIC_FIELD_OFFSET)
+=======
+        if (field->offset != -1)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return false;
 
         if ((field->type->attrs & FIELD_ATTRIBUTE_LITERAL) != 0)

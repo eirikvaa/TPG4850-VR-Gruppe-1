@@ -24,9 +24,15 @@ unloading shared library.
 
 #define GC_BUILD
 #include "gc.h"
+<<<<<<< HEAD
 #include "private/gc_priv.h"
 
 /* use 'CODE' resource 0 to get exact location of the beginning of global space. */
+=======
+#include "gc_priv.h"
+
+// use 'CODE' resource 0 to get exact location of the beginning of global space.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 typedef struct {
         unsigned long aboveA5;
@@ -35,7 +41,11 @@ typedef struct {
         unsigned long JTOffset;
 } *CodeZeroPtr, **CodeZeroHandle;
 
+<<<<<<< HEAD
 void* GC_MacGetDataStart(void)
+=======
+void* GC_MacGetDataStart()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
         CodeZeroHandle code0 = (CodeZeroHandle)GetResource('CODE', 0);
         if (code0) {
@@ -48,8 +58,11 @@ void* GC_MacGetDataStart(void)
         return 0;
 }
 
+<<<<<<< HEAD
 #ifdef USE_TEMPORARY_MEMORY
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* track the use of temporary memory so it can be freed all at once. */
 
 typedef struct TemporaryMemoryBlock TemporaryMemoryBlock, **TemporaryMemoryHandle;
@@ -60,14 +73,22 @@ struct TemporaryMemoryBlock {
 };
 
 static TemporaryMemoryHandle theTemporaryMemory = NULL;
+<<<<<<< HEAD
+=======
+static Boolean firstTime = true;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 void GC_MacFreeTemporaryMemory(void);
 
 Ptr GC_MacTemporaryNewPtr(size_t size, Boolean clearMemory)
 {
+<<<<<<< HEAD
 #     if !defined(SHARED_LIBRARY_BUILD)
         static Boolean firstTime = true;
 #     endif
+=======
+        static Boolean firstTime = true;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         OSErr result;
         TemporaryMemoryHandle tempMemBlock;
         Ptr tempPtr = nil;
@@ -79,13 +100,21 @@ Ptr GC_MacTemporaryNewPtr(size_t size, Boolean clearMemory)
                 if (clearMemory) memset(tempPtr, 0, size);
                 tempPtr = StripAddress(tempPtr);
 
+<<<<<<< HEAD
                 /* keep track of the allocated blocks. */
+=======
+                // keep track of the allocated blocks.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 (**tempMemBlock).nextBlock = theTemporaryMemory;
                 theTemporaryMemory = tempMemBlock;
         }
 
 #     if !defined(SHARED_LIBRARY_BUILD)
+<<<<<<< HEAD
         /* install an exit routine to clean up the memory used at the end. */
+=======
+        // install an exit routine to clean up the memory used at the end.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (firstTime) {
                 atexit(&GC_MacFreeTemporaryMemory);
                 firstTime = false;
@@ -97,7 +126,11 @@ Ptr GC_MacTemporaryNewPtr(size_t size, Boolean clearMemory)
 
 extern word GC_fo_entries;
 
+<<<<<<< HEAD
 static void perform_final_collection(void)
+=======
+static void perform_final_collection()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
   unsigned i;
   word last_fo_entries = 0;
@@ -114,7 +147,11 @@ static void perform_final_collection(void)
 }
 
 
+<<<<<<< HEAD
 void GC_MacFreeTemporaryMemory(void)
+=======
+void GC_MacFreeTemporaryMemory()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 # if defined(SHARED_LIBRARY_BUILD)
     /* if possible, collect all memory, and invoke all finalizers. */
@@ -122,6 +159,7 @@ void GC_MacFreeTemporaryMemory(void)
 # endif
 
     if (theTemporaryMemory != NULL) {
+<<<<<<< HEAD
 #     if !defined(SHARED_LIBRARY_BUILD)
         long totalMemoryUsed = 0;
 #     endif
@@ -131,6 +169,13 @@ void GC_MacFreeTemporaryMemory(void)
 #             if !defined(SHARED_LIBRARY_BUILD)
                 totalMemoryUsed += GetHandleSize((Handle)tempMemBlock);
 #             endif
+=======
+        long totalMemoryUsed = 0;
+        TemporaryMemoryHandle tempMemBlock = theTemporaryMemory;
+        while (tempMemBlock != NULL) {
+                TemporaryMemoryHandle nextBlock = (**tempMemBlock).nextBlock;
+                totalMemoryUsed += GetHandleSize((Handle)tempMemBlock);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 DisposeHandle((Handle)tempMemBlock);
                 tempMemBlock = nextBlock;
         }
@@ -139,19 +184,30 @@ void GC_MacFreeTemporaryMemory(void)
 #       if !defined(SHARED_LIBRARY_BUILD)
           if (GC_print_stats) {
             fprintf(stdout, "[total memory used:  %ld bytes.]\n",
+<<<<<<< HEAD
                     totalMemoryUsed);
             fprintf(stdout, "[total collections: %lu]\n",
                     (unsigned long)GC_gc_no);
+=======
+                  totalMemoryUsed);
+            fprintf(stdout, "[total collections:  %ld.]\n", GC_gc_no);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
           }
 #       endif
     }
 }
 
+<<<<<<< HEAD
 #endif /* USE_TEMPORARY_MEMORY */
 
 #if __option(far_data)
 
   void* GC_MacGetDataEnd(void)
+=======
+#if __option(far_data)
+
+  void* GC_MacGetDataEnd()
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   {
         CodeZeroHandle code0 = (CodeZeroHandle)GetResource('CODE', 0);
         if (code0) {

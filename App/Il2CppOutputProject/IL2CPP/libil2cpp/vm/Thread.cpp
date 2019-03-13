@@ -9,7 +9,10 @@
 #include "vm/Exception.h"
 #include "vm/Object.h"
 #include "vm/Object.h"
+<<<<<<< HEAD
 #include "vm/Profiler.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/Runtime.h"
 #include "vm/StackTrace.h"
 #include "vm/Thread.h"
@@ -19,12 +22,16 @@
 #include "gc/GCHandle.h"
 #include "utils/Memory.h"
 #include "utils/StringUtils.h"
+<<<<<<< HEAD
 #include "vm-utils/Debugger.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "il2cpp-class-internals.h"
 #include "il2cpp-object-internals.h"
 #include <algorithm>
 #include <map>
 
+<<<<<<< HEAD
 
 #if IL2CPP_MONO_DEBUGGER
 
@@ -33,6 +40,8 @@ extern "C" {
 }
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 using namespace il2cpp::os;
 using il2cpp::gc::GarbageCollector;
 using il2cpp::os::FastMutex;
@@ -61,12 +70,15 @@ namespace vm
     static volatile int32_t s_NextManagedThreadId = 0;
 
     static void
+<<<<<<< HEAD
     set_wbarrier_for_attached_threads()
     {
         GarbageCollector::SetWriteBarrier((void**)&(*s_AttachedThreads->begin()), sizeof(Il2CppThread*) * s_AttachedThreads->size());
     }
 
     static void
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     thread_cleanup_on_cancel(void* arg)
     {
         Thread::Detach((Il2CppThread*)arg);
@@ -117,7 +129,10 @@ namespace vm
         thread = (Il2CppThread*)Object::New(il2cpp_defaults.thread_class);
 #if NET_4_0
         thread->internal_thread = (Il2CppInternalThread*)Object::New(il2cpp_defaults.internal_thread_class);
+<<<<<<< HEAD
         GarbageCollector::SetWriteBarrier((void**)&thread->internal_thread);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
         thread->GetInternalThread()->handle = osThread;
         thread->GetInternalThread()->state = kThreadStateRunning;
@@ -141,10 +156,13 @@ namespace vm
         IL2CPP_ASSERT(thread->GetInternalThread()->handle != NULL);
         IL2CPP_ASSERT(thread->GetInternalThread()->synch_cs != NULL);
 
+<<<<<<< HEAD
 #if IL2CPP_MONO_DEBUGGER
         utils::Debugger::AllocateThreadLocalData();
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         s_CurrentThread.SetValue(thread);
 
         Domain::ContextSet(domain->default_context);
@@ -152,6 +170,7 @@ namespace vm
         Register(thread);
         AdjustStaticData();
 
+<<<<<<< HEAD
 #if IL2CPP_MONO_DEBUGGER
         MONO_PROFILER_RAISE(thread_started, ((uintptr_t)thread->GetInternalThread()->tid));
 #endif
@@ -160,6 +179,8 @@ namespace vm
         vm::Profiler::ThreadStart(((unsigned long)thread->GetInternalThread()->tid));
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         // Sync thread name.
         if (thread->GetInternalThread()->name)
         {
@@ -191,6 +212,7 @@ namespace vm
         if (!GarbageCollector::UnregisterThread())
             IL2CPP_ASSERT(0 && "GarbageCollector::UnregisterThread failed");
 
+<<<<<<< HEAD
 #if IL2CPP_ENABLE_PROFILER
         vm::Profiler::ThreadEnd(((unsigned long)thread->GetInternalThread()->tid));
 #endif
@@ -206,6 +228,11 @@ namespace vm
         utils::Debugger::FreeThreadLocalData();
 #endif
 
+=======
+        Unregister(thread);
+        FreeThreadStaticData(thread);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if !NET_4_0
         delete[] thread->GetInternalThread()->serialized_culture_info;
 #endif
@@ -236,6 +263,7 @@ namespace vm
         throw Thread::NativeThreadAbortException();
     }
 
+<<<<<<< HEAD
     static bool IsDebuggerThread(os::Thread* thread)
     {
 #if IL2CPP_MONO_DEBUGGER
@@ -245,6 +273,8 @@ namespace vm
 #endif
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void Thread::KillAllBackgroundThreadsAndWaitForForegroundThreads()
     {
 #if IL2CPP_SUPPORT_THREADS
@@ -272,7 +302,11 @@ namespace vm
                 IL2CPP_ASSERT(gcFinalizerThread == NULL && "There seems to be more than one finalizer thread!");
                 gcFinalizerThread = thread;
             }
+<<<<<<< HEAD
             else if (thread != currentThread && !IsDebuggerThread(osThread))
+=======
+            else if (thread != currentThread)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 // If it's a background thread, request it to kill itself.
                 if (GetState(thread) & kThreadStateBackground)
@@ -321,7 +355,10 @@ namespace vm
             s_AttachedThreads->push_back(gcFinalizerThread);
         if (currentThread)
             s_AttachedThreads->push_back(currentThread);
+<<<<<<< HEAD
         set_wbarrier_for_attached_threads();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
     }
 
@@ -449,6 +486,7 @@ namespace vm
         return Current()->GetInternalThread()->static_data[offset];
     }
 
+<<<<<<< HEAD
     void* Thread::GetThreadStaticDataForThread(int32_t offset, Il2CppThread* thread)
     {
         // No lock. We allocate static_data once with a fixed size so we can read it
@@ -468,16 +506,22 @@ namespace vm
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void Thread::Register(Il2CppThread *thread)
     {
         AUTO_LOCK_THREADS();
         if (s_BlockNewThreads)
             TerminateBackgroundThread(NULL);
         else
+<<<<<<< HEAD
         {
             s_AttachedThreads->push_back(thread);
             set_wbarrier_for_attached_threads();
         }
+=======
+            s_AttachedThreads->push_back(thread);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Thread::Unregister(Il2CppThread *thread)
@@ -486,7 +530,10 @@ namespace vm
         GCTrackedThreadVector::iterator it = std::find(s_AttachedThreads->begin(), s_AttachedThreads->end(), thread);
         IL2CPP_ASSERT(it != s_AttachedThreads->end() && "Vm thread not found in list of attached threads.");
         s_AttachedThreads->erase(it);
+<<<<<<< HEAD
         set_wbarrier_for_attached_threads();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Thread::IsVmThread(Il2CppThread *thread)
@@ -494,6 +541,7 @@ namespace vm
         return !GarbageCollector::IsFinalizerThread(thread);
     }
 
+<<<<<<< HEAD
 #if NET_4_0
     std::string Thread::GetName(Il2CppInternalThread* thread)
     {
@@ -504,6 +552,16 @@ namespace vm
     }
 
 #endif
+=======
+    char *Thread::GetName(uint32_t *len)
+    {
+        *len = 0;
+
+        // TODO: not implemented
+
+        return NULL;
+    }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     void Thread::SetName(Il2CppThread* thread, Il2CppString* name)
     {
@@ -815,6 +873,7 @@ namespace vm
             il2cpp::vm::Exception::Raise(il2cpp::vm::Exception::GetThreadStateException("Unable to reset abort because no abort was requested."));
     }
 
+<<<<<<< HEAD
 #if NET_4_0
     void Thread::ResetAbort(Il2CppInternalThread* thread)
     {
@@ -825,6 +884,8 @@ namespace vm
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void Thread::FullMemoryBarrier()
     {
         os::Atomic::FullMemoryBarrier();
@@ -834,6 +895,7 @@ namespace vm
     {
         return os::Atomic::Increment(&s_NextManagedThreadId);
     }
+<<<<<<< HEAD
 
     uint64_t Thread::GetId(Il2CppThread* thread)
     {
@@ -847,5 +909,7 @@ namespace vm
     }
 
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } /* namespace vm */
 } /* namespace il2cpp */

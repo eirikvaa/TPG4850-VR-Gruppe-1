@@ -13,19 +13,46 @@
 #include "il2cpp-class-internals.h"
 #include "il2cpp-tabledefs.h"
 
+<<<<<<< HEAD
 #include "gc/GarbageCollector.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/PlatformInvoke.h"
 #include "vm/StackTrace.h"
 #include "vm/PlatformInvoke.h"
 #include "vm/StackTrace.h"
+<<<<<<< HEAD
 #include "vm-utils/Debugger.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/StringUtils.h"
 #include "utils/StringView.h"
 #include "utils/Exception.h"
 #include "utils/Output.h"
 #include "utils/Runtime.h"
 
+<<<<<<< HEAD
 REAL_NORETURN IL2CPP_NO_INLINE void il2cpp_codegen_no_return();
+=======
+#ifdef _MSC_VER
+#define IL2CPP_DEBUG_BREAK() __debugbreak()
+#else
+#define IL2CPP_DEBUG_BREAK()
+#endif
+
+// This function exists to help with generation of callstacks for exceptions
+// on iOS and MacOS x64 with clang 6.0 (newer versions of clang don't have this
+// problem on x64). There we call the backtrace function, which does not play nicely
+// with NORETURN, since the compiler eliminates the method prologue code setting up
+// the address of the return frame (which makes sense). So on iOS we need to make
+// the NORETURN define do nothing, then we use this dummy method which has the
+// attribute for clang on iOS defined to prevent clang compiler errors for
+// method that end by throwing a managed exception.
+REAL_NORETURN IL2CPP_NO_INLINE static void il2cpp_codegen_no_return()
+{
+    IL2CPP_UNREACHABLE;
+}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #if IL2CPP_COMPILER_MSVC
 #define DEFAULT_CALL STDCALL
@@ -151,6 +178,7 @@ inline int64_t il2cpp_codegen_abs(int64_t value)
         goto Target;
 
 
+<<<<<<< HEAD
 #if IL2CPP_MONO_DEBUGGER
 #define IL2CPP_RAISE_MANAGED_EXCEPTION(message, seqPoint, lastManagedFrame) \
     do {\
@@ -164,12 +192,24 @@ inline int64_t il2cpp_codegen_abs(int64_t value)
         il2cpp_codegen_no_return();\
     } while (0)
 #endif
+=======
+
+#define IL2CPP_RAISE_MANAGED_EXCEPTION(message, lastManagedFrame) \
+    do {\
+        il2cpp_codegen_raise_exception((Exception_t*)message, (MethodInfo*)lastManagedFrame);\
+        il2cpp_codegen_no_return();\
+    } while (0)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 
 template<typename T>
 inline void Il2CppCodeGenWriteBarrier(T** targetAddress, T* object)
 {
+<<<<<<< HEAD
     il2cpp::gc::GarbageCollector::SetWriteBarrier((void**)targetAddress);
+=======
+    // TODO
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 void il2cpp_codegen_memory_barrier();
@@ -183,6 +223,7 @@ inline T VolatileRead(T* location)
 }
 
 template<typename T>
+<<<<<<< HEAD
 inline void VolatileWrite(T** location, T* value)
 {
     il2cpp_codegen_memory_barrier();
@@ -191,6 +232,8 @@ inline void VolatileWrite(T** location, T* value)
 }
 
 template<typename T>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 inline void VolatileWrite(T* location, T value)
 {
     il2cpp_codegen_memory_barrier();
@@ -264,6 +307,7 @@ inline typename pick_bigger<T, U>::type il2cpp_codegen_subtract(T left, U right)
     return left - right;
 }
 
+<<<<<<< HEAD
 inline void il2cpp_codegen_memcpy(void* dest, const void* src, size_t count)
 {
     memcpy(dest, src, count);
@@ -331,6 +375,8 @@ public:
     }
 };
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef _MSC_VER
 #define IL2CPP_DISABLE_OPTIMIZATIONS __pragma(optimize("", off))
 #define IL2CPP_ENABLE_OPTIMIZATIONS __pragma(optimize("", on))
@@ -338,6 +384,7 @@ public:
 #define IL2CPP_DISABLE_OPTIMIZATIONS __attribute__ ((optnone))
 #define IL2CPP_ENABLE_OPTIMIZATIONS
 #endif
+<<<<<<< HEAD
 
 // NativeArray macros
 #define IL2CPP_NATIVEARRAY_GET_ITEM(TElementType, TTField, TIndex) \
@@ -357,3 +404,5 @@ inline bool il2cpp_codegen_object_reference_equals(const RuntimeObject *obj1, co
 {
     return obj1 == obj2;
 }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

@@ -2,7 +2,10 @@
 #include <memory>
 #include "il2cpp-object-internals.h"
 #include "il2cpp-class-internals.h"
+<<<<<<< HEAD
 #include "gc/GarbageCollector.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "icalls/mscorlib/System/Array.h"
 #include "utils/Exception.h"
 #include "vm/Array.h"
@@ -31,7 +34,37 @@ namespace System
 
     Il2CppArray * Array::Clone(Il2CppArray * arr)
     {
+<<<<<<< HEAD
         return vm::Array::Clone(arr);
+=======
+        Il2CppClass *typeInfo = arr->klass;
+        const uint32_t elem_size = il2cpp::vm::Array::GetElementSize(typeInfo);
+
+        if (arr->bounds == NULL)
+        {
+            il2cpp_array_size_t len = il2cpp::vm::Array::GetLength(arr);
+            Il2CppArray *clone = (Il2CppArray*)il2cpp::vm::Array::NewFull(typeInfo, &len, NULL);
+            memcpy(il2cpp::vm::Array::GetFirstElementAddress(clone), il2cpp::vm::Array::GetFirstElementAddress(arr), elem_size * len);
+
+            return clone;
+        }
+
+        il2cpp_array_size_t size = elem_size;
+        std::vector<il2cpp_array_size_t> lengths(typeInfo->rank);
+        std::vector<il2cpp_array_size_t> lowerBounds(typeInfo->rank);
+
+        for (int i = 0; i < typeInfo->rank; ++i)
+        {
+            lengths[i] = arr->bounds[i].length;
+            size *= arr->bounds[i].length;
+            lowerBounds[i] = arr->bounds[i].lower_bound;
+        }
+
+        Il2CppArray* clone = il2cpp::vm::Array::NewFull(typeInfo, &lengths[0], &lowerBounds[0]);
+        memcpy(il2cpp::vm::Array::GetFirstElementAddress(clone), il2cpp::vm::Array::GetFirstElementAddress(arr), size);
+
+        return clone;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     static std::string FormatCreateInstanceException(const Il2CppType* type)
@@ -61,7 +94,11 @@ namespace System
         if (bounds != NULL)
             i32bounds = (int32_t*)il2cpp_array_addr(bounds, int32_t, 0);
 
+<<<<<<< HEAD
         Il2CppClass* arrayType = il2cpp::vm::Class::GetArrayClassCached(il2cpp::vm::Class::FromIl2CppType(elementType->type), il2cpp::vm::Array::GetLength(lengths), bounds != NULL);
+=======
+        Il2CppClass* arrayType = il2cpp::vm::Class::GetArrayClassCached(il2cpp::vm::Class::FromIl2CppType(elementType->type), il2cpp::vm::Array::GetLength(lengths));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (arrayType == NULL)
             vm::Exception::Raise(vm::Exception::GetInvalidOperationException(FormatCreateInstanceException(elementType->type).c_str()));
@@ -135,10 +172,16 @@ namespace System
                     Exception::Raise(Exception::GetInvalidCastException("At least one element in the source array could not be cast down to the destination array type."));
 #endif
 
+<<<<<<< HEAD
                 IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Array::FastCopy, "Need GC write barrier");
                 memcpy(il2cpp_array_addr_with_size(dest, element_size, dest_idx + i), Object::Unbox(elem), element_size);
             }
             gc::GarbageCollector::SetWriteBarrier((void**)il2cpp_array_addr_with_size(dest, element_size, dest_idx + i), element_size * length);
+=======
+                NOT_IMPLEMENTED_ICALL_NO_ASSERT(Array::FastCopy, "Need GC write barrier");
+                memcpy(il2cpp_array_addr_with_size(dest, element_size, dest_idx + i), Object::Unbox(elem), element_size);
+            }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return true;
         }
 
@@ -161,6 +204,7 @@ namespace System
                 return false;
 
             // derivedtype[] -> basetype[]
+<<<<<<< HEAD
             IL2CPP_ASSERT(Type::IsReference(&src_class->byval_arg));
             IL2CPP_ASSERT(Type::IsReference(&dest_class->byval_arg));
         }
@@ -176,6 +220,19 @@ namespace System
             length * element_size);
 
         gc::GarbageCollector::SetWriteBarrier((void**)il2cpp_array_addr_with_size(dest, element_size, dest_idx), length * element_size);
+=======
+            IL2CPP_ASSERT(Type::IsReference(src_class->byval_arg));
+            IL2CPP_ASSERT(Type::IsReference(dest_class->byval_arg));
+        }
+
+        IL2CPP_ASSERT(il2cpp_array_element_size(dest->klass) == il2cpp_array_element_size(source->klass));
+
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(Array::FastCopy, "Need GC write barrier");
+        memmove(
+            il2cpp_array_addr_with_size(dest, il2cpp_array_element_size(dest->klass), dest_idx),
+            il2cpp_array_addr_with_size(source, il2cpp_array_element_size(source->klass), source_idx),
+            length * il2cpp_array_element_size(dest->klass));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return true;
     }
@@ -472,6 +529,23 @@ namespace System
         }
     }
 
+<<<<<<< HEAD
+=======
+    static void NullableInit(uint8_t* buf, Il2CppObject* value, Il2CppClass* klass)
+    {
+        Il2CppClass *parameterClass = klass->castClass;
+
+        IL2CPP_ASSERT(Class::FromIl2CppType(klass->fields[0].type) == parameterClass);
+        IL2CPP_ASSERT(Class::FromIl2CppType(klass->fields[1].type) == il2cpp_defaults.boolean_class);
+
+        *(uint8_t*)(buf + klass->fields[1].offset - sizeof(Il2CppObject)) = value ? 1 : 0;
+        if (value)
+            memcpy(buf + klass->fields[0].offset - sizeof(Il2CppObject), Object::Unbox(value), Class::GetValueSize(parameterClass, NULL));
+        else
+            memset(buf + klass->fields[0].offset - sizeof(Il2CppObject), 0, Class::GetValueSize(parameterClass, NULL));
+    }
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void Array::SetValueImpl(Il2CppArray * thisPtr, Il2CppObject * value, int index)
     {
         Il2CppClass* typeInfo = thisPtr->klass;
@@ -482,7 +556,11 @@ namespace System
 
         if (Class::IsNullable(elementClass))
         {
+<<<<<<< HEAD
             Object::NullableInit((uint8_t*)elementAddress, value, elementClass);
+=======
+            NullableInit((uint8_t*)elementAddress, value, elementClass);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return;
         }
 
@@ -502,8 +580,13 @@ namespace System
 
         if (Object::IsInst(value, elementClass))
         {
+<<<<<<< HEAD
             memcpy(elementAddress, Object::Unbox(value), elementSize);
             gc::GarbageCollector::SetWriteBarrier((void**)elementAddress, elementSize);
+=======
+            // write barrier
+            memcpy(elementAddress, Object::Unbox(value), elementSize);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return;
         }
 
@@ -514,8 +597,13 @@ namespace System
 
         int valueSize = Class::GetInstanceSize(valueClass) - sizeof(Il2CppObject);
 
+<<<<<<< HEAD
         Il2CppTypeEnum elementType = Class::IsEnum(elementClass) ? Class::GetEnumBaseType(elementClass)->type : elementClass->byval_arg.type;
         Il2CppTypeEnum valueType = Class::IsEnum(valueClass) ? Class::GetEnumBaseType(valueClass)->type : valueClass->byval_arg.type;
+=======
+        Il2CppTypeEnum elementType = Class::IsEnum(elementClass) ? Class::GetEnumBaseType(elementClass)->type : elementClass->byval_arg->type;
+        Il2CppTypeEnum valueType = Class::IsEnum(valueClass) ? Class::GetEnumBaseType(valueClass)->type : valueClass->byval_arg->type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (elementType == IL2CPP_TYPE_BOOLEAN)
         {

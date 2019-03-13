@@ -22,7 +22,10 @@ namespace Emit
     public:
         static void basic_init(mscorlib_System_Reflection_Emit_AssemblyBuilder*);
         static mscorlib_System_Reflection_Module* InternalAddModule(mscorlib_System_Reflection_Emit_AssemblyBuilder * thisPtr, Il2CppString* fileName);
+<<<<<<< HEAD
         static void UpdateNativeCustomAttributes40(mscorlib_System_Reflection_Emit_AssemblyBuilder * thisPtr);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 } /* namespace Emit */
 } /* namespace Reflection */

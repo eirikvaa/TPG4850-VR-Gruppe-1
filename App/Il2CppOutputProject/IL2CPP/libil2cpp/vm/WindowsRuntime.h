@@ -29,6 +29,7 @@ namespace vm
             return result;
         }
 
+<<<<<<< HEAD
         static inline Il2CppHString CreateHString(const utils::StringView<Il2CppNativeChar>& str)
         {
             Il2CppHString result;
@@ -37,6 +38,8 @@ namespace vm
             return result;
         }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static inline void DeleteHString(Il2CppHString hstring)
         {
             il2cpp_hresult_t hr = os::WindowsRuntime::DeleteHString(hstring);
@@ -47,6 +50,7 @@ namespace vm
         {
             return os::WindowsRuntime::HStringToManagedString(hstring);
         }
+<<<<<<< HEAD
 
         static inline void* PreallocateHStringBuffer(uint32_t length, Il2CppNativeChar** buffer)
         {
@@ -77,6 +81,8 @@ namespace vm
         {
             DeleteHString(nativeType.typeName);
         }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 }
 }

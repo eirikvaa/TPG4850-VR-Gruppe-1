@@ -2,13 +2,17 @@
 
 #include <string>
 #include "File.h"
+<<<<<<< HEAD
 #include <map>
 #include "os/Mutex.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 namespace il2cpp
 {
 namespace os
 {
+<<<<<<< HEAD
     // This enum must match the same enum in the Mono code, as it is used on the icall boundary.
     enum MemoryMappedFileAccess
     {
@@ -59,6 +63,26 @@ namespace os
         static bool UnmapView(MemoryMappedFileHandle memoryMappedFileData, int64_t length);
         static bool Close(FileHandle* file);
         static void ConfigureHandleInheritability(FileHandle* file, bool inheritability);
+=======
+    class MemoryMappedFile
+    {
+    public:
+        static void* Map(FileHandle* file)
+        {
+            return Map(file, 0, 0);
+        }
+
+        static void Unmap(void* address)
+        {
+            Unmap(address, 0);
+        }
+
+        static void* Map(FileHandle* file, size_t length, size_t offset);
+        static void Unmap(void* address, size_t length);
+#if IL2CPP_TARGET_POSIX
+        static void* Map(int fd, size_t length, size_t offset);
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 }
 }

@@ -25,11 +25,14 @@ namespace Emit
         NOT_SUPPORTED_SRE(AssemblyBuilder::InternalAddModule);
         return NULL;
     }
+<<<<<<< HEAD
 
     void AssemblyBuilder::UpdateNativeCustomAttributes40(mscorlib_System_Reflection_Emit_AssemblyBuilder * thisPtr)
     {
         NOT_SUPPORTED_SRE(AssemblyBuilder::InternalAddModule);
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } /* namespace Emit */
 } /* namespace Reflection */
 } /* namespace System */

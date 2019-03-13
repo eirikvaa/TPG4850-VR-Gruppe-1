@@ -1,10 +1,13 @@
 #include "il2cpp-config.h"
 
 #include "icalls/mscorlib/System/TypedReference.h"
+<<<<<<< HEAD
 #include "vm/Array.h"
 #include "vm/Class.h"
 #include "vm/Object.h"
 #include "vm/Type.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/Exception.h"
 
 namespace il2cpp
@@ -23,6 +26,7 @@ namespace System
     }
 
 #if NET_4_0
+<<<<<<< HEAD
     Il2CppObject* TypedReference::InternalToObject(Il2CppTypedRef* typedRef)
     {
         Il2CppObject* result = NULL;
@@ -34,10 +38,18 @@ namespace System
 
         result = vm::Object::Box(typedRef->klass, typedRef->value);
         return result;
+=======
+    Il2CppObject* TypedReference::InternalToObject(void* value)
+    {
+        NOT_IMPLEMENTED_ICALL(TypedReference::InternalToObject);
+        IL2CPP_UNREACHABLE;
+        return NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppTypedRef TypedReference::MakeTypedReferenceInternal(Il2CppObject* target, Il2CppArray* fields)
     {
+<<<<<<< HEAD
         Il2CppTypedRef res;
         memset(&res, 0, sizeof(res));
 
@@ -78,6 +90,11 @@ namespace System
         res.value = value;
 
         return res;
+=======
+        NOT_IMPLEMENTED_ICALL(TypedReference::MakeTypedReferenceInternal);
+        IL2CPP_UNREACHABLE;
+        return Il2CppTypedRef();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 #endif

@@ -189,6 +189,7 @@ namespace Threading
 
         // use fixed GC memory since we are storing managed object pointers
         StartData* startData = (StartData*)GarbageCollector::AllocateFixed(sizeof(StartData), NULL);
+<<<<<<< HEAD
 
         startData->m_Thread = thisPtr;
         GarbageCollector::SetWriteBarrier((void**)&startData->m_Thread);
@@ -197,6 +198,12 @@ namespace Threading
         GarbageCollector::SetWriteBarrier((void**)&startData->m_Delegate);
         startData->m_StartArg = thisPtr->start_obj;
         GarbageCollector::SetWriteBarrier((void**)&startData->m_StartArg);
+=======
+        startData->m_Thread = thisPtr;
+        startData->m_Domain = Domain::GetCurrent();
+        startData->m_Delegate = start;
+        startData->m_StartArg = thisPtr->start_obj;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         startData->m_Semaphore = new il2cpp::os::Semaphore(0);
 
         il2cpp::os::Thread* thread = new il2cpp::os::Thread();
@@ -216,8 +223,12 @@ namespace Threading
         thisPtr->GetInternalThread()->handle = thread;
         thisPtr->GetInternalThread()->state &= ~kThreadStateUnstarted;
         thisPtr->GetInternalThread()->tid = thread->Id();
+<<<<<<< HEAD
         if (!thisPtr->GetInternalThread()->managed_id)
             thisPtr->GetInternalThread()->managed_id = il2cpp::vm::Thread::GetNewManagedId();
+=======
+        thisPtr->GetInternalThread()->managed_id = il2cpp::vm::Thread::GetNewManagedId();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         startData->m_Semaphore->Post(1, NULL);
 
@@ -295,7 +306,11 @@ namespace Threading
 
     void Thread::FreeLocalSlotValues(int32_t slot, bool use_thread_local)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Thread::FreeLocalSlotValues);
+=======
+        NOT_IMPLEMENTED_ICALL(Thread::FreeLocalSlotValues);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     mscorlib_System_Globalization_CultureInfo* Thread::GetCachedCurrentCulture(Il2CppThread* thisPtr)
@@ -511,14 +526,24 @@ namespace Threading
 
     Il2CppArray* Thread::ByteArrayToCurrentDomain(Il2CppArray* arr)
     {
+<<<<<<< HEAD
         // IL2CPP only has one domain, so just return the same array.
         return arr;
+=======
+        NOT_IMPLEMENTED_ICALL(Thread::ByteArrayToCurrentDomain);
+        IL2CPP_UNREACHABLE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppArray* Thread::ByteArrayToRootDomain(Il2CppArray* arr)
     {
+<<<<<<< HEAD
         // IL2CPP only has one domain, so just return the same array.
         return arr;
+=======
+        NOT_IMPLEMENTED_ICALL(Thread::ByteArrayToRootDomain);
+        IL2CPP_UNREACHABLE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Thread::YieldInternal()
@@ -538,7 +563,12 @@ namespace Threading
 
     int32_t Thread::SystemMaxStackStize()
     {
+<<<<<<< HEAD
         return il2cpp::os::Thread::GetMaxStackSize();
+=======
+        NOT_IMPLEMENTED_ICALL(Thread::SystemMaxStackStize);
+        IL2CPP_UNREACHABLE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppString* Thread::GetName_internal40(Il2CppInternalThread* thread)
@@ -590,7 +620,11 @@ namespace Threading
 
     void Thread::GetStackTraces(Il2CppArray** threads, Il2CppArray** stack_frames)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Thread::GetStackTraces);
+=======
+        NOT_IMPLEMENTED_ICALL(Thread::GetStackTraces);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 
@@ -601,7 +635,11 @@ namespace Threading
 
     void Thread::ResetAbortNative(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Thread::ResetAbortNative);
+=======
+        NOT_IMPLEMENTED_ICALL(Thread::ResetAbortNative);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 

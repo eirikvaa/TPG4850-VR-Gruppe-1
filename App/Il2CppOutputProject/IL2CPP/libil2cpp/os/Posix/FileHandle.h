@@ -23,12 +23,15 @@ namespace os
         int shareMode;
         int accessMode;
 
+<<<<<<< HEAD
         // The defaukt value of this field should be false,
         // meaning we _do_ own the file descriptor, and therefore
         // can close it. Zero-allocating this struct is something
         // we want to support, so make sure the default is 0.
         bool doesNotOwnFd;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         // device and inode are used as key for finding file handles
         dev_t device;
         ino_t inode;

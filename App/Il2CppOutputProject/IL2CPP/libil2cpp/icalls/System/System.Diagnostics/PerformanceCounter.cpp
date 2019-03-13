@@ -93,7 +93,11 @@ namespace Diagnostics
 
     int64_t PerformanceCounter::UpdateValue(intptr_t impl, bool do_incr, int64_t value)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(PerformanceCounter::UpdateValue);
+=======
+        NOT_IMPLEMENTED_ICALL(PerformanceCounter::UpdateValue);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return 0;
     }

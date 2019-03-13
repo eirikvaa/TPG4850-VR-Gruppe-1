@@ -8,7 +8,11 @@ static struct hblk* GetNextFreeBlock(ptr_t ptr)
 	for (i = 0; i < N_HBLK_FLS + 1; i++)
 	{
 		struct hblk* freeBlock = GC_hblkfreelist[i];
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		for (freeBlock = GC_hblkfreelist[i]; freeBlock != NULL; freeBlock = HDR(freeBlock)->hb_next)
 		{
 			/* We're only interested in pointers after "ptr" argument */
@@ -28,7 +32,11 @@ static struct hblk* GetNextFreeBlock(ptr_t ptr)
 void GC_foreach_heap_section(void* user_data, GC_heap_section_proc callback)
 {
 	unsigned i;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	GC_ASSERT(I_HOLD_LOCK());
 
 	if (callback == NULL)
@@ -45,7 +53,11 @@ void GC_foreach_heap_section(void* user_data, GC_heap_section_proc callback)
 		into the next one. Merging the section avoids crashes when
 		trying to copy the start of section that is a free block
 		continued from the previous section. */
+<<<<<<< HEAD
 		while (i + 1 < GC_n_heap_sects && GC_heap_sects[i + 1].hs_start == sectionEnd)
+=======
+		while (i+1 < GC_n_heap_sects && GC_heap_sects[i+1].hs_start == sectionEnd)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		{
 			++i;
 			sectionEnd = GC_heap_sects[i].hs_start + GC_heap_sects[i].hs_bytes;
@@ -54,7 +66,11 @@ void GC_foreach_heap_section(void* user_data, GC_heap_section_proc callback)
 		while (sectionStart < sectionEnd)
 		{
 			struct hblk* nextFreeBlock = GetNextFreeBlock(sectionStart);
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 			if (nextFreeBlock == NULL || (ptr_t)nextFreeBlock > sectionEnd)
 			{
 				callback(user_data, sectionStart, sectionEnd);

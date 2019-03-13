@@ -18,8 +18,11 @@
 #include "gc/gc_wrapper.h"
 #include "gc/GarbageCollector.h"
 #include "il2cpp-tabledefs.h"
+<<<<<<< HEAD
 #include "vm/Method.h"
 #include "metadata/GenericMethod.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #if IL2CPP_GC_BOEHM
 #define ALLOC_PTRFREE(obj, vt, size) do { (obj) = (Il2CppObject*)GC_MALLOC_ATOMIC ((size)); (obj)->klass = (vt); (obj)->monitor = NULL;} while (0)
@@ -92,7 +95,11 @@ namespace vm
 
                 All value types have an operation called box. Boxing a value of any value type produces its boxed value;
                 i.e., a value of the corresponding boxed type containing a bitwise copy of the original value. If the
+<<<<<<< HEAD
                 value type is a nullable type defined as an instantiation of the value type System.Nullable<T> the result
+=======
+                value type is a nullable type—defined as an instantiation of the value type System.Nullable<T> — the result
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 is a null reference or bitwise copy of its Value property of type T, depending on its HasValue property
                 (false and true, respectively).
             */
@@ -111,7 +118,10 @@ namespace vm
         size = size - sizeof(Il2CppObject);
 
         memcpy(((char*)obj) + sizeof(Il2CppObject), val, size);
+<<<<<<< HEAD
         gc::GarbageCollector::SetWriteBarrier((void**)(((char*)obj) + sizeof(Il2CppObject)), size);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return obj;
     }
 
@@ -119,20 +129,27 @@ namespace vm
     {
         Il2CppObject *o;
         int size;
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Object::Clone, "Finish implementation");
 
         if (obj->klass->rank)
         {
             return Array::Clone((Il2CppArray*)obj);
         }
+=======
+        NOT_IMPLEMENTED_NO_ASSERT(Object::Clone, "Finish implementation");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         size = obj->klass->instance_size;
         o = Allocate(size, obj->klass);
         /* do not copy the sync state */
         memcpy((char*)o + sizeof(Il2CppObject), (char*)obj + sizeof(Il2CppObject), size - sizeof(Il2CppObject));
 
+<<<<<<< HEAD
         gc::GarbageCollector::SetWriteBarrier((void**)(((char*)o) + sizeof(Il2CppObject)), size);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 //#ifdef HAVE_SGEN_GC
 //  if (obj->vtable->klass->has_references)
 //      mono_gc_wbarrier_object (o);
@@ -198,6 +215,7 @@ namespace vm
         if ((method->flags & METHOD_ATTRIBUTE_FINAL) || !(method->flags & METHOD_ATTRIBUTE_VIRTUAL))
             return method;
 
+<<<<<<< HEAD
         Il2CppClass* methodDeclaringType = method->klass;
         if (Class::IsInterface(methodDeclaringType))
         {
@@ -232,6 +250,13 @@ namespace vm
         {
             return obj->klass->vtable[method->slot].method;
         }
+=======
+        Il2CppClass* methodDeclaringType = method->declaring_type;
+        if (!Class::IsInterface(methodDeclaringType))
+            return obj->klass->vtable[method->slot].method;
+
+        return Class::GetInterfaceInvokeDataFromVTable(obj, methodDeclaringType, method->slot).method;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppObject* Object::IsInst(Il2CppObject *obj, Il2CppClass *klass)
@@ -240,11 +265,16 @@ namespace vm
             return NULL;
 
         Il2CppClass* objClass = Object::GetClass(obj);
+<<<<<<< HEAD
         if (Class::IsAssignableFrom(klass, objClass))
             return obj;
 
         if (!objClass->is_import_or_windows_runtime)
             return NULL;
+=======
+        if (!objClass->is_import_or_windows_runtime)
+            return Class::IsAssignableFrom(klass, objClass) ? obj : NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         // check if klass has an interface id
         if (Class::IsInterface(klass) && klass->interopData != NULL)
@@ -275,7 +305,11 @@ namespace vm
 #if (IL2CPP_GC_BOEHM || IL2CPP_GC_NULL)
         return New(klass);
 #else
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED(Object::NewPinned);
+=======
+        NOT_IMPLEMENTED(Object::NewPinned);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
     }
 
@@ -283,7 +317,11 @@ namespace vm
     {
         Il2CppObject *o = NULL;
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Object::NewAllocSpecific, "We really shouldn't need this initialization");
+=======
+        NOT_IMPLEMENTED_NO_ASSERT(Object::NewAllocSpecific, "We really shouldn't need this initialization");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         Class::Init(klass);
 
         if (Class::IsNullable(klass))
@@ -369,6 +407,7 @@ namespace vm
             *(static_cast<uint8_t*>(storage) + valueSize) = true;
         }
     }
+<<<<<<< HEAD
 
     void Object::NullableInit(uint8_t* buf, Il2CppObject* value, Il2CppClass* klass)
     {
@@ -383,5 +422,7 @@ namespace vm
         else
             memset(buf + klass->fields[0].offset - sizeof(Il2CppObject), 0, Class::GetValueSize(parameterClass, NULL));
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } /* namespace vm */
 } /* namespace il2cpp */

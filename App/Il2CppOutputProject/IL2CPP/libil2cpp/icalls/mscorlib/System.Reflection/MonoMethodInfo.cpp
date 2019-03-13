@@ -20,7 +20,11 @@ namespace Reflection
 {
     void MonoMethodInfo::get_method_info(intptr_t methodPtr, Il2CppMethodInfo *info)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoMethodInfo::get_method_info, "Audit and look over commented code. Work in progress.");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoMethodInfo::get_method_info, "Audit and look over commented code. Work in progress.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         MethodInfo* method = (MethodInfo*)methodPtr;
         //MonoMethodSignature* sig;
@@ -31,7 +35,11 @@ namespace Reflection
         //  mono_raise_exception (mono_loader_error_prepare_exception (mono_loader_get_last_error ()));
         //}
 
+<<<<<<< HEAD
         IL2CPP_STRUCT_SETREF(info, parent, il2cpp::vm::Reflection::GetTypeObject(&method->klass->byval_arg));
+=======
+        IL2CPP_STRUCT_SETREF(info, parent, il2cpp::vm::Reflection::GetTypeObject(method->declaring_type->byval_arg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (method->return_type)
             IL2CPP_STRUCT_SETREF(info, ret, il2cpp::vm::Reflection::GetTypeObject(method->return_type));
         info->attrs = method->flags;
@@ -55,7 +63,11 @@ namespace Reflection
 
     void* /* System.Reflection.Emit.UnmanagedMarshal */ MonoMethodInfo::get_retval_marshal(intptr_t handle)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoMethodInfo::get_retval_marshal, "This icall is not supported by il2cpp.");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoMethodInfo::get_retval_marshal, "This icall is not supported by il2cpp.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return NULL;
     }

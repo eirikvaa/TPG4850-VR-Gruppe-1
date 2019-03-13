@@ -7,6 +7,7 @@ namespace il2cpp
 {
 namespace utils
 {
+<<<<<<< HEAD
     struct MonoMemoryCallbacks
     {
         int version;
@@ -30,6 +31,8 @@ namespace utils
         NULL
     };
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     static Il2CppMemoryCallbacks s_Callbacks =
     {
         malloc,
@@ -44,6 +47,7 @@ namespace utils
     void Memory::SetMemoryCallbacks(Il2CppMemoryCallbacks* callbacks)
     {
         memcpy(&s_Callbacks, callbacks, sizeof(Il2CppMemoryCallbacks));
+<<<<<<< HEAD
 
 #if IL2CPP_MONO_DEBUGGER
         // The debugger uses Mono code, so we need to remap the callbacks
@@ -56,6 +60,8 @@ namespace utils
         IL2CPP_ASSERT(installed != 0);
         NO_UNUSED_WARNING(installed);
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void* Memory::Malloc(size_t size)

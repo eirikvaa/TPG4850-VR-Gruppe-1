@@ -1,5 +1,9 @@
 /* zconf.h -- configuration of the zlib compression library
+<<<<<<< HEAD
  * Copyright (C) 1995-2016 Jean-loup Gailly, Mark Adler
+=======
+ * Copyright (C) 1995-2006 Jean-loup Gailly.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
@@ -8,10 +12,13 @@
 #ifndef ZCONF_H
 #define ZCONF_H
 
+<<<<<<< HEAD
 #if !defined(WINDOWS) && !defined(WIN32)
 #define HAVE_UNISTD_H
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /*
  * If you *really* need a unique prefix for all types and library functions,
  * compile with -DZ_PREFIX. The "standard" zlib should be compiled without it.
@@ -21,11 +28,18 @@
 #define Z_PREFIX 1
 #ifdef Z_PREFIX     /* may be set to #if 1 by ./configure */
 
+<<<<<<< HEAD
 /* all linked symbols and init macros */
 #  define _dist_code            il2cpp_z__dist_code
 #  define _length_code          il2cpp_z__length_code
 #  define _tr_align             il2cpp_z__tr_align
 #  define _tr_flush_bits        il2cpp_z__tr_flush_bits
+=======
+/* all linked symbols */
+#  define _dist_code            il2cpp_z__dist_code
+#  define _length_code          il2cpp_z__length_code
+#  define _tr_align             il2cpp_z__tr_align
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define _tr_flush_block       il2cpp_z__tr_flush_block
 #  define _tr_init              il2cpp_z__tr_init
 #  define _tr_stored_block      il2cpp_z__tr_stored_block
@@ -33,6 +47,7 @@
 #  define adler32               il2cpp_z_adler32
 #  define adler32_combine       il2cpp_z_adler32_combine
 #  define adler32_combine64     il2cpp_z_adler32_combine64
+<<<<<<< HEAD
 #  define adler32_z             il2cpp_z_adler32_z
 #  ifndef Z_SOLO
 #    define compress              il2cpp_z_compress
@@ -43,10 +58,19 @@
 #  define crc32_combine         il2cpp_z_crc32_combine
 #  define crc32_combine64       il2cpp_z_crc32_combine64
 #  define crc32_z               il2cpp_z_crc32_z
+=======
+#  define compress              il2cpp_z_compress
+#  define compress2             il2cpp_z_compress2
+#  define compressBound         il2cpp_z_compressBound
+#  define crc32                 il2cpp_z_crc32
+#  define crc32_combine         il2cpp_z_crc32_combine
+#  define crc32_combine64       il2cpp_z_crc32_combine64
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define deflate               il2cpp_z_deflate
 #  define deflateBound          il2cpp_z_deflateBound
 #  define deflateCopy           il2cpp_z_deflateCopy
 #  define deflateEnd            il2cpp_z_deflateEnd
+<<<<<<< HEAD
 #  define deflateGetDictionary  il2cpp_z_deflateGetDictionary
 #  define deflateInit2_         il2cpp_z_deflateInit2_
 #  define deflateInit_          il2cpp_z_deflateInit_
@@ -55,11 +79,19 @@
 #  define deflatePrime          il2cpp_z_deflatePrime
 #  define deflateReset          il2cpp_z_deflateReset
 #  define deflateResetKeep      il2cpp_z_deflateResetKeep
+=======
+#  define deflateInit2_         il2cpp_z_deflateInit2_
+#  define deflateInit_          il2cpp_z_deflateInit_
+#  define deflateParams         il2cpp_z_deflateParams
+#  define deflatePrime          il2cpp_z_deflatePrime
+#  define deflateReset          il2cpp_z_deflateReset
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define deflateSetDictionary  il2cpp_z_deflateSetDictionary
 #  define deflateSetHeader      il2cpp_z_deflateSetHeader
 #  define deflateTune           il2cpp_z_deflateTune
 #  define deflate_copyright     il2cpp_z_deflate_copyright
 #  define get_crc_table         il2cpp_z_get_crc_table
+<<<<<<< HEAD
 #  ifndef Z_SOLO
 #    define gz_error              il2cpp_z_gz_error
 #    define gz_intmax             il2cpp_z_gz_intmax
@@ -99,10 +131,33 @@
 #    define gzvprintf             il2cpp_z_gzvprintf
 #    define gzwrite               il2cpp_z_gzwrite
 #  endif
+=======
+#  define gzclearerr            il2cpp_z_gzclearerr
+#  define gzclose               il2cpp_z_gzclose
+#  define gzdirect              il2cpp_z_gzdirect
+#  define gzdopen               il2cpp_z_gzdopen
+#  define gzeof                 il2cpp_z_gzeof
+#  define gzerror               il2cpp_z_gzerror
+#  define gzflush               il2cpp_z_gzflush
+#  define gzgetc                il2cpp_z_gzgetc
+#  define gzgets                il2cpp_z_gzgets
+#  define gzopen                il2cpp_z_gzopen
+#  define gzprintf              il2cpp_z_gzprintf
+#  define gzputc                il2cpp_z_gzputc
+#  define gzputs                il2cpp_z_gzputs
+#  define gzread                il2cpp_z_gzread
+#  define gzrewind              il2cpp_z_gzrewind
+#  define gzseek                il2cpp_z_gzseek
+#  define gzsetparams           il2cpp_z_gzsetparams
+#  define gztell                il2cpp_z_gztell
+#  define gzungetc              il2cpp_z_gzungetc
+#  define gzwrite               il2cpp_z_gzwrite
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define inflate               il2cpp_z_inflate
 #  define inflateBack           il2cpp_z_inflateBack
 #  define inflateBackEnd        il2cpp_z_inflateBackEnd
 #  define inflateBackInit_      il2cpp_z_inflateBackInit_
+<<<<<<< HEAD
 #  define inflateCodesUsed      il2cpp_z_inflateCodesUsed
 #  define inflateCopy           il2cpp_z_inflateCopy
 #  define inflateEnd            il2cpp_z_inflateEnd
@@ -115,10 +170,20 @@
 #  define inflateReset          il2cpp_z_inflateReset
 #  define inflateReset2         il2cpp_z_inflateReset2
 #  define inflateResetKeep      il2cpp_z_inflateResetKeep
+=======
+#  define inflateCopy           il2cpp_z_inflateCopy
+#  define inflateEnd            il2cpp_z_inflateEnd
+#  define inflateGetHeader      il2cpp_z_inflateGetHeader
+#  define inflateInit2_         il2cpp_z_inflateInit2_
+#  define inflateInit_          il2cpp_z_inflateInit_
+#  define inflatePrime          il2cpp_z_inflatePrime
+#  define inflateReset          il2cpp_z_inflateReset
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define inflateSetDictionary  il2cpp_z_inflateSetDictionary
 #  define inflateSync           il2cpp_z_inflateSync
 #  define inflateSyncPoint      il2cpp_z_inflateSyncPoint
 #  define inflateUndermine      il2cpp_z_inflateUndermine
+<<<<<<< HEAD
 #  define inflateValidate       il2cpp_z_inflateValidate
 #  define inflate_copyright     il2cpp_z_inflate_copyright
 #  define inflate_fast          il2cpp_z_inflate_fast
@@ -132,6 +197,16 @@
 #    define zcalloc               il2cpp_z_zcalloc
 #    define zcfree                il2cpp_z_zcfree
 #  endif
+=======
+#  define inflate_copyright     il2cpp_z_inflate_copyright
+#  define inflate_fast          il2cpp_z_inflate_fast
+#  define inflate_table         il2cpp_z_inflate_table
+#  define uncompress            il2cpp_z_uncompress
+#  define zError                il2cpp_z_zError
+#  define z_errmsg              il2cpp_z_z_errmsg
+#  define zcalloc               il2cpp_z_zcalloc
+#  define zcfree                il2cpp_z_zcfree
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define zlibCompileFlags      il2cpp_z_zlibCompileFlags
 #  define zlibVersion           il2cpp_z_zlibVersion
 
@@ -141,9 +216,13 @@
 #  define alloc_func            il2cpp_z_alloc_func
 #  define charf                 il2cpp_z_charf
 #  define free_func             il2cpp_z_free_func
+<<<<<<< HEAD
 #  ifndef Z_SOLO
 #    define gzFile                il2cpp_z_gzFile
 #  endif
+=======
+#  define gzFile                il2cpp_z_gzFile
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define gz_header             il2cpp_z_gz_header
 #  define gz_headerp            il2cpp_z_gz_headerp
 #  define in_func               il2cpp_z_in_func
@@ -154,12 +233,26 @@
 #  define uLong                 il2cpp_z_uLong
 #  define uLongf                il2cpp_z_uLongf
 #  define voidp                 il2cpp_z_voidp
+<<<<<<< HEAD
 #  define voidpc                il2cpp_z_voidpc
 #  define voidpf                il2cpp_z_voidpf
+=======
+#  define voidp                 il2cpp_z_voidp
+#  define voidpc                il2cpp_z_voidpc
+#  define voidpc                il2cpp_z_voidpc
+#  define voidpf                il2cpp_z_voidpf
+#  define voidpf                il2cpp_z_voidpf
+#  define z_stream              il2cpp_z_z_stream
+#  define z_streamp             il2cpp_z_z_streamp
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* all zlib structs in zlib.h and zconf.h */
 #  define gz_header_s           il2cpp_z_gz_header_s
 #  define internal_state        il2cpp_z_internal_state
+<<<<<<< HEAD
+=======
+#  define z_stream_s            il2cpp_z_z_stream_s
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #endif
 
@@ -229,6 +322,7 @@
 #  endif
 #endif
 
+<<<<<<< HEAD
 #if defined(ZLIB_CONST) && !defined(z_const)
 #  define z_const const
 #else
@@ -248,6 +342,11 @@
      typedef unsigned long z_size_t;
 #  endif
 #  undef z_longlong
+=======
+/* Some Mac compilers merge all .h files incorrectly: */
+#if defined(__MWERKS__)||defined(applec)||defined(THINK_C)||defined(__SC__)
+#  define NO_DUMMY_DECL
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 /* Maximum value for memLevel in deflateInit2 */
@@ -277,7 +376,11 @@
  Of course this will generally degrade compression (there's no free lunch).
 
    The memory requirements for inflate are (in bytes) 1 << windowBits
+<<<<<<< HEAD
  that is, 32K for windowBits=15 (default value) plus about 7 kilobytes
+=======
+ that is, 32K for windowBits=15 (default value) plus a few kilobytes
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  for small objects.
 */
 
@@ -291,6 +394,7 @@
 #  endif
 #endif
 
+<<<<<<< HEAD
 #ifndef Z_ARG /* function prototypes for stdarg */
 #  if defined(STDC) || defined(Z_HAVE_STDARG_H)
 #    define Z_ARG(args)  args
@@ -299,6 +403,8 @@
 #  endif
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* The following definitions for FAR are needed only for MSDOS mixed
  * model programming (small or medium model with some far allocations).
  * This was tested only with MSC; for other MSDOS compilers you may have
@@ -371,6 +477,13 @@
 #  endif
 #endif
 
+<<<<<<< HEAD
+=======
+#ifdef HAVE_VISIBILITY_PRAGMA
+#  define ZEXTERN __attribute__((visibility ("default"))) extern
+#endif
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef ZEXTERN
 #  define ZEXTERN extern
 #endif
@@ -412,6 +525,7 @@ typedef uLong FAR uLongf;
    typedef Byte       *voidp;
 #endif
 
+<<<<<<< HEAD
 #if !defined(Z_U4) && !defined(Z_SOLO) && defined(STDC)
 #  include <limits.h>
 #  if (UINT_MAX == 0xffffffffUL)
@@ -493,15 +607,27 @@ typedef uLong FAR uLongf;
 #endif
 
 #if !defined(SEEK_SET) && !defined(Z_SOLO)
+=======
+/* not needed
+ * This is created by zlib's configure script to define off_t
+#include "zlibdefs.h"
+*/
+
+#ifndef SEEK_SET
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define SEEK_SET        0       /* Seek from beginning of file.  */
 #  define SEEK_CUR        1       /* Seek from current position.  */
 #  define SEEK_END        2       /* Set file pointer to EOF plus "offset" */
 #endif
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef z_off_t
 #  define z_off_t long
 #endif
 
+<<<<<<< HEAD
 #if !defined(_WIN32) && defined(Z_LARGE64)
 #  define z_off64_t off64_t
 #else
@@ -530,3 +656,36 @@ typedef uLong FAR uLongf;
 #endif
 
 #endif /* ZCONF_H */
+=======
+#if defined(__OS400__)
+#  define NO_vsnprintf
+#endif
+
+#if defined(__MVS__)
+#  define NO_vsnprintf
+#endif
+
+/* MVS linker does not support external names larger than 8 bytes */
+#if defined(__MVS__)
+#   pragma map(deflateInit_,"DEIN")
+#   pragma map(deflateInit2_,"DEIN2")
+#   pragma map(deflateEnd,"DEEND")
+#   pragma map(deflateBound,"DEBND")
+#   pragma map(inflateInit_,"ININ")
+#   pragma map(inflateInit2_,"ININ2")
+#   pragma map(inflateEnd,"INEND")
+#   pragma map(inflateSync,"INSY")
+#   pragma map(inflateSetDictionary,"INSEDI")
+#   pragma map(compressBound,"CMBND")
+#   pragma map(inflate_table,"INTABL")
+#   pragma map(inflate_fast,"INFA")
+#   pragma map(inflate_copyright,"INCOPY")
+#endif
+
+#ifdef WINDOWS
+#define NO_FSEEKO 1
+#define NO_vsnprintf 1
+#endif
+#endif /* ZCONF_H */
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

@@ -1,4 +1,5 @@
 #if NET_4_0
+<<<<<<< HEAD
 #include <algorithm>
 #include <vector>
 #include "il2cpp-config.h"
@@ -8,6 +9,10 @@
 #include "os/Mutex.h"
 #include "utils/StringUtils.h"
 #include "utils/Memory.h"
+=======
+#include "il2cpp-config.h"
+#include "MemoryMapImpl.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 namespace il2cpp
 {
@@ -23,6 +28,7 @@ namespace IO
 {
 namespace MemoryMappedFiles
 {
+<<<<<<< HEAD
     static os::FastMutex s_Mutex;
     static std::vector<os::FileHandle*> s_OwnedFileHandles;
 
@@ -76,10 +82,18 @@ namespace MemoryMappedFiles
         IL2CPP_FREE(h);
 
         return result;
+=======
+    bool MemoryMapImpl::Unmap(intptr_t mmap_handle)
+    {
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::Unmap);
+        IL2CPP_UNREACHABLE;
+        return false;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     int32_t MemoryMapImpl::MapInternal(intptr_t handle, int64_t offset, int64_t* size, int32_t access, intptr_t* mmap_handle, intptr_t* base_address)
     {
+<<<<<<< HEAD
         IL2CPP_ASSERT(handle);
 
         MmapInstance* h = (MmapInstance*)IL2CPP_MALLOC_ZERO(sizeof(MmapInstance));
@@ -111,10 +125,16 @@ namespace MemoryMappedFiles
 
         *error = (int32_t)memoryMappedFileError;
         return memoryMappedFileData;
+=======
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::MapInternal);
+        IL2CPP_UNREACHABLE;
+        return 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     intptr_t MemoryMapImpl::OpenFileInternal(Il2CppString* path, int32_t mode, Il2CppString* mapName, int64_t* capacity, int32_t access, int32_t options, int32_t* error)
     {
+<<<<<<< HEAD
         IL2CPP_ASSERT(path || mapName);
 
         *error = 0;
@@ -138,27 +158,44 @@ namespace MemoryMappedFiles
         }
 
         return (intptr_t)result;
+=======
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::OpenFileInternal);
+        IL2CPP_UNREACHABLE;
+        return intptr_t();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     intptr_t MemoryMapImpl::OpenHandleInternal(intptr_t handle, Il2CppString* mapName, int64_t* capacity, int32_t access, int32_t options, int32_t* error)
     {
+<<<<<<< HEAD
         IL2CPP_ASSERT(handle);
 
         return (intptr_t)OpenHandle((os::FileHandle*)handle, mapName, os::FILE_MODE_OPEN, capacity, access, options, error);
+=======
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::OpenHandleInternal);
+        IL2CPP_UNREACHABLE;
+        return intptr_t();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void MemoryMapImpl::CloseMapping(intptr_t handle)
     {
+<<<<<<< HEAD
         IL2CPP_ASSERT(handle);
 
         os::FileHandle* file = (os::FileHandle*)handle;
 
         os::MemoryMappedFile::Close(file);
         CloseFileHandleIfOwned(file);
+=======
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::CloseMapping);
+        IL2CPP_UNREACHABLE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void MemoryMapImpl::ConfigureHandleInheritability(intptr_t handle, int32_t inheritability)
     {
+<<<<<<< HEAD
         IL2CPP_ASSERT(handle);
 
         os::MemoryMappedFile::ConfigureHandleInheritability((os::FileHandle*)handle, inheritability);
@@ -170,6 +207,16 @@ namespace MemoryMappedFiles
 
         MmapInstance *h = (MmapInstance*)mmap_handle;
         os::MemoryMappedFile::Flush(h->address, h->length);
+=======
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::ConfigureHandleInheritability);
+        IL2CPP_UNREACHABLE;
+    }
+
+    void MemoryMapImpl::Flush(intptr_t file_handle)
+    {
+        NOT_IMPLEMENTED_ICALL(MemoryMapImpl::Flush);
+        IL2CPP_UNREACHABLE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 } // namespace MemoryMappedFiles
 } // namespace IO

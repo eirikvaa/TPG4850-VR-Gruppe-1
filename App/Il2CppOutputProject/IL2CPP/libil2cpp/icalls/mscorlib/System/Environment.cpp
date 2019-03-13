@@ -26,6 +26,10 @@ namespace mscorlib
 {
 namespace System
 {
+<<<<<<< HEAD
+=======
+    static int32_t exitcode = 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     static bool socket_security_enabled = false;
 
     static Il2CppArray* ToIl2CppArray(const std::vector<std::string>& strings)
@@ -113,7 +117,11 @@ namespace System
 
     void Environment::internalBroadcastSettingChange()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::internalBroadcastSettingChange);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::internalBroadcastSettingChange);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppString * Environment::GetMachineConfigPath(void)
@@ -145,9 +153,12 @@ namespace System
     {
 #ifdef _MSC_VER
         return 2;
+<<<<<<< HEAD
 #elif NET_4_0 && IL2CPP_TARGET_DARWIN
         // new Mono expects distinct platform value for OSX/iOS
         return 6;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #else
         return 4;
 #endif
@@ -155,12 +166,20 @@ namespace System
 
     int32_t Environment::get_ExitCode()
     {
+<<<<<<< HEAD
         return vm::Runtime::GetExitCode();
+=======
+        return exitcode;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Environment::set_ExitCode(int32_t value)
     {
+<<<<<<< HEAD
         vm::Runtime::SetExitCode(value);
+=======
+        exitcode = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Environment::get_HasShutdownStarted()
@@ -180,15 +199,22 @@ namespace System
 
     void Environment::Exit(int32_t exitCode)
     {
+<<<<<<< HEAD
         set_ExitCode(exitCode);
         il2cpp::vm::Runtime::Shutdown();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         il2cpp::os::Environment::Exit(exitCode);
     }
 
     Il2CppString* Environment::internalGetGacPath()
     {
         // Not used by the runtime. Used only by the Mono compiler (mcs).
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::internalGetGacPatH);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::internalGetGacPatH);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return 0;
     }
@@ -226,7 +252,11 @@ namespace System
 
     Il2CppString* Environment::get_bundled_machine_config()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::get_bundled_machine_config);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::get_bundled_machine_config);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 

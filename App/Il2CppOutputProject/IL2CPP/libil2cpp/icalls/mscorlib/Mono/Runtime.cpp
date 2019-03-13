@@ -24,7 +24,11 @@ namespace Mono
 #if NET_4_0
     Il2CppString* Runtime::GetNativeStackTrace(Il2CppException* exception)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Runtime::GetNativeStackTrace);
+=======
+        NOT_IMPLEMENTED_ICALL(Runtime::GetNativeStackTrace);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }

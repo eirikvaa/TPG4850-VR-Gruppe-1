@@ -844,7 +844,11 @@ static void buildIEEE754Double(double* pd, int sign, int texp, uint64_t mantisse
 
     *p = (((uint64_t)sign) << 63) | (((uint64_t)((1023 + texp) & 0x7ff)) << 52) | mantisse;
 
+<<<<<<< HEAD
     IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(buildIEEE754Double, "Endianess is not being considered");
+=======
+    NOT_IMPLEMENTED_NO_ASSERT(buildIEEE754Double, "Endianess is not being considered");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 #else // NET_4_0
@@ -3154,7 +3158,11 @@ namespace System
 
     int32_t Decimal::decimal2string(il2cpp_decimal_repr* val, int32_t digits, int32_t decimals, Il2CppArray* bufDigits, int32_t bufSize, int32_t* decPos, int32_t* sign)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Decimal::decimal2string);
+=======
+        NOT_IMPLEMENTED_ICALL(Decimal::decimal2string);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return 0;
     }

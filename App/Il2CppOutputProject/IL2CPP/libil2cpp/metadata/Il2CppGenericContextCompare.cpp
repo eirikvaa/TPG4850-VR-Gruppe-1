@@ -14,7 +14,11 @@ namespace metadata
 
     bool Il2CppGenericContextCompare::Compare(const Il2CppGenericContext* gc1, const Il2CppGenericContext* gc2)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(Il2CppGenericContextCompare::Compare, "We should ensure GenericInst uniqueness and do direct comparison");
+=======
+        NOT_IMPLEMENTED_NO_ASSERT(Il2CppGenericContextCompare::Compare, "We should ensure GenericInst uniqueness and do direct comparison");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         // return gc1->class_inst == gc2->class_inst && gc1->method_inst == gc2->method_inst;
 
         if ((!gc1->class_inst && gc2->class_inst) || (gc1->class_inst && !gc2->class_inst))

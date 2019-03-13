@@ -3,32 +3,46 @@
 #include "os/MarshalStringAlloc.h"
 #include "os/WindowsRuntime.h"
 #include "vm/Array.h"
+<<<<<<< HEAD
 #include "vm/AssemblyName.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/Class.h"
 #include "vm/Exception.h"
 #include "vm/Object.h"
 #include "vm/Runtime.h"
 #include "vm/StackTrace.h"
 #include "vm/String.h"
+<<<<<<< HEAD
 #include "vm/Type.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "Image.h"
 #include "../utils/StringUtils.h"
 #include "il2cpp-tabledefs.h"
 #include "il2cpp-class-internals.h"
 #include "il2cpp-object-internals.h"
+<<<<<<< HEAD
 #include "vm-utils/Debugger.h"
 #include "vm-utils/VmStringUtils.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 namespace il2cpp
 {
 namespace vm
 {
+<<<<<<< HEAD
     void Exception::PrepareExceptionForThrow(Il2CppException* ex, Il2CppSequencePoint* seqPoint, MethodInfo* lastManagedFrame)
     {
 #if IL2CPP_MONO_DEBUGGER
         il2cpp::utils::Debugger::HandleException(ex, seqPoint);
 #endif
 
+=======
+    NORETURN void Exception::Raise(Il2CppException* ex, MethodInfo* lastManagedFrame)
+    {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (ex->trace_ips == NULL)
         {
             // Only write the stack trace if there is not one already in the exception.
@@ -57,6 +71,7 @@ namespace vm
             IL2CPP_ASSERT(ips != NULL);
             IL2CPP_OBJECT_SETREF(ex, trace_ips, ips);
         }
+<<<<<<< HEAD
     }
 
     NORETURN void Exception::Raise(Il2CppException* ex, Il2CppSequencePoint *seqPoint, MethodInfo* lastManagedFrame)
@@ -98,6 +113,45 @@ namespace vm
     NORETURN void Exception::RaiseArgumentOutOfRangeException(const char* msg, Il2CppSequencePoint *seqPoint)
     {
         Raise(GetArgumentOutOfRangeException(msg), seqPoint);
+=======
+
+        throw Il2CppExceptionWrapper(ex);
+    }
+
+    NORETURN void Exception::RaiseOutOfMemoryException()
+    {
+        RaiseOutOfMemoryException(utils::StringView<Il2CppChar>::Empty());
+    }
+
+    NORETURN void Exception::RaiseOutOfMemoryException(const utils::StringView<Il2CppChar>& msg)
+    {
+        Raise(GetOutOfMemoryException(msg));
+    }
+
+    NORETURN void Exception::RaiseNullReferenceException()
+    {
+        RaiseNullReferenceException(utils::StringView<Il2CppChar>::Empty());
+    }
+
+    NORETURN void Exception::RaiseNullReferenceException(const utils::StringView<Il2CppChar>& msg)
+    {
+        Raise(GetNullReferenceException(msg));
+    }
+
+    NORETURN void Exception::RaiseDivideByZeroException()
+    {
+        Raise(GetDivideByZeroException());
+    }
+
+    NORETURN void Exception::RaiseOverflowException()
+    {
+        Raise(GetOverflowException());
+    }
+
+    NORETURN void Exception::RaiseArgumentOutOfRangeException(const char* msg)
+    {
+        Raise(GetArgumentOutOfRangeException(msg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     inline static Il2CppException* TryGetExceptionFromRestrictedErrorInfo(Il2CppIRestrictedErrorInfo* errorInfo)
@@ -243,9 +297,15 @@ namespace vm
         }
     }
 
+<<<<<<< HEAD
     NORETURN void Exception::Raise(il2cpp_hresult_t hresult, bool defaultToCOMException, Il2CppSequencePoint *seqPoint)
     {
         Raise(Get(hresult, defaultToCOMException), seqPoint);
+=======
+    NORETURN void Exception::Raise(il2cpp_hresult_t hresult, bool defaultToCOMException)
+    {
+        Raise(Get(hresult, defaultToCOMException));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppException* Exception::FromNameMsg(const Il2CppImage* image, const char *name_space, const char *name, const char *msg)
@@ -369,6 +429,7 @@ namespace vm
         return FromNameMsg(vm::Image::GetCorlib(), "System", "TypeLoadException", NULL);
     }
 
+<<<<<<< HEAD
     Il2CppException* Exception::GetTypeLoadException(const TypeNameParseInfo& info)
     {
         std::string assemblyNameStr;
@@ -464,6 +525,8 @@ namespace vm
         return typeLoadException;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppException* Exception::GetOutOfMemoryException(const utils::StringView<Il2CppChar>& msg)
     {
         return FromNameMsg(vm::Image::GetCorlib(), "System", "OutOfMemoryException", msg);

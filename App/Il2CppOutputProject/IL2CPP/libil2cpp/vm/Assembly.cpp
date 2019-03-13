@@ -3,7 +3,10 @@
 #include "vm/AssemblyName.h"
 #include "vm/MetadataCache.h"
 #include "vm/Runtime.h"
+<<<<<<< HEAD
 #include "vm-utils/VmStringUtils.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "il2cpp-tabledefs.h"
 #include "il2cpp-class-internals.h"
 
@@ -25,7 +28,11 @@ namespace vm
     {
         for (AssemblyVector::const_iterator assembly = s_Assemblies.begin(); assembly != s_Assemblies.end(); ++assembly)
         {
+<<<<<<< HEAD
             if (strcmp((*assembly)->aname.name, name) == 0)
+=======
+            if (strcmp(MetadataCache::GetStringFromIndex((*assembly)->aname.nameIndex), name) == 0)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return *assembly;
         }
 
@@ -34,7 +41,11 @@ namespace vm
 
     Il2CppImage* Assembly::GetImage(const Il2CppAssembly* assembly)
     {
+<<<<<<< HEAD
         return assembly->image;
+=======
+        return MetadataCache::GetImageFromIndex(assembly->imageIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Assembly::GetReferencedAssemblies(const Il2CppAssembly* assembly, AssemblyNameVector* target)
@@ -64,11 +75,18 @@ namespace vm
     const Il2CppAssembly* Assembly::Load(const char* name)
     {
         const size_t len = strlen(name);
+<<<<<<< HEAD
         utils::VmStringUtils::CaseInsensitiveComparer comparer;
 
         for (AssemblyVector::const_iterator assembly = s_Assemblies.begin(); assembly != s_Assemblies.end(); ++assembly)
         {
             if (comparer(name, (*assembly)->aname.name))
+=======
+
+        for (AssemblyVector::const_iterator assembly = s_Assemblies.begin(); assembly != s_Assemblies.end(); ++assembly)
+        {
+            if (strcmp(name, MetadataCache::GetStringFromIndex((*assembly)->aname.nameIndex)) == 0)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return *assembly;
         }
 
@@ -97,7 +115,11 @@ namespace vm
         {
             for (AssemblyVector::const_iterator assembly = s_Assemblies.begin(); assembly != s_Assemblies.end(); ++assembly)
             {
+<<<<<<< HEAD
                 if (comparer(name, (*assembly)->image->name))
+=======
+                if (!strcmp(name, MetadataCache::GetImageFromIndex((*assembly)->imageIndex)->name))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     return *assembly;
             }
 

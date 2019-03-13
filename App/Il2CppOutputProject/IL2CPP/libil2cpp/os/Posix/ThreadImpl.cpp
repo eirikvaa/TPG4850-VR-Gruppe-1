@@ -7,7 +7,11 @@
 #include <map>
 #include <pthread.h>
 
+<<<<<<< HEAD
 #if IL2CPP_TARGET_LINUX
+=======
+#if IL2CPP_TARGET_LINUX || IL2CPP_TARGET_TIZEN
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <sys/prctl.h>
 #endif
 
@@ -119,13 +123,23 @@ namespace os
 
 #if IL2CPP_TARGET_DARWIN
         pthread_setname_np(name.c_str());
+<<<<<<< HEAD
 #elif IL2CPP_TARGET_LINUX || IL2CPP_TARGET_NOVA || IL2CPP_ENABLE_PLATFORM_THREAD_RENAME
+=======
+#elif IL2CPP_TARGET_LINUX || IL2CPP_TARGET_TIZEN || IL2CPP_ENABLE_PLATFORM_THREAD_RENAME
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         pthread_setname_np(m_Handle, name.c_str());
 #endif
     }
 
     void ThreadImpl::SetStackSize(size_t newsize)
     {
+<<<<<<< HEAD
+=======
+        // only makes sense if it's called BEFORE the thread has been created
+        IL2CPP_ASSERT(m_Handle == NULL);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         // if newsize is zero we use the per-platform default value for size of stack
         if (newsize == 0)
         {
@@ -135,6 +149,7 @@ namespace os
         m_StackSize = newsize;
     }
 
+<<<<<<< HEAD
     int ThreadImpl::GetMaxStackSize()
     {
 #if IL2CPP_TARGET_DARWIN || IL2CPP_TARGET_LINUX
@@ -152,6 +167,8 @@ namespace os
 #endif
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void ThreadImpl::SetPriority(ThreadPriority priority)
     {
         ////TODO

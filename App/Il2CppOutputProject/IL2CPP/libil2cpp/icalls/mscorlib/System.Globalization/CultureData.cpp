@@ -18,7 +18,11 @@ namespace System
 {
 namespace Globalization
 {
+<<<<<<< HEAD
     static Il2CppArray* create_names_array_idx(const uint16_t* names, int max, const char* strings_array)
+=======
+    static Il2CppArray* create_names_array_idx(const uint16_t* names, int max)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         if (names == NULL)
             return NULL;
@@ -34,7 +38,11 @@ namespace Globalization
         Il2CppArray* ret = il2cpp_array_new_specific(il2cpp_array_class_get(il2cpp_defaults.string_class, 1), len);
 
         for (int i = 0; i < len; i++)
+<<<<<<< HEAD
             il2cpp_array_setref(ret, i, il2cpp_string_new(strings_array + names[i]));
+=======
+            il2cpp_array_setref(ret, i, il2cpp_string_new(idx2string(names[i])));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return ret;
     }
@@ -68,9 +76,15 @@ namespace Globalization
         IL2CPP_OBJECT_SETREF(_this, AMDesignator, il2cpp_string_new(idx2string(dfe->am_designator)));
         IL2CPP_OBJECT_SETREF(_this, PMDesignator, il2cpp_string_new(idx2string(dfe->pm_designator)));
         IL2CPP_OBJECT_SETREF(_this, TimeSeparator, il2cpp_string_new(idx2string(dfe->time_separator)));
+<<<<<<< HEAD
         Il2CppArray *long_time_patterns = create_names_array_idx(dfe->long_time_patterns, NUM_LONG_TIME_PATTERNS, &patterns[0]);
         IL2CPP_OBJECT_SETREF(_this, LongTimePatterns, long_time_patterns);
         Il2CppArray *short_time_patterns = create_names_array_idx(dfe->short_time_patterns, NUM_SHORT_TIME_PATTERNS, &patterns[0]);
+=======
+        Il2CppArray *long_time_patterns = create_names_array_idx(dfe->long_time_patterns, NUM_LONG_TIME_PATTERNS);
+        IL2CPP_OBJECT_SETREF(_this, LongTimePatterns, long_time_patterns);
+        Il2CppArray *short_time_patterns = create_names_array_idx(dfe->short_time_patterns, NUM_SHORT_TIME_PATTERNS);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_OBJECT_SETREF(_this, ShortTimePatterns, short_time_patterns);
         _this->FirstDayOfWeek = dfe->first_day_of_week;
         _this->CalendarWeekRule = dfe->calendar_week_rule;

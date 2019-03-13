@@ -4,7 +4,10 @@
 #include <string>
 #include "il2cpp-config.h"
 #include "utils/StringView.h"
+<<<<<<< HEAD
 #include "../il2cpp-class-internals.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 struct Il2CppException;
 struct Il2CppImage;
@@ -14,14 +17,18 @@ namespace il2cpp
 {
 namespace vm
 {
+<<<<<<< HEAD
     class TypeNameParseInfo;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     class LIBIL2CPP_CODEGEN_API Exception
     {
 // exported
     public:
         static Il2CppException* Get(il2cpp_hresult_t hresult, bool defaultToCOMException);
 
+<<<<<<< HEAD
         static void PrepareExceptionForThrow(Il2CppException* ex, Il2CppSequencePoint *seqPoint = NULL, MethodInfo* lastManagedFrame = NULL);
         static NORETURN void Raise(Il2CppException* ex, Il2CppSequencePoint *seqPoint = NULL, MethodInfo* lastManagedFrame = NULL);
         static NORETURN void RaiseOutOfMemoryException(Il2CppSequencePoint *seqPoint = NULL);
@@ -37,6 +44,22 @@ namespace vm
         {
             if (IL2CPP_HR_FAILED(hresult))
                 Raise(hresult, defaultToCOMException, seqPoint);
+=======
+        static NORETURN void Raise(Il2CppException* ex, MethodInfo* lastManagedFrame = NULL);
+        static NORETURN void RaiseOutOfMemoryException();
+        static NORETURN void RaiseOutOfMemoryException(const utils::StringView<Il2CppChar>& msg);
+        static NORETURN void RaiseNullReferenceException();
+        static NORETURN void RaiseNullReferenceException(const utils::StringView<Il2CppChar>& msg);
+        static NORETURN void RaiseDivideByZeroException();
+        static NORETURN void RaiseOverflowException();
+        static NORETURN void RaiseArgumentOutOfRangeException(const char* msg);
+        static NORETURN void Raise(il2cpp_hresult_t hresult, bool defaultToCOMException);
+
+        inline static void RaiseIfFailed(il2cpp_hresult_t hresult, bool defaultToCOMException)
+        {
+            if (IL2CPP_HR_FAILED(hresult))
+                Raise(hresult, defaultToCOMException);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         ////TODO: rename to NewFromClassNameAndMessage
@@ -57,9 +80,12 @@ namespace vm
         static Il2CppException* GetInvalidCastException(const char* msg);
         static Il2CppException* GetInvalidCastException(const utils::StringView<Il2CppChar>& msg);
         static Il2CppException* GetTypeLoadException();
+<<<<<<< HEAD
         static Il2CppException* GetTypeLoadException(const TypeNameParseInfo& typeNameParseInfo);
         static Il2CppException* GetTypeLoadException(const utils::StringView<char>& namespaze, const utils::StringView<char>& typeName, const utils::StringView<char>& assemblyName);
         static Il2CppException* GetTypeLoadExceptionForWindowsRuntimeType(const utils::StringView<char>& namespaze, const utils::StringView<char>& typeName);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static Il2CppException* GetOutOfMemoryException(const utils::StringView<Il2CppChar>& msg);
         static Il2CppException* GetOverflowException();
         static Il2CppException* GetOverflowException(const char* msg);

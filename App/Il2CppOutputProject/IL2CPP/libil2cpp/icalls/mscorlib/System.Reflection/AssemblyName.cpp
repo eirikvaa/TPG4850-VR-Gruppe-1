@@ -39,7 +39,11 @@ namespace Reflection
 #if NET_4_0
     void AssemblyName::get_public_token(uint8_t* token, uint8_t* pubkey, int32_t len)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(AssemblyName::get_public_token);
+=======
+        NOT_IMPLEMENTED_ICALL(AssemblyName::get_public_token);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 

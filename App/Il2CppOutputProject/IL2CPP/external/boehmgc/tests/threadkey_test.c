@@ -11,9 +11,12 @@
 
 #include "gc.h"
 
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if (!defined(GC_PTHREADS) || defined(GC_SOLARIS_THREADS) \
      || defined(__native_client__)) && !defined(SKIP_THREADKEY_TEST)
   /* FIXME: Skip this test on Solaris for now.  The test may fail on    */
@@ -24,6 +27,11 @@
 
 #ifdef SKIP_THREADKEY_TEST
 
+<<<<<<< HEAD
+=======
+#include <stdio.h>
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 int main (void)
 {
   printf("threadkey_test skipped\n");
@@ -55,6 +63,7 @@ void * GC_CALLBACK on_thread_exit_inner (struct GC_stack_base * sb, void * arg)
   pthread_t t;
   int creation_res;     /* Used to suppress a warning about     */
                         /* unchecked pthread_create() result.   */
+<<<<<<< HEAD
   pthread_attr_t attr;
 
   if (pthread_attr_init(&attr) != 0
@@ -64,6 +73,10 @@ void * GC_CALLBACK on_thread_exit_inner (struct GC_stack_base * sb, void * arg)
   }
   creation_res = GC_pthread_create(&t, &attr, entry, NULL);
   (void)pthread_attr_destroy(&attr);
+=======
+
+  creation_res = GC_pthread_create (&t, NULL, entry, NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   if (res == GC_SUCCESS)
     GC_unregister_my_thread ();
 
@@ -80,8 +93,13 @@ void make_key (void)
   pthread_key_create (&key, on_thread_exit);
 }
 
+<<<<<<< HEAD
 #ifndef NTHREADS
 # define NTHREADS 30 /* number of initial threads */
+=======
+#ifndef LIMIT
+# define LIMIT 30
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 int main (void)
@@ -94,6 +112,7 @@ int main (void)
 # else
     pthread_once (&key_once, make_key);
 # endif
+<<<<<<< HEAD
   for (i = 0; i < NTHREADS; i++) {
     pthread_t t;
 
@@ -107,6 +126,14 @@ int main (void)
                 (i & 1) != 0 ? "join" : "detach", code);
         exit(2);
       }
+=======
+  for (i = 0; i < LIMIT; i++) {
+    pthread_t t;
+    void *res;
+    if (GC_pthread_create (&t, NULL, entry, NULL) == 0
+        && (i & 1) != 0) {
+      (void)GC_pthread_join(t, &res);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
   }
   return 0;

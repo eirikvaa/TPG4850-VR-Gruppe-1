@@ -373,6 +373,7 @@ namespace vm
 #endif
     }
 
+<<<<<<< HEAD
     // When a delegate is marshalled from native code via Marshal.GetDelegateForFunctionPointer
     // libil2cpp will create a fake MethodInfo which just has a methodPointer, so the method
     // can be invoked again later. This fake MethodInfo does not have a methodDefinition, and does
@@ -384,12 +385,15 @@ namespace vm
         return method->methodDefinition == NULL && method->is_marshaled_from_native;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     intptr_t PlatformInvoke::MarshalDelegate(Il2CppDelegate* d)
     {
         if (d == NULL)
             return 0;
 
         if (d->method->is_inflated)
+<<<<<<< HEAD
         {
             std::string methodName = il2cpp::vm::Method::GetFullName(d->method);
             std::string errorMessage = "IL2CPP does not support marshaling delegates that point to generic methods. The generic method we're attemping to marshal is: " + methodName;
@@ -398,6 +402,9 @@ namespace vm
 
         if (IsFakeDelegateMethodMarshaledFromNativeCode(d->method))
             return reinterpret_cast<intptr_t>(d->method->methodPointer);
+=======
+            vm::Exception::Raise(vm::Exception::GetNotSupportedException("IL2CPP does not support marshaling delegates that point to generic methods."));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         IL2CPP_ASSERT(d->method->methodDefinition);
 
@@ -440,7 +447,10 @@ namespace vm
             newMethod->invoker_method = NULL;
             newMethod->parameters_count = invoke->parameters_count;
             newMethod->slot = kInvalidIl2CppMethodSlot;
+<<<<<<< HEAD
             newMethod->is_marshaled_from_native = true;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             utils::NativeDelegateMethodCache::AddNativeDelegate(nativeFunctionPointer, newMethod);
             method = newMethod;
         }

@@ -27,7 +27,10 @@
 #include <limits>
 #include <stdint.h>
 #include "il2cpp-config.h"
+<<<<<<< HEAD
 #include "StringView.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 namespace il2cpp
 {
@@ -57,6 +60,7 @@ namespace utils
             return Utf16ToUtf8(nativeStr.c_str(), static_cast<int>(nativeStr.length()));
         }
 
+<<<<<<< HEAD
         static inline std::string NativeStringToUtf8(const Il2CppNativeChar* nativeStr)
         {
             return Utf16ToUtf8(nativeStr);
@@ -69,11 +73,15 @@ namespace utils
         }
 
         static inline Il2CppNativeString Utf8ToNativeString(const std::string& str)
+=======
+        static inline Il2CppNativeString Utf8ToNativeString(const std::string str)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             IL2CPP_ASSERT(str.length() < static_cast<size_t>(std::numeric_limits<int>::max()));
             return Utf8ToUtf16(str.c_str(), str.length());
         }
 
+<<<<<<< HEAD
         static inline Il2CppNativeString Utf8ToNativeString(const char* str)
         {
             return Utf8ToUtf16(str);
@@ -85,24 +93,35 @@ namespace utils
         }
 
         static inline std::string NativeStringToUtf8(const Il2CppNativeChar* nativeStr)
+=======
+#else
+        static inline std::string NativeStringToUtf8(Il2CppNativeString nativeStr)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             return nativeStr;
         }
 
+<<<<<<< HEAD
         static inline std::string NativeStringToUtf8(const Il2CppNativeChar* nativeStr, uint32_t length)
         {
             return std::string(nativeStr, length);
         }
 
         static inline Il2CppNativeString Utf8ToNativeString(const std::string& str)
+=======
+        static inline Il2CppNativeString Utf8ToNativeString(const std::string str)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             return str;
         }
 
+<<<<<<< HEAD
         static inline Il2CppNativeString Utf8ToNativeString(const char* str)
         {
             return str;
         }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
         template<typename CharType, size_t N>
@@ -124,6 +143,7 @@ namespace utils
             return length;
         }
 
+<<<<<<< HEAD
         template <typename CharType>
         static inline bool Equals(const StringView<CharType>& left, const StringView<CharType>& right)
         {
@@ -160,6 +180,8 @@ namespace utils
             return memcmp(left.Str(), right, (rightLength - 1) * sizeof(CharType)) == 0;
         }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         // Taken from github.com/Microsoft/referencesource/blob/master/mscorlib/system/string.cs
         template<typename CharType>
         static inline size_t Hash(const CharType *str, size_t length)
@@ -236,8 +258,11 @@ namespace utils
 #if defined(_MSC_VER)
 #define DECLARE_IL2CPP_STRING_AS_STRING_VIEW_OF_NATIVE_CHARS(variableName, str) \
     il2cpp::utils::StringView<Il2CppNativeChar> variableName(reinterpret_cast<Il2CppString*>(str)->chars, reinterpret_cast<Il2CppString*>(str)->length);
+<<<<<<< HEAD
 #define DECLARE_IL2CPP_CHAR_PTR_AS_STRING_VIEW_OF_NATIVE_CHARS(variableName, str) \
     il2cpp::utils::StringView<Il2CppNativeChar> variableName(str, il2cpp::utils::StringUtils::StrLen (str));
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #define DECLARE_NATIVE_C_STRING_AS_STRING_VIEW_OF_IL2CPP_CHARS(variableName, str) \
     il2cpp::utils::StringView<Il2CppChar> variableName(str, wcslen(str));
 #define DECLARE_NATIVE_STRING_AS_STRING_VIEW_OF_IL2CPP_CHARS(variableName, str) \
@@ -246,9 +271,12 @@ namespace utils
 #define DECLARE_IL2CPP_STRING_AS_STRING_VIEW_OF_NATIVE_CHARS(variableName, str) \
     Il2CppNativeString variableName##_native_string_storage = il2cpp::utils::StringUtils::Utf16ToUtf8(reinterpret_cast<Il2CppString*>(str)->chars, reinterpret_cast<Il2CppString*>(str)->length); \
     il2cpp::utils::StringView<Il2CppNativeChar> variableName(variableName##_native_string_storage.c_str(), variableName##_native_string_storage.length());
+<<<<<<< HEAD
 #define DECLARE_IL2CPP_CHAR_PTR_AS_STRING_VIEW_OF_NATIVE_CHARS(variableName, str) \
     Il2CppNativeString variableName##_native_string_storage = il2cpp::utils::StringUtils::Utf16ToUtf8(str, il2cpp::utils::StringUtils::StrLen (str)); \
     il2cpp::utils::StringView<Il2CppNativeChar> variableName(variableName##_native_string_storage.c_str(), variableName##_native_string_storage.length());
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #define DECLARE_NATIVE_C_STRING_AS_STRING_VIEW_OF_IL2CPP_CHARS(variableName, str) \
     UTF16String variableName##_utf16String = il2cpp::utils::StringUtils::Utf8ToUtf16(str); \
     il2cpp::utils::StringView<Il2CppChar> variableName(variableName##_utf16String);

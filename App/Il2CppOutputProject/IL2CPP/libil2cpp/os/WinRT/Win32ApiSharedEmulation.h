@@ -28,17 +28,34 @@ namespace winrt
         unsigned int sourceLength;
         auto sourceBuffer = source.GetRawBuffer(&sourceLength);
 
+<<<<<<< HEAD
         if (sourceLength > *targetSize - 1)
+=======
+        if (sourceLength + 1 > *targetSize)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             SetLastError(ERROR_BUFFER_OVERFLOW);
             *targetSize = sourceLength + 1;
             return FALSE;
         }
 
+<<<<<<< HEAD
         memcpy(target, sourceBuffer, sourceLength * sizeof(wchar_t));
         target[sourceLength] = L'\0';
         *targetSize = sourceLength;
         return TRUE;
+=======
+        *targetSize = sourceLength;
+
+        if (target != nullptr)
+        {
+            memcpy(target, sourceBuffer, sourceLength * sizeof(wchar_t));
+            target[sourceLength] = L'\0';
+            return TRUE;
+        }
+
+        return FALSE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 }
 }

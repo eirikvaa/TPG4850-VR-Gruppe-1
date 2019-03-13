@@ -55,11 +55,16 @@ int getpagesize(void)
   }
 #endif
 
+<<<<<<< HEAD
 struct a_s {
+=======
+struct {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   char a_a;
   char * a_b;
 } a;
 
+<<<<<<< HEAD
 word nested_sp(void)
 {
 # if GC_GNUC_PREREQ(4, 0)
@@ -90,6 +95,26 @@ int main(void)
       (void)nested_sp(); /* to workaround a bug in cppcheck */
 #   endif
     if (nested_sp_fn() < sp) {
+=======
+int * nested_sp(void)
+{
+    volatile word sp;
+    sp = (word)(&sp);
+    return (int *)sp;
+}
+
+int main(void)
+{
+    volatile word sp;
+    long ps = GETPAGESIZE();
+    jmp_buf b;
+    register int x = (int)strlen("a");  /* 1, slightly disguised */
+    static int y = 0;
+
+    sp = (word)(&sp);
+    printf("This appears to be a %s running %s\n", MACH_TYPE, OS_TYPE);
+    if ((word)nested_sp() < sp) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       printf("Stack appears to grow down, which is the default.\n");
       printf("A good guess for STACKBOTTOM on this machine is 0x%lx.\n",
              ((unsigned long)sp + ps) & ~(ps-1));
@@ -102,7 +127,11 @@ int main(void)
     printf("Note that this may vary between machines of ostensibly\n");
     printf("the same architecture (e.g. Sun 3/50s and 3/80s).\n");
     printf("On many machines the value is not fixed.\n");
+<<<<<<< HEAD
     printf("A good guess for ALIGNMENT on this machine is %lu.\n",
+=======
+    printf("A good guess for ALIGNMENT on this machine is %ld.\n",
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
            (unsigned long)((word)(&(a.a_b)) - (word)(&a)));
 
     printf("The following is a very dubious test of one root marking"
@@ -112,10 +141,17 @@ int main(void)
     x = 2*x-1;
     printf("\n");
     x = 2*x-1;
+<<<<<<< HEAD
     (void)SETJMP(b);
     if (y == 1) {
       if (x == 2) {
         printf("Setjmp-based generic mark_regs code probably won't work.\n");
+=======
+    setjmp(b);
+    if (y == 1) {
+      if (x == 2) {
+        printf("Setjmp-based generic mark_regs code probably wont work.\n");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         printf("But we rarely try that anymore.  If you have getcontect()\n");
         printf("this probably doesn't matter.\n");
       } else if (x == 1) {
@@ -126,7 +162,11 @@ int main(void)
     }
     y++;
     x = 2;
+<<<<<<< HEAD
     if (y == 1) LONGJMP(b, 1);
+=======
+    if (y == 1) longjmp(b,1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     printf("Some GC internal configuration stuff: \n");
     printf("\tWORDSZ = %lu, ALIGNMENT = %d, GC_GRANULE_BYTES = %d\n",
            (unsigned long)WORDSZ, ALIGNMENT, GC_GRANULE_BYTES);
@@ -148,7 +188,10 @@ int main(void)
 #   ifdef PARALLEL_MARK
       printf("Parallel marking enabled.\n");
 #   endif
+<<<<<<< HEAD
     (void)g(x);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     return(0);
 }
 

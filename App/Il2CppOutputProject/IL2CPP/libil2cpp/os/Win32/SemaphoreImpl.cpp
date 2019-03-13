@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #include "os/c-api/il2cpp-config-platforms.h"
+=======
+#include "il2cpp-config.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #if IL2CPP_THREADS_WIN32
 

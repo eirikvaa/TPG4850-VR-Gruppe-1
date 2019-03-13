@@ -2,10 +2,13 @@
 #include "il2cpp-config.h"
 #include "RuntimeFieldHandle.h"
 #include "icalls/mscorlib/System.Reflection/MonoField.h"
+<<<<<<< HEAD
 #include "vm/Exception.h"
 #include "vm/Field.h"
 #include "vm/Object.h"
 #include "vm/Type.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 namespace il2cpp
 {
@@ -15,6 +18,7 @@ namespace mscorlib
 {
 namespace System
 {
+<<<<<<< HEAD
     void RuntimeFieldHandle::SetValueDirect(Il2CppReflectionField* field, Il2CppObject* fieldType, Il2CppTypedRef* typedRef, Il2CppObject* value, Il2CppObject* contextType)
     {
         IL2CPP_ASSERT(field);
@@ -35,6 +39,12 @@ namespace System
             vm::Field::SetValueRaw(f->type, (uint8_t*)typedRef->value + f->offset - sizeof(Il2CppObject), value, false);
         else
             vm::Field::SetValueRaw(f->type, (uint8_t*)typedRef->value + f->offset - sizeof(Il2CppObject), vm::Object::Unbox(value), false);
+=======
+    void RuntimeFieldHandle::SetValueDirect(Il2CppObject* field, Il2CppObject* fieldType, void* pTypedRef, Il2CppObject* value, Il2CppObject* contextType)
+    {
+        NOT_IMPLEMENTED_ICALL(RuntimeFieldHandle::SetValueDirect);
+        IL2CPP_UNREACHABLE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void RuntimeFieldHandle::SetValueInternal(Il2CppReflectionField* fi, Il2CppObject* obj, Il2CppObject* value)

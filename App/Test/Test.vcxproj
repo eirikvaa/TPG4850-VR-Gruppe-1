@@ -38,6 +38,7 @@
       <Configuration>Master</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+<<<<<<< HEAD
     <ProjectConfiguration Include="MasterWithLTCG|ARM">
       <Configuration>MasterWithLTCG</Configuration>
       <Platform>ARM</Platform>
@@ -50,6 +51,8 @@
       <Configuration>MasterWithLTCG</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ProjectConfiguration Include="Release|ARM">
       <Configuration>Release</Configuration>
       <Platform>ARM</Platform>
@@ -74,7 +77,11 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)'=='Master' OR '$(Configuration)'=='MasterWithLTCG'" Label="Configuration">
+=======
+  <PropertyGroup Condition="'$(Configuration)'=='Master'" Label="Configuration">
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -129,9 +136,12 @@
     <None Include="Assets\Square44x44Logo.scale-200.png">
       <DeploymentContent>true</DeploymentContent>
     </None>
+<<<<<<< HEAD
     <None Include="Assets\Square44x44Logo.targetsize-24.png">
       <DeploymentContent>true</DeploymentContent>
     </None>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <None Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <DeploymentContent>true</DeploymentContent>
     </None>

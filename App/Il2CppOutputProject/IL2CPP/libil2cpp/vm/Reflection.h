@@ -2,7 +2,10 @@
 
 #include <stdint.h>
 #include "il2cpp-config.h"
+<<<<<<< HEAD
 #include "il2cpp-metadata.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 struct Il2CppString;
 struct Il2CppArray;
@@ -46,7 +49,10 @@ namespace vm
         static Il2CppReflectionProperty* GetPropertyObject(Il2CppClass *klass, const PropertyInfo *property);
         static Il2CppReflectionEvent* GetEventObject(Il2CppClass *klass, const EventInfo *event);
         static Il2CppReflectionMethod* GetMethodObject(const MethodInfo *method, Il2CppClass *refclass);
+<<<<<<< HEAD
         static const MethodInfo* GetMethod(const Il2CppReflectionMethod* method);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static Il2CppReflectionModule* GetModuleObject(const Il2CppImage *image);
         static Il2CppReflectionType* GetTypeObject(const Il2CppType *type);
         static Il2CppArray* GetParamObjects(const MethodInfo *method, Il2CppClass *refclass);
@@ -70,6 +76,7 @@ namespace vm
 // internal
     public:
         static void Initialize();
+<<<<<<< HEAD
         static Il2CppClass* TypeGetHandle(Il2CppReflectionType* ref);
         static Il2CppObject* GetDBNullObject();
 
@@ -81,6 +88,17 @@ namespace vm
 
     private:
         static bool HasAttribute(Il2CppReflectionParameter *parameter, Il2CppClass* attribute);
+=======
+        static bool CustomAttrsHasAttr(CustomAttributeTypeCache *ainfo, Il2CppClass *attr_klass);
+        static Il2CppClass* TypeGetHandle(Il2CppReflectionType* ref);
+        static Il2CppObject* GetDBNullObject();
+
+    private:
+        static CustomAttributeTypeCache* GetCustomAttrsTypeInfo(Il2CppObject *obj);
+        static CustomAttributeTypeCache* GetCustomAttributeTypeCacheFor(Il2CppReflectionParameter *parameter);
+        static CustomAttributesCache* GetCustomAttributesCacheFor(Il2CppClass *klass);
+        static CustomAttributesCache* GetCustomAttributesCacheFor(const MethodInfo *method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static CustomAttributesCache* GetCustomAttributesCacheFor(const PropertyInfo *property);
         static CustomAttributesCache* GetCustomAttributesCacheFor(FieldInfo *field);
         static CustomAttributesCache* GetCustomAttributesCacheFor(const EventInfo *event);

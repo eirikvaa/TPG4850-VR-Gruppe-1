@@ -27,7 +27,10 @@ namespace vm
 
         static Il2CppObject * Clone(Il2CppObject *obj);
         static Il2CppObject* NewPinned(Il2CppClass *klass);
+<<<<<<< HEAD
         static void NullableInit(uint8_t* buf, Il2CppObject* value, Il2CppClass* klass);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     private:
         static Il2CppObject * NewAllocSpecific(Il2CppClass *klass);
         static Il2CppObject* NewPtrFree(Il2CppClass *klass);
@@ -43,5 +46,10 @@ namespace vm
 } /* namespace il2cpp */
 
 #define IL2CPP_OBJECT_SETREF(obj, fieldname, value) do {\
+<<<<<<< HEAD
         il2cpp_gc_wbarrier_set_field((Il2CppObject *)(obj), (void**)&(obj)->fieldname, (value));\
+=======
+        /*mono_gc_wbarrier_set_field ((Il2CppObject*)(obj), &((obj)->fieldname), (Il2CppObject*)value); */\
+        (obj)->fieldname = (value); \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     } while (0)

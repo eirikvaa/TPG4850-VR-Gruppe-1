@@ -48,6 +48,10 @@ namespace vm
         newProperty->attrs = propertyDefinition->attrs;
         newProperty->parent = declaringClass;
         newProperty->name = propertyDefinition->name;
+<<<<<<< HEAD
+=======
+        newProperty->customAttributeIndex = propertyDefinition->customAttributeIndex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         newProperty->token = propertyDefinition->token;
 
         if (propertyDefinition->get)
@@ -85,6 +89,10 @@ namespace vm
         newEvent->eventType = GenericMetadata::InflateIfNeeded(eventDefinition->eventType, context, false);
         newEvent->name = eventDefinition->name;
         newEvent->parent = declaringClass;
+<<<<<<< HEAD
+=======
+        newEvent->customAttributeIndex = eventDefinition->customAttributeIndex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         newEvent->token = eventDefinition->token;
 
         if (eventDefinition->add)
@@ -125,6 +133,10 @@ namespace vm
         newField->name = fieldDefinition->name;
         newField->parent = declaringClass;
         newField->offset = fieldDefinition->offset;
+<<<<<<< HEAD
+=======
+        newField->customAttributeIndex = fieldDefinition->customAttributeIndex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         newField->token = fieldDefinition->token;
 
         return newField;
@@ -164,7 +176,10 @@ namespace vm
         if (!gclass->cached_class)
         {
             Il2CppClass* klass = gclass->cached_class = (Il2CppClass*)MetadataCalloc(1, sizeof(Il2CppClass) + (sizeof(VirtualInvokeData) * definition->vtable_count));
+<<<<<<< HEAD
             klass->klass = klass;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             klass->name = definition->name;
             klass->namespaze = definition->namespaze;
@@ -178,6 +193,7 @@ namespace vm
             Il2CppGenericContext* context = &klass->generic_class->context;
 
             if (genericTypeDefinition->parent)
+<<<<<<< HEAD
                 klass->parent = Class::FromIl2CppType(GenericMetadata::InflateIfNeeded(&genericTypeDefinition->parent->byval_arg, context, false));
 
             if (genericTypeDefinition->declaringType)
@@ -186,6 +202,22 @@ namespace vm
             klass->this_arg.type = klass->byval_arg.type = IL2CPP_TYPE_GENERICINST;
             klass->this_arg.data.generic_class = klass->byval_arg.data.generic_class = gclass;
             klass->this_arg.byref = true;
+=======
+                klass->parent = Class::FromIl2CppType(GenericMetadata::InflateIfNeeded(genericTypeDefinition->parent->byval_arg, context, false));
+
+            if (genericTypeDefinition->declaringType)
+                klass->declaringType = Class::FromIl2CppType(GenericMetadata::InflateIfNeeded(genericTypeDefinition->declaringType->byval_arg, context, false));
+
+            Il2CppType* thisArg = (Il2CppType*)MetadataCalloc(1, sizeof(Il2CppType));
+            Il2CppType* byValArg = (Il2CppType*)MetadataCalloc(1, sizeof(Il2CppType));
+
+            thisArg->type = byValArg->type = IL2CPP_TYPE_GENERICINST;
+            thisArg->data.generic_class = byValArg->data.generic_class = gclass;
+            thisArg->byref = true;
+
+            klass->this_arg = thisArg;
+            klass->byval_arg = byValArg;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             klass->event_count = definition->event_count;
             klass->field_count = definition->field_count;
@@ -200,8 +232,14 @@ namespace vm
             klass->has_cctor = definition->has_cctor;
             klass->has_finalize = definition->has_finalize;
             klass->native_size = klass->thread_static_fields_offset = -1;
+<<<<<<< HEAD
             klass->token = definition->token;
             klass->interopData = MetadataCache::GetInteropDataForType(&klass->byval_arg);
+=======
+            klass->customAttributeIndex = definition->customAttributeIndex;
+            klass->token = definition->token;
+            klass->interopData = MetadataCache::GetInteropDataForType(klass->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             if (Class::IsNullable(klass))
                 klass->element_class = klass->castClass  = Class::GetNullableArgument(klass);

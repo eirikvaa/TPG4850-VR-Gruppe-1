@@ -12,6 +12,7 @@
       .pdb;
     </AllowedReferenceRelatedFileExtensions>
   </PropertyGroup>
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)'!='MasterWithLTCG'">
     <UnityPlayerConfiguration>$(Configuration)</UnityPlayerConfiguration>
   </PropertyGroup>
@@ -25,6 +26,11 @@
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
+=======
+  <ItemGroup>
+    <Resource Include="$(MSBuildThisFileDirectory)Resource.res">
+    </Resource>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClCompile Include="$(MSBuildThisFileDirectory)UnityGenerated.cpp">
     </ClCompile>
     <ClInclude Include="$(MSBuildThisFileDirectory)UnityGenerated.h">
@@ -49,7 +55,15 @@
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
+<<<<<<< HEAD
     <None Include="$(MSBuildThisFileDirectory)Data\nativePlugins.txt">
+=======
+    <None Include="$(MSBuildThisFileDirectory)Data\methods_pointedto_by_uievents.xml">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\preserved_derived_types.xml">
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
@@ -61,6 +75,13 @@
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
+<<<<<<< HEAD
+=======
+    <None Include="$(MSBuildThisFileDirectory)Data\UnityEngine.xml">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
+    </None>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <None Include="$(MSBuildThisFileDirectory)Data\il2cpp_data\etc\mono\browscap.ini">
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
@@ -145,6 +166,7 @@
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
+<<<<<<< HEAD
     <None Include="$(MSBuildThisFileDirectory)Data\Resources\unity default resources">
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
@@ -154,12 +176,27 @@
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
     <None Include="$(MSBuildThisFileDirectory)AudioPluginMsHRTF.dll">
+=======
+    <None Include="$(MSBuildThisFileDirectory)Data\il2cpp_data\Resources\System.dll-resources.dat">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\Resources\unity default resources">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\Resources\unity_builtin_extra">
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       <DeploymentContent>true</DeploymentContent>
       <ExcludeFromResourceIndex>true</ExcludeFromResourceIndex>
     </None>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="$(UnityWSAPlayerDir)Players\UAP\il2cpp\$(PlatformTarget)\$(UnityPlayerConfiguration)\UnityPlayer.winmd">
+=======
+    <Reference Include="$(UnityWSAPlayerDir)Players\UAP\il2cpp\$(PlatformTarget)\$(Configuration)\UnityPlayer.winmd">
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
     <None Include="$(OutDir)GameAssembly.dll">
@@ -168,9 +205,18 @@
     <None Include="$(OutDir)GameAssembly.pdb">
       <DeploymentContent>true</DeploymentContent>
     </None>
+<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' OR '$(Configuration)|$(Platform)'=='Release|x64'">
     <None Include="$(UnityWSAPlayerDir)Players\UAP\il2cpp\$(PlatformTarget)\$(UnityPlayerConfiguration)\WinPixEventRuntime_UAP.dll">
+=======
+    <None Include="$(OutDir)SymbolMap">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' OR '$(Configuration)|$(Platform)'=='Release|x64'">
+    <None Include="$(UnityWSAPlayerDir)Players\UAP\il2cpp\$(PlatformTarget)\$(Configuration)\WinPixEventRuntime_UAP.dll">
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>
@@ -178,9 +224,12 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <Target Name="BeforeResolveReferences" Condition="'$(BuildingProject)' == 'true'">
+<<<<<<< HEAD
         <Copy SourceFiles="$(ProjectDir)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.dll" DestinationFiles="$(ProjectDir)AudioPluginMsHRTF.dll" />
             <Delete Files="$(ProjectDir)AudioPluginMsHRTF.pdb" Condition="Exists('$(ProjectDir)AudioPluginMsHRTF.pdb')" />
             <Delete Files="$(ProjectDir)AudioPluginMsHRTF.dll.mdb" Condition="Exists('$(ProjectDir)AudioPluginMsHRTF.dll.mdb')" />
             <Copy SourceFiles="$(ProjectDir)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.pdb" DestinationFiles="$(ProjectDir)AudioPluginMsHRTF.pdb" Condition="Exists('$(ProjectDir)Plugins\$(PlatformShortName)\AudioPluginMsHRTF.pdb')" />
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   </Target>
 </Project>

@@ -3,7 +3,11 @@
 // Corresponds to element type signatures
 // See ECMA-335, II.23.1.16
 
+<<<<<<< HEAD
 typedef enum Il2CppTypeEnum
+=======
+enum Il2CppTypeEnum
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     IL2CPP_TYPE_END        = 0x00,       /* End of List */
     IL2CPP_TYPE_VOID       = 0x01,
@@ -43,4 +47,8 @@ typedef enum Il2CppTypeEnum
     IL2CPP_TYPE_PINNED     = 0x45,       /* Local var that points to pinned object */
 
     IL2CPP_TYPE_ENUM       = 0x55        /* an enumeration */
+<<<<<<< HEAD
 } Il2CppTypeEnum;
+=======
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

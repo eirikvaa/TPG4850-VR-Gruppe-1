@@ -38,7 +38,11 @@ LIBIL2CPP_CODEGEN_API bool ves_icall_System_Threading_ThreadPool_IsThreadPoolHos
 /* Internals */
 bool threadpool_ms_enqueue_work_item(Il2CppDomain *domain, Il2CppObject *work_item);
 
+<<<<<<< HEAD
 extern ::ThreadPool* g_ThreadPool;
+=======
+extern ThreadPool* g_ThreadPool;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 bool worker_try_unpark();
 void hill_climbing_force_change(int16_t new_thread_count, ThreadPoolHeuristicStateTransition transition);
 

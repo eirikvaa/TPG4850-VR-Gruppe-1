@@ -1,5 +1,9 @@
 /* infback.c -- inflate using a call-back interface
+<<<<<<< HEAD
  * Copyright (C) 1995-2016 Mark Adler
+=======
+ * Copyright (C) 1995-2006 Mark Adler
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
@@ -42,6 +46,7 @@ int stream_size;
         return Z_STREAM_ERROR;
     strm->msg = Z_NULL;                 /* in case we return an error */
     if (strm->zalloc == (alloc_func)0) {
+<<<<<<< HEAD
 #ifdef Z_SOLO
         return Z_STREAM_ERROR;
 #else
@@ -55,16 +60,29 @@ int stream_size;
 #else
     strm->zfree = zcfree;
 #endif
+=======
+        strm->zalloc = zcalloc;
+        strm->opaque = (voidpf)0;
+    }
+    if (strm->zfree == (free_func)0) strm->zfree = zcfree;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     state = (struct inflate_state FAR *)ZALLOC(strm, 1,
                                                sizeof(struct inflate_state));
     if (state == Z_NULL) return Z_MEM_ERROR;
     Tracev((stderr, "inflate: allocated\n"));
     strm->state = (struct internal_state FAR *)state;
     state->dmax = 32768U;
+<<<<<<< HEAD
     state->wbits = (uInt)windowBits;
     state->wsize = 1U << windowBits;
     state->window = window;
     state->wnext = 0;
+=======
+    state->wbits = windowBits;
+    state->wsize = 1U << windowBits;
+    state->window = window;
+    state->write = 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     state->whave = 0;
     return Z_OK;
 }
@@ -255,7 +273,11 @@ out_func out;
 void FAR *out_desc;
 {
     struct inflate_state FAR *state;
+<<<<<<< HEAD
     z_const unsigned char FAR *next;    /* next input */
+=======
+    unsigned char FAR *next;    /* next input */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     unsigned char FAR *put;     /* next output */
     unsigned have, left;        /* available input and output */
     unsigned long hold;         /* bit buffer */
@@ -403,6 +425,10 @@ void FAR *out_desc;
                     PULLBYTE();
                 }
                 if (here.val < 16) {
+<<<<<<< HEAD
+=======
+                    NEEDBITS(here.bits);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     DROPBITS(here.bits);
                     state->lens[state->have++] = here.val;
                 }
@@ -446,6 +472,7 @@ void FAR *out_desc;
             /* handle error breaks in while */
             if (state->mode == BAD) break;
 
+<<<<<<< HEAD
             /* check for end-of-block code (better have one) */
             if (state->lens[256] == 0) {
                 strm->msg = (char *)"invalid code -- missing end-of-block";
@@ -456,6 +483,9 @@ void FAR *out_desc;
             /* build code tables -- note: do not change the lenbits or distbits
                values here (9 and 6) without reading the comments in inftrees.h
                concerning the ENOUGH constants, which depend on those values */
+=======
+            /* build code tables */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             state->next = state->codes;
             state->lencode = (code const FAR *)(state->next);
             state->lenbits = 9;

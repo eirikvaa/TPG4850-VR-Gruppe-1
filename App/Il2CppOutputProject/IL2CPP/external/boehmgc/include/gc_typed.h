@@ -50,7 +50,11 @@ typedef GC_word * GC_bitmap;
 typedef GC_word GC_descr;
 
 GC_API GC_descr GC_CALL GC_make_descriptor(const GC_word * /* GC_bitmap bm */,
+<<<<<<< HEAD
                                 size_t /* len (number_of_bits_in_bitmap) */);
+=======
+                                           size_t /* len */);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 /* Return a type descriptor for the object whose layout */
                 /* is described by the argument.                        */
                 /* The least significant bit of the first word is one   */
@@ -81,16 +85,25 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
         GC_malloc_explicitly_typed(size_t /* size_in_bytes */,
                                    GC_descr /* d */);
                 /* Allocate an object whose layout is described by d.   */
+<<<<<<< HEAD
                 /* The size may NOT be less than the number of          */
                 /* meaningful bits in the bitmap of d multiplied by     */
                 /* sizeof GC_word.  The returned object is cleared.     */
                 /* The returned object may NOT be passed to GC_realloc. */
+=======
+                /* The resulting object MAY NOT BE PASSED TO REALLOC.   */
+                /* The returned object is cleared.                      */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
         GC_malloc_explicitly_typed_ignore_off_page(size_t /* size_in_bytes */,
                                                    GC_descr /* d */);
 
+<<<<<<< HEAD
 GC_API GC_ATTR_MALLOC GC_ATTR_CALLOC_SIZE(1, 2) void * GC_CALL
+=======
+GC_API GC_ATTR_MALLOC void * GC_CALL
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         GC_calloc_explicitly_typed(size_t /* nelements */,
                                    size_t /* element_size_in_bytes */,
                                    GC_descr /* d */);
@@ -99,9 +112,13 @@ GC_API GC_ATTR_MALLOC GC_ATTR_CALLOC_SIZE(1, 2) void * GC_CALL
         /* The element size must be a multiple of the byte      */
         /* alignment required for pointers.  E.g. on a 32-bit   */
         /* machine with 16-bit aligned pointers, size_in_bytes  */
+<<<<<<< HEAD
         /* must be a multiple of 2.  The element size may NOT   */
         /* be less than the number of meaningful bits in the    */
         /* bitmap of d multiplied by sizeof GC_word.            */
+=======
+        /* must be a multiple of 2.                             */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         /* Returned object is cleared.                          */
 
 #ifdef GC_DEBUG
@@ -115,7 +132,11 @@ GC_API GC_ATTR_MALLOC GC_ATTR_CALLOC_SIZE(1, 2) void * GC_CALL
 #endif
 
 #ifdef __cplusplus
+<<<<<<< HEAD
   } /* extern "C" */
+=======
+  } /* matches extern "C" */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 #endif /* GC_TYPED_H */

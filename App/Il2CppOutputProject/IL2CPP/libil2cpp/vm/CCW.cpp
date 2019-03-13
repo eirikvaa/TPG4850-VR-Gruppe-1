@@ -9,7 +9,10 @@
 #include "vm/MetadataCache.h"
 #include "vm/RCW.h"
 #include "vm/Runtime.h"
+<<<<<<< HEAD
 #include "vm/ScopedThreadAttacher.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/String.h"
 
 namespace il2cpp
@@ -48,6 +51,7 @@ namespace vm
                 return IL2CPP_S_OK;
             }
 
+<<<<<<< HEAD
             if (::memcmp(&iid, &Il2CppIWeakReferenceSource::IID, sizeof(Il2CppGuid)) == 0)
             {
                 *object = static_cast<Il2CppIWeakReferenceSource*>(this);
@@ -55,6 +59,8 @@ namespace vm
                 return IL2CPP_S_OK;
             }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             *object = NULL;
             return IL2CPP_E_NOINTERFACE;
         }
@@ -86,6 +92,7 @@ namespace vm
         return static_cast<Il2CppIManagedObjectHolder*>(new(memory)ManagedObject(obj));
     }
 
+<<<<<<< HEAD
     static Il2CppString* ValueToStringFallbackToEmpty(Il2CppObject* value)
     {
         Il2CppClass* klass = il2cpp::vm::Object::GetClass(value);
@@ -150,6 +157,20 @@ namespace vm
                 utils::StringUtils::Utf16ToUtf8(valueStr->chars, valueStr->length).c_str(),
                 toElementType);
         return HandleInvalidIPropertyConversionImpl(message);
+=======
+    Il2CppException* CCW::GetIPropertyValueInvalidCast(Il2CppObject* value, const char* from, const char* to)
+    {
+        Il2CppClass* klass = il2cpp::vm::Object::GetClass(value);
+        const MethodInfo* toString = il2cpp::vm::Class::GetMethodFromName(klass, "ToString", 0);
+        Il2CppString* valueString = (Il2CppString*)il2cpp::vm::Runtime::Invoke(toString, value, NULL, NULL);
+        std::string utf8Value = il2cpp::utils::StringUtils::Utf16ToUtf8(il2cpp::utils::StringUtils::GetChars(valueString));
+        std::string message = il2cpp::utils::StringUtils::Printf(
+                "Object in an IPropertyValue is of type '%s' with value '%s', which cannot be converted to a '%s'.",
+                from,
+                utf8Value.c_str(),
+                to);
+        return il2cpp::vm::Exception::GetInvalidCastException(message.c_str());
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 } /* namespace vm */
 } /* namespace il2cpp */

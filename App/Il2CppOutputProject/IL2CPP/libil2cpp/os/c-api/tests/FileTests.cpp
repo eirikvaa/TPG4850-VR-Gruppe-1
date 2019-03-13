@@ -56,7 +56,10 @@ SUITE(File)
         il2cpp::os::FileHandle* handle;
     };
 
+<<<<<<< HEAD
 #if !IL2CPP_TARGET_WINRT && !IL2CPP_TARGET_XBOXONE
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     TEST_FIXTURE(FileFixture, FileIsAttyWithValidButNoTTY_ReturnsFalse)
     {
         CHECK_MSG(!UnityPalIsatty(handle), "A normal is a TTY, which is not expected.");
@@ -73,7 +76,10 @@ SUITE(File)
     {
         CHECK_EQUAL((int32_t)il2cpp::os::File::Isatty(handle), UnityPalIsatty(handle));
     }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     TEST(FileOpenNoError_ReturnsNonNullHandle)
     {
@@ -1241,9 +1247,17 @@ SUITE(File)
 
     TEST(ReadBadResult)
     {
+<<<<<<< HEAD
         int usused;
         char buffer[16];
         int64_t result = UnityPalRead(NULL, buffer, 16, &usused);
+=======
+        int error;
+        il2cpp::os::FileHandle* handle = il2cpp::os::File::Open(TEST_FILE_NAME, kFileModeOpenOrCreate, kFileAccessReadWrite, 0, 0, &error);
+        CleanupTestFile(handle);
+        char buffer[16];
+        int64_t result = UnityPalRead(handle, buffer, 16, &error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         CHECK(!result);
     }
@@ -1251,8 +1265,15 @@ SUITE(File)
     TEST(ReadBadError)
     {
         int error;
+<<<<<<< HEAD
         char buffer[16];
         UnityPalRead(NULL, buffer, 16, &error);
+=======
+        il2cpp::os::FileHandle* handle = il2cpp::os::File::Open(TEST_FILE_NAME, kFileModeOpenOrCreate, kFileAccessReadWrite, 0, 0, &error);
+        CleanupTestFile(handle);
+        char buffer[16];
+        UnityPalRead(handle, buffer, 16, &error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         CHECK_NOT_EQUAL(il2cpp::os::kErrorCodeSuccess, error);
     }
@@ -1303,17 +1324,29 @@ SUITE(File)
 
     TEST(ReadBadResultMatchesClass)
     {
+<<<<<<< HEAD
         int unused;
         char buffer[16];
 
         int64_t api_result = UnityPalRead(NULL, buffer, 14, &unused);
         int64_t class_result = il2cpp::os::File::Read(NULL, buffer, 14, &unused);
+=======
+        int error;
+        il2cpp::os::FileHandle* handle = il2cpp::os::File::Open(TEST_FILE_NAME, kFileModeOpenOrCreate, kFileAccessReadWrite, 0, 0, &error);
+        CleanupTestFile(handle);
+
+        char buffer[16];
+
+        int64_t api_result = UnityPalRead(handle, buffer, 14, &error);
+        int64_t class_result = il2cpp::os::File::Read(handle, buffer, 14, &error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         CHECK_EQUAL(class_result, api_result);
     }
 
     TEST(ReadBadErrorMatchesClass)
     {
+<<<<<<< HEAD
         int api_error;
         int class_error;
 
@@ -1321,6 +1354,19 @@ SUITE(File)
 
         UnityPalRead(NULL, buffer, 14, &api_error);
         il2cpp::os::File::Read(NULL, buffer, 14, &class_error);
+=======
+        int error;
+        int api_error;
+        int class_error;
+
+        il2cpp::os::FileHandle* handle = il2cpp::os::File::Open(TEST_FILE_NAME, kFileModeOpenOrCreate, kFileAccessReadWrite, 0, 0, &error);
+        CleanupTestFile(handle);
+
+        char buffer[16];
+
+        UnityPalRead(handle, buffer, 14, &api_error);
+        il2cpp::os::File::Read(handle, buffer, 14, &class_error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         CHECK_EQUAL(class_error, api_error);
     }
@@ -1554,7 +1600,11 @@ SUITE(File)
         CHECK_EQUAL(class_error, api_error);
     }
 
+<<<<<<< HEAD
 #if !IL2CPP_TARGET_PS4 && !IL2CPP_TARGET_WINRT && !IL2CPP_TARGET_XBOXONE
+=======
+#if !IL2CPP_TARGET_PS4
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     TEST(CreatePipeNormalResult_ReturnsTrue)
     {
         int error;

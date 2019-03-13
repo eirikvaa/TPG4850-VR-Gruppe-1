@@ -32,12 +32,15 @@
 # include "thread_local_alloc.h"
 #endif
 
+<<<<<<< HEAD
 #ifdef THREAD_SANITIZER
 # include "dbg_mlc.h" /* for oh type */
 #endif
 
 EXTERN_C_BEGIN
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* We use the allocation lock to protect thread-related data structures. */
 
 /* The set of all known threads.  We intercept thread creation and      */
@@ -46,6 +49,7 @@ EXTERN_C_BEGIN
 /* Some of this should be declared volatile, but that's inconsistent    */
 /* with some library routine declarations.                              */
 typedef struct GC_Thread_Rep {
+<<<<<<< HEAD
 #   ifdef THREAD_SANITIZER
       char dummy[sizeof(oh)];     /* A dummy field to avoid TSan false  */
                                   /* positive about the race between    */
@@ -54,23 +58,32 @@ typedef struct GC_Thread_Rep {
                                   /* sets store_stop.stack_ptr).        */
 #   endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     struct GC_Thread_Rep * next;  /* More recently allocated threads    */
                                   /* with a given pthread id come       */
                                   /* first.  (All but the first are     */
                                   /* guaranteed to be dead, but we may  */
                                   /* not yet have registered the join.) */
     pthread_t id;
+<<<<<<< HEAD
 #   ifdef USE_TKILL_ON_ANDROID
+=======
+#   ifdef PLATFORM_ANDROID
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       pid_t kernel_id;
 #   endif
     /* Extra bookkeeping information the stopping code uses */
     struct thread_stop_info stop_info;
 
+<<<<<<< HEAD
 #   if defined(GC_ENABLE_SUSPEND_THREAD) && !defined(GC_DARWIN_THREADS) \
         && !defined(GC_OPENBSD_UTHREADS) && !defined(NACL)
       volatile AO_t suspended_ext;  /* Thread was suspended externally. */
 #   endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     unsigned char flags;
 #       define FINISHED 1       /* Thread has exited.                   */
 #       define DETACHED 2       /* Thread is treated as detached.       */
@@ -81,6 +94,12 @@ typedef struct GC_Thread_Rep {
                                 /* it unregisters itself, since it      */
                                 /* may not return a GC pointer.         */
 #       define MAIN_THREAD 4    /* True for the original thread only.   */
+<<<<<<< HEAD
+=======
+#       define SUSPENDED_EXT 8  /* Thread was suspended externally      */
+                                /* (this is not used by the unmodified  */
+                                /* GC itself at present).               */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #       define DISABLED_GC 0x10 /* Collections are disabled while the   */
                                 /* thread is exiting.                   */
 
@@ -102,12 +121,15 @@ typedef struct GC_Thread_Rep {
 
     ptr_t stack_end;            /* Cold end of the stack (except for    */
                                 /* main thread).                        */
+<<<<<<< HEAD
     ptr_t altstack;             /* The start of the alt-stack if there  */
                                 /* is one, NULL otherwise.              */
     word altstack_size;         /* The size of the alt-stack if exists. */
     ptr_t stack;                /* The start and size of the normal     */
                                 /* stack (set by GC_register_altstack). */
     word stack_size;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #   if defined(GC_DARWIN_THREADS) && !defined(DARWIN_DONT_PARSE_STACK)
       ptr_t topOfStack;         /* Result of GC_FindTopOfStack(0);      */
                                 /* valid only if the thread is blocked; */
@@ -136,6 +158,7 @@ typedef struct GC_Thread_Rep {
 #   endif
 } * GC_thread;
 
+<<<<<<< HEAD
 #ifndef THREAD_TABLE_SZ
 # define THREAD_TABLE_SZ 256    /* Power of 2 (for speed). */
 #endif
@@ -152,6 +175,9 @@ typedef struct GC_Thread_Rep {
                        ^ NUMERIC_THREAD_ID(id)) % THREAD_TABLE_SZ)
 #endif
 
+=======
+# define THREAD_TABLE_SZ 256    /* Must be power of 2   */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 GC_EXTERN volatile GC_thread GC_threads[THREAD_TABLE_SZ];
 
 GC_EXTERN GC_bool GC_thr_initialized;
@@ -179,17 +205,23 @@ GC_EXTERN GC_bool GC_in_thread_creation;
 # define GC_INNER_PTHRSTART GC_INNER
 #endif
 
+<<<<<<< HEAD
 GC_INNER_PTHRSTART void * GC_CALLBACK GC_inner_start_routine(
                                         struct GC_stack_base *sb, void *arg);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 GC_INNER_PTHRSTART GC_thread GC_start_rtn_prepare_thread(
                                         void *(**pstart)(void *),
                                         void **pstart_arg,
                                         struct GC_stack_base *sb, void *arg);
 GC_INNER_PTHRSTART void GC_thread_exit_proc(void *);
 
+<<<<<<< HEAD
 EXTERN_C_END
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif /* GC_PTHREADS && !GC_WIN32_THREADS */
 
 #endif /* GC_PTHREAD_SUPPORT_H */

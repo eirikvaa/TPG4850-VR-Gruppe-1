@@ -12,7 +12,11 @@ namespace System
 {
     bool TimeSpan::LegacyFormatMode()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(TimeSpan::LegacyFormatMode);
+=======
+        NOT_IMPLEMENTED_ICALL(TimeSpan::LegacyFormatMode);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return false;
     }

@@ -77,27 +77,52 @@ namespace os
 
     std::string Environment::GetEnvironmentVariable(const std::string& name)
     {
+<<<<<<< HEAD
         std::vector<Il2CppChar> buffer(BUFFER_SIZE);
 
         const UTF16String varName = utils::StringUtils::Utf8ToUtf16(name.c_str());
 
         DWORD ret = GetEnvironmentVariableW(varName.c_str(), &buffer[0], BUFFER_SIZE);
+=======
+        Il2CppChar buffer[BUFFER_SIZE];
+
+        const UTF16String varName = utils::StringUtils::Utf8ToUtf16(name.c_str());
+
+        DWORD ret = GetEnvironmentVariableW(varName.c_str(), buffer, BUFFER_SIZE);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (ret == 0) // Not found
             return std::string();
 
         if (ret < BUFFER_SIZE) // Found and fits into buffer
+<<<<<<< HEAD
             return utils::StringUtils::Utf16ToUtf8(&buffer[0]);
+=======
+            return utils::StringUtils::Utf16ToUtf8(buffer);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         // Requires bigger buffer
         IL2CPP_ASSERT(ret >= BUFFER_SIZE);
 
+<<<<<<< HEAD
         buffer.resize(ret + 1);
 
         ret = GetEnvironmentVariableW(varName.c_str(), &buffer[0], ret + 1);
         IL2CPP_ASSERT(ret != 0);
 
         return utils::StringUtils::Utf16ToUtf8(&buffer[0]);
+=======
+        Il2CppChar* bigbuffer = new Il2CppChar[ret + 1];
+
+        ret = GetEnvironmentVariableW(varName.c_str(), bigbuffer, ret + 1);
+        IL2CPP_ASSERT(ret != 0);
+
+        std::string variableValue(utils::StringUtils::Utf16ToUtf8(bigbuffer));
+
+        delete bigbuffer;
+
+        return variableValue;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Environment::SetEnvironmentVariable(const std::string& name, const std::string& value)
@@ -174,11 +199,16 @@ namespace os
 
         return home_directory;
 #else
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::GetHomeDirectory);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::GetHomeDirectory);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return std::string();
 #endif
     }
 
+<<<<<<< HEAD
     std::vector<std::string> SplitLogicalDriveString(Il2CppChar *buffer, DWORD size)
     {
         std::vector<std::string> retVal;
@@ -218,11 +248,21 @@ namespace os
 #else
         return std::vector<std::string>();
 #endif
+=======
+    std::vector<std::string> Environment::GetLogicalDrives()
+    {
+        NOT_IMPLEMENTED_ICALL(Environment::GetLogicalDrives);
+        return std::vector<std::string>();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Environment::Exit(int result)
     {
+<<<<<<< HEAD
         ::exit(result);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::Exit);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     NORETURN void Environment::Abort()

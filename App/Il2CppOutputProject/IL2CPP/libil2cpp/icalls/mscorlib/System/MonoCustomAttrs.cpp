@@ -81,7 +81,11 @@ namespace System
         const MethodInfo* attributeConstructor = vm::Class::GetMethodFromName(attribute->klass, ".ctor", 0);
 
         if (attributeConstructor == NULL)
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED_ICALL(MonoCustomAttrs::GetCustomAttributesDataInternal);
+=======
+            NOT_IMPLEMENTED_ICALL(MonoCustomAttrs::GetCustomAttributesDataInternal);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         Il2CppObject* customAttributeData = vm::Object::New(il2cpp_defaults.customattribute_data_class);
         params[0] = vm::Reflection::GetMethodObject(attributeConstructor, NULL);
@@ -99,16 +103,27 @@ namespace System
         if (!customAttributeDataConstructor)
             customAttributeDataConstructor = vm::Class::GetMethodFromName(il2cpp_defaults.customattribute_data_class, ".ctor", 4);
 
+<<<<<<< HEAD
         const MethodInfo* attributeConstructor = vm::Class::GetMethodFromNameFlags(attribute->klass, ".ctor", vm::Class::IgnoreNumberOfArguments, METHOD_ATTRIBUTE_PUBLIC);
 
         if (attributeConstructor == NULL)
             IL2CPP_NOT_IMPLEMENTED_ICALL(MonoCustomAttrs::GetCustomAttributesDataInternal);
+=======
+        const MethodInfo* attributeConstructor = vm::Class::GetMethodFromName(attribute->klass, ".ctor", 0);
+
+        if (attributeConstructor == NULL)
+            NOT_IMPLEMENTED_ICALL(MonoCustomAttrs::GetCustomAttributesDataInternal);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         Il2CppObject* customAttributeData = vm::Object::New(il2cpp_defaults.customattribute_data_class);
         int argCount = 0;
         void* nullArg = NULL;
         params[0] = vm::Reflection::GetMethodObject(attributeConstructor, NULL);
+<<<<<<< HEAD
         params[1] = vm::Reflection::GetAssemblyObject(attribute->klass->image->assembly);
+=======
+        params[1] = vm::Reflection::GetAssemblyObject(MetadataCache::GetAssemblyFromIndex(attribute->klass->image->assemblyIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         params[2] = &nullArg;
         params[3] = &argCount;
         vm::Runtime::Invoke(customAttributeDataConstructor, customAttributeData, params, NULL);

@@ -41,12 +41,20 @@ void* il2cpp::gc::GarbageCollector::MakeDescriptorForArray()
 
 void il2cpp::gc::GarbageCollector::StopWorld()
 {
+<<<<<<< HEAD
     IL2CPP_NOT_IMPLEMENTED(il2cpp::gc::GarbageCollector::StopWorld);
+=======
+    NOT_IMPLEMENTED(il2cpp::gc::GarbageCollector::StopWorld);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 void il2cpp::gc::GarbageCollector::StartWorld()
 {
+<<<<<<< HEAD
     IL2CPP_NOT_IMPLEMENTED(il2cpp::gc::GarbageCollector::StartWorld);
+=======
+    NOT_IMPLEMENTED(il2cpp::gc::GarbageCollector::StartWorld);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 void
@@ -123,12 +131,15 @@ il2cpp::gc::GarbageCollector::Disable()
 {
 }
 
+<<<<<<< HEAD
 bool
 il2cpp::gc::GarbageCollector::IsDisabled()
 {
     return true;
 }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 int64_t
 il2cpp::gc::GarbageCollector::GetUsedHeapSize(void)
 {

@@ -33,17 +33,30 @@ namespace Reflection
         if (type)
         {
             klass = vm::Class::FromIl2CppType((Il2CppType*)type);
+<<<<<<< HEAD
             if (il2cpp_class_get_generic_type_definition(methodInfo->klass) != il2cpp_class_get_generic_type_definition(klass))
+=======
+            if (il2cpp_class_get_generic_type_definition(methodInfo->declaring_type) != il2cpp_class_get_generic_type_definition(klass))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return NULL;
 
             // See the VerifyTwoArgumentGetMethodFromHandleWithGenericType for the failing test. Once we have support for inflating methods
             // we can implement this case as well and make that test pass.
+<<<<<<< HEAD
             if (methodInfo->klass != klass)
                 IL2CPP_NOT_IMPLEMENTED_ICALL(MethodBase::GetMethodFromHandleInternalType);
         }
         else
         {
             klass = methodInfo->klass;
+=======
+            if (methodInfo->declaring_type != klass)
+                NOT_IMPLEMENTED_ICALL(MethodBase::GetMethodFromHandleInternalType);
+        }
+        else
+        {
+            klass = methodInfo->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
         return il2cpp::vm::Reflection::GetMethodObject(methodInfo, klass);
     }
@@ -86,7 +99,11 @@ namespace Reflection
                 }
                 else if (klass->genericContainerIndex != kGenericContainerIndexInvalid)
                 {
+<<<<<<< HEAD
                     IL2CPP_NOT_IMPLEMENTED(il2cpp_method_get_equivalent_method: generic_container_case);
+=======
+                    NOT_IMPLEMENTED(il2cpp_method_get_equivalent_method: generic_container_case);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     //const Il2CppGenericContainer *genericContainer = il2cpp::vm::MetadataCache::GetGenericContainerFromIndex(klass->genericContainerIndex);
                     //newCtx.class_inst = genericContainer->context.class_inst;
                 }
@@ -96,11 +113,19 @@ namespace Reflection
             }
         }
 
+<<<<<<< HEAD
         il2cpp::vm::Class::SetupMethods(method->klass);
 
         for (i = 0; i < method->klass->method_count; ++i)
         {
             if (method->klass->methods[i] == method)
+=======
+        il2cpp::vm::Class::SetupMethods(method->declaring_type);
+
+        for (i = 0; i < method->declaring_type->method_count; ++i)
+        {
+            if (method->declaring_type->methods[i] == method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 offset = i;
                 break;
@@ -121,10 +146,17 @@ namespace Reflection
         if (type_handle && genericCheck)
         {
             klass = il2cpp_class_from_il2cpp_type((Il2CppType*)type_handle);
+<<<<<<< HEAD
             if (il2cpp_class_get_generic_type_definition(method->klass) != il2cpp_class_get_generic_type_definition(klass))
                 return NULL;
 
             if (method->klass != klass)
+=======
+            if (il2cpp_class_get_generic_type_definition(method->declaring_type) != il2cpp_class_get_generic_type_definition(klass))
+                return NULL;
+
+            if (method->declaring_type != klass)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 method = il2cpp_method_get_equivalent_method(method, klass);
                 if (!method)
@@ -134,7 +166,11 @@ namespace Reflection
         else if (type_handle)
             klass = il2cpp_class_from_il2cpp_type((Il2CppType*)type_handle);
         else
+<<<<<<< HEAD
             klass = method->klass;
+=======
+            klass = method->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         res = il2cpp_method_get_object(method, klass);
         return res;

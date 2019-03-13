@@ -3,7 +3,10 @@
 #if IL2CPP_TARGET_POSIX
 
 #include <pthread.h>
+<<<<<<< HEAD
 #include <stdint.h>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <limits.h>
 #include "utils/NonCopyable.h"
 #include "os/WaitStatus.h"

@@ -340,7 +340,11 @@ namespace vm
                 // TryAquire, dont return, unaquire the installedMonitor, go back through the logic again to grab a
                 // a valid monitor.
 
+<<<<<<< HEAD
                 if (os::Atomic::ReadPointer(&obj->monitor) != installedMonitor)
+=======
+                if (!obj->monitor)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 {
                     installedMonitor->Unacquire();
                     continue;

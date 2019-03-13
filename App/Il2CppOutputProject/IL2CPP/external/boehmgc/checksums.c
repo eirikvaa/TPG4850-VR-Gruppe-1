@@ -17,6 +17,12 @@
 
 /* This is debugging code intended to verify the results of dirty bit   */
 /* computations. Works only in a single threaded environment.           */
+<<<<<<< HEAD
+=======
+/* We assume that stubborn objects are changed only when they are       */
+/* enabled for writing.  (Certain kinds of writing are actually         */
+/* safe under other conditions.)                                        */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #define NSUMS 10000
 
 #define OFFSET 0x10000
@@ -36,6 +42,7 @@ STATIC word GC_faulted[NSUMS] = { 0 };
 
 STATIC size_t GC_n_faulted = 0;
 
+<<<<<<< HEAD
 #if defined(MPROTECT_VDB) && !defined(DARWIN)
   void GC_record_fault(struct hblk * h)
   {
@@ -46,12 +53,30 @@ STATIC size_t GC_n_faulted = 0;
     GC_faulted[GC_n_faulted++] = page;
   }
 #endif
+=======
+void GC_record_fault(struct hblk * h)
+{
+    word page = (word)h;
+
+    page += GC_page_size - 1;
+    page &= ~(GC_page_size - 1);
+    if (GC_n_faulted >= NSUMS) ABORT("write fault log overflowed");
+    GC_faulted[GC_n_faulted++] = page;
+}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 STATIC GC_bool GC_was_faulted(struct hblk *h)
 {
     size_t i;
+<<<<<<< HEAD
     word page = (word)h & ~(GC_page_size - 1);
 
+=======
+    word page = (word)h;
+
+    page += GC_page_size - 1;
+    page &= ~(GC_page_size - 1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     for (i = 0; i < GC_n_faulted; ++i) {
         if (GC_faulted[i] == page) return TRUE;
     }
@@ -70,10 +95,35 @@ STATIC word GC_checksum(struct hblk *h)
     return(result | 0x80000000 /* doesn't look like pointer */);
 }
 
+<<<<<<< HEAD
 int GC_n_dirty_errors = 0;
 int GC_n_faulted_dirty_errors = 0;
 unsigned long GC_n_clean = 0;
 unsigned long GC_n_dirty = 0;
+=======
+#ifdef STUBBORN_ALLOC
+  /* Check whether a stubborn object from the given block appears on    */
+  /* the appropriate free list.                                         */
+  STATIC GC_bool GC_on_free_list(struct hblk *h)
+  {
+    hdr * hhdr = HDR(h);
+    size_t sz = BYTES_TO_WORDS(hhdr -> hb_sz);
+    ptr_t p;
+
+    if (sz > MAXOBJWORDS) return(FALSE);
+    for (p = GC_sobjfreelist[sz]; p != 0; p = obj_link(p)) {
+        if (HBLKPTR(p) == h) return(TRUE);
+    }
+    return(FALSE);
+  }
+#endif
+
+int GC_n_dirty_errors = 0;
+int GC_n_faulted_dirty_errors = 0;
+int GC_n_changed_errors = 0;
+int GC_n_clean = 0;
+int GC_n_dirty = 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 STATIC void GC_update_check_page(struct hblk *h, int index)
 {
@@ -107,6 +157,19 @@ STATIC void GC_update_check_page(struct hblk *h, int index)
             /* Set breakpoint here */GC_n_dirty_errors++;
             if (was_faulted) GC_n_faulted_dirty_errors++;
         }
+<<<<<<< HEAD
+=======
+#       ifdef STUBBORN_ALLOC
+          if (!HBLK_IS_FREE(hhdr)
+            && hhdr -> hb_obj_kind == STUBBORN
+            && !GC_page_was_changed(h)
+            && !GC_on_free_list(h)) {
+            /* if GC_on_free_list(h) then reclaim may have touched it   */
+            /* without any allocations taking place.                    */
+            /* Set breakpoint here */GC_n_changed_errors++;
+          }
+#       endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
     pe -> new_valid = TRUE;
     pe -> block = h + OFFSET;
@@ -117,8 +180,16 @@ word GC_bytes_in_used_blocks = 0;
 STATIC void GC_add_block(struct hblk *h, word dummy GC_ATTR_UNUSED)
 {
    hdr * hhdr = HDR(h);
+<<<<<<< HEAD
 
    GC_bytes_in_used_blocks += (hhdr->hb_sz + HBLKSIZE-1) & ~(HBLKSIZE-1);
+=======
+   size_t bytes = hhdr -> hb_sz;
+
+   bytes += HBLKSIZE-1;
+   bytes &= ~(HBLKSIZE-1);
+   GC_bytes_in_used_blocks += bytes;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 STATIC void GC_check_blocks(void)
@@ -137,7 +208,11 @@ STATIC void GC_check_blocks(void)
     }
 }
 
+<<<<<<< HEAD
 /* Should be called immediately after GC_read_dirty.    */
+=======
+/* Should be called immediately after GC_read_dirty and GC_read_changed. */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 void GC_check_dirty(void)
 {
     int index;
@@ -149,6 +224,10 @@ void GC_check_dirty(void)
 
     GC_n_dirty_errors = 0;
     GC_n_faulted_dirty_errors = 0;
+<<<<<<< HEAD
+=======
+    GC_n_changed_errors = 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     GC_n_clean = 0;
     GC_n_dirty = 0;
 
@@ -164,11 +243,28 @@ void GC_check_dirty(void)
     }
 out:
     GC_COND_LOG_PRINTF("Checked %lu clean and %lu dirty pages\n",
+<<<<<<< HEAD
                        GC_n_clean, GC_n_dirty);
+=======
+                       (unsigned long)GC_n_clean, (unsigned long)GC_n_dirty);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (GC_n_dirty_errors > 0) {
         GC_err_printf("Found %d dirty bit errors (%d were faulted)\n",
                       GC_n_dirty_errors, GC_n_faulted_dirty_errors);
     }
+<<<<<<< HEAD
+=======
+    if (GC_n_changed_errors > 0) {
+        GC_err_printf("Found %lu changed bit errors\n",
+                      (unsigned long)GC_n_changed_errors);
+        GC_err_printf(
+                "These may be benign (provoked by nonpointer changes)\n");
+#       ifdef THREADS
+          GC_err_printf(
+            "Also expect 1 per thread currently allocating a stubborn obj\n");
+#       endif
+    }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     for (i = 0; i < GC_n_faulted; ++i) {
         GC_faulted[i] = 0; /* Don't expose block pointers to GC */
     }

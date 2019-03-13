@@ -1,6 +1,9 @@
 #include "il2cpp-config.h"
 #include <stddef.h>
+<<<<<<< HEAD
 #include "gc/GarbageCollector.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "icalls/mscorlib/System.Reflection/MonoField.h"
 #include "utils/StringUtils.h"
 #include "vm/Class.h"
@@ -33,7 +36,11 @@ namespace Reflection
 
         parent = declaring ? field->field->parent : field->klass;
 
+<<<<<<< HEAD
         return il2cpp::vm::Reflection::GetTypeObject(&parent->byval_arg);
+=======
+        return il2cpp::vm::Reflection::GetTypeObject(parent->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     int32_t MonoField::GetFieldOffset(Il2CppReflectionField * field)
@@ -50,14 +57,21 @@ namespace Reflection
     {
         FieldInfo* fieldInfo = field->field;
         Il2CppClass* fieldType = Class::FromIl2CppType(fieldInfo->type);
+<<<<<<< HEAD
         vm::Class::Init(fieldType);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifndef NET_4_0 //This check is done in managed code in .NET 4.5+
         if (value != NULL && !Class::IsAssignableFrom(fieldType, value->klass))
         {
             Exception::Raise(Exception::GetArgumentException("value",
                     utils::StringUtils::Printf("Object of type '%s' cannot be converted to type '%s'.",
+<<<<<<< HEAD
                         Type::GetName(&value->klass->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME).c_str(),
+=======
+                        Type::GetName(value->klass->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME).c_str(),
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                         Type::GetName(fieldInfo->type, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME).c_str()
                         ).c_str()));
         }
@@ -69,7 +83,11 @@ namespace Reflection
         {
             if (fieldInfo->offset == THREAD_STATIC_FIELD_OFFSET)
             {
+<<<<<<< HEAD
                 IL2CPP_NOT_IMPLEMENTED(Field::StaticSetValue);
+=======
+                NOT_IMPLEMENTED(Field::StaticSetValue);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             }
 
             Runtime::ClassInit(fieldInfo->parent);
@@ -116,7 +134,10 @@ namespace Reflection
         else
         {
             memcpy(fieldAddress, &value, sizeof(Il2CppObject*));
+<<<<<<< HEAD
             il2cpp::gc::GarbageCollector::SetWriteBarrier((void**)fieldAddress);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
     }
 
@@ -168,14 +189,22 @@ namespace Reflection
 #if NET_4_0
     int32_t MonoField::get_core_clr_security_level(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(MonoField::get_core_clr_security_level);
+=======
+        NOT_IMPLEMENTED_ICALL(MonoField::get_core_clr_security_level);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return 0;
     }
 
     Il2CppObject* MonoField::ResolveType(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(MonoField::ResolveType);
+=======
+        NOT_IMPLEMENTED_ICALL(MonoField::ResolveType);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }

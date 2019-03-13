@@ -21,7 +21,11 @@ namespace System
 
     Il2CppReflectionType* Object::GetType(Il2CppObject* obj)
     {
+<<<<<<< HEAD
         return il2cpp::vm::Reflection::GetTypeObject(&obj->klass->byval_arg);
+=======
+        return il2cpp::vm::Reflection::GetTypeObject(obj->klass->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppObject* Object::MemberwiseClone(Il2CppObject* obj)

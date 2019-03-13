@@ -124,11 +124,14 @@ namespace vm
             return false;
         }
 
+<<<<<<< HEAD
         void SetAssemblyName(const AssemblyName& assemblyName)
         {
             _assembly_name = assemblyName;
         }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     private:
 
         std::string _namespace;
@@ -145,7 +148,11 @@ namespace vm
     {
     public:
 
+<<<<<<< HEAD
         TypeNameParser(const std::string &name, TypeNameParseInfo &info, bool is_nested);
+=======
+        TypeNameParser(std::string &name, TypeNameParseInfo &info, bool is_nested);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         TypeNameParser(std::string::const_iterator &begin, std::string::const_iterator &end, TypeNameParseInfo &info, bool is_nested);
 
         bool Parse(bool acceptAssemblyName = true);
@@ -217,7 +224,10 @@ namespace vm
         static bool IsGenericInstance(const Il2CppType *type);
         static Il2CppReflectionType* GetDeclaringType(const Il2CppType* type);
         static Il2CppArray* GetGenericArgumentsInternal(Il2CppReflectionType* type, bool runtimeArray);
+<<<<<<< HEAD
         static bool IsEqualToType(const Il2CppType *type, const Il2CppType *otherType);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     public:
         // internal

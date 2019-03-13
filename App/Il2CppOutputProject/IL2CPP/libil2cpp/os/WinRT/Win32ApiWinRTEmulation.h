@@ -78,12 +78,18 @@ BOOL WINAPI SetEnvironmentVariableW(LPCWSTR lpName, LPCWSTR lpValue);
 #define MapViewOfFile(hFileMappingObject, dwDesiredAccess, dwFileOffsetHigh, dwFileOffsetLow, dwNumberOfBytesToMap) \
     MapViewOfFileFromApp(hFileMappingObject, dwDesiredAccess, (static_cast<ULONG64>(dwFileOffsetHigh) << 32) | dwFileOffsetLow, dwNumberOfBytesToMap);
 
+<<<<<<< HEAD
 #if WINDOWS_SDK_BUILD_VERSION < 14393
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #define TlsAlloc() FlsAlloc(NULL)
 #define TlsGetValue FlsGetValue
 #define TlsSetValue FlsSetValue
 #define TlsFree FlsFree
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } // extern "C"
 
 #endif

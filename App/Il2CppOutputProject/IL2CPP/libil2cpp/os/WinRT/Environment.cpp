@@ -128,10 +128,15 @@ namespace os
                 return GetLocalAppDataFolder();
 
             default:
+<<<<<<< HEAD
                 IL2CPP_VM_RAISE_UNAUTHORIZED_ACCESS_EXCEPTION(L"Failed getting the path of a special folder: Access Denied.");
         }
 
         return std::string();
+=======
+                Exception::Raise(Exception::GetUnauthorizedAccessException(L"Failed getting the path of a special folder: Access Denied."));
+        }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 #if NET_4_0
@@ -139,8 +144,12 @@ namespace os
     bool Environment::Is64BitOs()
     {
 #if IL2CPP_TARGET_WINRT
+<<<<<<< HEAD
         IL2CPP_VM_NOT_SUPPORTED("Is64BitOs", L"It is not possible to check if the OS is a 64bit OS on the current platform.");
         return false;
+=======
+        vm::Exception::Raise(vm::Exception::GetPlatformNotSupportedException(L"It is not possible to check if the OS is a 64bit OS on the current platform."));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
         return true;
     }

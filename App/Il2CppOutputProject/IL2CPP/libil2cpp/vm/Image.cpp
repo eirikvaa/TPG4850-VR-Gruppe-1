@@ -2,6 +2,10 @@
 #include <vector>
 #include <map>
 #include <limits>
+<<<<<<< HEAD
+=======
+#include "os/MemoryMappedFile.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "os/Mutex.h"
 #include "utils/StringUtils.h"
 #include "vm/Class.h"
@@ -11,7 +15,10 @@
 #include "vm/Type.h"
 #include "utils/HashUtils.h"
 #include "utils/Il2CppHashMap.h"
+<<<<<<< HEAD
 #include "utils/MemoryMappedFile.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/StringUtils.h"
 #include "vm-utils/VmStringUtils.h"
 
@@ -65,7 +72,11 @@ namespace vm
 {
     const Il2CppAssembly* Image::GetAssembly(const Il2CppImage* image)
     {
+<<<<<<< HEAD
         return image->assembly;
+=======
+        return MetadataCache::GetAssemblyFromIndex(image->assemblyIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     typedef il2cpp::vm::StackFrames::const_reverse_iterator StackReverseIterator;
@@ -84,7 +95,11 @@ namespace vm
     {
         for (StackReverseIterator it = first; it != last; it++)
         {
+<<<<<<< HEAD
             Il2CppClass* klass = it->method->klass;
+=======
+            Il2CppClass* klass = it->method->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             if (klass->image != NULL && !IsSystemType(klass) && !IsSystemReflectionAssembly(klass))
             {
                 return it;
@@ -101,7 +116,11 @@ namespace vm
 
         if (imageIt != stack.rend())
         {
+<<<<<<< HEAD
             return imageIt->method->klass->image;
+=======
+            return imageIt->method->declaring_type->image;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         // Fallback to corlib if no image is found
@@ -119,7 +138,11 @@ namespace vm
 
             if (imageIt != stack.rend())
             {
+<<<<<<< HEAD
                 return imageIt->method->klass->image;
+=======
+                return imageIt->method->declaring_type->image;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             }
         }
 
@@ -402,7 +425,11 @@ namespace vm
     {
         os::FastAutoLock lock(&s_Mutex);
         for (std::map<Il2CppReflectionAssembly*, void*>::iterator i = s_CachedMemoryMappedResourceFiles.begin(); i != s_CachedMemoryMappedResourceFiles.end(); ++i)
+<<<<<<< HEAD
             utils::MemoryMappedFile::Unmap(i->second);
+=======
+            os::MemoryMappedFile::Unmap(i->second);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         s_CachedMemoryMappedResourceFiles.clear();
         s_CachedResourceData.clear();

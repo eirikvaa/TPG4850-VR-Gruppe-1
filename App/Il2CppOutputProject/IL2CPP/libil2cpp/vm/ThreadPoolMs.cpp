@@ -1,7 +1,10 @@
 #if NET_4_0
 
 #include "il2cpp-api.h"
+<<<<<<< HEAD
 #include "il2cpp-config.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/dynamic_array.h"
 #include "vm/ThreadPoolMs.h"
 #include "vm/Domain.h"
@@ -102,7 +105,11 @@ namespace vm
         il2cpp::gc::WriteBarrier::GenericStore(out_args, (Il2CppObject*)arr);
         *exc = NULL;
 
+<<<<<<< HEAD
         ret = vm::Runtime::InvokeArray(method, method->klass->valuetype ? il2cpp_object_unbox(target) : target, method->parameters_count > 0 ? msg->args : NULL, (Il2CppException**)exc);
+=======
+        ret = vm::Runtime::InvokeArray(method, method->declaring_type->valuetype ? il2cpp_object_unbox(target) : target, method->parameters_count > 0 ? msg->args : NULL, (Il2CppException**)exc);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         for (i = 0, j = 0; i < method->parameters_count; i++)
         {
@@ -117,6 +124,7 @@ namespace vm
 
         return ret;
     }
+<<<<<<< HEAD
 
     void ThreadPoolMs::Suspend()
     {
@@ -127,6 +135,8 @@ namespace vm
     {
         threadpool_ms_resume();
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } /* namespace vm */
 } /* namespace il2cpp */
 

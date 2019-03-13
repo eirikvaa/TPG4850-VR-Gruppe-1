@@ -172,7 +172,11 @@ namespace vm
 
     void LivenessState::TraverseGenericObject(Il2CppObject* object, LivenessState* state)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(LivenessState::TraverseGenericObject, "Use GC bitmap when we have one");
+=======
+        NOT_IMPLEMENTED_NO_ASSERT(LivenessState::TraverseGenericObject, "Use GC bitmap when we have one");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #if IL2CPP_HAS_GC_DESCRIPTORS
         size_t gc_desc = (size_t)(GET_CLASS(object)->gc_desc);

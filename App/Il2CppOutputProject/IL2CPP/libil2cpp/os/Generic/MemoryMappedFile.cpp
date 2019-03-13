@@ -3,14 +3,18 @@
 #if IL2CPP_USE_GENERIC_MEMORY_MAPPED_FILE
 #include "os/File.h"
 #include "os/MemoryMappedFile.h"
+<<<<<<< HEAD
 #include "os/Mutex.h"
 #include "utils/dynamic_array.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/Memory.h"
 
 namespace il2cpp
 {
 namespace os
 {
+<<<<<<< HEAD
     struct MemoryFileData
     {
         MemoryFileData(const char* name, int64_t dataSize)
@@ -119,10 +123,22 @@ namespace os
             {
                 if (error != NULL)
                     *error = COULD_NOT_MAP_MEMORY;
+=======
+    void* MemoryMappedFile::Map(FileHandle* file, size_t length, size_t offset)
+    {
+        int error = 0;
+
+        if (!length)
+        {
+            length = os::File::GetLength(file, &error);
+            if (error != 0)
+            {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 return NULL;
             }
         }
 
+<<<<<<< HEAD
         void* buffer = IL2CPP_MALLOC_ZERO((size_t)*length);
 
         os::File::Seek(mappedFileHandle, offset, 0, &fileError);
@@ -140,12 +156,28 @@ namespace os
             IL2CPP_FREE(buffer);
             if (error != NULL)
                 *error = COULD_NOT_MAP_MEMORY;
+=======
+        void* buffer = IL2CPP_MALLOC(length);
+
+        os::File::Seek(file, offset, 0, &error);
+        if (error != 0)
+        {
+            IL2CPP_FREE(buffer);
+            return NULL;
+        }
+
+        int bytesRead = File::Read(file, (char*)buffer, (int)length, &error);
+        if (bytesRead != length || error != 0)
+        {
+            IL2CPP_FREE(buffer);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return NULL;
         }
 
         return buffer;
     }
 
+<<<<<<< HEAD
     static MemoryMappedFile::MemoryMappedFileHandle ViewMemoryFile(void* mappedFileHandle, int64_t* length, int64_t offset, MemoryMappedFileAccess access, MemoryMappedFileError* error)
     {
         os::FastAutoLock lock(&s_Mutex);
@@ -208,6 +240,21 @@ namespace os
     void MemoryMappedFile::ConfigureHandleInheritability(FileHandle* file, bool inheritability)
     {
     }
+=======
+    void MemoryMappedFile::Unmap(void* address, size_t length)
+    {
+        IL2CPP_FREE(address);
+    }
+
+#if IL2CPP_TARGET_POSIX
+    void* MemoryMappedFile::Map(int fd, size_t length, size_t offset)
+    {
+        // Not Supported
+        return NULL;
+    }
+
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 }
 #endif

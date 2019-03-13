@@ -7,10 +7,17 @@
 #include "utils/StringUtils.h"
 #include "utils/PathUtils.h"
 #include "os/File.h"
+<<<<<<< HEAD
 #include "os/Mutex.h"
 #include "os/Path.h"
 #include "utils/Memory.h"
 #include "utils/MemoryMappedFile.h"
+=======
+#include "os/MemoryMappedFile.h"
+#include "os/Mutex.h"
+#include "os/Path.h"
+#include "utils/Memory.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/Runtime.h"
 #include "vm/Array.h"
 #include "vm/Assembly.h"
@@ -50,24 +57,40 @@ namespace Reflection
 
     Il2CppString*  Assembly::get_location(Il2CppReflectionAssembly *assembly)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Assembly::get_location, "Assembly::get_location is not functional on il2cpp");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(Assembly::get_location, "Assembly::get_location is not functional on il2cpp");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return vm::String::New("");
     }
 
     Il2CppReflectionAssembly* Assembly::GetEntryAssembly()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Assembly::GetEntryAssembly, "In the case of Unity this is always NULL. For a normal exe this is the assembly with Main.");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(Assembly::GetEntryAssembly, "In the case of Unity this is always NULL. For a normal exe this is the assembly with Main.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return NULL;
     }
 
     Il2CppReflectionAssembly* Assembly::GetExecutingAssembly()
     {
+<<<<<<< HEAD
         return vm::Reflection::GetAssemblyObject(vm::Image::GetExecutingImage()->assembly);
+=======
+        return vm::Reflection::GetAssemblyObject(MetadataCache::GetAssemblyFromIndex(vm::Image::GetExecutingImage()->assemblyIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 #define CHECK_IF_NULL(v)    \
     if ( (v) == NULL && throwOnError ) \
+<<<<<<< HEAD
         Exception::Raise (Exception::GetTypeLoadException (info)); \
+=======
+        Exception::Raise (Exception::GetTypeLoadException ()); \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if ( (v) == NULL ) \
         return NULL;
 
@@ -127,7 +150,11 @@ namespace Reflection
         FieldInfo* codebaseField = Class::GetFieldFromName(assemblyNameType, "codebase");
 
         if (assemblyNameField != NULL)
+<<<<<<< HEAD
             Field::SetValue(assemblyNameObject, assemblyNameField, String::New(assemblyName->name));
+=======
+            Field::SetValue(assemblyNameObject, assemblyNameField, String::New(MetadataCache::GetStringFromIndex(assemblyName->nameIndex)));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (codebaseField != NULL)
             Field::SetValue(assemblyNameObject, codebaseField, get_code_base(ass, false));
@@ -197,10 +224,17 @@ namespace Reflection
             // Set it to non-null only if public key token is not all zeroes
             for (int i = 0; i < kPublicKeyByteLength; i++)
             {
+<<<<<<< HEAD
                 if (assemblyName->public_key_token[i] != 0)
                 {
                     keyTokenManaged = Array::New(il2cpp_defaults.byte_class, kPublicKeyByteLength);
                     memcpy(il2cpp::vm::Array::GetFirstElementAddress(keyTokenManaged), assemblyName->public_key_token, kPublicKeyByteLength);
+=======
+                if (assemblyName->publicKeyToken[i] != 0)
+                {
+                    keyTokenManaged = Array::New(il2cpp_defaults.byte_class, kPublicKeyByteLength);
+                    memcpy(il2cpp::vm::Array::GetFirstElementAddress(keyTokenManaged), assemblyName->publicKeyToken, kPublicKeyByteLength);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     break;
                 }
             }
@@ -269,25 +303,41 @@ namespace Reflection
 
     bool Assembly::LoadPermissions(mscorlib_System_Reflection_Assembly * a, intptr_t* minimum, int32_t* minLength, intptr_t* optional, int32_t* optLength, intptr_t* refused, int32_t* refLength)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Assembly::LoadPermissions);
+=======
+        NOT_IMPLEMENTED_ICALL(Assembly::LoadPermissions);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return false;
     }
 
     Il2CppReflectionAssembly* Assembly::GetCallingAssembly()
     {
+<<<<<<< HEAD
         return vm::Reflection::GetAssemblyObject(Image::GetCallingImage()->assembly);
+=======
+        return vm::Reflection::GetAssemblyObject(MetadataCache::GetAssemblyFromIndex(Image::GetCallingImage()->assemblyIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppString* Assembly::get_code_base(Il2CppReflectionAssembly * assembly, bool escaped)
     {
         std::string executableDirectory = utils::PathUtils::DirectoryName(os::Path::GetExecutablePath());
         std::replace(executableDirectory.begin(), executableDirectory.end(), '\\', '/');
+<<<<<<< HEAD
         return vm::String::New(utils::StringUtils::Printf("file://%s/%s.dll", executableDirectory.c_str(), assembly->assembly->aname.name).c_str());
+=======
+        return vm::String::New(utils::StringUtils::Printf("file://%s/%s.dll", executableDirectory.c_str(), MetadataCache::GetStringFromIndex(assembly->assembly->aname.nameIndex)).c_str());
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppArray* Assembly::GetTypes(Il2CppReflectionAssembly* thisPtr, bool exportedOnly)
     {
+<<<<<<< HEAD
         const Il2CppImage* image = thisPtr->assembly->image;
+=======
+        const Il2CppImage* image = MetadataCache::GetImageFromIndex(thisPtr->assembly->imageIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return Module::InternalGetTypes(vm::Reflection::GetModuleObject(image));
     }
 
@@ -300,7 +350,11 @@ namespace Reflection
 
     Il2CppReflectionMethod* Assembly::get_EntryPoint(Il2CppReflectionAssembly* self)
     {
+<<<<<<< HEAD
         const MethodInfo* method = Image::GetEntryPoint(self->assembly->image);
+=======
+        const MethodInfo* method = Image::GetEntryPoint(MetadataCache::GetImageFromIndex(self->assembly->imageIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (method == NULL)
             return NULL;
 
@@ -380,7 +434,11 @@ namespace Reflection
     {
         std::string resourcesDirectory = utils::PathUtils::Combine(utils::Runtime::GetDataDir(), utils::StringView<char>("Resources"));
 
+<<<<<<< HEAD
         std::string resourceFileName(assembly->assembly->image->name);
+=======
+        std::string resourceFileName(MetadataCache::GetImageFromIndex(assembly->assembly->imageIndex)->name);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         resourceFileName += "-resources.dat";
 
         std::string resourceFilePath = utils::PathUtils::Combine(resourcesDirectory, resourceFileName);
@@ -390,12 +448,20 @@ namespace Reflection
         if (error != 0)
             return NULL;
 
+<<<<<<< HEAD
         void* fileBuffer = utils::MemoryMappedFile::Map(handle);
+=======
+        void* fileBuffer = os::MemoryMappedFile::Map(handle);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         os::File::Close(handle, &error);
         if (error != 0)
         {
+<<<<<<< HEAD
             utils::MemoryMappedFile::Unmap(fileBuffer);
+=======
+            os::MemoryMappedFile::Unmap(fileBuffer);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             fileBuffer = NULL;
             return NULL;
         }
@@ -469,7 +535,11 @@ namespace Reflection
             std::vector<char> resourceName(resourceNameSize);
             bytesRead += ReadFromBuffer((uint8_t*)fileBuffer, bytesRead, resourceNameSize, &resourceName[0]);
 
+<<<<<<< HEAD
             resourceRecords.push_back(EmbeddedResourceRecord(assembly->assembly->image, std::string(resourceName.begin(), resourceName.end()), currentResourceDataOffset, resourceDataSize));
+=======
+            resourceRecords.push_back(EmbeddedResourceRecord(MetadataCache::GetImageFromIndex(assembly->assembly->imageIndex), std::string(resourceName.begin(), resourceName.end()), currentResourceDataOffset, resourceDataSize));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             currentResourceDataOffset += resourceDataSize;
         }
@@ -511,7 +581,11 @@ namespace Reflection
         {
             info->location = IL2CPP_RESOURCE_LOCATION_EMBEDDED | IL2CPP_RESOURCE_LOCATION_IN_MANIFEST;
 
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Assembly::GetManifestResourceInfoInternal, "We have not yet implemented file or assembly resources.");
+=======
+            NOT_IMPLEMENTED_ICALL_NO_ASSERT(Assembly::GetManifestResourceInfoInternal, "We have not yet implemented file or assembly resources.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             return true;
         }
@@ -525,7 +599,11 @@ namespace Reflection
         std::vector<EmbeddedResourceRecord>::iterator resource = std::find_if(resourceRecords.begin(), resourceRecords.end(), ResourceNameMatcher(utils::StringUtils::Utf16ToUtf8(name->chars)));
         if (resource != resourceRecords.end())
         {
+<<<<<<< HEAD
             *module = vm::Reflection::GetModuleObject(assembly->assembly->image);
+=======
+            *module = vm::Reflection::GetModuleObject(MetadataCache::GetImageFromIndex(assembly->assembly->imageIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             *size = resource->size;
             intptr_t result;
             result = (intptr_t)LoadResourceData(assembly, *resource);

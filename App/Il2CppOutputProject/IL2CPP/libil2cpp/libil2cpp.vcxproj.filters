@@ -715,6 +715,10 @@
     <ClCompile Include="icalls\mscorlib\System.Reflection\PropertyInfo.cpp">
       <Filter>icalls\mscorlib\System.Reflection</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="mono-structs.cpp" />
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClCompile Include="vm\ThreadPoolMs.cpp">
       <Filter>vm</Filter>
     </ClCompile>
@@ -746,6 +750,12 @@
     <ClCompile Include="utils\Exception.cpp">
       <Filter>utils</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="os\c-api\Console.cpp">
+      <Filter>os\c-api</Filter>
+    </ClCompile>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClCompile Include="os\c-api\Error.cpp">
       <Filter>os\c-api</Filter>
     </ClCompile>
@@ -827,6 +837,7 @@
     <ClCompile Include="os\Handle.cpp">
       <Filter>os</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="os\Generic\TimeZoneInfo.cpp">
       <Filter>os\Generic</Filter>
     </ClCompile>
@@ -860,13 +871,26 @@
     <ClCompile Include="vm\ScopedThreadAttacher.cpp">
       <Filter>vm</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="os\Unity\AtomicQueue.cpp">
+      <Filter>os\Unity</Filter>
+    </ClCompile>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blob.h" />
     <ClInclude Include="char-conversions.h" />
+<<<<<<< HEAD
     <ClInclude Include="il2cpp-config.h" />
     <ClInclude Include="metadata.h" />
     <ClInclude Include="number-formatter.h" />
+=======
+    <ClInclude Include="class-internals.h" />
+    <ClInclude Include="il2cpp-config.h" />
+    <ClInclude Include="metadata.h" />
+    <ClInclude Include="number-formatter.h" />
+    <ClInclude Include="object-internals.h" />
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClInclude Include="utils\dynamic_array.h">
       <Filter>utils</Filter>
     </ClInclude>
@@ -1822,7 +1846,10 @@
       <Filter>os\c-api</Filter>
     </ClInclude>
     <ClInclude Include="os\c-api\Allocator.h" />
+<<<<<<< HEAD
     <ClInclude Include="os\c-api\Allocator.h" />
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClInclude Include="os\c-api\Console.cpp" />
     <ClInclude Include="il2cpp-config-api.h" />
     <ClInclude Include="os\TimeZoneInfo.h">
@@ -1866,6 +1893,7 @@
     <ClInclude Include="il2cpp-tabledefs.h" />
     <ClInclude Include="os\c-api\Allocator.h" />
     <ClInclude Include="vm-utils\Debugger.h" />
+<<<<<<< HEAD
     <ClInclude Include="os\c-api\Allocator.h" />
     <ClInclude Include="os\c-api\Allocator.h" />
     <ClInclude Include="os\c-api\Allocator.h" />
@@ -1886,13 +1914,23 @@
     <ClInclude Include="vm\ScopedThreadAttacher.h">
       <Filter>vm</Filter>
     </ClInclude>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="blob.h" />
     <ClInclude Include="char-conversions.h" />
+<<<<<<< HEAD
     <ClInclude Include="il2cpp-config.h" />
     <ClInclude Include="metadata.h" />
     <ClInclude Include="number-formatter.h" />
+=======
+    <ClInclude Include="class-internals.h" />
+    <ClInclude Include="il2cpp-config.h" />
+    <ClInclude Include="metadata.h" />
+    <ClInclude Include="number-formatter.h" />
+    <ClInclude Include="object-internals.h" />
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClInclude Include="tabledefs.h" />
     <ClInclude Include="il2cpp-api.h" />
     <ClInclude Include="vm\Class.h">

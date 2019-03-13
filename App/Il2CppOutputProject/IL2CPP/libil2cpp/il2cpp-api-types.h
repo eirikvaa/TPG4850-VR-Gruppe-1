@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <stddef.h>
 
+<<<<<<< HEAD
 #if !defined(__cplusplus)
 #define bool uint8_t
 #endif // !__cplusplus
@@ -31,6 +32,30 @@ typedef struct Il2CppManagedMemorySnapshot Il2CppManagedMemorySnapshot;
 typedef struct Il2CppCustomAttrInfo Il2CppCustomAttrInfo;
 
 typedef enum
+=======
+struct Il2CppClass;
+struct Il2CppType;
+struct EventInfo;
+struct MethodInfo;
+struct FieldInfo;
+struct PropertyInfo;
+
+struct Il2CppAssembly;
+struct Il2CppArray;
+struct Il2CppDelegate;
+struct Il2CppDomain;
+struct Il2CppImage;
+struct Il2CppException;
+struct Il2CppProfiler;
+struct Il2CppObject;
+struct Il2CppReflectionMethod;
+struct Il2CppReflectionType;
+struct Il2CppString;
+struct Il2CppThread;
+struct Il2CppAsyncResult;
+
+enum Il2CppProfileFlags
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     IL2CPP_PROFILE_NONE = 0,
     IL2CPP_PROFILE_APPDOMAIN_EVENTS = 1 << 0,
@@ -54,6 +79,7 @@ typedef enum
     IL2CPP_PROFILE_IOMAP_EVENTS     = 1 << 18, /* this should likely be removed, too */
     IL2CPP_PROFILE_GC_MOVES         = 1 << 19,
     IL2CPP_PROFILE_FILEIO           = 1 << 20
+<<<<<<< HEAD
 } Il2CppProfileFlags;
 
 typedef enum
@@ -63,6 +89,17 @@ typedef enum
 } Il2CppProfileFileIOKind;
 
 typedef enum
+=======
+};
+
+enum Il2CppProfileFileIOKind
+{
+    IL2CPP_PROFILE_FILEIO_WRITE = 0,
+    IL2CPP_PROFILE_FILEIO_READ
+};
+
+enum Il2CppGCEvent
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     IL2CPP_GC_EVENT_START,
     IL2CPP_GC_EVENT_MARK_START,
@@ -74,9 +111,15 @@ typedef enum
     IL2CPP_GC_EVENT_POST_STOP_WORLD,
     IL2CPP_GC_EVENT_PRE_START_WORLD,
     IL2CPP_GC_EVENT_POST_START_WORLD
+<<<<<<< HEAD
 } Il2CppGCEvent;
 
 typedef enum
+=======
+};
+
+enum Il2CppStat
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     IL2CPP_STAT_NEW_OBJECT_COUNT,
     IL2CPP_STAT_INITIALIZED_CLASS_COUNT,
@@ -94,6 +137,7 @@ typedef enum
     //IL2CPP_STAT_MAJOR_GC_COUNT,
     //IL2CPP_STAT_MINOR_GC_TIME_USECS,
     //IL2CPP_STAT_MAJOR_GC_TIME_USECS
+<<<<<<< HEAD
 } Il2CppStat;
 
 typedef enum
@@ -106,6 +150,20 @@ typedef struct Il2CppStackFrameInfo
 {
     const MethodInfo *method;
 } Il2CppStackFrameInfo;
+=======
+};
+
+enum Il2CppRuntimeUnhandledExceptionPolicy
+{
+    IL2CPP_UNHANDLED_POLICY_LEGACY,
+    IL2CPP_UNHANDLED_POLICY_CURRENT
+};
+
+struct Il2CppStackFrameInfo
+{
+    const MethodInfo *method;
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 typedef struct
 {
@@ -149,7 +207,10 @@ typedef void (*Il2CppProfileAllocFunc) (Il2CppProfiler* prof, Il2CppObject *obj,
 typedef void (*Il2CppProfileGCFunc) (Il2CppProfiler* prof, Il2CppGCEvent event, int generation);
 typedef void (*Il2CppProfileGCResizeFunc) (Il2CppProfiler* prof, int64_t new_size);
 typedef void (*Il2CppProfileFileIOFunc) (Il2CppProfiler* prof, Il2CppProfileFileIOKind kind, int count);
+<<<<<<< HEAD
 typedef void (*Il2CppProfileThreadFunc) (Il2CppProfiler *prof, unsigned long tid);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 typedef const Il2CppNativeChar* (*Il2CppSetFindPlugInCallback)(const Il2CppNativeChar*);
 typedef void (*Il2CppLogCallback)(const char*);

@@ -12,15 +12,24 @@ int main(void) {
   GC_INIT();
 
   for (i = 0; i < COUNT; i++) {
+<<<<<<< HEAD
     int **p = GC_NEW(int *);
     int *q = (int*)GC_MALLOC_ATOMIC(sizeof(int));
+=======
+    int **p = GC_MALLOC(sizeof(int *));
+    int *q = GC_MALLOC_ATOMIC(sizeof(int));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (p == 0 || *p != 0) {
       fprintf(stderr, "GC_malloc returned garbage (or NULL)\n");
       exit(1);
     }
 
+<<<<<<< HEAD
     *p = (int*)GC_REALLOC(q, 2 * sizeof(int));
+=======
+    *p = GC_REALLOC(q, 2 * sizeof(int));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (i % 10 == 0) {
       unsigned long heap_size = (unsigned long)GC_get_heap_size();

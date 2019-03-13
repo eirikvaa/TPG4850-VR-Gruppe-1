@@ -59,11 +59,19 @@
 
 typedef void (* oom_fn)(void);
 
+<<<<<<< HEAD
 # define OUT_OF_MEMORY { if (CORD_oom_fn != (oom_fn) 0) (*CORD_oom_fn)(); \
                          ABORT("Out of memory"); }
 # define ABORT(msg) { fprintf(stderr, "%s\n", msg); abort(); }
 
 #if GC_GNUC_PREREQ(3, 4)
+=======
+# define OUT_OF_MEMORY {  if (CORD_oom_fn != (oom_fn) 0) (*CORD_oom_fn)(); \
+              ABORT("Out of memory\n"); }
+# define ABORT(msg) { fprintf(stderr, "%s\n", msg); abort(); }
+
+#if __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # define CORD_ATTR_UNUSED __attribute__((__unused__))
 #else
 # define CORD_ATTR_UNUSED /* empty */
@@ -71,10 +79,17 @@ typedef void (* oom_fn)(void);
 
 CORD CORD_cat_char(CORD x, char c)
 {
+<<<<<<< HEAD
     char * string;
 
     if (c == '\0') return(CORD_cat(x, CORD_nul(1)));
     string = (char *)GC_MALLOC_ATOMIC(2);
+=======
+    register char * string;
+
+    if (c == '\0') return(CORD_cat(x, CORD_nul(1)));
+    string = GC_MALLOC_ATOMIC(2);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (string == 0) OUT_OF_MEMORY;
     string[0] = c;
     string[1] = '\0';
@@ -83,6 +98,7 @@ CORD CORD_cat_char(CORD x, char c)
 
 CORD CORD_catn(int nargs, ...)
 {
+<<<<<<< HEAD
     CORD result = CORD_EMPTY;
     va_list args;
     int i;
@@ -90,6 +106,15 @@ CORD CORD_catn(int nargs, ...)
     va_start(args, nargs);
     for (i = 0; i < nargs; i++) {
         CORD next = va_arg(args, CORD);
+=======
+    register CORD result = CORD_EMPTY;
+    va_list args;
+    register int i;
+
+    va_start(args, nargs);
+    for (i = 0; i < nargs; i++) {
+        register CORD next = va_arg(args, CORD);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         result = CORD_cat(result, next);
     }
     va_end(args);
@@ -104,8 +129,13 @@ typedef struct {
 
 int CORD_fill_proc(char c, void * client_data)
 {
+<<<<<<< HEAD
     CORD_fill_data * d = (CORD_fill_data *)client_data;
     size_t count = d -> count;
+=======
+    register CORD_fill_data * d = (CORD_fill_data *)client_data;
+    register size_t count = d -> count;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     (d -> buf)[count] = c;
     d -> count = ++count;
@@ -118,11 +148,19 @@ int CORD_fill_proc(char c, void * client_data)
 
 int CORD_batched_fill_proc(const char * s, void * client_data)
 {
+<<<<<<< HEAD
     CORD_fill_data * d = (CORD_fill_data *)client_data;
     size_t count = d -> count;
     size_t max = d -> len;
     char * buf = d -> buf;
     const char * t = s;
+=======
+    register CORD_fill_data * d = (CORD_fill_data *)client_data;
+    register size_t count = d -> count;
+    register size_t max = d -> len;
+    register char * buf = d -> buf;
+    register const char * t = s;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     while((buf[count] = *t++) != '\0') {
         count++;
@@ -136,23 +174,36 @@ int CORD_batched_fill_proc(const char * s, void * client_data)
 }
 
 /* Fill buf with len characters starting at i.  */
+<<<<<<< HEAD
 /* Assumes len characters are available in buf. */
 /* Return 1 if buf is filled fully (and len is  */
 /* non-zero), 0 otherwise.                      */
 int CORD_fill_buf(CORD x, size_t i, size_t len, char * buf)
+=======
+/* Assumes len characters are available.        */
+void CORD_fill_buf(CORD x, size_t i, size_t len, char * buf)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     CORD_fill_data fd;
 
     fd.len = len;
     fd.buf = buf;
     fd.count = 0;
+<<<<<<< HEAD
     return CORD_iter5(x, i, CORD_fill_proc, CORD_batched_fill_proc, &fd);
+=======
+    (void)CORD_iter5(x, i, CORD_fill_proc, CORD_batched_fill_proc, &fd);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 int CORD_cmp(CORD x, CORD y)
 {
     CORD_pos xpos;
     CORD_pos ypos;
+<<<<<<< HEAD
+=======
+    register size_t avail, yavail;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (y == CORD_EMPTY) return(x != CORD_EMPTY);
     if (x == CORD_EMPTY) return(-1);
@@ -160,8 +211,11 @@ int CORD_cmp(CORD x, CORD y)
     CORD_set_pos(xpos, x, 0);
     CORD_set_pos(ypos, y, 0);
     for(;;) {
+<<<<<<< HEAD
         size_t avail, yavail;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (!CORD_pos_valid(xpos)) {
             if (CORD_pos_valid(ypos)) {
                 return(-1);
@@ -172,17 +226,28 @@ int CORD_cmp(CORD x, CORD y)
         if (!CORD_pos_valid(ypos)) {
             return(1);
         }
+<<<<<<< HEAD
         avail = CORD_pos_chars_left(xpos);
         if (avail == 0
             || (yavail = CORD_pos_chars_left(ypos)) == 0) {
             char xcurrent = CORD_pos_fetch(xpos);
             char ycurrent = CORD_pos_fetch(ypos);
+=======
+        if ((avail = CORD_pos_chars_left(xpos)) <= 0
+            || (yavail = CORD_pos_chars_left(ypos)) <= 0) {
+            register char xcurrent = CORD_pos_fetch(xpos);
+            register char ycurrent = CORD_pos_fetch(ypos);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             if (xcurrent != ycurrent) return(xcurrent - ycurrent);
             CORD_next(xpos);
             CORD_next(ypos);
         } else {
             /* process as many characters as we can */
+<<<<<<< HEAD
             int result;
+=======
+            register int result;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             if (avail > yavail) avail = yavail;
             result = strncmp(CORD_pos_cur_char_addr(xpos),
@@ -198,13 +263,21 @@ int CORD_ncmp(CORD x, size_t x_start, CORD y, size_t y_start, size_t len)
 {
     CORD_pos xpos;
     CORD_pos ypos;
+<<<<<<< HEAD
     size_t count;
+=======
+    register size_t count;
+    register long avail, yavail;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     CORD_set_pos(xpos, x, x_start);
     CORD_set_pos(ypos, y, y_start);
     for(count = 0; count < len;) {
+<<<<<<< HEAD
         long avail, yavail;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (!CORD_pos_valid(xpos)) {
             if (CORD_pos_valid(ypos)) {
                 return(-1);
@@ -217,21 +290,34 @@ int CORD_ncmp(CORD x, size_t x_start, CORD y, size_t y_start, size_t len)
         }
         if ((avail = CORD_pos_chars_left(xpos)) <= 0
             || (yavail = CORD_pos_chars_left(ypos)) <= 0) {
+<<<<<<< HEAD
             char xcurrent = CORD_pos_fetch(xpos);
             char ycurrent = CORD_pos_fetch(ypos);
 
+=======
+            register char xcurrent = CORD_pos_fetch(xpos);
+            register char ycurrent = CORD_pos_fetch(ypos);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             if (xcurrent != ycurrent) return(xcurrent - ycurrent);
             CORD_next(xpos);
             CORD_next(ypos);
             count++;
         } else {
             /* process as many characters as we can */
+<<<<<<< HEAD
             int result;
 
             if (avail > yavail) avail = yavail;
             count += avail;
             if (count > len)
                 avail -= (long)(count - len);
+=======
+            register int result;
+
+            if (avail > yavail) avail = yavail;
+            count += avail;
+            if (count > len) avail -= (count - len);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             result = strncmp(CORD_pos_cur_char_addr(xpos),
                          CORD_pos_cur_char_addr(ypos), (size_t)avail);
             if (result != 0) return(result);
@@ -244,12 +330,20 @@ int CORD_ncmp(CORD x, size_t x_start, CORD y, size_t y_start, size_t len)
 
 char * CORD_to_char_star(CORD x)
 {
+<<<<<<< HEAD
     size_t len = CORD_len(x);
     char * result = (char *)GC_MALLOC_ATOMIC(len + 1);
 
     if (result == 0) OUT_OF_MEMORY;
     if (len > 0 && CORD_fill_buf(x, 0, len, result) != 1)
       ABORT("CORD_fill_buf malfunction");
+=======
+    register size_t len = CORD_len(x);
+    char * result = GC_MALLOC_ATOMIC(len + 1);
+
+    if (result == 0) OUT_OF_MEMORY;
+    CORD_fill_buf(x, 0, len, result);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     result[len] = '\0';
     return(result);
 }
@@ -260,7 +354,11 @@ CORD CORD_from_char_star(const char *s)
     size_t len = strlen(s);
 
     if (0 == len) return(CORD_EMPTY);
+<<<<<<< HEAD
     result = (char *)GC_MALLOC_ATOMIC(len + 1);
+=======
+    result = GC_MALLOC_ATOMIC(len + 1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (result == 0) OUT_OF_MEMORY;
     memcpy(result, s, len+1);
     return(result);
@@ -285,14 +383,22 @@ char CORD_fetch(CORD x, size_t i)
 
 int CORD_put_proc(char c, void * client_data)
 {
+<<<<<<< HEAD
     FILE * f = (FILE *)client_data;
+=======
+    register FILE * f = (FILE *)client_data;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     return(putc(c, f) == EOF);
 }
 
 int CORD_batched_put_proc(const char * s, void * client_data)
 {
+<<<<<<< HEAD
     FILE * f = (FILE *)client_data;
+=======
+    register FILE * f = (FILE *)client_data;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     return(fputs(s, f) == EOF);
 }
@@ -314,7 +420,11 @@ typedef struct {
 
 int CORD_chr_proc(char c, void * client_data)
 {
+<<<<<<< HEAD
     chr_data * d = (chr_data *)client_data;
+=======
+    register chr_data * d = (chr_data *)client_data;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (c == d -> target) return(1);
     (d -> pos) ++;
@@ -323,7 +433,11 @@ int CORD_chr_proc(char c, void * client_data)
 
 int CORD_rchr_proc(char c, void * client_data)
 {
+<<<<<<< HEAD
     chr_data * d = (chr_data *)client_data;
+=======
+    register chr_data * d = (chr_data *)client_data;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (c == d -> target) return(1);
     (d -> pos) --;
@@ -332,10 +446,17 @@ int CORD_rchr_proc(char c, void * client_data)
 
 int CORD_batched_chr_proc(const char *s, void * client_data)
 {
+<<<<<<< HEAD
     chr_data * d = (chr_data *)client_data;
     const char * occ = strchr(s, d -> target);
 
     if (NULL == occ) {
+=======
+    register chr_data * d = (chr_data *)client_data;
+    register char * occ = strchr(s, d -> target);
+
+    if (occ == 0) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         d -> pos += strlen(s);
         return(0);
     } else {
@@ -349,7 +470,11 @@ size_t CORD_chr(CORD x, size_t i, int c)
     chr_data d;
 
     d.pos = i;
+<<<<<<< HEAD
     d.target = (char)c;
+=======
+    d.target = c;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (CORD_iter5(x, i, CORD_chr_proc, CORD_batched_chr_proc, &d)) {
         return(d.pos);
     } else {
@@ -362,7 +487,11 @@ size_t CORD_rchr(CORD x, size_t i, int c)
     chr_data d;
 
     d.pos = i;
+<<<<<<< HEAD
     d.target = (char)c;
+=======
+    d.target = c;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (CORD_riter4(x, i, CORD_rchr_proc, &d)) {
         return(d.pos);
     } else {
@@ -381,15 +510,24 @@ size_t CORD_str(CORD x, size_t start, CORD s)
     CORD_pos xpos;
     size_t xlen = CORD_len(x);
     size_t slen;
+<<<<<<< HEAD
     size_t start_len;
+=======
+    register size_t start_len;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     const char * s_start;
     unsigned long s_buf = 0;    /* The first few characters of s        */
     unsigned long x_buf = 0;    /* Start of candidate substring.        */
                     /* Initialized only to make compilers   */
                     /* happy.                               */
     unsigned long mask = 0;
+<<<<<<< HEAD
     size_t i;
     size_t match_pos;
+=======
+    register size_t i;
+    register size_t match_pos;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (s == CORD_EMPTY) return(start);
     if (CORD_IS_STRING(s)) {
@@ -431,12 +569,20 @@ size_t CORD_str(CORD x, size_t start, CORD s)
 
 void CORD_ec_flush_buf(CORD_ec x)
 {
+<<<<<<< HEAD
     size_t len = x[0].ec_bufptr - x[0].ec_buf;
     char * s;
 
     if (len == 0) return;
     s = (char *)GC_MALLOC_ATOMIC(len + 1);
     if (NULL == s) OUT_OF_MEMORY;
+=======
+    register size_t len = x[0].ec_bufptr - x[0].ec_buf;
+    char * s;
+
+    if (len == 0) return;
+    s = GC_MALLOC_ATOMIC(len+1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     memcpy(s, x[0].ec_buf, len);
     s[len] = '\0';
     x[0].ec_cord = CORD_cat_char_star(x[0].ec_cord, s, len);
@@ -451,34 +597,60 @@ void CORD_ec_append_cord(CORD_ec x, CORD s)
 
 char CORD_nul_func(size_t i CORD_ATTR_UNUSED, void * client_data)
 {
+<<<<<<< HEAD
     return (char)(GC_word)client_data;
 }
 
 CORD CORD_chars(char c, size_t i)
 {
     return CORD_from_fn(CORD_nul_func, (void *)(GC_word)(unsigned char)c, i);
+=======
+    return((char)(unsigned long)client_data);
+}
+
+
+CORD CORD_chars(char c, size_t i)
+{
+    return(CORD_from_fn(CORD_nul_func, (void *)(unsigned long)c, i));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 CORD CORD_from_file_eager(FILE * f)
 {
+<<<<<<< HEAD
+=======
+    register int c;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     CORD_ec ecord;
 
     CORD_ec_init(ecord);
     for(;;) {
+<<<<<<< HEAD
         int c = getc(f);
 
+=======
+        c = getc(f);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (c == 0) {
           /* Append the right number of NULs                            */
           /* Note that any string of NULs is represented in 4 words,    */
           /* independent of its length.                                 */
+<<<<<<< HEAD
             size_t count = 1;
+=======
+            register size_t count = 1;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             CORD_ec_flush_buf(ecord);
             while ((c = getc(f)) == 0) count++;
             ecord[0].ec_cord = CORD_cat(ecord[0].ec_cord, CORD_nul(count));
         }
         if (c == EOF) break;
+<<<<<<< HEAD
         CORD_ec_append(ecord, (char)c);
+=======
+        CORD_ec_append(ecord, c);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
     (void) fclose(f);
     return(CORD_balance(CORD_ec_to_cord(ecord)));
@@ -529,15 +701,24 @@ typedef struct {
 /* Executed with allocation lock. */
 static char refill_cache(refill_data * client_data)
 {
+<<<<<<< HEAD
     lf_state * state = client_data -> state;
     size_t file_pos = client_data -> file_pos;
+=======
+    register lf_state * state = client_data -> state;
+    register size_t file_pos = client_data -> file_pos;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     FILE *f = state -> lf_file;
     size_t line_start = LINE_START(file_pos);
     size_t line_no = DIV_LINE_SZ(MOD_CACHE_SZ(file_pos));
     cache_line * new_cache = client_data -> new_cache;
 
     if (line_start != state -> lf_current
+<<<<<<< HEAD
         && fseek(f, (long)line_start, SEEK_SET) != 0) {
+=======
+        && fseek(f, line_start, SEEK_SET) != 0) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             ABORT("fseek failed");
     }
     if (fread(new_cache -> data, sizeof(char), LINE_SZ, f)
@@ -553,10 +734,17 @@ static char refill_cache(refill_data * client_data)
 
 char CORD_lf_func(size_t i, void * client_data)
 {
+<<<<<<< HEAD
     lf_state * state = (lf_state *)client_data;
     cache_line * volatile * cl_addr =
                         &(state -> lf_cache[DIV_LINE_SZ(MOD_CACHE_SZ(i))]);
     cache_line * cl = (cache_line *)ATOMIC_READ(cl_addr);
+=======
+    register lf_state * state = (lf_state *)client_data;
+    register cache_line * volatile * cl_addr =
+        &(state -> lf_cache[DIV_LINE_SZ(MOD_CACHE_SZ(i))]);
+    register cache_line * cl = (cache_line *)ATOMIC_READ(cl_addr);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (cl == 0 || cl -> tag != DIV_LINE_SZ(i)) {
         /* Cache miss */
@@ -581,8 +769,13 @@ void CORD_lf_close_proc(void * obj, void * client_data CORD_ATTR_UNUSED)
 
 CORD CORD_from_file_lazy_inner(FILE * f, size_t len)
 {
+<<<<<<< HEAD
     lf_state * state = GC_NEW(lf_state);
     int i;
+=======
+    register lf_state * state = GC_NEW(lf_state);
+    register int i;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (state == 0) OUT_OF_MEMORY;
     if (len != 0) {
@@ -593,10 +786,18 @@ CORD CORD_from_file_lazy_inner(FILE * f, size_t len)
         /* world is multi-threaded.                     */
         char buf[1];
 
+<<<<<<< HEAD
         if (fread(buf, 1, 1, f) > 1
             || fseek(f, 0l, SEEK_SET) != 0) {
             ABORT("Bad f argument or I/O failure");
         }
+=======
+        if (fread(buf, 1, 1, f) > 1) {
+            /* Just to suppress "unused result" compiler warning.   */
+            ABORT("fread unexpected result");
+        }
+        rewind(f);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
     state -> lf_file = f;
     for (i = 0; i < CACHE_SZ/LINE_SZ; i++) {
@@ -609,6 +810,7 @@ CORD CORD_from_file_lazy_inner(FILE * f, size_t len)
 
 CORD CORD_from_file_lazy(FILE * f)
 {
+<<<<<<< HEAD
     long len;
 
     if (fseek(f, 0l, SEEK_END) != 0
@@ -616,6 +818,17 @@ CORD CORD_from_file_lazy(FILE * f)
         || fseek(f, 0l, SEEK_SET) != 0) {
         ABORT("Bad f argument or I/O failure");
     }
+=======
+    register long len;
+
+    if (fseek(f, 0l, SEEK_END) != 0) {
+        ABORT("Bad fd argument - fseek failed");
+    }
+    if ((len = ftell(f)) < 0) {
+        ABORT("Bad fd argument - ftell failed");
+    }
+    rewind(f);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     return(CORD_from_file_lazy_inner(f, (size_t)len));
 }
 
@@ -623,6 +836,7 @@ CORD CORD_from_file_lazy(FILE * f)
 
 CORD CORD_from_file(FILE * f)
 {
+<<<<<<< HEAD
     long len;
 
     if (fseek(f, 0l, SEEK_END) != 0
@@ -630,6 +844,17 @@ CORD CORD_from_file(FILE * f)
         || fseek(f, 0l, SEEK_SET) != 0) {
         ABORT("Bad f argument or I/O failure");
     }
+=======
+    register long len;
+
+    if (fseek(f, 0l, SEEK_END) != 0) {
+        ABORT("Bad fd argument - fseek failed");
+    }
+    if ((len = ftell(f)) < 0) {
+        ABORT("Bad fd argument - ftell failed");
+    }
+    rewind(f);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (len < LAZY_THRESHOLD) {
         return(CORD_from_file_eager(f));
     } else {

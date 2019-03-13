@@ -136,10 +136,17 @@ namespace vm
 
     void AssemblyName::FillNativeAssemblyName(const Il2CppAssemblyName& aname, Il2CppMonoAssemblyName* nativeName)
     {
+<<<<<<< HEAD
         nativeName->name = il2cpp::utils::StringUtils::StringDuplicate(aname.name);
         nativeName->culture = il2cpp::utils::StringUtils::StringDuplicate(aname.culture);
         nativeName->hash_value = il2cpp::utils::StringUtils::StringDuplicate(aname.hash_value);
         nativeName->public_key = EncodeStringBlob(aname.public_key);
+=======
+        nativeName->name = il2cpp::utils::StringUtils::StringDuplicate(il2cpp::vm::MetadataCache::GetStringFromIndex(aname.nameIndex));
+        nativeName->culture = il2cpp::utils::StringUtils::StringDuplicate(il2cpp::vm::MetadataCache::GetStringFromIndex(aname.cultureIndex));
+        nativeName->hash_value = il2cpp::utils::StringUtils::StringDuplicate(il2cpp::vm::MetadataCache::GetStringFromIndex(aname.hashValueIndex));
+        nativeName->public_key = EncodeStringBlob(il2cpp::vm::MetadataCache::GetStringFromIndex(aname.publicKeyIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         nativeName->hash_alg = aname.hash_alg;
         nativeName->hash_len = aname.hash_len;
         nativeName->flags = aname.flags;
@@ -149,12 +156,20 @@ namespace vm
         nativeName->revision = aname.revision;
 
         //Mono public key token is stored as hexadecimal characters
+<<<<<<< HEAD
         if (aname.public_key_token[0])
+=======
+        if (aname.publicKeyToken[0])
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             int j = 0;
             for (int i = 0; i < kPublicKeyByteLength; ++i)
             {
+<<<<<<< HEAD
                 uint8_t value = aname.public_key_token[i];
+=======
+                uint8_t value = aname.publicKeyToken[i];
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 nativeName->public_key_token.padding[j++] = HexValueToLowercaseAscii((value & 0xF0) >> 4);
                 nativeName->public_key_token.padding[j++] = HexValueToLowercaseAscii(value & 0x0F);
             }
@@ -163,13 +178,22 @@ namespace vm
 
 #endif
 
+<<<<<<< HEAD
     static std::string PublicKeyTokenToString(const uint8_t* public_key_token)
+=======
+    static std::string PublicKeyTokenToString(const uint8_t* publicKeyToken)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         std::string result(kPublicKeyByteLength * 2, '0');
         for (int i = 0; i < kPublicKeyByteLength; ++i)
         {
+<<<<<<< HEAD
             uint8_t hi = (public_key_token[i] & 0xF0) >> 4;
             uint8_t lo = public_key_token[i] & 0x0F;
+=======
+            uint8_t hi = (publicKeyToken[i] & 0xF0) >> 4;
+            uint8_t lo = publicKeyToken[i] & 0x0F;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             result[i * 2] = HexValueToLowercaseAscii(hi);
             result[i * 2 + 1] = HexValueToLowercaseAscii(lo);
@@ -184,7 +208,11 @@ namespace vm
 
         char buffer[1024];
 
+<<<<<<< HEAD
         name += aname.name;
+=======
+        name += MetadataCache::GetStringFromIndex(aname.nameIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         name += ", Version=";
         sprintf(buffer, "%d", aname.major);
         name += buffer;
@@ -198,6 +226,7 @@ namespace vm
         sprintf(buffer, "%d", aname.revision);
         name += buffer;
         name += ", Culture=";
+<<<<<<< HEAD
         const char* culture = NULL;
         culture = aname.culture;
         name += (culture != NULL && strlen(culture) != 0 ? culture : "neutral");
@@ -208,6 +237,13 @@ namespace vm
         if (strcmp(aname.name, "WindowsRuntimeMetadata") == 0)
             name += ", ContentType=WindowsRuntime";
 
+=======
+        name += (aname.cultureIndex != kStringLiteralIndexInvalid ? MetadataCache::GetStringFromIndex(aname.cultureIndex) : "neutral");
+        name += ", PublicKeyToken=";
+        name += (aname.publicKeyToken[0] ? PublicKeyTokenToString(aname.publicKeyToken) : "null");
+        name += ((aname.flags & ASSEMBLYREF_RETARGETABLE_FLAG) ? ", Retargetable=Yes" : "");
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return name;
     }
 } /* namespace vm */

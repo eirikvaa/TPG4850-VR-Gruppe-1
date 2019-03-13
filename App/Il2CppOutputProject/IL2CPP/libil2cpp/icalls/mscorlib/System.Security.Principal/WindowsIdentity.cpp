@@ -16,13 +16,21 @@ namespace Principal
 {
     Il2CppString* WindowsIdentity::GetTokenName(intptr_t token)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(WindowsIdentity::GetTokenName);
+=======
+        NOT_IMPLEMENTED_ICALL(WindowsIdentity::GetTokenName);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return 0;
     }
 
     intptr_t WindowsIdentity::GetCurrentToken()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(WindowsIdentity::GetCurrentToken);
+=======
+        NOT_IMPLEMENTED_ICALL(WindowsIdentity::GetCurrentToken);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return intptr_t();
     }
 

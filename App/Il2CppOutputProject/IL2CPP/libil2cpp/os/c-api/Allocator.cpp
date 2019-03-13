@@ -25,6 +25,7 @@ char* Allocator::CopyToAllocatedStringBuffer(const std::string& input)
     buffer[size] = '\0';
     return buffer;
 }
+<<<<<<< HEAD
 
 char* Allocator::CopyToAllocatedStringBuffer(const char* input)
 {
@@ -62,3 +63,5 @@ void Allocator::CopyDataVectorToNullTerminatedArray(const std::vector<void*>& in
         (*output)[numberOfEntries] = NULL;
     }
 }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

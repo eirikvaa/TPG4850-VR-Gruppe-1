@@ -21,13 +21,17 @@ namespace Globalization
 #if NET_4_0
         regionInfo->geo_id = ri->geo_id;
 #else
+<<<<<<< HEAD
         regionInfo->lcid = ri->lcid;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         regionInfo->region_id = ri->region_id;
 #endif
         IL2CPP_OBJECT_SETREF(regionInfo, iso2name, vm::String::New(idx2string(ri->iso2name)));
         IL2CPP_OBJECT_SETREF(regionInfo, iso3name, vm::String::New(idx2string(ri->iso3name)));
         IL2CPP_OBJECT_SETREF(regionInfo, win3name, vm::String::New(idx2string(ri->win3name)));
         IL2CPP_OBJECT_SETREF(regionInfo, english_name, vm::String::New(idx2string(ri->english_name)));
+<<<<<<< HEAD
 #if NET_4_0
         IL2CPP_OBJECT_SETREF(regionInfo, native_name, vm::String::New(idx2string(ri->native_name)));
 #endif
@@ -37,6 +41,11 @@ namespace Globalization
 #if NET_4_0
         IL2CPP_OBJECT_SETREF(regionInfo, currency_native_name, vm::String::New(idx2string(ri->currency_native_name)));
 #endif
+=======
+        IL2CPP_OBJECT_SETREF(regionInfo, currency_symbol, vm::String::New(idx2string(ri->currency_symbol)));
+        IL2CPP_OBJECT_SETREF(regionInfo, iso_currency_symbol, vm::String::New(idx2string(ri->iso_currency_symbol)));
+        IL2CPP_OBJECT_SETREF(regionInfo, currency_english_name, vm::String::New(idx2string(ri->currency_english_name)));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return true;
     }

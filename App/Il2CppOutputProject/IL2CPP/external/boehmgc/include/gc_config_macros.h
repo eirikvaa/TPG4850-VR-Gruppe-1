@@ -19,6 +19,7 @@
 /* We separate it only to make gc.h more suitable as documentation.       */
 #if defined(GC_H)
 
+<<<<<<< HEAD
 /* Convenient internal macro to test version of GCC.    */
 #if defined(__GNUC__) && defined(__GNUC_MINOR__)
 # define GC_GNUC_PREREQ(major, minor) \
@@ -27,6 +28,8 @@
 # define GC_GNUC_PREREQ(major, minor) 0 /* FALSE */
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* Some tests for old macros.  These violate our namespace rules and    */
 /* will disappear shortly.  Use the GC_ names.                          */
 #if defined(SOLARIS_THREADS) || defined(_SOLARIS_THREADS) \
@@ -65,25 +68,45 @@
 # define GC_USE_LD_WRAP
 #endif
 
+<<<<<<< HEAD
 #if defined(GC_WIN32_PTHREADS) && !defined(GC_WIN32_THREADS)
   /* Using pthreads-win32 library (or other Win32 implementation).  */
+=======
+#if defined(CAFE) || defined(SN_TARGET_ORBIS) /* define GC_THREADS here and not necessarily on cmdline as the latter can be forgotten */
+#if !defined(GC_THREADS)
+# define GC_THREADS
+#endif
+#endif
+
+#if defined(GC_WIN32_PTHREADS) && !defined(GC_WIN32_THREADS)
+  /* Using pthreads-w32 library. */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # define GC_WIN32_THREADS
 #endif
 
 #if defined(GC_AIX_THREADS) || defined(GC_DARWIN_THREADS) \
     || defined(GC_DGUX386_THREADS) || defined(GC_FREEBSD_THREADS) \
+<<<<<<< HEAD
     || defined(GC_HPUX_THREADS) \
     || defined(GC_IRIX_THREADS) || defined(GC_LINUX_THREADS) \
     || defined(GC_NETBSD_THREADS) || defined(GC_OPENBSD_THREADS) \
     || defined(GC_OSF1_THREADS) || defined(GC_SOLARIS_THREADS) \
     || defined(GC_WIN32_THREADS) || defined(GC_RTEMS_PTHREADS) \
     || defined(SN_TARGET_ORBIS) || defined(SN_TARGET_PSP2)
+=======
+    || defined(GC_GNU_THREADS) || defined(GC_HPUX_THREADS) \
+    || defined(GC_IRIX_THREADS) || defined(GC_LINUX_THREADS) \
+    || defined(GC_NETBSD_THREADS) || defined(GC_OPENBSD_THREADS) \
+    || defined(GC_OSF1_THREADS) || defined(GC_SOLARIS_THREADS) \
+    || defined(GC_WIN32_THREADS) || defined(GC_RTEMS_PTHREADS)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # ifndef GC_THREADS
 #   define GC_THREADS
 # endif
 #elif defined(GC_THREADS)
 # if defined(__linux__)
 #   define GC_LINUX_THREADS
+<<<<<<< HEAD
 # elif defined(_PA_RISC1_1) || defined(_PA_RISC2_0) || defined(hppa) \
        || defined(__HPPA) || (defined(__ia64) && defined(_HPUX_SOURCE))
 #   define GC_HPUX_THREADS
@@ -109,6 +132,39 @@
 #   define GC_SOLARIS_THREADS
 # elif defined(__APPLE__) && defined(__MACH__)
 #   define GC_DARWIN_THREADS
+=======
+# endif
+# if !defined(__linux__) && (defined(_PA_RISC1_1) || defined(_PA_RISC2_0) \
+                             || defined(hppa) || defined(__HPPA)) \
+     || (defined(__ia64) && defined(_HPUX_SOURCE))
+#   define GC_HPUX_THREADS
+# endif
+# if !defined(__linux__) && (defined(__alpha) || defined(__alpha__))
+#   define GC_OSF1_THREADS
+# endif
+# if defined(__mips) && !defined(__linux__)
+#   define GC_IRIX_THREADS
+# endif
+# if defined(__sparc) && !defined(__linux__) \
+     || defined(sun) && (defined(i386) || defined(__i386__) \
+                         || defined(__amd64__))
+#   define GC_SOLARIS_THREADS
+# elif defined(__APPLE__) && defined(__MACH__)
+#   define GC_DARWIN_THREADS
+# elif defined(__OpenBSD__)
+#   define GC_OPENBSD_THREADS
+# elif !defined(GC_LINUX_THREADS) && !defined(GC_HPUX_THREADS) \
+       && !defined(GC_OSF1_THREADS) && !defined(GC_IRIX_THREADS)
+    /* FIXME: Should we really need for FreeBSD and NetBSD to check     */
+    /* that no other GC_xxx_THREADS macro is set?                       */
+#   if defined(__FreeBSD__) || defined(__DragonFly__)
+#   if !defined(SN_TARGET_ORBIS)
+#     define GC_FREEBSD_THREADS
+#   endif
+#   elif defined(__NetBSD__)
+#     define GC_NETBSD_THREADS
+#   endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # endif
 # if defined(DGUX) && (defined(i386) || defined(__i386__))
 #   define GC_DGUX386_THREADS
@@ -130,8 +186,13 @@
 
 #undef GC_PTHREADS
 #if (!defined(GC_WIN32_THREADS) || defined(GC_WIN32_PTHREADS) \
+<<<<<<< HEAD
      || defined(__CYGWIN32__) || defined(__CYGWIN__)) && defined(GC_THREADS) \
     && !defined(NN_PLATFORM_CTR) && !defined(NN_BUILD_TARGET_PLATFORM_NX)
+=======
+     || defined(__CYGWIN32__) || defined(__CYGWIN__) || defined(SN_TARGET_ORBIS) || defined(SN_TARGET_PSP2)) \
+     && defined(GC_THREADS) && !defined(NN_PLATFORM_CTR) && !defined(NN_BUILD_TARGET_PLATFORM_NX)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   /* Posix threads. */
 # define GC_PTHREADS
 #endif
@@ -178,7 +239,11 @@
 #if defined(GC_DLL) && !defined(GC_API)
 
 # if defined(__MINGW32__) || defined(__CEGCC__)
+<<<<<<< HEAD
 #   if defined(GC_BUILD) || defined(__MINGW32_DELAY_LOAD__)
+=======
+#   ifdef GC_BUILD
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #     define GC_API __declspec(dllexport)
 #   else
 #     define GC_API __declspec(dllimport)
@@ -208,8 +273,13 @@
 
 # elif defined(__GNUC__)
     /* Only matters if used in conjunction with -fvisibility=hidden option. */
+<<<<<<< HEAD
 #   if defined(GC_BUILD) && !defined(GC_NO_VISIBILITY) \
             && (GC_GNUC_PREREQ(4, 0) || defined(GC_VISIBILITY_HIDDEN_SET))
+=======
+#   if defined(GC_BUILD) && (__GNUC__ >= 4 \
+                             || defined(GC_VISIBILITY_HIDDEN_SET))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #     define GC_API extern __attribute__((__visibility__("default")))
 #   endif
 # endif
@@ -235,12 +305,19 @@
   /* by using custom GC_oom_func then define GC_OOM_FUNC_RETURNS_ALIAS. */
 # ifdef GC_OOM_FUNC_RETURNS_ALIAS
 #   define GC_ATTR_MALLOC /* empty */
+<<<<<<< HEAD
 # elif GC_GNUC_PREREQ(3, 1)
 #   define GC_ATTR_MALLOC __attribute__((__malloc__))
 # elif defined(_MSC_VER) && (_MSC_VER >= 1900) && !defined(__EDG__)
 #   define GC_ATTR_MALLOC \
                 __declspec(allocator) __declspec(noalias) __declspec(restrict)
 # elif defined(_MSC_VER) && _MSC_VER >= 1400
+=======
+# elif defined(__GNUC__) && (__GNUC__ > 3 \
+                             || (__GNUC__ == 3 && __GNUC_MINOR__ >= 1))
+#   define GC_ATTR_MALLOC __attribute__((__malloc__))
+# elif defined(_MSC_VER) && _MSC_VER >= 14
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #   define GC_ATTR_MALLOC __declspec(noalias) __declspec(restrict)
 # else
 #   define GC_ATTR_MALLOC
@@ -249,6 +326,7 @@
 
 #ifndef GC_ATTR_ALLOC_SIZE
   /* 'alloc_size' attribute improves __builtin_object_size correctness. */
+<<<<<<< HEAD
 # undef GC_ATTR_CALLOC_SIZE
 # ifdef __clang__
 #   if __has_attribute(__alloc_size__)
@@ -271,6 +349,21 @@
 
 #ifndef GC_ATTR_NONNULL
 # if GC_GNUC_PREREQ(4, 0)
+=======
+  /* Only single-argument form of 'alloc_size' attribute is used.       */
+# if !defined(__APPLE__) && defined(__GNUC__) && (__GNUC__ > 4 \
+        || (__GNUC__ == 4 && __GNUC_MINOR__ >= 3 && !defined(__ICC)) \
+        || __clang_major__ > 3 \
+        || (__clang_major__ == 3 && __clang_minor__ >= 2))
+#   define GC_ATTR_ALLOC_SIZE(argnum) __attribute__((__alloc_size__(argnum)))
+# else
+#   define GC_ATTR_ALLOC_SIZE(argnum)
+# endif
+#endif
+
+#ifndef GC_ATTR_NONNULL
+# if defined(__GNUC__) && __GNUC__ >= 4
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #   define GC_ATTR_NONNULL(argnum) __attribute__((__nonnull__(argnum)))
 # else
 #   define GC_ATTR_NONNULL(argnum) /* empty */
@@ -281,9 +374,15 @@
 # ifdef GC_BUILD
 #   undef GC_ATTR_DEPRECATED
 #   define GC_ATTR_DEPRECATED /* empty */
+<<<<<<< HEAD
 # elif GC_GNUC_PREREQ(4, 0)
 #   define GC_ATTR_DEPRECATED __attribute__((__deprecated__))
 # elif defined(_MSC_VER) && _MSC_VER >= 1200
+=======
+# elif defined(__GNUC__) && __GNUC__ >= 4
+#   define GC_ATTR_DEPRECATED __attribute__((__deprecated__))
+# elif defined(_MSC_VER) && _MSC_VER >= 12
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #   define GC_ATTR_DEPRECATED __declspec(deprecated)
 # else
 #   define GC_ATTR_DEPRECATED /* empty */
@@ -300,8 +399,12 @@
 #   include <features.h>
 # endif
 # if (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1 || __GLIBC__ > 2) \
+<<<<<<< HEAD
         && !defined(__ia64__) \
         && !defined(GC_MISSING_EXECINFO_H) \
+=======
+        && !defined(__ia64__) && !defined(__UCLIBC__) \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         && !defined(GC_HAVE_BUILTIN_BACKTRACE)
 #   define GC_HAVE_BUILTIN_BACKTRACE
 # endif
@@ -325,13 +428,18 @@
 # define GC_CAN_SAVE_CALL_STACKS
 #endif
 
+<<<<<<< HEAD
 /* If we're on a platform on which we can't save call stacks, but       */
+=======
+/* If we're on an a platform on which we can't save call stacks, but    */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* gcc is normally used, we go ahead and define GC_ADD_CALLER.          */
 /* We make this decision independent of whether gcc is actually being   */
 /* used, in order to keep the interface consistent, and allow mixing    */
 /* of compilers.                                                        */
 /* This may also be desirable if it is possible but expensive to        */
 /* retrieve the call chain.                                             */
+<<<<<<< HEAD
 #if (defined(__linux__) || defined(__DragonFly__) || defined(__FreeBSD__) \
      || defined(__FreeBSD_kernel__) || defined(__HAIKU__) \
      || defined(__NetBSD__) || defined(__OpenBSD__) \
@@ -345,6 +453,19 @@
 #   if GC_GNUC_PREREQ(4, 0) && (defined(__i386__) || defined(__amd64__) \
                         || defined(__x86_64__) /* and probably others... */)
 #     define GC_HAVE_RETURN_ADDR_PARENT
+=======
+#if (defined(__linux__) || defined(__NetBSD__) || defined(__OpenBSD__) \
+     || defined(__FreeBSD__) || defined(__DragonFly__) \
+     || defined(PLATFORM_ANDROID) || defined(__ANDROID__)) \
+    && !defined(GC_CAN_SAVE_CALL_STACKS)
+# define GC_ADD_CALLER
+# if __GNUC__ >= 3 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 95)
+    /* gcc knows how to retrieve return address, but we don't know      */
+    /* how to generate call stacks.                                     */
+#   define GC_RETURN_ADDR (GC_word)__builtin_return_address(0)
+#   if (__GNUC__ >= 4) && (defined(__i386__) || defined(__amd64__) \
+        || defined(__x86_64__) /* and probably others... */)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #     define GC_RETURN_ADDR_PARENT \
         (GC_word)__builtin_extract_return_addr(__builtin_return_address(1))
 #   endif
@@ -377,18 +498,30 @@
 #   ifndef GC_PTHREAD_CREATE_CONST
 #     define GC_PTHREAD_CREATE_CONST /* empty */
 #   endif
+<<<<<<< HEAD
 #   ifndef GC_HAVE_PTHREAD_EXIT
 #     define GC_HAVE_PTHREAD_EXIT
+=======
+#   ifndef GC_PTHREAD_EXIT_ATTRIBUTE
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #     define GC_PTHREAD_EXIT_ATTRIBUTE /* empty */
 #   endif
 # endif
 
+<<<<<<< HEAD
 # if !defined(GC_HAVE_PTHREAD_EXIT) \
      && !defined(HOST_ANDROID) && !defined(__ANDROID__) \
      && (defined(GC_LINUX_THREADS) || defined(GC_SOLARIS_THREADS))
 #   define GC_HAVE_PTHREAD_EXIT
     /* Intercept pthread_exit on Linux and Solaris.     */
 #   if GC_GNUC_PREREQ(2, 7)
+=======
+# if !defined(GC_PTHREAD_EXIT_ATTRIBUTE) \
+     && !defined(PLATFORM_ANDROID) && !defined(__ANDROID__) \
+     && (defined(GC_LINUX_THREADS) || defined(GC_SOLARIS_THREADS))
+    /* Intercept pthread_exit on Linux and Solaris.     */
+#   if defined(__GNUC__) /* since GCC v2.7 */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #     define GC_PTHREAD_EXIT_ATTRIBUTE __attribute__((__noreturn__))
 #   elif defined(__NORETURN) /* used in Solaris */
 #     define GC_PTHREAD_EXIT_ATTRIBUTE __NORETURN
@@ -397,7 +530,11 @@
 #   endif
 # endif
 
+<<<<<<< HEAD
 # if (!defined(GC_HAVE_PTHREAD_EXIT) || defined(__native_client__)) \
+=======
+# if (!defined(GC_PTHREAD_EXIT_ATTRIBUTE) || defined(__native_client__)) \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
      && !defined(GC_NO_PTHREAD_CANCEL)
     /* Either there is no pthread_cancel() or no need to intercept it.  */
 #   define GC_NO_PTHREAD_CANCEL

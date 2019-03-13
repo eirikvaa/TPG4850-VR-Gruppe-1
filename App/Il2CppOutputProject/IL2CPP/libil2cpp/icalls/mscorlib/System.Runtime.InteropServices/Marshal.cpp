@@ -287,7 +287,11 @@ namespace InteropServices
         Il2CppClass* type = structure->klass;
 
         // This is only legal for classes.
+<<<<<<< HEAD
         if (type->byval_arg.type != IL2CPP_TYPE_CLASS)
+=======
+        if (type->byval_arg->type != IL2CPP_TYPE_CLASS)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             Exception::Raise(Exception::GetArgumentException("structure", "The specified structure must be an instance of a formattable class."));
         }
@@ -440,7 +444,11 @@ namespace InteropServices
             if (deleteOld)
                 utils::MarshalingUtils::MarshalFreeStruct(reinterpret_cast<void*>(ptr), type->interopData);
 
+<<<<<<< HEAD
             void* objectPtr = (type->byval_arg.type == IL2CPP_TYPE_CLASS) ? structure : Object::Unbox(structure);
+=======
+            void* objectPtr = (type->byval_arg->type == IL2CPP_TYPE_CLASS) ? structure : Object::Unbox(structure);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             utils::MarshalingUtils::MarshalStructToNative(objectPtr, reinterpret_cast<void*>(ptr), type->interopData);
             return;
         }
@@ -450,7 +458,11 @@ namespace InteropServices
         if (type->native_size != -1)
         {
             // StructureToPtr is supposed to throw on strings and enums
+<<<<<<< HEAD
             if (!type->enumtype && type->byval_arg.type != IL2CPP_TYPE_STRING)
+=======
+            if (!type->enumtype && type->byval_arg->type != IL2CPP_TYPE_STRING)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 memcpy(reinterpret_cast<void*>(ptr), Object::Unbox(structure), type->native_size);
                 return;
@@ -653,13 +665,21 @@ namespace InteropServices
 
     intptr_t Marshal::BufferToBSTR(Il2CppArray* ptr, int32_t slen)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Marshal::BufferToBSTR);
+=======
+        NOT_IMPLEMENTED_ICALL(Marshal::BufferToBSTR);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 
     int32_t Marshal::GetHRForException_WinRT(Il2CppException* e)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Marshal::GetHRForException_WinRT);
+=======
+        NOT_IMPLEMENTED_ICALL(Marshal::GetHRForException_WinRT);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 
@@ -672,7 +692,11 @@ namespace InteropServices
 
     Il2CppObject* Marshal::GetNativeActivationFactory(Il2CppObject* type)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Marshal::GetNativeActivationFactory);
+=======
+        NOT_IMPLEMENTED_ICALL(Marshal::GetNativeActivationFactory);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 
@@ -681,7 +705,11 @@ namespace InteropServices
 #if NET_4_0
     intptr_t Marshal::AllocCoTaskMemSize(intptr_t sizet)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Marshal::AllocCoTaskMemSize);
+=======
+        NOT_IMPLEMENTED_ICALL(Marshal::AllocCoTaskMemSize);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 

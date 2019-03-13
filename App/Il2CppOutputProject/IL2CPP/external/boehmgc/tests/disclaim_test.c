@@ -25,6 +25,7 @@
 # include "config.h"
 #endif
 
+<<<<<<< HEAD
 #undef GC_NO_THREAD_REDIRECTS
 #include "gc_disclaim.h"
 
@@ -47,6 +48,12 @@
 #define my_assert(e) \
     if (!(e)) { \
         fflush(stdout); \
+=======
+#include "gc_disclaim.h"
+
+#define my_assert(e) \
+    if (!(e)) { \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         fprintf(stderr, "Assertion failure, line %d: " #e "\n", __LINE__); \
         exit(-1); \
     }
@@ -91,12 +98,17 @@ void test_misc_sizes(void)
 typedef struct pair_s *pair_t;
 
 struct pair_s {
+<<<<<<< HEAD
     char magic[16];
+=======
+    int is_valid;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     int checksum;
     pair_t car;
     pair_t cdr;
 };
 
+<<<<<<< HEAD
 static const char * const pair_magic = "PAIR_MAGIC_BYTES";
 
 int is_pair(pair_t p)
@@ -107,6 +119,11 @@ int is_pair(pair_t p)
 void GC_CALLBACK pair_dct(void *obj, void *cd)
 {
     pair_t p = (pair_t)obj;
+=======
+void GC_CALLBACK pair_dct(void *obj, void *cd)
+{
+    pair_t p = obj;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     int checksum;
 
     /* Check that obj and its car and cdr are not trashed. */
@@ -115,20 +132,33 @@ void GC_CALLBACK pair_dct(void *obj, void *cd)
              (void *)p, (void *)p->car, (void *)p->cdr);
 #   endif
     my_assert(GC_base(obj));
+<<<<<<< HEAD
     my_assert(is_pair(p));
     my_assert(!p->car || is_pair(p->car));
     my_assert(!p->cdr || is_pair(p->cdr));
+=======
+    my_assert(p->is_valid);
+    my_assert(!p->car || p->car->is_valid);
+    my_assert(!p->cdr || p->cdr->is_valid);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     checksum = 782;
     if (p->car) checksum += p->car->checksum;
     if (p->cdr) checksum += p->cdr->checksum;
     my_assert(p->checksum == checksum);
 
     /* Invalidate it. */
+<<<<<<< HEAD
     memset(p->magic, '*', sizeof(p->magic));
     p->checksum = 0;
     p->car = (pair_t)cd;
     p->cdr = NULL;
     GC_end_stubborn_change(p);
+=======
+    p->is_valid = 0;
+    p->checksum = 0;
+    p->car = cd;
+    p->cdr = NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 pair_t
@@ -137,11 +167,16 @@ pair_new(pair_t car, pair_t cdr)
     pair_t p;
     static const struct GC_finalizer_closure fc = { pair_dct, NULL };
 
+<<<<<<< HEAD
     p = (pair_t)GC_finalized_malloc(sizeof(struct pair_s), &fc);
+=======
+    p = GC_finalized_malloc(sizeof(struct pair_s), &fc);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (p == NULL) {
         fprintf(stderr, "Out of memory!\n");
         exit(3);
     }
+<<<<<<< HEAD
     my_assert(!is_pair(p));
     my_assert(memeq(p, 0, sizeof(struct pair_s)));
     memcpy(p->magic, pair_magic, sizeof(p->magic));
@@ -149,6 +184,13 @@ pair_new(pair_t car, pair_t cdr)
     p->car = car;
     p->cdr = cdr;
     GC_end_stubborn_change(p);
+=======
+    my_assert(memeq(p, 0, sizeof(struct pair_s)));
+    p->is_valid = 1;
+    p->checksum = 782 + (car? car->checksum : 0) + (cdr? cdr->checksum : 0);
+    p->car = car;
+    p->cdr = cdr;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #   ifdef DEBUG_DISCLAIM_DESTRUCT
       printf("Construct %p = (%p, %p)\n",
              (void *)p, (void *)p->car, (void *)p->cdr);
@@ -172,6 +214,7 @@ pair_check_rec(pair_t p)
 }
 
 #ifdef GC_PTHREADS
+<<<<<<< HEAD
 # ifndef NTHREADS
 #   define NTHREADS 6
 # endif
@@ -188,6 +231,21 @@ pair_check_rec(pair_t p)
 # define MUTATE_CNT 10000000
 #endif
 #define GROW_LIMIT (MUTATE_CNT/10)
+=======
+#  define THREAD_CNT 6
+#  include <pthread.h>
+#else
+#  define THREAD_CNT 1
+#endif
+
+#define POP_SIZE 1000
+#if THREAD_CNT > 1
+#  define MUTATE_CNT 2000000/THREAD_CNT
+#else
+#  define MUTATE_CNT 10000000
+#endif
+#define GROW_LIMIT 10000000
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 void *test(void *data)
 {
@@ -218,14 +276,22 @@ void *test(void *data)
 
 int main(void)
 {
+<<<<<<< HEAD
 # if NTHREADS > 1
     pthread_t th[NTHREADS];
     int i;
 # endif
+=======
+#if THREAD_CNT > 1
+    pthread_t th[THREAD_CNT];
+    int i;
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     GC_set_all_interior_pointers(0); /* for a stricter test */
     GC_INIT();
     GC_init_finalized_malloc();
+<<<<<<< HEAD
 #   ifndef NO_INCREMENTAL
         GC_enable_incremental();
 #   endif
@@ -235,6 +301,14 @@ int main(void)
 # if NTHREADS > 1
     printf("Threaded disclaim test.\n");
     for (i = 0; i < NTHREADS; ++i) {
+=======
+
+    test_misc_sizes();
+
+#if THREAD_CNT > 1
+    printf("Threaded disclaim test.\n");
+    for (i = 0; i < THREAD_CNT; ++i) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         int err = pthread_create(&th[i], NULL, test, NULL);
         if (err) {
             fprintf(stderr, "Failed to create thread # %d: %s\n", i,
@@ -242,7 +316,11 @@ int main(void)
             exit(1);
         }
     }
+<<<<<<< HEAD
     for (i = 0; i < NTHREADS; ++i) {
+=======
+    for (i = 0; i < THREAD_CNT; ++i) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         int err = pthread_join(th[i], NULL);
         if (err) {
             fprintf(stderr, "Failed to join thread # %d: %s\n", i,
@@ -250,9 +328,16 @@ int main(void)
             exit(69);
         }
     }
+<<<<<<< HEAD
 # else
     printf("Unthreaded disclaim test.\n");
     test(NULL);
 # endif
+=======
+#else
+    printf("Unthreaded disclaim test.\n");
+    test(NULL);
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     return 0;
 }

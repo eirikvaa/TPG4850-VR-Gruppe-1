@@ -7,7 +7,10 @@
 # define GC_THREADS
 #endif
 
+<<<<<<< HEAD
 #undef GC_NO_THREAD_REDIRECTS
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "leak_detector.h"
 
 #ifdef GC_PTHREADS
@@ -27,7 +30,11 @@
     int *p[10];
     int i;
     for (i = 0; i < 10; ++i) {
+<<<<<<< HEAD
         p[i] = (int *)malloc(sizeof(int) + i);
+=======
+        p[i] = malloc(sizeof(int)+i);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
     CHECK_LEAKS();
     for (i = 1; i < 10; ++i) {
@@ -40,12 +47,18 @@
 #   endif
 }
 
+<<<<<<< HEAD
 #ifndef NTHREADS
 # define NTHREADS 5
 #endif
 
 int main(void) {
 # if NTHREADS > 0
+=======
+#define NTHREADS 5
+
+int main(void) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     int i;
 #   ifdef GC_PTHREADS
       pthread_t t[NTHREADS];
@@ -54,13 +67,19 @@ int main(void) {
       DWORD thread_id;
 #   endif
     int code;
+<<<<<<< HEAD
 # endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     GC_set_find_leak(1); /* for new collect versions not compiled       */
                          /* with -DFIND_LEAK.                           */
     GC_INIT();
 
+<<<<<<< HEAD
 # if NTHREADS > 0
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     for (i = 0; i < NTHREADS; ++i) {
 #       ifdef GC_PTHREADS
           code = pthread_create(t + i, 0, test, 0);
@@ -86,7 +105,10 @@ int main(void) {
             exit(2);
         }
     }
+<<<<<<< HEAD
 # endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     CHECK_LEAKS();
     CHECK_LEAKS();

@@ -30,26 +30,44 @@ namespace Image
         if (error != -1)
             return -1;
 
+<<<<<<< HEAD
         path.resize(size);
+=======
+        path.reserve(size);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         error = _NSGetExecutablePath(&path[0], &size);
         IL2CPP_ASSERT(error == 0);
         if (error != 0)
             return -1;
 
+<<<<<<< HEAD
         int gameAssemblyImageIndex = -1;
+=======
+        int userAssemblyImageIndex = -1;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         int executableImageIndex = -1;
         int numberOfImages = _dyld_image_count();
         for (uint32_t i = 0; i < numberOfImages; i++)
         {
             const char* imageName = _dyld_get_image_name(i);
+<<<<<<< HEAD
             if (strstr(imageName, "GameAssembly.dylib") != NULL)
                 gameAssemblyImageIndex = i;
+=======
+            if (strstr(imageName, "UserAssembly.dylib") != NULL)
+                userAssemblyImageIndex = i;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             else if (strcmp(imageName, &path[0]) == 0)
                 executableImageIndex = i;
         }
 
+<<<<<<< HEAD
         if (gameAssemblyImageIndex != -1)
             return gameAssemblyImageIndex;
+=======
+        if (userAssemblyImageIndex != -1)
+            return userAssemblyImageIndex;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         else if (executableImageIndex != -1)
             return executableImageIndex;
 
@@ -65,6 +83,7 @@ namespace Image
             s_ImageBase = NULL;
     }
 
+<<<<<<< HEAD
 #if IL2CPP_SIZEOF_VOID_P == 8
     typedef section_64 archSectionData_t;
 #else
@@ -81,12 +100,15 @@ namespace Image
 #endif
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     static void InitializeManagedSection()
     {
         int imageIndex = GetImageIndex();
         if (imageIndex == -1)
             return;
 
+<<<<<<< HEAD
         const archSectionData_t* sectionData = SectionDataFor(imageIndex);
         if (sectionData == NULL)
         {
@@ -105,6 +127,14 @@ namespace Image
                 imageIndex++;
             }
         }
+=======
+        const struct mach_header* header = _dyld_get_image_header(imageIndex);
+#if IL2CPP_SIZEOF_VOID_P == 8
+        const section_64* sectionData = getsectbynamefromheader_64((const struct mach_header_64*)header, "__TEXT", IL2CPP_BINARY_SECTION_NAME);
+#else
+        const section* sectionData = getsectbynamefromheader(header, "__TEXT", IL2CPP_BINARY_SECTION_NAME);
+#endif
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         s_ManagedSectionStart = (void*)((intptr_t)sectionData->addr + (intptr_t)s_ImageBase);
         s_ManagedSectionEnd = (uint8_t*)s_ManagedSectionStart + sectionData->size;

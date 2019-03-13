@@ -12,11 +12,14 @@ namespace utils
         {
             return hash1 * Seed + hash2;
         }
+<<<<<<< HEAD
 
         static inline size_t AlignedPointerHash(void* ptr)
         {
             return ((uintptr_t)ptr) >> 3;
         }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 
     template<class T>

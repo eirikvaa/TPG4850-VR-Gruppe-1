@@ -145,11 +145,14 @@ namespace os
         ::QueueUserAPC(reinterpret_cast<PAPCFUNC>(func), m_ThreadHandle, reinterpret_cast<ULONG_PTR>(context));
     }
 
+<<<<<<< HEAD
     int ThreadImpl::GetMaxStackSize()
     {
         return INT_MAX;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 namespace
 {
     // It would be nice to always use CoGetApartmentType but it's only available on Windows 7 and later.
@@ -202,7 +205,11 @@ namespace
         return kApartmentStateUnknown;
     }
 
+<<<<<<< HEAD
 #if IL2CPP_TARGET_WINDOWS_DESKTOP
+=======
+#if !defined(WINAPI_FAMILY) || WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     ApartmentState GetApartmentWindowsXp(bool* implicit)
     {

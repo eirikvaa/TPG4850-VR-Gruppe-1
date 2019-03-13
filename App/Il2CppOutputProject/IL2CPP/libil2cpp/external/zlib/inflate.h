@@ -1,5 +1,9 @@
 /* inflate.h -- internal inflate state definition
+<<<<<<< HEAD
  * Copyright (C) 1995-2016 Mark Adler
+=======
+ * Copyright (C) 1995-2006 Mark Adler
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
@@ -18,7 +22,11 @@
 
 /* Possible inflate modes between inflate() calls */
 typedef enum {
+<<<<<<< HEAD
     HEAD = 16180,   /* i: waiting for magic header */
+=======
+    HEAD,       /* i: waiting for magic header */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     FLAGS,      /* i: waiting for method and flags (gzip) */
     TIME,       /* i: waiting for modification time (gzip) */
     OS,         /* i: waiting for extra flags and operating system (gzip) */
@@ -32,13 +40,20 @@ typedef enum {
         TYPE,       /* i: waiting for type bits, including last-flag bit */
         TYPEDO,     /* i: same, but skip check to exit inflate on new block */
         STORED,     /* i: waiting for stored size (length and complement) */
+<<<<<<< HEAD
         COPY_,      /* i/o: same as COPY below, but only first time in */
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         COPY,       /* i/o: waiting for input or output to copy stored block */
         TABLE,      /* i: waiting for dynamic block table lengths */
         LENLENS,    /* i: waiting for code length code lengths */
         CODELENS,   /* i: waiting for length/lit and distance code lengths */
+<<<<<<< HEAD
             LEN_,       /* i: same as LEN below, but only first time in */
             LEN,        /* i: waiting for length/lit/eob code */
+=======
+            LEN,        /* i: waiting for length/lit code */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             LENEXT,     /* i: waiting for length extra bits */
             DIST,       /* i: waiting for distance code */
             DISTEXT,    /* i: waiting for distance extra bits */
@@ -55,6 +70,7 @@ typedef enum {
 /*
     State transitions between above modes -
 
+<<<<<<< HEAD
     (most modes can go to BAD or MEM on error -- not shown for clarity)
 
     Process header:
@@ -70,6 +86,21 @@ typedef enum {
             TABLE -> LENLENS -> CODELENS -> LEN_
             LEN_ -> LEN
     Read deflate codes in fixed or dynamic block:
+=======
+    (most modes can go to the BAD or MEM mode -- not shown for clarity)
+
+    Process header:
+        HEAD -> (gzip) or (zlib)
+        (gzip) -> FLAGS -> TIME -> OS -> EXLEN -> EXTRA -> NAME
+        NAME -> COMMENT -> HCRC -> TYPE
+        (zlib) -> DICTID or TYPE
+        DICTID -> DICT -> TYPE
+    Read deflate blocks:
+            TYPE -> STORED or TABLE or LEN or CHECK
+            STORED -> COPY -> TYPE
+            TABLE -> LENLENS -> CODELENS -> LEN
+    Read deflate codes:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 LEN -> LENEXT or LIT or TYPE
                 LENEXT -> DIST -> DISTEXT -> MATCH -> LEN
                 LIT -> LEN
@@ -77,6 +108,7 @@ typedef enum {
         CHECK -> LENGTH -> DONE
  */
 
+<<<<<<< HEAD
 /* State maintained between inflate() calls -- approximately 7K bytes, not
    including the allocated sliding window, which is up to 32K bytes. */
 struct inflate_state {
@@ -85,6 +117,13 @@ struct inflate_state {
     int last;                   /* true if processing last block */
     int wrap;                   /* bit 0 true for zlib, bit 1 true for gzip,
                                    bit 2 true to validate check value */
+=======
+/* state maintained between inflate() calls.  Approximately 10K bytes. */
+struct inflate_state {
+    inflate_mode mode;          /* current inflate mode */
+    int last;                   /* true if processing last block */
+    int wrap;                   /* bit 0 true for zlib, bit 1 true for gzip */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     int havedict;               /* true if dictionary provided */
     int flags;                  /* gzip header method and flags (0 if zlib) */
     unsigned dmax;              /* zlib header max distance (INFLATE_STRICT) */
@@ -95,7 +134,11 @@ struct inflate_state {
     unsigned wbits;             /* log base 2 of requested window size */
     unsigned wsize;             /* window size or zero if not using window */
     unsigned whave;             /* valid bytes in the window */
+<<<<<<< HEAD
     unsigned wnext;             /* window write index */
+=======
+    unsigned write;             /* window write index */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     unsigned char FAR *window;  /* allocated sliding window, if needed */
         /* bit accumulator */
     unsigned long hold;         /* input bit accumulator */
@@ -120,6 +163,9 @@ struct inflate_state {
     unsigned short work[288];   /* work area for code table building */
     code codes[ENOUGH];         /* space for code tables */
     int sane;                   /* if false, allow invalid distance too far */
+<<<<<<< HEAD
     int back;                   /* bits back of last unprocessed length/lit */
     unsigned was;               /* initial length of match */
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };

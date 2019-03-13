@@ -14,7 +14,10 @@ namespace System
     {
     public:
         static bool HasInstantiation(Il2CppReflectionRuntimeType* type);
+<<<<<<< HEAD
         static bool HasReferences(Il2CppReflectionRuntimeType* type);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static bool IsArray(Il2CppReflectionRuntimeType* type);
         static bool IsByRef(Il2CppReflectionRuntimeType* type);
         static bool IsComObject(Il2CppReflectionRuntimeType* type);

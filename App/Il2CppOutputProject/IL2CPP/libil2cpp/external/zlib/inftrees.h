@@ -1,5 +1,9 @@
 /* inftrees.h -- header to use inftrees.c
+<<<<<<< HEAD
  * Copyright (C) 1995-2005, 2010 Mark Adler
+=======
+ * Copyright (C) 1995-2005 Mark Adler
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
@@ -35,6 +39,7 @@ typedef struct {
     01000000 - invalid code
  */
 
+<<<<<<< HEAD
 /* Maximum size of the dynamic table.  The maximum number of code structures is
    1444, which is the sum of 852 for literal/length codes and 592 for distance
    codes.  These values were found by exhaustive searches using the program
@@ -51,12 +56,27 @@ typedef struct {
 #define ENOUGH (ENOUGH_LENS+ENOUGH_DISTS)
 
 /* Type of code to build for inflate_table() */
+=======
+/* Maximum size of dynamic tree.  The maximum found in a long but non-
+   exhaustive search was 1444 code structures (852 for length/literals
+   and 592 for distances, the latter actually the result of an
+   exhaustive search).  The true maximum is not known, but the value
+   below is more than safe. */
+#define ENOUGH 2048
+#define MAXD 592
+
+/* Type of code to build for inftable() */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 typedef enum {
     CODES,
     LENS,
     DISTS
 } codetype;
 
+<<<<<<< HEAD
 int ZLIB_INTERNAL inflate_table OF((codetype type, unsigned short FAR *lens,
+=======
+extern int inflate_table OF((codetype type, unsigned short FAR *lens,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                              unsigned codes, code FAR * FAR *table,
                              unsigned FAR *bits, unsigned short FAR *work));

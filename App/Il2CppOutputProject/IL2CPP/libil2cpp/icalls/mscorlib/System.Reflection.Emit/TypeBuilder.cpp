@@ -51,12 +51,15 @@ namespace Emit
     {
         NOT_SUPPORTED_SRE(TypeBuilder::setup_generic_class);
     }
+<<<<<<< HEAD
 
     Il2CppReflectionType* TypeBuilder::create_runtime_class40(Il2CppReflectionTypeBuilder*)
     {
         NOT_SUPPORTED_SRE(TypeBuilder::create_runtime_class);
         return NULL;
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } /* namespace Emit */
 } /* namespace Reflection */
 } /* namespace System */

@@ -39,8 +39,11 @@ namespace os
             m_StackSize = newsize;
         }
 
+<<<<<<< HEAD
         static int GetMaxStackSize();
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         void QueueUserAPC(Thread::APCFunc func, void* context);
 
         ApartmentState GetApartment();

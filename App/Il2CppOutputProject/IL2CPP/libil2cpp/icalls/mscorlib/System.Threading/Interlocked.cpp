@@ -1,5 +1,8 @@
 #include "il2cpp-config.h"
+<<<<<<< HEAD
 #include "gc/GarbageCollector.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "icalls/mscorlib/System.Threading/Interlocked.h"
 #include <ctype.h>
 #include "os/Atomic.h"
@@ -36,9 +39,13 @@ namespace Threading
 
     void* Interlocked::CompareExchange_T(void** location, void* value, void* comparand)
     {
+<<<<<<< HEAD
         void* retval = Atomic::CompareExchangePointer(location, value, comparand);
         gc::GarbageCollector::SetWriteBarrier(location);
         return retval;
+=======
+        return Atomic::CompareExchangePointer(location, value, comparand);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     intptr_t Interlocked::CompareExchangeIntPtr(intptr_t* location, intptr_t value, intptr_t comparand)

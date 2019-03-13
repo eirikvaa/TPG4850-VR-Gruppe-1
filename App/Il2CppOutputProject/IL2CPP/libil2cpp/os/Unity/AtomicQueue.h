@@ -2,11 +2,49 @@
 
 #include "UnityPlatformConfigure.h"
 #include "ExtendedAtomicTypes.h"
+<<<<<<< HEAD
 #include "AtomicNode.h"
 
 
 UNITY_PLATFORM_BEGIN_NAMESPACE;
 
+=======
+
+UNITY_PLATFORM_BEGIN_NAMESPACE;
+
+#if defined(ATOMIC_HAS_DCAS)
+
+    #define ATOMIC_HAS_QUEUE    2
+
+#elif (defined(__arm64__) || defined(__aarch64__)) && (defined(__clang__) || defined(__GNUC__))
+
+    #define ATOMIC_HAS_QUEUE    1
+
+#elif defined(__arm__) && (defined(__ARM_ARCH_7__) || defined(__ARM_ARCH_7A__) || defined(__ARM_ARCH_7R__) || defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7S__)) && (!UNITY_STV_API) && (defined(__clang__) || defined(__GNUC__) || defined(SN_TARGET_PSP2))
+
+    #define ATOMIC_HAS_QUEUE    1
+
+#endif
+
+class AtomicNode
+{
+    friend class AtomicStack;
+    friend class AtomicQueue;
+
+    volatile atomic_word _next;
+
+public:
+    void* data[3];
+
+    AtomicNode *Next() const
+    {
+        return (AtomicNode*)_next;
+    }
+
+    AtomicNode *Link(AtomicNode *next);
+};
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if defined(ATOMIC_HAS_QUEUE)
 
 
@@ -46,6 +84,7 @@ void DestroyAtomicStack(AtomicStack* s);
 
 
 // A generic lockfree queue FIFO queue.
+<<<<<<< HEAD
 // Any thread can Enqueue / Dequeue in parallel.
 // We do guarantee that all 3 data pointer are the same after dequeuing.
 //
@@ -62,6 +101,14 @@ void DestroyAtomicStack(AtomicStack* s);
 // Make sure to destroy nodes consistently.
 
 // The queue is lockfree and highly optimized. It has different implementations for different architectures.
+=======
+// Any thread can Enqueue / Dequeue in paralell.
+// When pushing / popping a node there is no guarantee that the pointer to the node is the same (void* data[3])
+// We do guarantee that all 3 data pointer are the same after deqeuing.
+
+
+// The queue is lockfree and highly optimized. It has different implementations for different archectures.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 // On intel / arm it is built with double CAS:
 // http://en.wikipedia.org/wiki/Double_compare-and-swap
@@ -124,6 +171,11 @@ public:
     bool Add(AtomicNode *first, AtomicNode *last, atomic_word tag);
     AtomicNode* Touch(atomic_word tag);
     void Reset(AtomicNode *node, atomic_word tag);
+<<<<<<< HEAD
+=======
+
+    static void Relax();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 UNITY_PLATFORM_END_NAMESPACE;

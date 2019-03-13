@@ -21,11 +21,15 @@ namespace vm
             return gc::GarbageCollector::GetOrCreateCCW(obj, iid);
         }
 
+<<<<<<< HEAD
         static il2cpp_hresult_t HandleInvalidIPropertyConversion(const char* fromType, const char* toType);
         static il2cpp_hresult_t HandleInvalidIPropertyConversion(Il2CppObject* value, const char* fromType, const char* toType);
 
         static il2cpp_hresult_t HandleInvalidIPropertyArrayConversion(const char* fromArrayType, const char* fromElementType, const char* toElementType, il2cpp_array_size_t index);
         static il2cpp_hresult_t HandleInvalidIPropertyArrayConversion(Il2CppObject* value, const char* fromArrayType, const char* fromElementType, const char* toElementType, il2cpp_array_size_t index);
+=======
+        static Il2CppException* GetIPropertyValueInvalidCast(Il2CppObject* value, const char* from, const char* to);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 } /* namespace vm */
 } /* namespace il2cpp */

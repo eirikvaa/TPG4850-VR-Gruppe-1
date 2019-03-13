@@ -4,6 +4,7 @@
 #include "os/WindowsRuntime.h"
 #include "utils/Il2CppHStringReference.h"
 #include "utils/StringUtils.h"
+<<<<<<< HEAD
 #include "vm/AssemblyName.h"
 #include "vm/Class.h"
 #include "vm/Exception.h"
@@ -11,6 +12,12 @@
 #include "vm/Image.h"
 #include "vm/MetadataCache.h"
 #include "vm/Type.h"
+=======
+#include "vm/Class.h"
+#include "vm/Exception.h"
+#include "vm/GenericClass.h"
+#include "vm/MetadataCache.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/WindowsRuntime.h"
 
 using namespace il2cpp::metadata;
@@ -19,6 +26,7 @@ namespace il2cpp
 {
 namespace vm
 {
+<<<<<<< HEAD
     const char kArrayTypePrefixUtf8[] = "Windows.Foundation.IReferenceArray`1<";
     const Il2CppNativeChar kArrayTypePrefix[] = IL2CPP_NATIVE_STRING("Windows.Foundation.IReferenceArray`1<");
     const Il2CppNativeChar kIReferencePrefix[] = IL2CPP_NATIVE_STRING("Windows.Foundation.IReference`1<");
@@ -26,6 +34,8 @@ namespace vm
     const Il2CppNativeChar kArrayTypePostprefix[] = IL2CPP_NATIVE_STRING("Array`1<");
     const Il2CppNativeChar kIReferencePostprefix[] = IL2CPP_NATIVE_STRING("`1<");
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppIActivationFactory* WindowsRuntime::GetActivationFactory(const utils::StringView<Il2CppNativeChar>& runtimeClassName)
     {
         utils::Il2CppHStringReference className(runtimeClassName);
@@ -89,6 +99,7 @@ namespace vm
 
         return NULL;
     }
+<<<<<<< HEAD
 
     static bool IsWindowsRuntimePrimitiveType(const Il2CppType* type, Il2CppClass*& outCachedNonPrimitiveClass)
     {
@@ -829,5 +840,7 @@ namespace vm
                 ThrowUnexpectedTypeKindException();
         }
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 }

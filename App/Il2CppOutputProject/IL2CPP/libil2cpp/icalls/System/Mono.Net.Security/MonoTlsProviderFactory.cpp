@@ -2,7 +2,10 @@
 
 #include "il2cpp-config.h"
 #include "MonoTlsProviderFactory.h"
+<<<<<<< HEAD
 #include "vm/String.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 namespace il2cpp
 {
@@ -20,6 +23,7 @@ namespace Security
     {
         return false;
     }
+<<<<<<< HEAD
 
     Il2CppString* MonoTlsProviderFactory::GetDefaultProviderForPlatform()
     {
@@ -29,6 +33,8 @@ namespace Security
         return vm::String::New("mbedtls");
 #endif
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } // namespace Security
 } // namespace Net
 } // namespace Mono

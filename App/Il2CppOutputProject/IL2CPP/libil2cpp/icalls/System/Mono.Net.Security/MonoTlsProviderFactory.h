@@ -2,8 +2,11 @@
 
 #if NET_4_0
 
+<<<<<<< HEAD
 struct Il2CppString;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 namespace il2cpp
 {
 namespace icalls
@@ -20,7 +23,10 @@ namespace Security
     {
     public:
         static bool IsBtlsSupported();
+<<<<<<< HEAD
         static Il2CppString* GetDefaultProviderForPlatform();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 } // namespace Security
 } // namespace Net

@@ -12,7 +12,11 @@ namespace System
 {
     Il2CppString* MissingMemberException::FormatSignature(Il2CppArray* signature)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(MissingMemberException::FormatSignature);
+=======
+        NOT_IMPLEMENTED_ICALL(MissingMemberException::FormatSignature);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }

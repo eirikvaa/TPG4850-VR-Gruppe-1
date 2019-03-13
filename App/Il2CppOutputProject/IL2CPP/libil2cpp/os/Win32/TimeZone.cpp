@@ -43,6 +43,7 @@ namespace os
 
 // names[0] - standardName
 // names[1] - daylightName
+<<<<<<< HEAD
 #if NET_4_0
     bool TimeZone::GetTimeZoneData(int32_t year, int64_t data[4], std::string names[2], bool* daylight_inverted)
     {
@@ -51,6 +52,8 @@ namespace os
     }
 
 #else
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     bool TimeZone::GetTimeZoneData(int32_t year, int64_t data[4], std::string names[2])
     {
         TIME_ZONE_INFORMATION tz_info;
@@ -111,8 +114,11 @@ namespace os
 
         return 1;
     }
+<<<<<<< HEAD
 
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 }
 

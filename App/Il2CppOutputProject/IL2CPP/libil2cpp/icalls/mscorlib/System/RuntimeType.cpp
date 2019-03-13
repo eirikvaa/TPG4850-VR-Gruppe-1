@@ -32,21 +32,33 @@ namespace System
 {
     bool RuntimeType::IsTypeExportedToWindowsRuntime(Il2CppObject* type)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(RuntimeType::IsTypeExportedToWindowsRuntime);
+=======
+        NOT_IMPLEMENTED_ICALL(RuntimeType::IsTypeExportedToWindowsRuntime);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return false;
     }
 
     bool RuntimeType::IsWindowsRuntimeObjectType(Il2CppObject* type)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(RuntimeType::IsWindowsRuntimeObjectType);
+=======
+        NOT_IMPLEMENTED_ICALL(RuntimeType::IsWindowsRuntimeObjectType);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return false;
     }
 
     int32_t RuntimeType::get_core_clr_security_level(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(RuntimeType::get_core_clr_security_level);
+=======
+        NOT_IMPLEMENTED_ICALL(RuntimeType::get_core_clr_security_level);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return 0;
     }
@@ -68,7 +80,11 @@ namespace System
 
     Il2CppObject* RuntimeType::get_DeclaringMethod(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(RuntimeType::get_DeclaringMethod);
+=======
+        NOT_IMPLEMENTED_ICALL(RuntimeType::get_DeclaringMethod);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }
@@ -317,6 +333,7 @@ namespace System
 
         return reinterpret_cast<intptr_t>(void_ptr_array_to_gptr_array(res_array));
     }
+<<<<<<< HEAD
 
     void* /* System.Reflection.ConstructorInfo */ RuntimeType::GetCorrespondingInflatedConstructor(void* /* System.MonoType */ self, void* /* System.Reflection.ConstructorInfo */ genericInfo)
     {
@@ -329,6 +346,8 @@ namespace System
         NOT_SUPPORTED_IL2CPP(MonoType::GetCorrespondingInflatedMethod, "This icall is only used by System.Reflection.Emit.TypeBuilder.");
         return 0;
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 } // namespace System
 } // namespace mscorlib
 } // namespace icalls

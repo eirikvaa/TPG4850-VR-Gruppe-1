@@ -151,8 +151,11 @@ il2cpp_type_get_object
 il2cpp_type_get_type
 il2cpp_type_get_class_or_element_class
 il2cpp_type_get_name
+<<<<<<< HEAD
 il2cpp_type_equals
 
 il2cpp_unity_install_unitytls_interface
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 ____visualizerHelpersPreventLinkerStripping @65535 NONAME DATA

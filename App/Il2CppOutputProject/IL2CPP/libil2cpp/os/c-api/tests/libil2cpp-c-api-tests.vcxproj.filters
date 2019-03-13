@@ -189,6 +189,12 @@
     <ClCompile Include="..\..\ConditionVariable.cpp">
       <Filter>libil2cpp\os</Filter>
     </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="..\..\Debug.cpp">
+      <Filter>libil2cpp\os</Filter>
+    </ClCompile>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     <ClCompile Include="..\..\Error.cpp">
       <Filter>libil2cpp\os</Filter>
     </ClCompile>
@@ -600,6 +606,7 @@
     <ClCompile Include="..\..\Handle.cpp">
       <Filter>libil2cpp\os</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\..\Generic\TimeZoneInfo.cpp">
       <Filter>libil2cpp\os\Generic</Filter>
     </ClCompile>
@@ -624,6 +631,8 @@
     <ClCompile Include="..\..\..\utils\MemoryMappedFile.cpp">
       <Filter>libil2cpp\utils</Filter>
     </ClCompile>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\il2cpp-dependencies\UnitTest++\AssertException.h">
@@ -1103,6 +1112,7 @@
     <ClInclude Include="..\Semaphore-c-api.h">
       <Filter>libil2cpp\os\c-api</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\..\TimeZoneInfo.h">
       <Filter>libil2cpp\os</Filter>
     </ClInclude>
@@ -1118,5 +1128,7 @@
     <ClInclude Include="..\..\..\utils\MemoryMappedFile.h">
       <Filter>libil2cpp\utils</Filter>
     </ClInclude>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   </ItemGroup>
 </Project>

@@ -131,11 +131,14 @@ namespace os
         m_Thread->SetStackSize(stackSize);
     }
 
+<<<<<<< HEAD
     int Thread::GetMaxStackSize()
     {
         return ThreadImpl::GetMaxStackSize();
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     struct StartData
     {
         Thread* thread;

@@ -6,7 +6,10 @@
 # include <malloc.h>
 #endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -19,6 +22,7 @@
 #include "codegen/il2cpp-codegen.h"
 #include "il2cpp-object-internals.h"
 
+<<<<<<< HEAD
 template <typename R>
 struct VirtFuncInvoker0
 {
@@ -242,6 +246,25 @@ struct TerrainU5BU5D_t09516803A2C01893489D5ACAA202A907B2972BDE;
 
 #ifndef U3CMODULEU3E_TF1895192DB0786D7B32E637E7538ADA625D10FB5_H
 #define U3CMODULEU3E_TF1895192DB0786D7B32E637E7538ADA625D10FB5_H
+=======
+
+// UnityEngine.TerrainData
+struct TerrainData_t657004131;
+// System.Void
+struct Void_t1185182177;
+// System.Char[]
+struct CharU5BU5D_t3528271667;
+// System.String
+struct String_t;
+
+extern RuntimeClass* TerrainData_t657004131_il2cpp_TypeInfo_var;
+extern const uint32_t TerrainData__cctor_m2936165929_MetadataUsageId;
+
+
+
+#ifndef U3CMODULEU3E_T692745543_H
+#define U3CMODULEU3E_T692745543_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -249,7 +272,11 @@ struct TerrainU5BU5D_t09516803A2C01893489D5ACAA202A907B2972BDE;
 #endif
 
 // <Module>
+<<<<<<< HEAD
 struct  U3CModuleU3E_tF1895192DB0786D7B32E637E7538ADA625D10FB5 
+=======
+struct  U3CModuleU3E_t692745543 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -259,7 +286,11 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // U3CMODULEU3E_TF1895192DB0786D7B32E637E7538ADA625D10FB5_H
+=======
+#endif // U3CMODULEU3E_T692745543_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
 #ifdef __clang__
@@ -274,29 +305,60 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEOBJECT_H
+<<<<<<< HEAD
 struct Il2CppArrayBounds;
 #ifndef RUNTIMEARRAY_H
 #define RUNTIMEARRAY_H
+=======
+#ifndef VALUETYPE_T3640485471_H
+#define VALUETYPE_T3640485471_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Array
+=======
+// System.ValueType
+struct  ValueType_t3640485471  : public RuntimeObject
+{
+public:
+
+public:
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // RUNTIMEARRAY_H
 #ifndef KEYCOLLECTION_TE38E8CA5A5DAD8EDFE46CBE8440DE1FB77D92EAB_H
 #define KEYCOLLECTION_TE38E8CA5A5DAD8EDFE46CBE8440DE1FB77D92EAB_H
+=======
+// Native definition for P/Invoke marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_com
+{
+};
+#endif // VALUETYPE_T3640485471_H
+struct Il2CppArrayBounds;
+#ifndef RUNTIMEARRAY_H
+#define RUNTIMEARRAY_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Collections.Generic.Dictionary`2/KeyCollection<UnityEngine.Experimental.TerrainAPI.TerrainUtility/TerrainMap/TileCoord,UnityEngine.Terrain>
 struct  KeyCollection_tE38E8CA5A5DAD8EDFE46CBE8440DE1FB77D92EAB  : public RuntimeObject
 {
@@ -314,19 +376,29 @@ public:
 		Il2CppCodeGenWriteBarrier((&___dictionary_0), value);
 	}
 };
+=======
+// System.Array
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // KEYCOLLECTION_TE38E8CA5A5DAD8EDFE46CBE8440DE1FB77D92EAB_H
 #ifndef DICTIONARY_2_T651CE851D569289A981D44DC5543BEA956206753_H
 #define DICTIONARY_2_T651CE851D569289A981D44DC5543BEA956206753_H
+=======
+#endif // RUNTIMEARRAY_H
+#ifndef INTPTR_T_H
+#define INTPTR_T_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.Experimental.TerrainAPI.TerrainUtility/TerrainMap>
 struct  Dictionary_2_t651CE851D569289A981D44DC5543BEA956206753  : public RuntimeObject
 {
@@ -437,21 +509,60 @@ public:
 	{
 		____syncRoot_9 = value;
 		Il2CppCodeGenWriteBarrier((&____syncRoot_9), value);
+=======
+// System.IntPtr
+struct  IntPtr_t 
+{
+public:
+	// System.Void* System.IntPtr::m_value
+	void* ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(IntPtr_t, ___m_value_0)); }
+	inline void* get_m_value_0() const { return ___m_value_0; }
+	inline void** get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(void* value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+struct IntPtr_t_StaticFields
+{
+public:
+	// System.IntPtr System.IntPtr::Zero
+	intptr_t ___Zero_1;
+
+public:
+	inline static int32_t get_offset_of_Zero_1() { return static_cast<int32_t>(offsetof(IntPtr_t_StaticFields, ___Zero_1)); }
+	inline intptr_t get_Zero_1() const { return ___Zero_1; }
+	inline intptr_t* get_address_of_Zero_1() { return &___Zero_1; }
+	inline void set_Zero_1(intptr_t value)
+	{
+		___Zero_1 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // DICTIONARY_2_T651CE851D569289A981D44DC5543BEA956206753_H
 #ifndef DICTIONARY_2_TEB34CAE1B4D0E725777A5B9D419AF51BE918C30C_H
 #define DICTIONARY_2_TEB34CAE1B4D0E725777A5B9D419AF51BE918C30C_H
+=======
+#endif // INTPTR_T_H
+#ifndef ENUM_T4135868527_H
+#define ENUM_T4135868527_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Collections.Generic.Dictionary`2<UnityEngine.Experimental.TerrainAPI.TerrainUtility/TerrainMap/TileCoord,UnityEngine.Terrain>
 struct  Dictionary_2_tEB34CAE1B4D0E725777A5B9D419AF51BE918C30C  : public RuntimeObject
 {
@@ -583,11 +694,37 @@ struct  ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF  : public RuntimeObj
 public:
 
 public:
+=======
+// System.Enum
+struct  Enum_t4135868527  : public ValueType_t3640485471
+{
+public:
+
+public:
+};
+
+struct Enum_t4135868527_StaticFields
+{
+public:
+	// System.Char[] System.Enum::enumSeperatorCharArray
+	CharU5BU5D_t3528271667* ___enumSeperatorCharArray_0;
+
+public:
+	inline static int32_t get_offset_of_enumSeperatorCharArray_0() { return static_cast<int32_t>(offsetof(Enum_t4135868527_StaticFields, ___enumSeperatorCharArray_0)); }
+	inline CharU5BU5D_t3528271667* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
+	inline CharU5BU5D_t3528271667** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
+	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t3528271667* value)
+	{
+		___enumSeperatorCharArray_0 = value;
+		Il2CppCodeGenWriteBarrier((&___enumSeperatorCharArray_0), value);
+	}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 // Native definition for P/Invoke marshalling of System.ValueType
 struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_pinvoke
 {
@@ -599,16 +736,43 @@ struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
 #endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
 #ifndef TERRAINUTILITY_T82C295A06EAAEA3D755971EBE55084B993C7FC7B_H
 #define TERRAINUTILITY_T82C295A06EAAEA3D755971EBE55084B993C7FC7B_H
+=======
+// Native definition for P/Invoke marshalling of System.Enum
+struct Enum_t4135868527_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.Enum
+struct Enum_t4135868527_marshaled_com
+{
+};
+#endif // ENUM_T4135868527_H
+#ifndef VOID_T1185182177_H
+#define VOID_T1185182177_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Experimental.TerrainAPI.TerrainUtility
 struct  TerrainUtility_t82C295A06EAAEA3D755971EBE55084B993C7FC7B  : public RuntimeObject
 {
 public:
+=======
+// System.Void
+struct  Void_t1185182177 
+{
+public:
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t1185182177__padding[1];
+	};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 public:
 };
@@ -616,15 +780,22 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // TERRAINUTILITY_T82C295A06EAAEA3D755971EBE55084B993C7FC7B_H
 #ifndef U3CCOLLECTTERRAINSU3EC__ANONSTOREY0_T4BCCA12171A915F3BCE4B2B0F9A4EBD484BC78CA_H
 #define U3CCOLLECTTERRAINSU3EC__ANONSTOREY0_T4BCCA12171A915F3BCE4B2B0F9A4EBD484BC78CA_H
+=======
+#endif // VOID_T1185182177_H
+#ifndef INT32_T2950945753_H
+#define INT32_T2950945753_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Experimental.TerrainAPI.TerrainUtility/<CollectTerrains>c__AnonStorey0
 struct  U3CCollectTerrainsU3Ec__AnonStorey0_t4BCCA12171A915F3BCE4B2B0F9A4EBD484BC78CA  : public RuntimeObject
 {
@@ -651,21 +822,44 @@ public:
 	{
 		___U3CU3Ef__refU241_1 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CU3Ef__refU241_1), value);
+=======
+// System.Int32
+struct  Int32_t2950945753 
+{
+public:
+	// System.Int32 System.Int32::m_value
+	int32_t ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Int32_t2950945753, ___m_value_0)); }
+	inline int32_t get_m_value_0() const { return ___m_value_0; }
+	inline int32_t* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(int32_t value)
+	{
+		___m_value_0 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // U3CCOLLECTTERRAINSU3EC__ANONSTOREY0_T4BCCA12171A915F3BCE4B2B0F9A4EBD484BC78CA_H
 #ifndef U3CCOLLECTTERRAINSU3EC__ANONSTOREY1_T41DA2A02D290EE5FEF14389A4391CBC1E3E622A5_H
 #define U3CCOLLECTTERRAINSU3EC__ANONSTOREY1_T41DA2A02D290EE5FEF14389A4391CBC1E3E622A5_H
+=======
+#endif // INT32_T2950945753_H
+#ifndef SINGLE_T1397266774_H
+#define SINGLE_T1397266774_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Experimental.TerrainAPI.TerrainUtility/<CollectTerrains>c__AnonStorey1
 struct  U3CCollectTerrainsU3Ec__AnonStorey1_t41DA2A02D290EE5FEF14389A4391CBC1E3E622A5  : public RuntimeObject
 {
@@ -680,21 +874,44 @@ public:
 	inline void set_onlyAutoConnectedTerrains_0(bool value)
 	{
 		___onlyAutoConnectedTerrains_0 = value;
+=======
+// System.Single
+struct  Single_t1397266774 
+{
+public:
+	// System.Single System.Single::m_value
+	float ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Single_t1397266774, ___m_value_0)); }
+	inline float get_m_value_0() const { return ___m_value_0; }
+	inline float* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(float value)
+	{
+		___m_value_0 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // U3CCOLLECTTERRAINSU3EC__ANONSTOREY1_T41DA2A02D290EE5FEF14389A4391CBC1E3E622A5_H
 #ifndef U3CCREATEFROMPLACEMENTU3EC__ANONSTOREY0_T785BD4BDC25E101807FE78EE2D72D5954E42248C_H
 #define U3CCREATEFROMPLACEMENTU3EC__ANONSTOREY0_T785BD4BDC25E101807FE78EE2D72D5954E42248C_H
+=======
+#endif // SINGLE_T1397266774_H
+#ifndef BOUNDARYVALUETYPE_T1782311533_H
+#define BOUNDARYVALUETYPE_T1782311533_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Experimental.TerrainAPI.TerrainUtility/TerrainMap/<CreateFromPlacement>c__AnonStorey0
 struct  U3CCreateFromPlacementU3Ec__AnonStorey0_t785BD4BDC25E101807FE78EE2D72D5954E42248C  : public RuntimeObject
 {
@@ -709,21 +926,44 @@ public:
 	inline void set_groupID_0(int32_t value)
 	{
 		___groupID_0 = value;
+=======
+// UnityEngine.TerrainData/BoundaryValueType
+struct  BoundaryValueType_t1782311533 
+{
+public:
+	// System.Int32 UnityEngine.TerrainData/BoundaryValueType::value__
+	int32_t ___value___2;
+
+public:
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(BoundaryValueType_t1782311533, ___value___2)); }
+	inline int32_t get_value___2() const { return ___value___2; }
+	inline int32_t* get_address_of_value___2() { return &___value___2; }
+	inline void set_value___2(int32_t value)
+	{
+		___value___2 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // U3CCREATEFROMPLACEMENTU3EC__ANONSTOREY0_T785BD4BDC25E101807FE78EE2D72D5954E42248C_H
 #ifndef BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
 #define BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
+=======
+#endif // BOUNDARYVALUETYPE_T1782311533_H
+#ifndef OBJECT_T631007953_H
+#define OBJECT_T631007953_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Boolean
 struct  Boolean_tB53F6830F670160873277339AA58F15CAED4399C 
 {
@@ -766,21 +1006,70 @@ public:
 	{
 		___FalseString_6 = value;
 		Il2CppCodeGenWriteBarrier((&___FalseString_6), value);
+=======
+// UnityEngine.Object
+struct  Object_t631007953  : public RuntimeObject
+{
+public:
+	// System.IntPtr UnityEngine.Object::m_CachedPtr
+	intptr_t ___m_CachedPtr_0;
+
+public:
+	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_t631007953, ___m_CachedPtr_0)); }
+	inline intptr_t get_m_CachedPtr_0() const { return ___m_CachedPtr_0; }
+	inline intptr_t* get_address_of_m_CachedPtr_0() { return &___m_CachedPtr_0; }
+	inline void set_m_CachedPtr_0(intptr_t value)
+	{
+		___m_CachedPtr_0 = value;
+	}
+};
+
+struct Object_t631007953_StaticFields
+{
+public:
+	// System.Int32 UnityEngine.Object::OffsetOfInstanceIDInCPlusPlusObject
+	int32_t ___OffsetOfInstanceIDInCPlusPlusObject_1;
+
+public:
+	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_t631007953_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
+	inline int32_t get_OffsetOfInstanceIDInCPlusPlusObject_1() const { return ___OffsetOfInstanceIDInCPlusPlusObject_1; }
+	inline int32_t* get_address_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return &___OffsetOfInstanceIDInCPlusPlusObject_1; }
+	inline void set_OffsetOfInstanceIDInCPlusPlusObject_1(int32_t value)
+	{
+		___OffsetOfInstanceIDInCPlusPlusObject_1 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
 #ifndef KEYVALUEPAIR_2_T142B50DAD5164EBD2E1495FD821B1A4C3233FA26_H
 #define KEYVALUEPAIR_2_T142B50DAD5164EBD2E1495FD821B1A4C3233FA26_H
+=======
+// Native definition for P/Invoke marshalling of UnityEngine.Object
+struct Object_t631007953_marshaled_pinvoke
+{
+	intptr_t ___m_CachedPtr_0;
+};
+// Native definition for COM marshalling of UnityEngine.Object
+struct Object_t631007953_marshaled_com
+{
+	intptr_t ___m_CachedPtr_0;
+};
+#endif // OBJECT_T631007953_H
+#ifndef TERRAINDATA_T657004131_H
+#define TERRAINDATA_T657004131_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Collections.Generic.KeyValuePair`2<System.Int32,System.Object>
 struct  KeyValuePair_2_t142B50DAD5164EBD2E1495FD821B1A4C3233FA26 
 {
@@ -4677,11 +4966,117 @@ extern "C"  void TileCoord__ctor_mAA64B48F381F5DCBB58B7EA137AD4073076177ED_Adjus
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+=======
+// UnityEngine.TerrainData
+struct  TerrainData_t657004131  : public Object_t631007953
+{
+public:
+
+public:
+};
+
+struct TerrainData_t657004131_StaticFields
+{
+public:
+	// System.Int32 UnityEngine.TerrainData::k_MaximumResolution
+	int32_t ___k_MaximumResolution_2;
+	// System.Int32 UnityEngine.TerrainData::k_MinimumDetailResolutionPerPatch
+	int32_t ___k_MinimumDetailResolutionPerPatch_3;
+	// System.Int32 UnityEngine.TerrainData::k_MaximumDetailResolutionPerPatch
+	int32_t ___k_MaximumDetailResolutionPerPatch_4;
+	// System.Int32 UnityEngine.TerrainData::k_MaximumDetailPatchCount
+	int32_t ___k_MaximumDetailPatchCount_5;
+	// System.Int32 UnityEngine.TerrainData::k_MinimumAlphamapResolution
+	int32_t ___k_MinimumAlphamapResolution_6;
+	// System.Int32 UnityEngine.TerrainData::k_MaximumAlphamapResolution
+	int32_t ___k_MaximumAlphamapResolution_7;
+	// System.Int32 UnityEngine.TerrainData::k_MinimumBaseMapResolution
+	int32_t ___k_MinimumBaseMapResolution_8;
+	// System.Int32 UnityEngine.TerrainData::k_MaximumBaseMapResolution
+	int32_t ___k_MaximumBaseMapResolution_9;
+
+public:
+	inline static int32_t get_offset_of_k_MaximumResolution_2() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MaximumResolution_2)); }
+	inline int32_t get_k_MaximumResolution_2() const { return ___k_MaximumResolution_2; }
+	inline int32_t* get_address_of_k_MaximumResolution_2() { return &___k_MaximumResolution_2; }
+	inline void set_k_MaximumResolution_2(int32_t value)
+	{
+		___k_MaximumResolution_2 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MinimumDetailResolutionPerPatch_3() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MinimumDetailResolutionPerPatch_3)); }
+	inline int32_t get_k_MinimumDetailResolutionPerPatch_3() const { return ___k_MinimumDetailResolutionPerPatch_3; }
+	inline int32_t* get_address_of_k_MinimumDetailResolutionPerPatch_3() { return &___k_MinimumDetailResolutionPerPatch_3; }
+	inline void set_k_MinimumDetailResolutionPerPatch_3(int32_t value)
+	{
+		___k_MinimumDetailResolutionPerPatch_3 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MaximumDetailResolutionPerPatch_4() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MaximumDetailResolutionPerPatch_4)); }
+	inline int32_t get_k_MaximumDetailResolutionPerPatch_4() const { return ___k_MaximumDetailResolutionPerPatch_4; }
+	inline int32_t* get_address_of_k_MaximumDetailResolutionPerPatch_4() { return &___k_MaximumDetailResolutionPerPatch_4; }
+	inline void set_k_MaximumDetailResolutionPerPatch_4(int32_t value)
+	{
+		___k_MaximumDetailResolutionPerPatch_4 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MaximumDetailPatchCount_5() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MaximumDetailPatchCount_5)); }
+	inline int32_t get_k_MaximumDetailPatchCount_5() const { return ___k_MaximumDetailPatchCount_5; }
+	inline int32_t* get_address_of_k_MaximumDetailPatchCount_5() { return &___k_MaximumDetailPatchCount_5; }
+	inline void set_k_MaximumDetailPatchCount_5(int32_t value)
+	{
+		___k_MaximumDetailPatchCount_5 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MinimumAlphamapResolution_6() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MinimumAlphamapResolution_6)); }
+	inline int32_t get_k_MinimumAlphamapResolution_6() const { return ___k_MinimumAlphamapResolution_6; }
+	inline int32_t* get_address_of_k_MinimumAlphamapResolution_6() { return &___k_MinimumAlphamapResolution_6; }
+	inline void set_k_MinimumAlphamapResolution_6(int32_t value)
+	{
+		___k_MinimumAlphamapResolution_6 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MaximumAlphamapResolution_7() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MaximumAlphamapResolution_7)); }
+	inline int32_t get_k_MaximumAlphamapResolution_7() const { return ___k_MaximumAlphamapResolution_7; }
+	inline int32_t* get_address_of_k_MaximumAlphamapResolution_7() { return &___k_MaximumAlphamapResolution_7; }
+	inline void set_k_MaximumAlphamapResolution_7(int32_t value)
+	{
+		___k_MaximumAlphamapResolution_7 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MinimumBaseMapResolution_8() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MinimumBaseMapResolution_8)); }
+	inline int32_t get_k_MinimumBaseMapResolution_8() const { return ___k_MinimumBaseMapResolution_8; }
+	inline int32_t* get_address_of_k_MinimumBaseMapResolution_8() { return &___k_MinimumBaseMapResolution_8; }
+	inline void set_k_MinimumBaseMapResolution_8(int32_t value)
+	{
+		___k_MinimumBaseMapResolution_8 = value;
+	}
+
+	inline static int32_t get_offset_of_k_MaximumBaseMapResolution_9() { return static_cast<int32_t>(offsetof(TerrainData_t657004131_StaticFields, ___k_MaximumBaseMapResolution_9)); }
+	inline int32_t get_k_MaximumBaseMapResolution_9() const { return ___k_MaximumBaseMapResolution_9; }
+	inline int32_t* get_address_of_k_MaximumBaseMapResolution_9() { return &___k_MaximumBaseMapResolution_9; }
+	inline void set_k_MaximumBaseMapResolution_9(int32_t value)
+	{
+		___k_MaximumBaseMapResolution_9 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TERRAINDATA_T657004131_H
+
+
+
+// System.Int32 UnityEngine.TerrainData::GetBoundaryValue(UnityEngine.TerrainData/BoundaryValueType)
+extern "C" IL2CPP_METHOD_ATTR int32_t TerrainData_GetBoundaryValue_m1103633233 (RuntimeObject * __this /* static, unused */, int32_t ___type0, const RuntimeMethod* method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.Terrain::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void Terrain__ctor_m1D3167E91CFC5220CF861F7CDE01A1F3C280BDCF (Terrain_t0BF7371FA90643325F50A87C7894D7BEBBE08943 * __this, const RuntimeMethod* method)
 {
@@ -4739,6 +5134,8 @@ extern "C" IL2CPP_METHOD_ATTR TerrainU5BU5D_t09516803A2C01893489D5ACAA202A907B29
 	TerrainU5BU5D_t09516803A2C01893489D5ACAA202A907B2972BDE* retVal = _il2cpp_icall_func();
 	return retVal;
 }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -4747,6 +5144,7 @@ extern "C" IL2CPP_METHOD_ATTR TerrainU5BU5D_t09516803A2C01893489D5ACAA202A907B29
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.TerrainData::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void TerrainData__ctor_mEF24945C9BBDA5CAFE4A1C453649B86D79DD87AF (TerrainData_t9D44396901570930AFE428DAC19ABE0C1477CFE2 * __this, const RuntimeMethod* method)
 {
@@ -4801,15 +5199,39 @@ extern "C" IL2CPP_METHOD_ATTR float TerrainData_GetAlphamapResolutionInternal_mA
 	static TerrainData_GetAlphamapResolutionInternal_mA65CA918038A8D733648A2331826E2C0AA7316B6_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (TerrainData_GetAlphamapResolutionInternal_mA65CA918038A8D733648A2331826E2C0AA7316B6_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetAlphamapResolutionInternal()");
+=======
+// System.Int32 UnityEngine.TerrainData::GetBoundaryValue(UnityEngine.TerrainData/BoundaryValueType)
+extern "C" IL2CPP_METHOD_ATTR int32_t TerrainData_GetBoundaryValue_m1103633233 (RuntimeObject * __this /* static, unused */, int32_t ___type0, const RuntimeMethod* method)
+{
+	typedef int32_t (*TerrainData_GetBoundaryValue_m1103633233_ftn) (int32_t);
+	static TerrainData_GetBoundaryValue_m1103633233_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TerrainData_GetBoundaryValue_m1103633233_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetBoundaryValue(UnityEngine.TerrainData/BoundaryValueType)");
+	int32_t retVal = _il2cpp_icall_func(___type0);
+	return retVal;
+}
+// System.Single UnityEngine.TerrainData::GetAlphamapResolutionInternal()
+extern "C" IL2CPP_METHOD_ATTR float TerrainData_GetAlphamapResolutionInternal_m1173327220 (TerrainData_t657004131 * __this, const RuntimeMethod* method)
+{
+	typedef float (*TerrainData_GetAlphamapResolutionInternal_m1173327220_ftn) (TerrainData_t657004131 *);
+	static TerrainData_GetAlphamapResolutionInternal_m1173327220_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (TerrainData_GetAlphamapResolutionInternal_m1173327220_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::GetAlphamapResolutionInternal()");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	float retVal = _il2cpp_icall_func(__this);
 	return retVal;
 }
 // System.Void UnityEngine.TerrainData::.cctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void TerrainData__cctor_mB579F93C53A8F85C72D7AA2C6A266DA7F0D066C5 (const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void TerrainData__cctor_m2936165929 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (TerrainData__cctor_mB579F93C53A8F85C72D7AA2C6A266DA7F0D066C5_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -4842,6 +5264,31 @@ extern "C" IL2CPP_METHOD_ATTR void TerrainData_get_size_Injected_mF6DEEE266FBF9C
 	_il2cpp_icall_func = (TerrainData_get_size_Injected_mF6DEEE266FBF9CEC3AF2B6B77593B9704B299A68_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.TerrainData::get_size_Injected(UnityEngine.Vector3&)");
 	_il2cpp_icall_func(__this, ___ret0);
 }
+=======
+		il2cpp_codegen_initialize_method (TerrainData__cctor_m2936165929_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		int32_t L_0 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 0, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MaximumResolution_2(L_0);
+		int32_t L_1 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 1, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MinimumDetailResolutionPerPatch_3(L_1);
+		int32_t L_2 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 2, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MaximumDetailResolutionPerPatch_4(L_2);
+		int32_t L_3 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 3, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MaximumDetailPatchCount_5(L_3);
+		int32_t L_4 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 4, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MinimumAlphamapResolution_6(L_4);
+		int32_t L_5 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 5, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MaximumAlphamapResolution_7(L_5);
+		int32_t L_6 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 6, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MinimumBaseMapResolution_8(L_6);
+		int32_t L_7 = TerrainData_GetBoundaryValue_m1103633233(NULL /*static, unused*/, 7, /*hidden argument*/NULL);
+		((TerrainData_t657004131_StaticFields*)il2cpp_codegen_static_fields_for(TerrainData_t657004131_il2cpp_TypeInfo_var))->set_k_MaximumBaseMapResolution_9(L_7);
+		return;
+	}
+}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

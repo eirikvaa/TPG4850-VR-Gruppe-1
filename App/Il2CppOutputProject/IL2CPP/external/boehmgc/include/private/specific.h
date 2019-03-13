@@ -13,8 +13,12 @@
  */
 
 #include <errno.h>
+<<<<<<< HEAD
 
 EXTERN_C_BEGIN
+=======
+#include "atomic_ops.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* Called during key creation or setspecific.           */
 /* For the GC we already hold lock.                     */
@@ -32,7 +36,11 @@ EXTERN_C_BEGIN
 
 /* An entry describing a thread-specific value for a given thread.      */
 /* All such accessible structures preserve the invariant that if either */
+<<<<<<< HEAD
 /* thread is a valid pthread id or qtid is a valid "quick thread id"    */
+=======
+/* thread is a valid pthread id or qtid is a valid "quick tread id"     */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* for a thread, then value holds the corresponding thread specific     */
 /* value.  This invariant must be preserved at ALL times, since         */
 /* asynchronous reads are allowed.                                      */
@@ -77,9 +85,13 @@ typedef tsd * GC_key_t;
 #define GC_key_create(key, d) GC_key_create_inner(key)
 GC_INNER int GC_key_create_inner(tsd ** key_ptr);
 GC_INNER int GC_setspecific(tsd * key, void * value);
+<<<<<<< HEAD
 #define GC_remove_specific(key) \
                         GC_remove_specific_after_fork(key, pthread_self())
 GC_INNER void GC_remove_specific_after_fork(tsd * key, pthread_t t);
+=======
+GC_INNER void GC_remove_specific(tsd * key);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* An internal version of getspecific that assumes a cache miss.        */
 GC_INNER void * GC_slow_getspecific(tsd * key, word qtid,
@@ -99,5 +111,8 @@ GC_INLINE void * GC_getspecific(tsd * key)
     }
     return GC_slow_getspecific(key, qtid, entry_ptr);
 }
+<<<<<<< HEAD
 
 EXTERN_C_END
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

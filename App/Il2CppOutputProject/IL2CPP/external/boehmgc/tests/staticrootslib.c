@@ -23,7 +23,11 @@ struct treenode {
 };
 
 static struct treenode *root[10] = { 0 };
+<<<<<<< HEAD
 static struct treenode *root_nz[10] = { (struct treenode *)(GC_word)2 };
+=======
+static struct treenode *root_nz[10] = { (void *)(GC_word)2 };
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef STATICROOTSLIB2
 # define libsrl_getpelem libsrl_getpelem2
@@ -31,11 +35,17 @@ static struct treenode *root_nz[10] = { (struct treenode *)(GC_word)2 };
 
   GC_TEST_EXPORT_API struct treenode * libsrl_mktree(int i)
   {
+<<<<<<< HEAD
     struct treenode * r = GC_NEW(struct treenode);
     if (0 == i)
       return 0;
     if (1 == i)
       r = (struct treenode *)GC_MALLOC_ATOMIC(sizeof(struct treenode));
+=======
+    struct treenode * r = GC_MALLOC(sizeof(struct treenode));
+    if (0 == i) return 0;
+    if (1 == i) r = GC_MALLOC_ATOMIC(sizeof(struct treenode));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (r) {
       r -> x = libsrl_mktree(i-1);
       r -> y = libsrl_mktree(i-1);

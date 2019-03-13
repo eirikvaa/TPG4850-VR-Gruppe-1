@@ -28,7 +28,10 @@ namespace Emit
         static Il2CppReflectionEvent* get_event_info(Il2CppReflectionTypeBuilder*, Il2CppReflectionEventBuilder*);
         static void setup_generic_class(Il2CppReflectionTypeBuilder*);
         static void setup_internal_class(Il2CppReflectionTypeBuilder*, Il2CppReflectionTypeBuilder*);
+<<<<<<< HEAD
         static Il2CppReflectionType* create_runtime_class40(Il2CppReflectionTypeBuilder*);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 } /* namespace Emit */
 } /* namespace Reflection */

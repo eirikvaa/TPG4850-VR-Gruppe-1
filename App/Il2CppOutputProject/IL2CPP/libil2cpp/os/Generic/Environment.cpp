@@ -40,24 +40,40 @@ namespace os
 
     std::vector<std::string> Environment::GetEnvironmentVariableNames()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::GetEnvironmentVariableNames);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::GetEnvironmentVariableNames);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return std::vector<std::string>();
     }
 
     std::string Environment::GetHomeDirectory()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::GetHomeDirectory);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::GetHomeDirectory);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return std::string();
     }
 
     std::vector<std::string> Environment::GetLogicalDrives()
     {
+<<<<<<< HEAD
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::GetLogicalDrives);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return std::vector<std::string>();
     }
 
     void Environment::Exit(int result)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Environment::Exit);
+=======
+        NOT_IMPLEMENTED_ICALL(Environment::Exit);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     NORETURN void Environment::Abort()

@@ -18,7 +18,11 @@ namespace os
 
         size_t frames = CaptureStackBackTrace(0, kMaxFrames, stack, NULL);
 
+<<<<<<< HEAD
         if (walkOrder == kFirstCalledToLastCalled)
+=======
+        if (walkOrder == WalkOrder::kFirstCalledToLastCalled)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             for (size_t i = frames; i--;)
             {

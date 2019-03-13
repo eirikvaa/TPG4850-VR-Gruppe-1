@@ -20,7 +20,10 @@
 #include "utils/StringUtils.h"
 #include "utils/Environment.h"
 #include "utils/utf8-cpp/source/utf8.h"
+<<<<<<< HEAD
 #include "vm-utils/Debugger.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm-utils/NativeSymbol.h"
 
 static void* il2cpp_get_vtable_trampoline(MonoVTable *vtable, int slot_index)
@@ -188,11 +191,16 @@ MonoObject* il2cpp_mono_runtime_invoke(MonoMethod *method, void *obj, void **par
 
     try
     {
+<<<<<<< HEAD
         MonoClass *klass = mono_method_get_class(method);
 
         if (strcmp(mono_unity_method_get_name(method), ".ctor") == 0 || (mono_unity_method_is_static(method) && mono_unity_class_has_cctor(klass)))
             mono_runtime_class_init_full(il2cpp_mono_class_vtable(g_MonoDomain, klass), error);
 
+=======
+        if (strcmp(mono_unity_method_get_name(method), ".ctor") == 0)
+            mono_runtime_class_init_full(il2cpp_mono_class_vtable(g_MonoDomain, mono_unity_method_get_class(method)), error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         void *retVal = ((InvokerMethod)mono_unity_method_get_invoke_pointer(method))((Il2CppMethodPointer)mono_unity_method_get_method_pointer(method), method, target, newParams);
 
         std::vector<int>::const_iterator end = byRefParams.end();
@@ -282,6 +290,7 @@ char* il2cpp_mono_get_runtime_build_info()
     return mono_unity_get_runtime_build_info(__DATE__, __TIME__);
 }
 
+<<<<<<< HEAD
 #if IL2CPP_MONO_DEBUGGER
 void il2cpp_debugger_save_thread_context(Il2CppThreadUnwindState* context, int frameCountAdjust)
 {
@@ -290,6 +299,8 @@ void il2cpp_debugger_save_thread_context(Il2CppThreadUnwindState* context, int f
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 void il2cpp_install_callbacks()
 {
     MonoRuntimeCallbacks callbacks;
@@ -305,12 +316,15 @@ void il2cpp_install_callbacks()
     callbacks.create_ftnptr = il2cpp_mono_create_ftnptr;
     callbacks.get_runtime_build_info = il2cpp_mono_get_runtime_build_info;
     callbacks.create_delegate_trampoline = il2cpp_mono_delegate_trampoline;
+<<<<<<< HEAD
 #if IL2CPP_MONO_DEBUGGER
     // These don't exist in the Mono code used by default. We might need to add them (or something similar)
     // later. I'll comment them out to get the build working for now though.
     //callbacks.il2cpp_debugger_save_thread_context = il2cpp_debugger_save_thread_context;
     //callbacks.get_global_breakpoint_state_pointer =il2cpp::utils::Debugger::GetGlobalBreakpointPointer;
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     mono_install_callbacks(&callbacks);
 
@@ -332,7 +346,11 @@ void il2cpp_install_callbacks()
     memset(&ticallbacks, 0, sizeof(ticallbacks));
     ticallbacks.thread_state_init_from_handle = mono_unity_thread_state_init_from_handle;
 
+<<<<<<< HEAD
     mono_thread_info_runtime_init(&ticallbacks);
+=======
+    mono_threads_runtime_init(&ticallbacks);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 void il2cpp_mono_runtime_init()
@@ -352,8 +370,11 @@ void il2cpp_mono_runtime_init()
     initialize_interop_data_map();
 
     il2cpp::os::Image::Initialize();
+<<<<<<< HEAD
 
     mono_profiler_started();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 static void MonoSetConfigStr(const std::string& executablePath)
@@ -389,6 +410,7 @@ void il2cpp_mono_set_commandline_arguments_utf16(int argc, const Il2CppChar* con
         cargs[i] = args[i].c_str();
 
     mono_runtime_set_main_args(argc, const_cast<char**>(&cargs[0]));
+<<<<<<< HEAD
 
     for (int i = 0; i < argc; ++i)
     {
@@ -403,6 +425,8 @@ void il2cpp_mono_set_commandline_arguments_utf16(int argc, const Il2CppChar* con
         }
         */
     }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     il2cpp::utils::Environment::SetMainArgs(argv, argc);
 }
 

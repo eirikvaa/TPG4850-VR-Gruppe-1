@@ -6,7 +6,10 @@
 # include <malloc.h>
 #endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -20,6 +23,7 @@
 #include "il2cpp-object-internals.h"
 
 
+<<<<<<< HEAD
 // System.Action`1<System.Object>
 struct Action_1_t551A279CEADCF6EEAE8FA2B1E1E757D0D15290D0;
 // System.Action`1<UnityEngine.Playables.PlayableDirector>
@@ -68,6 +72,14 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // U3CMODULEU3E_T5AF943BF708588C1841CAB8BCD8AC614C6E8F142_H
+=======
+// System.Void
+struct Void_t1185182177;
+
+
+
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
 #ifdef __clang__
@@ -82,6 +94,84 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEOBJECT_H
+<<<<<<< HEAD
+struct Il2CppArrayBounds;
+#ifndef RUNTIMEARRAY_H
+#define RUNTIMEARRAY_H
+=======
+#ifndef U3CMODULEU3E_T692745540_H
+#define U3CMODULEU3E_T692745540_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+<<<<<<< HEAD
+// System.Array
+=======
+// <Module>
+struct  U3CModuleU3E_t692745540 
+{
+public:
+
+public:
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
+#endif // RUNTIMEARRAY_H
+#ifndef VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+#define VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+=======
+#endif // U3CMODULEU3E_T692745540_H
+#ifndef VALUETYPE_T3640485471_H
+#define VALUETYPE_T3640485471_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.ValueType
+<<<<<<< HEAD
+struct  ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF  : public RuntimeObject
+=======
+struct  ValueType_t3640485471  : public RuntimeObject
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+// Native definition for P/Invoke marshalling of System.ValueType
+<<<<<<< HEAD
+struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
+{
+};
+#endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+=======
+struct ValueType_t3640485471_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_com
+{
+};
+#endif // VALUETYPE_T3640485471_H
 struct Il2CppArrayBounds;
 #ifndef RUNTIMEARRAY_H
 #define RUNTIMEARRAY_H
@@ -97,34 +187,7 @@ struct Il2CppArrayBounds;
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEARRAY_H
-#ifndef VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
-#define VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.ValueType
-struct  ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF  : public RuntimeObject
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-// Native definition for P/Invoke marshalling of System.ValueType
-struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_pinvoke
-{
-};
-// Native definition for COM marshalling of System.ValueType
-struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
-{
-};
-#endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef INTPTR_T_H
 #define INTPTR_T_H
 #ifdef __clang__
@@ -170,6 +233,7 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // INTPTR_T_H
+<<<<<<< HEAD
 #ifndef VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #define VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #ifdef __clang__
@@ -362,6 +426,10 @@ struct Delegate_t_marshaled_com
 #endif // DELEGATE_T_H
 #ifndef OBJECT_TAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_H
 #define OBJECT_TAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_H
+=======
+#ifndef OBJECT_T631007953_H
+#define OBJECT_T631007953_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -369,14 +437,22 @@ struct Delegate_t_marshaled_com
 #endif
 
 // UnityEngine.Object
+<<<<<<< HEAD
 struct  Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0  : public RuntimeObject
+=======
+struct  Object_t631007953  : public RuntimeObject
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.IntPtr UnityEngine.Object::m_CachedPtr
 	intptr_t ___m_CachedPtr_0;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0, ___m_CachedPtr_0)); }
+=======
+	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_t631007953, ___m_CachedPtr_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline intptr_t get_m_CachedPtr_0() const { return ___m_CachedPtr_0; }
 	inline intptr_t* get_address_of_m_CachedPtr_0() { return &___m_CachedPtr_0; }
 	inline void set_m_CachedPtr_0(intptr_t value)
@@ -385,14 +461,22 @@ public:
 	}
 };
 
+<<<<<<< HEAD
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_StaticFields
+=======
+struct Object_t631007953_StaticFields
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Object::OffsetOfInstanceIDInCPlusPlusObject
 	int32_t ___OffsetOfInstanceIDInCPlusPlusObject_1;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
+=======
+	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_t631007953_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_OffsetOfInstanceIDInCPlusPlusObject_1() const { return ___OffsetOfInstanceIDInCPlusPlusObject_1; }
 	inline int32_t* get_address_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return &___OffsetOfInstanceIDInCPlusPlusObject_1; }
 	inline void set_OffsetOfInstanceIDInCPlusPlusObject_1(int32_t value)
@@ -405,11 +489,16 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of UnityEngine.Object
+<<<<<<< HEAD
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_pinvoke
+=======
+struct Object_t631007953_marshaled_pinvoke
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	intptr_t ___m_CachedPtr_0;
 };
 // Native definition for COM marshalling of UnityEngine.Object
+<<<<<<< HEAD
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_com
 {
 	intptr_t ___m_CachedPtr_0;
@@ -457,6 +546,15 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 #endif // MULTICASTDELEGATE_T_H
 #ifndef COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
 #define COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
+=======
+struct Object_t631007953_marshaled_com
+{
+	intptr_t ___m_CachedPtr_0;
+};
+#endif // OBJECT_T631007953_H
+#ifndef COMPONENT_T1923634451_H
+#define COMPONENT_T1923634451_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -464,7 +562,11 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 #endif
 
 // UnityEngine.Component
+<<<<<<< HEAD
 struct  Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621  : public Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0
+=======
+struct  Component_t1923634451  : public Object_t631007953
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -474,6 +576,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
 #ifndef ACTION_1_T25E50453F931760A3FC110C4EC79B73BBC203021_H
 #define ACTION_1_T25E50453F931760A3FC110C4EC79B73BBC203021_H
@@ -497,6 +600,11 @@ public:
 #endif // ACTION_1_T25E50453F931760A3FC110C4EC79B73BBC203021_H
 #ifndef BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
 #define BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
+=======
+#endif // COMPONENT_T1923634451_H
+#ifndef BEHAVIOUR_T1437897464_H
+#define BEHAVIOUR_T1437897464_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -504,7 +612,11 @@ public:
 #endif
 
 // UnityEngine.Behaviour
+<<<<<<< HEAD
 struct  Behaviour_tBDC7E9C3C898AD8348891B82D3E345801D920CA8  : public Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621
+=======
+struct  Behaviour_t1437897464  : public Component_t1923634451
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -514,9 +626,15 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
 #ifndef PLAYABLEDIRECTOR_TAE05A3F910B71FA6BC7EED28C26C35945308D2B2_H
 #define PLAYABLEDIRECTOR_TAE05A3F910B71FA6BC7EED28C26C35945308D2B2_H
+=======
+#endif // BEHAVIOUR_T1437897464_H
+#ifndef PLAYABLEDIRECTOR_T508516997_H
+#define PLAYABLEDIRECTOR_T508516997_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -524,6 +642,7 @@ public:
 #endif
 
 // UnityEngine.Playables.PlayableDirector
+<<<<<<< HEAD
 struct  PlayableDirector_tAE05A3F910B71FA6BC7EED28C26C35945308D2B2  : public Behaviour_tBDC7E9C3C898AD8348891B82D3E345801D920CA8
 {
 public:
@@ -561,11 +680,19 @@ public:
 		___stopped_6 = value;
 		Il2CppCodeGenWriteBarrier((&___stopped_6), value);
 	}
+=======
+struct  PlayableDirector_t508516997  : public Behaviour_t1437897464
+{
+public:
+
+public:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // PLAYABLEDIRECTOR_TAE05A3F910B71FA6BC7EED28C26C35945308D2B2_H
 
 
@@ -577,6 +704,12 @@ inline void Action_1_Invoke_mE8C21024872FD84A7DB7C11BE8A207AD3A97C537 (Action_1_
 {
 	((  void (*) (Action_1_t25E50453F931760A3FC110C4EC79B73BBC203021 *, PlayableDirector_tAE05A3F910B71FA6BC7EED28C26C35945308D2B2 *, const RuntimeMethod*))Action_1_Invoke_mB86FC1B303E77C41ED0E94FC3592A9CF8DA571D5_gshared)(__this, p0, method);
 }
+=======
+#endif // PLAYABLEDIRECTOR_T508516997_H
+
+
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -590,6 +723,7 @@ inline void Action_1_Invoke_mE8C21024872FD84A7DB7C11BE8A207AD3A97C537 (Action_1_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.Playables.PlayableDirector::SendOnPlayableDirectorPlay()
 extern "C" IL2CPP_METHOD_ATTR void PlayableDirector_SendOnPlayableDirectorPlay_m4E9920374473D4726C270EF6ECACA93303C7BA87 (PlayableDirector_tAE05A3F910B71FA6BC7EED28C26C35945308D2B2 * __this, const RuntimeMethod* method)
 {
@@ -671,6 +805,8 @@ IL_0018:
 		return;
 	}
 }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

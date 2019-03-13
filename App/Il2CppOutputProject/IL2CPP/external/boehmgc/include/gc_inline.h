@@ -31,11 +31,16 @@
 #include "gc.h"
 #include "gc_tiny_fl.h"
 
+<<<<<<< HEAD
 #if GC_GNUC_PREREQ(3, 0)
+=======
+#if __GNUC__ >= 3
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # define GC_EXPECT(expr, outcome) __builtin_expect(expr,outcome)
   /* Equivalent to (expr), but predict that usually (expr)==outcome. */
 #else
 # define GC_EXPECT(expr, outcome) (expr)
+<<<<<<< HEAD
 #endif
 
 #ifndef GC_ASSERT
@@ -63,12 +68,21 @@
 #define GC_I_PTRFREE 0
 #define GC_I_NORMAL 1
 
+=======
+#endif /* __GNUC__ */
+
+#ifndef GC_ASSERT
+# define GC_ASSERT(expr) /* empty */
+#endif
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* Store a pointer to a list of newly allocated objects of kind k and   */
 /* size lb in *result.  The caller must make sure that *result is       */
 /* traced even if objects are ptrfree.                                  */
 GC_API void GC_CALL GC_generic_malloc_many(size_t /* lb */, int /* k */,
                                            void ** /* result */);
 
+<<<<<<< HEAD
 /* Generalized version of GC_malloc and GC_malloc_atomic.               */
 /* Uses appropriately the thread-local (if available) or the global     */
 /* free-list of the specified kind.                                     */
@@ -92,6 +106,8 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
 # define GC_FAST_M_AO_STORE(my_fl, next) (void)(*(my_fl) = (next))
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* The ultimately general inline allocation macro.  Allocate an object  */
 /* of size granules, putting the resulting pointer in result.  Tiny_fl  */
 /* is a "tiny" free list array, which will be used first, if the size   */
@@ -100,17 +116,28 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
 /* GC_generic_malloc_many with the indicated kind.                      */
 /* Tiny_fl should be an array of GC_TINY_FREELISTS void * pointers.     */
 /* If num_direct is nonzero, and the individual free list pointers      */
+<<<<<<< HEAD
 /* are initialized to (void *)1, then we allocate num_direct granules   */
 /* directly using generic_malloc before putting multiple objects into   */
 /* the tiny_fl entry.  If num_direct is zero, then the free lists may   */
 /* also be initialized to (void *)0.                                    */
+=======
+/* are initialized to (void *)1, then we allocate numdirect granules    */
+/* directly using gmalloc before putting multiple objects into the      */
+/* tiny_fl entry.  If num_direct is zero, then the free lists may also  */
+/* be initialized to (void *)0.                                         */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* Note that we use the zeroth free list to hold objects 1 granule in   */
 /* size that are used to satisfy size 0 allocation requests.            */
 /* We rely on much of this hopefully getting optimized away in the      */
 /* num_direct = 0 case.                                                 */
 /* Particularly if granules is constant, this should generate a small   */
 /* amount of code.                                                      */
+<<<<<<< HEAD
 # define GC_FAST_MALLOC_GRANS(result,granules,tiny_fl,num_direct, \
+=======
+# define GC_FAST_MALLOC_GRANS(result,granules,tiny_fl,num_direct,\
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                               kind,default_expr,init) \
   do { \
     if (GC_EXPECT((granules) >= GC_TINY_FREELISTS,0)) { \
@@ -120,6 +147,7 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
         void *my_entry=*my_fl; \
         void *next; \
     \
+<<<<<<< HEAD
         for (;;) { \
             if (GC_EXPECT((GC_word)my_entry \
                           > (num_direct) + GC_TINY_FREELISTS + 1, 1)) { \
@@ -144,6 +172,16 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
                 if ((kind) != GC_I_PTRFREE) GC_end_stubborn_change(my_fl); \
                 result = (default_expr); \
                 break; \
+=======
+        while (GC_EXPECT((GC_word)my_entry \
+                        <= (num_direct) + GC_TINY_FREELISTS + 1, 0)) { \
+            /* Entry contains counter or NULL */ \
+            if ((GC_word)my_entry - 1 < (num_direct)) { \
+                /* Small counter value, not NULL */ \
+                *my_fl = (char *)my_entry + (granules) + 1; \
+                result = (default_expr); \
+                goto out; \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             } else { \
                 /* Large counter or NULL */ \
                 GC_generic_malloc_many(((granules) == 0? GC_GRANULE_BYTES : \
@@ -152,10 +190,25 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
                 my_entry = *my_fl; \
                 if (my_entry == 0) { \
                     result = (*GC_get_oom_fn())((granules)*GC_GRANULE_BYTES); \
+<<<<<<< HEAD
                     break; \
                 } \
             } \
         } \
+=======
+                    goto out; \
+                } \
+            } \
+        } \
+        next = *(void **)(my_entry); \
+        result = (void *)my_entry; \
+        *my_fl = next; \
+        init; \
+        PREFETCH_FOR_WRITE(next); \
+        GC_ASSERT(GC_size(result) >= (granules)*GC_GRANULE_BYTES); \
+        GC_ASSERT((kind) == PTRFREE || ((GC_word *)result)[1] == 0); \
+      out: ; \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     } \
   } while (0)
 
@@ -169,6 +222,7 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
 /* the caller is responsible for supplying a cleared tiny_fl            */
 /* free list array.  For single-threaded applications, this may be      */
 /* a global array.                                                      */
+<<<<<<< HEAD
 # define GC_MALLOC_WORDS_KIND(result,n,tiny_fl,kind,init) \
     do { \
       size_t granules = GC_WORDS_TO_WHOLE_GRANULES(n); \
@@ -201,5 +255,32 @@ GC_API void GC_CALL GC_print_free_list(int /* kind */,
 #ifdef __cplusplus
   } /* extern "C" */
 #endif
+=======
+# define GC_MALLOC_WORDS(result,n,tiny_fl) \
+  do { \
+    size_t grans = GC_WORDS_TO_WHOLE_GRANULES(n); \
+    GC_FAST_MALLOC_GRANS(result, grans, tiny_fl, 0, \
+                         NORMAL, GC_malloc(grans*GC_GRANULE_BYTES), \
+                         *(void **)(result) = 0); \
+  } while (0)
+
+# define GC_MALLOC_ATOMIC_WORDS(result,n,tiny_fl) \
+  do { \
+    size_t grans = GC_WORDS_TO_WHOLE_GRANULES(n); \
+    GC_FAST_MALLOC_GRANS(result, grans, tiny_fl, 0, \
+                         PTRFREE, GC_malloc_atomic(grans*GC_GRANULE_BYTES), \
+                         (void)0 /* no initialization */); \
+  } while (0)
+
+/* And once more for two word initialized objects: */
+# define GC_CONS(result, first, second, tiny_fl) \
+  do { \
+    size_t grans = GC_WORDS_TO_WHOLE_GRANULES(2); \
+    GC_FAST_MALLOC_GRANS(result, grans, tiny_fl, 0, \
+                         NORMAL, GC_malloc(grans*GC_GRANULE_BYTES), \
+                         *(void **)(result) = (void *)(first)); \
+    ((void **)(result))[1] = (void *)(second); \
+  } while (0)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #endif /* !GC_INLINE_H */

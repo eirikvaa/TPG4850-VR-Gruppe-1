@@ -33,13 +33,18 @@
  *    must be prepared to deal with objects that have been finalized in
  *    spite of the fact that they are still referenced by statically
  *    allocated pointer variables.
+<<<<<<< HEAD
  * 2) It may mean that we get stuck in an infinite loop running
+=======
+ * 1) It may mean that we get stuck in an infinite loop running
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  *    finalizers which create new finalizable objects, though that's
  *    probably unlikely.
  * Thus this is not recommended for general use.
  */
 GC_API void GC_CALL GC_finalize_all(void);
 
+<<<<<<< HEAD
 #ifdef GC_THREADS
   /* External thread suspension support.  No thread suspension count    */
   /* (so a thread which has been suspended numerous times will be       */
@@ -57,4 +62,8 @@ GC_API void GC_CALL GC_finalize_all(void);
 
 #ifdef __cplusplus
   } /* extern "C" */
+=======
+#ifdef __cplusplus
+  } /* end of extern "C" */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif

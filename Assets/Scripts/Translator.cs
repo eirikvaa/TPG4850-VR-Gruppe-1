@@ -13,7 +13,7 @@ public class Translator : MonoBehaviour
     private const string ocpApimSubscriptionKeyHeader = "Ocp-Apim-Subscription-Key";
 
     // Personal key, might change as far as i understand it
-    private const string authorizationKey = "24efd534fb7f446caad44eb24de615f6";
+    private const string authorizationKey = "2716044350fa4e40972443effd8a52a2";
     private string authorizationToken;
 
     // languages set below are: 
@@ -48,6 +48,7 @@ public class Translator : MonoBehaviour
         {
             unityWebRequest.SetRequestHeader("Ocp-Apim-Subscription-Key", key);
             yield return unityWebRequest.SendWebRequest();
+            long responseCode = unityWebRequest.responseCode;
 
             if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
             {

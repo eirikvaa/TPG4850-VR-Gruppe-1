@@ -66,21 +66,33 @@ namespace Emit
 #if NET_4_0
     int32_t ModuleBuilder::getMethodToken40(Il2CppObject* mb, Il2CppObject* method, Il2CppArray* opt_param_types)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(ModuleBuilder::getMethodToken40);
+=======
+        NOT_IMPLEMENTED_ICALL(ModuleBuilder::getMethodToken40);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return 0;
     }
 
     int32_t ModuleBuilder::getToken40(Il2CppObject* mb, Il2CppObject* obj, bool create_open_instance)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(ModuleBuilder::getToken40);
+=======
+        NOT_IMPLEMENTED_ICALL(ModuleBuilder::getToken40);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return 0;
     }
 
     Il2CppObject* ModuleBuilder::GetRegisteredToken(Il2CppObject* _this, int32_t token)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(ModuleBuilder::GetRegisteredToken);
+=======
+        NOT_IMPLEMENTED_ICALL(ModuleBuilder::GetRegisteredToken);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }

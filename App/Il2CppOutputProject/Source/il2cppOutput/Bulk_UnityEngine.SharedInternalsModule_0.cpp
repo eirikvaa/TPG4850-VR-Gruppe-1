@@ -6,7 +6,10 @@
 # include <malloc.h>
 #endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -20,6 +23,7 @@
 #include "il2cpp-object-internals.h"
 
 
+<<<<<<< HEAD
 // System.ArgumentException
 struct ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1;
 // System.ArgumentNullException
@@ -117,12 +121,87 @@ struct StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E;
 
 #ifndef U3CMODULEU3E_TDD607E0208590BE5D73D68EB7825AD7A1FBDFCC3_H
 #define U3CMODULEU3E_TDD607E0208590BE5D73D68EB7825AD7A1FBDFCC3_H
+=======
+// UnityEngine.Bindings.FreeFunctionAttribute
+struct FreeFunctionAttribute_t2020741617;
+// UnityEngine.Bindings.NativeMethodAttribute
+struct NativeMethodAttribute_t4187428193;
+// System.String
+struct String_t;
+// UnityEngine.Bindings.NativeConditionalAttribute
+struct NativeConditionalAttribute_t2439539374;
+// System.Attribute
+struct Attribute_t861562559;
+// UnityEngine.Bindings.NativeHeaderAttribute
+struct NativeHeaderAttribute_t5261382;
+// System.ArgumentNullException
+struct ArgumentNullException_t1615371798;
+// System.ArgumentException
+struct ArgumentException_t132251570;
+// UnityEngine.Bindings.NativeNameAttribute
+struct NativeNameAttribute_t3268151526;
+// UnityEngine.Bindings.NativeTypeAttribute
+struct NativeTypeAttribute_t2250406315;
+// UnityEngine.Bindings.StaticAccessorAttribute
+struct StaticAccessorAttribute_t2432663902;
+// UnityEngine.Bindings.ThreadSafeAttribute
+struct ThreadSafeAttribute_t3376653515;
+// UnityEngine.Bindings.UnmarshalledAttribute
+struct UnmarshalledAttribute_t1517743549;
+// UnityEngine.Scripting.GeneratedByOldBindingsGeneratorAttribute
+struct GeneratedByOldBindingsGeneratorAttribute_t433318409;
+// UnityEngine.Scripting.RequiredByNativeCodeAttribute
+struct RequiredByNativeCodeAttribute_t4130846357;
+// UnityEngine.Scripting.UsedByNativeCodeAttribute
+struct UsedByNativeCodeAttribute_t1703770351;
+// UnityEngine.ThreadAndSerializationSafeAttribute
+struct ThreadAndSerializationSafeAttribute_t363116225;
+// System.Object[]
+struct ObjectU5BU5D_t2843939325;
+// UnityEngine.WritableAttribute
+struct WritableAttribute_t812406054;
+// System.Collections.IDictionary
+struct IDictionary_t1363984059;
+// System.Runtime.Serialization.SafeSerializationManager
+struct SafeSerializationManager_t2481557153;
+// System.Diagnostics.StackTrace[]
+struct StackTraceU5BU5D_t1169129676;
+// System.IntPtr[]
+struct IntPtrU5BU5D_t4013366056;
+// System.Char[]
+struct CharU5BU5D_t3528271667;
+
+extern RuntimeClass* ArgumentNullException_t1615371798_il2cpp_TypeInfo_var;
+extern RuntimeClass* ArgumentException_t132251570_il2cpp_TypeInfo_var;
+extern const RuntimeMethod* NativeHeaderAttribute__ctor_m457462113_RuntimeMethod_var;
+extern String_t* _stringLiteral3529812190;
+extern String_t* _stringLiteral757602046;
+extern String_t* _stringLiteral2581250844;
+extern const uint32_t NativeHeaderAttribute__ctor_m457462113_MetadataUsageId;
+extern const RuntimeMethod* NativeMethodAttribute__ctor_m2941746701_RuntimeMethod_var;
+extern String_t* _stringLiteral62725243;
+extern String_t* _stringLiteral648666413;
+extern const uint32_t NativeMethodAttribute__ctor_m2941746701_MetadataUsageId;
+extern const RuntimeMethod* NativeNameAttribute__ctor_m3296876808_RuntimeMethod_var;
+extern const uint32_t NativeNameAttribute__ctor_m3296876808_MetadataUsageId;
+extern const RuntimeMethod* NativeTypeAttribute__ctor_m133676646_RuntimeMethod_var;
+extern const uint32_t NativeTypeAttribute__ctor_m133676646_MetadataUsageId;
+struct Exception_t_marshaled_pinvoke;
+struct Exception_t_marshaled_com;
+
+struct ObjectU5BU5D_t2843939325;
+
+
+#ifndef RUNTIMEOBJECT_H
+#define RUNTIMEOBJECT_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // <Module>
 struct  U3CModuleU3E_tDD607E0208590BE5D73D68EB7825AD7A1FBDFCC3 
 {
@@ -130,60 +209,150 @@ public:
 
 public:
 };
+=======
+// System.Object
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // U3CMODULEU3E_TDD607E0208590BE5D73D68EB7825AD7A1FBDFCC3_H
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
+=======
+#endif // RUNTIMEOBJECT_H
+#ifndef U3CMODULEU3E_T692745531_H
+#define U3CMODULEU3E_T692745531_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Object
+=======
+// <Module>
+struct  U3CModuleU3E_t692745531 
+{
+public:
+
+public:
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // RUNTIMEOBJECT_H
 struct Il2CppArrayBounds;
 #ifndef RUNTIMEARRAY_H
 #define RUNTIMEARRAY_H
+=======
+#endif // U3CMODULEU3E_T692745531_H
+#ifndef ATTRIBUTE_T861562559_H
+#define ATTRIBUTE_T861562559_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Array
+=======
+// System.Attribute
+struct  Attribute_t861562559  : public RuntimeObject
+{
+public:
+
+public:
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // RUNTIMEARRAY_H
 #ifndef ATTRIBUTE_TF048C13FB3C8CFCC53F82290E4A3F621089F9A74_H
 #define ATTRIBUTE_TF048C13FB3C8CFCC53F82290E4A3F621089F9A74_H
+=======
+#endif // ATTRIBUTE_T861562559_H
+#ifndef STRING_T_H
+#define STRING_T_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Attribute
 struct  Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74  : public RuntimeObject
 {
 public:
 
 public:
+=======
+// System.String
+struct  String_t  : public RuntimeObject
+{
+public:
+	// System.Int32 System.String::m_stringLength
+	int32_t ___m_stringLength_0;
+	// System.Char System.String::m_firstChar
+	Il2CppChar ___m_firstChar_1;
+
+public:
+	inline static int32_t get_offset_of_m_stringLength_0() { return static_cast<int32_t>(offsetof(String_t, ___m_stringLength_0)); }
+	inline int32_t get_m_stringLength_0() const { return ___m_stringLength_0; }
+	inline int32_t* get_address_of_m_stringLength_0() { return &___m_stringLength_0; }
+	inline void set_m_stringLength_0(int32_t value)
+	{
+		___m_stringLength_0 = value;
+	}
+
+	inline static int32_t get_offset_of_m_firstChar_1() { return static_cast<int32_t>(offsetof(String_t, ___m_firstChar_1)); }
+	inline Il2CppChar get_m_firstChar_1() const { return ___m_firstChar_1; }
+	inline Il2CppChar* get_address_of_m_firstChar_1() { return &___m_firstChar_1; }
+	inline void set_m_firstChar_1(Il2CppChar value)
+	{
+		___m_firstChar_1 = value;
+	}
+};
+
+struct String_t_StaticFields
+{
+public:
+	// System.String System.String::Empty
+	String_t* ___Empty_5;
+
+public:
+	inline static int32_t get_offset_of_Empty_5() { return static_cast<int32_t>(offsetof(String_t_StaticFields, ___Empty_5)); }
+	inline String_t* get_Empty_5() const { return ___Empty_5; }
+	inline String_t** get_address_of_Empty_5() { return &___Empty_5; }
+	inline void set_Empty_5(String_t* value)
+	{
+		___Empty_5 = value;
+		Il2CppCodeGenWriteBarrier((&___Empty_5), value);
+	}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // ATTRIBUTE_TF048C13FB3C8CFCC53F82290E4A3F621089F9A74_H
+=======
+#endif // STRING_T_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef EXCEPTION_T_H
 #define EXCEPTION_T_H
 #ifdef __clang__
@@ -221,11 +390,19 @@ public:
 	// System.String System.Exception::_source
 	String_t* ____source_12;
 	// System.Runtime.Serialization.SafeSerializationManager System.Exception::_safeSerializationManager
+<<<<<<< HEAD
 	SafeSerializationManager_t4A754D86B0F784B18CBC36C073BA564BED109770 * ____safeSerializationManager_13;
 	// System.Diagnostics.StackTrace[] System.Exception::captured_traces
 	StackTraceU5BU5D_t855F09649EA34DEE7C1B6F088E0538E3CCC3F196* ___captured_traces_14;
 	// System.IntPtr[] System.Exception::native_trace_ips
 	IntPtrU5BU5D_t4DC01DCB9A6DF6C9792A6513595D7A11E637DCDD* ___native_trace_ips_15;
+=======
+	SafeSerializationManager_t2481557153 * ____safeSerializationManager_13;
+	// System.Diagnostics.StackTrace[] System.Exception::captured_traces
+	StackTraceU5BU5D_t1169129676* ___captured_traces_14;
+	// System.IntPtr[] System.Exception::native_trace_ips
+	IntPtrU5BU5D_t4013366056* ___native_trace_ips_15;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 public:
 	inline static int32_t get_offset_of__className_1() { return static_cast<int32_t>(offsetof(Exception_t, ____className_1)); }
@@ -335,27 +512,45 @@ public:
 	}
 
 	inline static int32_t get_offset_of__safeSerializationManager_13() { return static_cast<int32_t>(offsetof(Exception_t, ____safeSerializationManager_13)); }
+<<<<<<< HEAD
 	inline SafeSerializationManager_t4A754D86B0F784B18CBC36C073BA564BED109770 * get__safeSerializationManager_13() const { return ____safeSerializationManager_13; }
 	inline SafeSerializationManager_t4A754D86B0F784B18CBC36C073BA564BED109770 ** get_address_of__safeSerializationManager_13() { return &____safeSerializationManager_13; }
 	inline void set__safeSerializationManager_13(SafeSerializationManager_t4A754D86B0F784B18CBC36C073BA564BED109770 * value)
+=======
+	inline SafeSerializationManager_t2481557153 * get__safeSerializationManager_13() const { return ____safeSerializationManager_13; }
+	inline SafeSerializationManager_t2481557153 ** get_address_of__safeSerializationManager_13() { return &____safeSerializationManager_13; }
+	inline void set__safeSerializationManager_13(SafeSerializationManager_t2481557153 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		____safeSerializationManager_13 = value;
 		Il2CppCodeGenWriteBarrier((&____safeSerializationManager_13), value);
 	}
 
 	inline static int32_t get_offset_of_captured_traces_14() { return static_cast<int32_t>(offsetof(Exception_t, ___captured_traces_14)); }
+<<<<<<< HEAD
 	inline StackTraceU5BU5D_t855F09649EA34DEE7C1B6F088E0538E3CCC3F196* get_captured_traces_14() const { return ___captured_traces_14; }
 	inline StackTraceU5BU5D_t855F09649EA34DEE7C1B6F088E0538E3CCC3F196** get_address_of_captured_traces_14() { return &___captured_traces_14; }
 	inline void set_captured_traces_14(StackTraceU5BU5D_t855F09649EA34DEE7C1B6F088E0538E3CCC3F196* value)
+=======
+	inline StackTraceU5BU5D_t1169129676* get_captured_traces_14() const { return ___captured_traces_14; }
+	inline StackTraceU5BU5D_t1169129676** get_address_of_captured_traces_14() { return &___captured_traces_14; }
+	inline void set_captured_traces_14(StackTraceU5BU5D_t1169129676* value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___captured_traces_14 = value;
 		Il2CppCodeGenWriteBarrier((&___captured_traces_14), value);
 	}
 
 	inline static int32_t get_offset_of_native_trace_ips_15() { return static_cast<int32_t>(offsetof(Exception_t, ___native_trace_ips_15)); }
+<<<<<<< HEAD
 	inline IntPtrU5BU5D_t4DC01DCB9A6DF6C9792A6513595D7A11E637DCDD* get_native_trace_ips_15() const { return ___native_trace_ips_15; }
 	inline IntPtrU5BU5D_t4DC01DCB9A6DF6C9792A6513595D7A11E637DCDD** get_address_of_native_trace_ips_15() { return &___native_trace_ips_15; }
 	inline void set_native_trace_ips_15(IntPtrU5BU5D_t4DC01DCB9A6DF6C9792A6513595D7A11E637DCDD* value)
+=======
+	inline IntPtrU5BU5D_t4013366056* get_native_trace_ips_15() const { return ___native_trace_ips_15; }
+	inline IntPtrU5BU5D_t4013366056** get_address_of_native_trace_ips_15() { return &___native_trace_ips_15; }
+	inline void set_native_trace_ips_15(IntPtrU5BU5D_t4013366056* value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___native_trace_ips_15 = value;
 		Il2CppCodeGenWriteBarrier((&___native_trace_ips_15), value);
@@ -397,8 +592,13 @@ struct Exception_t_marshaled_pinvoke
 	Il2CppIUnknown* ____dynamicMethods_10;
 	int32_t ____HResult_11;
 	char* ____source_12;
+<<<<<<< HEAD
 	SafeSerializationManager_t4A754D86B0F784B18CBC36C073BA564BED109770 * ____safeSerializationManager_13;
 	StackTraceU5BU5D_t855F09649EA34DEE7C1B6F088E0538E3CCC3F196* ___captured_traces_14;
+=======
+	SafeSerializationManager_t2481557153 * ____safeSerializationManager_13;
+	StackTraceU5BU5D_t1169129676* ___captured_traces_14;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	intptr_t* ___native_trace_ips_15;
 };
 // Native definition for COM marshalling of System.Exception
@@ -416,6 +616,7 @@ struct Exception_t_marshaled_com
 	Il2CppIUnknown* ____dynamicMethods_10;
 	int32_t ____HResult_11;
 	Il2CppChar* ____source_12;
+<<<<<<< HEAD
 	SafeSerializationManager_t4A754D86B0F784B18CBC36C073BA564BED109770 * ____safeSerializationManager_13;
 	StackTraceU5BU5D_t855F09649EA34DEE7C1B6F088E0538E3CCC3F196* ___captured_traces_14;
 	intptr_t* ___native_trace_ips_15;
@@ -423,12 +624,22 @@ struct Exception_t_marshaled_com
 #endif // EXCEPTION_T_H
 #ifndef STRING_T_H
 #define STRING_T_H
+=======
+	SafeSerializationManager_t2481557153 * ____safeSerializationManager_13;
+	StackTraceU5BU5D_t1169129676* ___captured_traces_14;
+	intptr_t* ___native_trace_ips_15;
+};
+#endif // EXCEPTION_T_H
+#ifndef VALUETYPE_T3640485471_H
+#define VALUETYPE_T3640485471_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.String
 struct  String_t  : public RuntimeObject
 {
@@ -471,22 +682,9 @@ public:
 		___Empty_5 = value;
 		Il2CppCodeGenWriteBarrier((&___Empty_5), value);
 	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // STRING_T_H
-#ifndef VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
-#define VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
+=======
 // System.ValueType
-struct  ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF  : public RuntimeObject
+struct  ValueType_t3640485471  : public RuntimeObject
 {
 public:
 
@@ -496,6 +694,82 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+// Native definition for P/Invoke marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_com
+{
+};
+#endif // VALUETYPE_T3640485471_H
+#ifndef UNITYSTRING_T1423233093_H
+#define UNITYSTRING_T1423233093_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.UnityString
+struct  UnityString_t1423233093  : public RuntimeObject
+{
+public:
+
+public:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
+#endif // STRING_T_H
+#ifndef VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+#define VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+=======
+#endif // UNITYSTRING_T1423233093_H
+struct Il2CppArrayBounds;
+#ifndef RUNTIMEARRAY_H
+#define RUNTIMEARRAY_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+<<<<<<< HEAD
+// System.ValueType
+struct  ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF  : public RuntimeObject
+=======
+// System.Array
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // RUNTIMEARRAY_H
+#ifndef REQUIREDBYNATIVECODEATTRIBUTE_T4130846357_H
+#define REQUIREDBYNATIVECODEATTRIBUTE_T4130846357_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Scripting.RequiredByNativeCodeAttribute
+struct  RequiredByNativeCodeAttribute_t4130846357  : public Attribute_t861562559
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
 // Native definition for P/Invoke marshalling of System.ValueType
 struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_pinvoke
 {
@@ -507,14 +781,24 @@ struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
 #endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
 #ifndef UNITYSTRING_T23ABC3E7AC3E5DA2DAF1DE7A50E1670E3DC6691B_H
 #define UNITYSTRING_T23ABC3E7AC3E5DA2DAF1DE7A50E1670E3DC6691B_H
+=======
+#endif // REQUIREDBYNATIVECODEATTRIBUTE_T4130846357_H
+#ifndef USEDBYNATIVECODEATTRIBUTE_T1703770351_H
+#define USEDBYNATIVECODEATTRIBUTE_T1703770351_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.UnityString
 struct  UnityString_t23ABC3E7AC3E5DA2DAF1DE7A50E1670E3DC6691B  : public RuntimeObject
+=======
+// UnityEngine.Scripting.UsedByNativeCodeAttribute
+struct  UsedByNativeCodeAttribute_t1703770351  : public Attribute_t861562559
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -524,15 +808,22 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // UNITYSTRING_T23ABC3E7AC3E5DA2DAF1DE7A50E1670E3DC6691B_H
 #ifndef BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
 #define BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
+=======
+#endif // USEDBYNATIVECODEATTRIBUTE_T1703770351_H
+#ifndef UNMARSHALLEDATTRIBUTE_T1517743549_H
+#define UNMARSHALLEDATTRIBUTE_T1517743549_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Boolean
 struct  Boolean_tB53F6830F670160873277339AA58F15CAED4399C 
 {
@@ -576,14 +867,48 @@ public:
 		___FalseString_6 = value;
 		Il2CppCodeGenWriteBarrier((&___FalseString_6), value);
 	}
+=======
+// UnityEngine.Bindings.UnmarshalledAttribute
+struct  UnmarshalledAttribute_t1517743549  : public Attribute_t861562559
+{
+public:
+
+public:
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+#endif // UNMARSHALLEDATTRIBUTE_T1517743549_H
+#ifndef GENERATEDBYOLDBINDINGSGENERATORATTRIBUTE_T433318409_H
+#define GENERATEDBYOLDBINDINGSGENERATORATTRIBUTE_T433318409_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Scripting.GeneratedByOldBindingsGeneratorAttribute
+struct  GeneratedByOldBindingsGeneratorAttribute_t433318409  : public Attribute_t861562559
+{
+public:
+
+public:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
 #endif // BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
 #ifndef ENUM_T2AF27C02B8653AE29442467390005ABC74D8F521_H
 #define ENUM_T2AF27C02B8653AE29442467390005ABC74D8F521_H
+=======
+#endif // GENERATEDBYOLDBINDINGSGENERATORATTRIBUTE_T433318409_H
+#ifndef ENUM_T4135868527_H
+#define ENUM_T4135868527_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -591,13 +916,18 @@ public:
 #endif
 
 // System.Enum
+<<<<<<< HEAD
 struct  Enum_t2AF27C02B8653AE29442467390005ABC74D8F521  : public ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF
+=======
+struct  Enum_t4135868527  : public ValueType_t3640485471
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
 public:
 };
 
+<<<<<<< HEAD
 struct Enum_t2AF27C02B8653AE29442467390005ABC74D8F521_StaticFields
 {
 public:
@@ -609,6 +939,19 @@ public:
 	inline CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
 	inline CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
 	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2* value)
+=======
+struct Enum_t4135868527_StaticFields
+{
+public:
+	// System.Char[] System.Enum::enumSeperatorCharArray
+	CharU5BU5D_t3528271667* ___enumSeperatorCharArray_0;
+
+public:
+	inline static int32_t get_offset_of_enumSeperatorCharArray_0() { return static_cast<int32_t>(offsetof(Enum_t4135868527_StaticFields, ___enumSeperatorCharArray_0)); }
+	inline CharU5BU5D_t3528271667* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
+	inline CharU5BU5D_t3528271667** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
+	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t3528271667* value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___enumSeperatorCharArray_0 = value;
 		Il2CppCodeGenWriteBarrier((&___enumSeperatorCharArray_0), value);
@@ -619,6 +962,7 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of System.Enum
+<<<<<<< HEAD
 struct Enum_t2AF27C02B8653AE29442467390005ABC74D8F521_marshaled_pinvoke
 {
 };
@@ -629,6 +973,18 @@ struct Enum_t2AF27C02B8653AE29442467390005ABC74D8F521_marshaled_com
 #endif // ENUM_T2AF27C02B8653AE29442467390005ABC74D8F521_H
 #ifndef SYSTEMEXCEPTION_T5380468142AA850BE4A341D7AF3EAB9C78746782_H
 #define SYSTEMEXCEPTION_T5380468142AA850BE4A341D7AF3EAB9C78746782_H
+=======
+struct Enum_t4135868527_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.Enum
+struct Enum_t4135868527_marshaled_com
+{
+};
+#endif // ENUM_T4135868527_H
+#ifndef SYSTEMEXCEPTION_T176217640_H
+#define SYSTEMEXCEPTION_T176217640_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -636,7 +992,11 @@ struct Enum_t2AF27C02B8653AE29442467390005ABC74D8F521_marshaled_com
 #endif
 
 // System.SystemException
+<<<<<<< HEAD
 struct  SystemException_t5380468142AA850BE4A341D7AF3EAB9C78746782  : public Exception_t
+=======
+struct  SystemException_t176217640  : public Exception_t
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -646,15 +1006,22 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // SYSTEMEXCEPTION_T5380468142AA850BE4A341D7AF3EAB9C78746782_H
 #ifndef VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #define VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
+=======
+#endif // SYSTEMEXCEPTION_T176217640_H
+#ifndef THREADANDSERIALIZATIONSAFEATTRIBUTE_T363116225_H
+#define THREADANDSERIALIZATIONSAFEATTRIBUTE_T363116225_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.Void
 struct  Void_t22962CB4C05B1D89B55A6E1139F0E87A90987017 
 {
@@ -666,6 +1033,12 @@ public:
 		};
 		uint8_t Void_t22962CB4C05B1D89B55A6E1139F0E87A90987017__padding[1];
 	};
+=======
+// UnityEngine.ThreadAndSerializationSafeAttribute
+struct  ThreadAndSerializationSafeAttribute_t363116225  : public Attribute_t861562559
+{
+public:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 public:
 };
@@ -673,15 +1046,22 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // VOID_T22962CB4C05B1D89B55A6E1139F0E87A90987017_H
 #ifndef ASSETFILENAMEEXTENSIONATTRIBUTE_T634736D44FACBB2E58C82ABE354A807BD77DEB03_H
 #define ASSETFILENAMEEXTENSIONATTRIBUTE_T634736D44FACBB2E58C82ABE354A807BD77DEB03_H
+=======
+#endif // THREADANDSERIALIZATIONSAFEATTRIBUTE_T363116225_H
+#ifndef WRITABLEATTRIBUTE_T812406054_H
+#define WRITABLEATTRIBUTE_T812406054_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.AssetFileNameExtensionAttribute
 struct  AssetFileNameExtensionAttribute_t634736D44FACBB2E58C82ABE354A807BD77DEB03  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -709,20 +1089,35 @@ public:
 		___U3CotherExtensionsU3Ek__BackingField_1 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CotherExtensionsU3Ek__BackingField_1), value);
 	}
+=======
+// UnityEngine.WritableAttribute
+struct  WritableAttribute_t812406054  : public Attribute_t861562559
+{
+public:
+
+public:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // ASSETFILENAMEEXTENSIONATTRIBUTE_T634736D44FACBB2E58C82ABE354A807BD77DEB03_H
 #ifndef IGNOREATTRIBUTE_TD849E806CA1C75980B97B047908DE57D156B775F_H
 #define IGNOREATTRIBUTE_TD849E806CA1C75980B97B047908DE57D156B775F_H
+=======
+#endif // WRITABLEATTRIBUTE_T812406054_H
+#ifndef NATIVENAMEATTRIBUTE_T3268151526_H
+#define NATIVENAMEATTRIBUTE_T3268151526_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Bindings.IgnoreAttribute
 struct  IgnoreAttribute_tD849E806CA1C75980B97B047908DE57D156B775F  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -737,21 +1132,45 @@ public:
 	inline void set_U3CDoesNotContributeToSizeU3Ek__BackingField_0(bool value)
 	{
 		___U3CDoesNotContributeToSizeU3Ek__BackingField_0 = value;
+=======
+// UnityEngine.Bindings.NativeNameAttribute
+struct  NativeNameAttribute_t3268151526  : public Attribute_t861562559
+{
+public:
+	// System.String UnityEngine.Bindings.NativeNameAttribute::<Name>k__BackingField
+	String_t* ___U3CNameU3Ek__BackingField_0;
+
+public:
+	inline static int32_t get_offset_of_U3CNameU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(NativeNameAttribute_t3268151526, ___U3CNameU3Ek__BackingField_0)); }
+	inline String_t* get_U3CNameU3Ek__BackingField_0() const { return ___U3CNameU3Ek__BackingField_0; }
+	inline String_t** get_address_of_U3CNameU3Ek__BackingField_0() { return &___U3CNameU3Ek__BackingField_0; }
+	inline void set_U3CNameU3Ek__BackingField_0(String_t* value)
+	{
+		___U3CNameU3Ek__BackingField_0 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CNameU3Ek__BackingField_0), value);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // IGNOREATTRIBUTE_TD849E806CA1C75980B97B047908DE57D156B775F_H
 #ifndef NATIVECONDITIONALATTRIBUTE_T8F72026EC5B1194F1D82D72E0C76C51D7D7FBD2E_H
 #define NATIVECONDITIONALATTRIBUTE_T8F72026EC5B1194F1D82D72E0C76C51D7D7FBD2E_H
+=======
+#endif // NATIVENAMEATTRIBUTE_T3268151526_H
+#ifndef NATIVEHEADERATTRIBUTE_T5261382_H
+#define NATIVEHEADERATTRIBUTE_T5261382_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Bindings.NativeConditionalAttribute
 struct  NativeConditionalAttribute_t8F72026EC5B1194F1D82D72E0C76C51D7D7FBD2E  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -809,19 +1228,45 @@ public:
 		Il2CppCodeGenWriteBarrier((&___U3CHeaderU3Ek__BackingField_0), value);
 	}
 };
+=======
+// UnityEngine.Bindings.NativeHeaderAttribute
+struct  NativeHeaderAttribute_t5261382  : public Attribute_t861562559
+{
+public:
+	// System.String UnityEngine.Bindings.NativeHeaderAttribute::<Header>k__BackingField
+	String_t* ___U3CHeaderU3Ek__BackingField_0;
+
+public:
+	inline static int32_t get_offset_of_U3CHeaderU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(NativeHeaderAttribute_t5261382, ___U3CHeaderU3Ek__BackingField_0)); }
+	inline String_t* get_U3CHeaderU3Ek__BackingField_0() const { return ___U3CHeaderU3Ek__BackingField_0; }
+	inline String_t** get_address_of_U3CHeaderU3Ek__BackingField_0() { return &___U3CHeaderU3Ek__BackingField_0; }
+	inline void set_U3CHeaderU3Ek__BackingField_0(String_t* value)
+	{
+		___U3CHeaderU3Ek__BackingField_0 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CHeaderU3Ek__BackingField_0), value);
+	}
+};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // NATIVEHEADERATTRIBUTE_T5C38607694D73834F0B9EB2AB0E575D3FD6D0D8B_H
 #ifndef NATIVEMETHODATTRIBUTE_TB1AB33D5877AD8417C7E646A48AF1941283DC309_H
 #define NATIVEMETHODATTRIBUTE_TB1AB33D5877AD8417C7E646A48AF1941283DC309_H
+=======
+#endif // NATIVEHEADERATTRIBUTE_T5261382_H
+#ifndef BOOLEAN_T97287965_H
+#define BOOLEAN_T97287965_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Bindings.NativeMethodAttribute
 struct  NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -936,21 +1381,72 @@ public:
 	inline void set_U3CThrowsExceptionU3Ek__BackingField_0(bool value)
 	{
 		___U3CThrowsExceptionU3Ek__BackingField_0 = value;
+=======
+// System.Boolean
+struct  Boolean_t97287965 
+{
+public:
+	// System.Boolean System.Boolean::m_value
+	bool ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Boolean_t97287965, ___m_value_0)); }
+	inline bool get_m_value_0() const { return ___m_value_0; }
+	inline bool* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(bool value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+struct Boolean_t97287965_StaticFields
+{
+public:
+	// System.String System.Boolean::TrueString
+	String_t* ___TrueString_5;
+	// System.String System.Boolean::FalseString
+	String_t* ___FalseString_6;
+
+public:
+	inline static int32_t get_offset_of_TrueString_5() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___TrueString_5)); }
+	inline String_t* get_TrueString_5() const { return ___TrueString_5; }
+	inline String_t** get_address_of_TrueString_5() { return &___TrueString_5; }
+	inline void set_TrueString_5(String_t* value)
+	{
+		___TrueString_5 = value;
+		Il2CppCodeGenWriteBarrier((&___TrueString_5), value);
+	}
+
+	inline static int32_t get_offset_of_FalseString_6() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___FalseString_6)); }
+	inline String_t* get_FalseString_6() const { return ___FalseString_6; }
+	inline String_t** get_address_of_FalseString_6() { return &___FalseString_6; }
+	inline void set_FalseString_6(String_t* value)
+	{
+		___FalseString_6 = value;
+		Il2CppCodeGenWriteBarrier((&___FalseString_6), value);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // NATIVETHROWSATTRIBUTE_T0DAF98C14FF11B321CBB7131226E0A2413426EFA_H
 #ifndef NATIVEWRITABLESELFATTRIBUTE_TBDA68FDFF238481055D2A5BE4E6D66A5FAA7013D_H
 #define NATIVEWRITABLESELFATTRIBUTE_TBDA68FDFF238481055D2A5BE4E6D66A5FAA7013D_H
+=======
+#endif // BOOLEAN_T97287965_H
+#ifndef VOID_T1185182177_H
+#define VOID_T1185182177_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Bindings.NativeWritableSelfAttribute
 struct  NativeWritableSelfAttribute_tBDA68FDFF238481055D2A5BE4E6D66A5FAA7013D  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -1024,6 +1520,19 @@ public:
 struct  VisibleToOtherModulesAttribute_t8601A3A00D7B9528C62DD278E53B317B566FDA90  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
 public:
+=======
+// System.Void
+struct  Void_t1185182177 
+{
+public:
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t1185182177__padding[1];
+	};
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 public:
 };
@@ -1031,15 +1540,22 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // VISIBLETOOTHERMODULESATTRIBUTE_T8601A3A00D7B9528C62DD278E53B317B566FDA90_H
 #ifndef NATIVECLASSATTRIBUTE_T1CA9B99EEAAFC1EE97D52505821BD3AD15F8448C_H
 #define NATIVECLASSATTRIBUTE_T1CA9B99EEAAFC1EE97D52505821BD3AD15F8448C_H
+=======
+#endif // VOID_T1185182177_H
+#ifndef NATIVECONDITIONALATTRIBUTE_T2439539374_H
+#define NATIVECONDITIONALATTRIBUTE_T2439539374_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.NativeClassAttribute
 struct  NativeClassAttribute_t1CA9B99EEAAFC1EE97D52505821BD3AD15F8448C  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -1066,21 +1582,55 @@ public:
 	{
 		___U3CDeclarationU3Ek__BackingField_1 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CDeclarationU3Ek__BackingField_1), value);
+=======
+// UnityEngine.Bindings.NativeConditionalAttribute
+struct  NativeConditionalAttribute_t2439539374  : public Attribute_t861562559
+{
+public:
+	// System.String UnityEngine.Bindings.NativeConditionalAttribute::<Condition>k__BackingField
+	String_t* ___U3CConditionU3Ek__BackingField_0;
+	// System.Boolean UnityEngine.Bindings.NativeConditionalAttribute::<Enabled>k__BackingField
+	bool ___U3CEnabledU3Ek__BackingField_1;
+
+public:
+	inline static int32_t get_offset_of_U3CConditionU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(NativeConditionalAttribute_t2439539374, ___U3CConditionU3Ek__BackingField_0)); }
+	inline String_t* get_U3CConditionU3Ek__BackingField_0() const { return ___U3CConditionU3Ek__BackingField_0; }
+	inline String_t** get_address_of_U3CConditionU3Ek__BackingField_0() { return &___U3CConditionU3Ek__BackingField_0; }
+	inline void set_U3CConditionU3Ek__BackingField_0(String_t* value)
+	{
+		___U3CConditionU3Ek__BackingField_0 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CConditionU3Ek__BackingField_0), value);
+	}
+
+	inline static int32_t get_offset_of_U3CEnabledU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(NativeConditionalAttribute_t2439539374, ___U3CEnabledU3Ek__BackingField_1)); }
+	inline bool get_U3CEnabledU3Ek__BackingField_1() const { return ___U3CEnabledU3Ek__BackingField_1; }
+	inline bool* get_address_of_U3CEnabledU3Ek__BackingField_1() { return &___U3CEnabledU3Ek__BackingField_1; }
+	inline void set_U3CEnabledU3Ek__BackingField_1(bool value)
+	{
+		___U3CEnabledU3Ek__BackingField_1 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // NATIVECLASSATTRIBUTE_T1CA9B99EEAAFC1EE97D52505821BD3AD15F8448C_H
 #ifndef GENERATEDBYOLDBINDINGSGENERATORATTRIBUTE_TF3386E1746F60B4E1D77C2167915FBB4B89BBA86_H
 #define GENERATEDBYOLDBINDINGSGENERATORATTRIBUTE_TF3386E1746F60B4E1D77C2167915FBB4B89BBA86_H
+=======
+#endif // NATIVECONDITIONALATTRIBUTE_T2439539374_H
+#ifndef NATIVEMETHODATTRIBUTE_T4187428193_H
+#define NATIVEMETHODATTRIBUTE_T4187428193_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Scripting.GeneratedByOldBindingsGeneratorAttribute
 struct  GeneratedByOldBindingsGeneratorAttribute_tF3386E1746F60B4E1D77C2167915FBB4B89BBA86  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
 {
@@ -1114,6 +1664,23 @@ public:
 
 public:
 	inline static int32_t get_offset_of_U3CNameU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t949320E827C2BD269B3E686FE317A18835670AAE, ___U3CNameU3Ek__BackingField_0)); }
+=======
+// UnityEngine.Bindings.NativeMethodAttribute
+struct  NativeMethodAttribute_t4187428193  : public Attribute_t861562559
+{
+public:
+	// System.String UnityEngine.Bindings.NativeMethodAttribute::<Name>k__BackingField
+	String_t* ___U3CNameU3Ek__BackingField_0;
+	// System.Boolean UnityEngine.Bindings.NativeMethodAttribute::<IsThreadSafe>k__BackingField
+	bool ___U3CIsThreadSafeU3Ek__BackingField_1;
+	// System.Boolean UnityEngine.Bindings.NativeMethodAttribute::<IsFreeFunction>k__BackingField
+	bool ___U3CIsFreeFunctionU3Ek__BackingField_2;
+	// System.Boolean UnityEngine.Bindings.NativeMethodAttribute::<HasExplicitThis>k__BackingField
+	bool ___U3CHasExplicitThisU3Ek__BackingField_3;
+
+public:
+	inline static int32_t get_offset_of_U3CNameU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(NativeMethodAttribute_t4187428193, ___U3CNameU3Ek__BackingField_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline String_t* get_U3CNameU3Ek__BackingField_0() const { return ___U3CNameU3Ek__BackingField_0; }
 	inline String_t** get_address_of_U3CNameU3Ek__BackingField_0() { return &___U3CNameU3Ek__BackingField_0; }
 	inline void set_U3CNameU3Ek__BackingField_0(String_t* value)
@@ -1122,6 +1689,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___U3CNameU3Ek__BackingField_0), value);
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_U3COptionalU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(RequiredByNativeCodeAttribute_t949320E827C2BD269B3E686FE317A18835670AAE, ___U3COptionalU3Ek__BackingField_1)); }
 	inline bool get_U3COptionalU3Ek__BackingField_1() const { return ___U3COptionalU3Ek__BackingField_1; }
 	inline bool* get_address_of_U3COptionalU3Ek__BackingField_1() { return &___U3COptionalU3Ek__BackingField_1; }
@@ -1166,12 +1734,37 @@ public:
 	{
 		___U3CNameU3Ek__BackingField_0 = value;
 		Il2CppCodeGenWriteBarrier((&___U3CNameU3Ek__BackingField_0), value);
+=======
+	inline static int32_t get_offset_of_U3CIsThreadSafeU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(NativeMethodAttribute_t4187428193, ___U3CIsThreadSafeU3Ek__BackingField_1)); }
+	inline bool get_U3CIsThreadSafeU3Ek__BackingField_1() const { return ___U3CIsThreadSafeU3Ek__BackingField_1; }
+	inline bool* get_address_of_U3CIsThreadSafeU3Ek__BackingField_1() { return &___U3CIsThreadSafeU3Ek__BackingField_1; }
+	inline void set_U3CIsThreadSafeU3Ek__BackingField_1(bool value)
+	{
+		___U3CIsThreadSafeU3Ek__BackingField_1 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CIsFreeFunctionU3Ek__BackingField_2() { return static_cast<int32_t>(offsetof(NativeMethodAttribute_t4187428193, ___U3CIsFreeFunctionU3Ek__BackingField_2)); }
+	inline bool get_U3CIsFreeFunctionU3Ek__BackingField_2() const { return ___U3CIsFreeFunctionU3Ek__BackingField_2; }
+	inline bool* get_address_of_U3CIsFreeFunctionU3Ek__BackingField_2() { return &___U3CIsFreeFunctionU3Ek__BackingField_2; }
+	inline void set_U3CIsFreeFunctionU3Ek__BackingField_2(bool value)
+	{
+		___U3CIsFreeFunctionU3Ek__BackingField_2 = value;
+	}
+
+	inline static int32_t get_offset_of_U3CHasExplicitThisU3Ek__BackingField_3() { return static_cast<int32_t>(offsetof(NativeMethodAttribute_t4187428193, ___U3CHasExplicitThisU3Ek__BackingField_3)); }
+	inline bool get_U3CHasExplicitThisU3Ek__BackingField_3() const { return ___U3CHasExplicitThisU3Ek__BackingField_3; }
+	inline bool* get_address_of_U3CHasExplicitThisU3Ek__BackingField_3() { return &___U3CHasExplicitThisU3Ek__BackingField_3; }
+	inline void set_U3CHasExplicitThisU3Ek__BackingField_3(bool value)
+	{
+		___U3CHasExplicitThisU3Ek__BackingField_3 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // USEDBYNATIVECODEATTRIBUTE_T923F9A140847AF2F193AD1AB33143B8774797912_H
 #ifndef THREADANDSERIALIZATIONSAFEATTRIBUTE_TC7AAA73802AAF871C176CF59656C030E5BFA87AA_H
 #define THREADANDSERIALIZATIONSAFEATTRIBUTE_TC7AAA73802AAF871C176CF59656C030E5BFA87AA_H
@@ -1265,6 +1858,11 @@ public:
 #endif // ARGUMENTEXCEPTION_TEDCD16F20A09ECE461C3DA766C16EDA8864057D1_H
 #ifndef CODEGENOPTIONS_T046CD01EAB9A7BBBF2862220BE36B1AE7AE895CE_H
 #define CODEGENOPTIONS_T046CD01EAB9A7BBBF2862220BE36B1AE7AE895CE_H
+=======
+#endif // NATIVEMETHODATTRIBUTE_T4187428193_H
+#ifndef CODEGENOPTIONS_T498890944_H
+#define CODEGENOPTIONS_T498890944_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1272,14 +1870,22 @@ public:
 #endif
 
 // UnityEngine.Bindings.CodegenOptions
+<<<<<<< HEAD
 struct  CodegenOptions_t046CD01EAB9A7BBBF2862220BE36B1AE7AE895CE 
+=======
+struct  CodegenOptions_t498890944 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Bindings.CodegenOptions::value__
 	int32_t ___value___2;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(CodegenOptions_t046CD01EAB9A7BBBF2862220BE36B1AE7AE895CE, ___value___2)); }
+=======
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(CodegenOptions_t498890944, ___value___2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_value___2() const { return ___value___2; }
 	inline int32_t* get_address_of_value___2() { return &___value___2; }
 	inline void set_value___2(int32_t value)
@@ -1291,6 +1897,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // CODEGENOPTIONS_T046CD01EAB9A7BBBF2862220BE36B1AE7AE895CE_H
 #ifndef FREEFUNCTIONATTRIBUTE_TE41160023E316B5E3DF87DA36BDDA9639DD835AE_H
 #define FREEFUNCTIONATTRIBUTE_TE41160023E316B5E3DF87DA36BDDA9639DD835AE_H
@@ -1314,6 +1921,11 @@ public:
 #endif // FREEFUNCTIONATTRIBUTE_TE41160023E316B5E3DF87DA36BDDA9639DD835AE_H
 #ifndef STATICACCESSORTYPE_T1F9C3101E6A29C700469488FDBC8F04FA6AFF061_H
 #define STATICACCESSORTYPE_T1F9C3101E6A29C700469488FDBC8F04FA6AFF061_H
+=======
+#endif // CODEGENOPTIONS_T498890944_H
+#ifndef STATICACCESSORTYPE_T186341701_H
+#define STATICACCESSORTYPE_T186341701_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1321,13 +1933,18 @@ public:
 #endif
 
 // UnityEngine.Bindings.StaticAccessorType
+<<<<<<< HEAD
 struct  StaticAccessorType_t1F9C3101E6A29C700469488FDBC8F04FA6AFF061 
+=======
+struct  StaticAccessorType_t186341701 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Bindings.StaticAccessorType::value__
 	int32_t ___value___2;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(StaticAccessorType_t1F9C3101E6A29C700469488FDBC8F04FA6AFF061, ___value___2)); }
 	inline int32_t get_value___2() const { return ___value___2; }
 	inline int32_t* get_address_of_value___2() { return &___value___2; }
@@ -1358,6 +1975,9 @@ public:
 
 public:
 	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TargetType_t8EE9F64281EE7EA0EDE81FA41E92A8C44C0F31BA, ___value___2)); }
+=======
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(StaticAccessorType_t186341701, ___value___2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_value___2() const { return ___value___2; }
 	inline int32_t* get_address_of_value___2() { return &___value___2; }
 	inline void set_value___2(int32_t value)
@@ -1369,9 +1989,15 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // TARGETTYPE_T8EE9F64281EE7EA0EDE81FA41E92A8C44C0F31BA_H
 #ifndef THREADSAFEATTRIBUTE_T3FB9EE5993C748628BC06D9D46ACA3A58FDAE317_H
 #define THREADSAFEATTRIBUTE_T3FB9EE5993C748628BC06D9D46ACA3A58FDAE317_H
+=======
+#endif // STATICACCESSORTYPE_T186341701_H
+#ifndef THREADSAFEATTRIBUTE_T3376653515_H
+#define THREADSAFEATTRIBUTE_T3376653515_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1379,7 +2005,11 @@ public:
 #endif
 
 // UnityEngine.Bindings.ThreadSafeAttribute
+<<<<<<< HEAD
 struct  ThreadSafeAttribute_t3FB9EE5993C748628BC06D9D46ACA3A58FDAE317  : public NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309
+=======
+struct  ThreadSafeAttribute_t3376653515  : public NativeMethodAttribute_t4187428193
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -1389,35 +2019,67 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // THREADSAFEATTRIBUTE_T3FB9EE5993C748628BC06D9D46ACA3A58FDAE317_H
 #ifndef ARGUMENTNULLEXCEPTION_T581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_H
 #define ARGUMENTNULLEXCEPTION_T581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_H
+=======
+#endif // THREADSAFEATTRIBUTE_T3376653515_H
+#ifndef ARGUMENTEXCEPTION_T132251570_H
+#define ARGUMENTEXCEPTION_T132251570_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // System.ArgumentNullException
 struct  ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD  : public ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1
 {
 public:
 
 public:
+=======
+// System.ArgumentException
+struct  ArgumentException_t132251570  : public SystemException_t176217640
+{
+public:
+	// System.String System.ArgumentException::m_paramName
+	String_t* ___m_paramName_16;
+
+public:
+	inline static int32_t get_offset_of_m_paramName_16() { return static_cast<int32_t>(offsetof(ArgumentException_t132251570, ___m_paramName_16)); }
+	inline String_t* get_m_paramName_16() const { return ___m_paramName_16; }
+	inline String_t** get_address_of_m_paramName_16() { return &___m_paramName_16; }
+	inline void set_m_paramName_16(String_t* value)
+	{
+		___m_paramName_16 = value;
+		Il2CppCodeGenWriteBarrier((&___m_paramName_16), value);
+	}
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // ARGUMENTNULLEXCEPTION_T581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_H
 #ifndef NATIVEPROPERTYATTRIBUTE_TD231CE0D66BEF2B7C0E5D3FF92B02E4FD0365C61_H
 #define NATIVEPROPERTYATTRIBUTE_TD231CE0D66BEF2B7C0E5D3FF92B02E4FD0365C61_H
+=======
+#endif // ARGUMENTEXCEPTION_T132251570_H
+#ifndef FREEFUNCTIONATTRIBUTE_T2020741617_H
+#define FREEFUNCTIONATTRIBUTE_T2020741617_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
+<<<<<<< HEAD
 // UnityEngine.Bindings.NativePropertyAttribute
 struct  NativePropertyAttribute_tD231CE0D66BEF2B7C0E5D3FF92B02E4FD0365C61  : public NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309
 {
@@ -1433,14 +2095,28 @@ public:
 	{
 		___U3CTargetTypeU3Ek__BackingField_5 = value;
 	}
+=======
+// UnityEngine.Bindings.FreeFunctionAttribute
+struct  FreeFunctionAttribute_t2020741617  : public NativeMethodAttribute_t4187428193
+{
+public:
+
+public:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // NATIVEPROPERTYATTRIBUTE_TD231CE0D66BEF2B7C0E5D3FF92B02E4FD0365C61_H
 #ifndef NATIVETYPEATTRIBUTE_T13DB73C52788E49FFE842918C50B9D79C352B831_H
 #define NATIVETYPEATTRIBUTE_T13DB73C52788E49FFE842918C50B9D79C352B831_H
+=======
+#endif // FREEFUNCTIONATTRIBUTE_T2020741617_H
+#ifndef NATIVETYPEATTRIBUTE_T2250406315_H
+#define NATIVETYPEATTRIBUTE_T2250406315_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1448,11 +2124,16 @@ public:
 #endif
 
 // UnityEngine.Bindings.NativeTypeAttribute
+<<<<<<< HEAD
 struct  NativeTypeAttribute_t13DB73C52788E49FFE842918C50B9D79C352B831  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
+=======
+struct  NativeTypeAttribute_t2250406315  : public Attribute_t861562559
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.String UnityEngine.Bindings.NativeTypeAttribute::<Header>k__BackingField
 	String_t* ___U3CHeaderU3Ek__BackingField_0;
+<<<<<<< HEAD
 	// System.String UnityEngine.Bindings.NativeTypeAttribute::<IntermediateScriptingStructName>k__BackingField
 	String_t* ___U3CIntermediateScriptingStructNameU3Ek__BackingField_1;
 	// UnityEngine.Bindings.CodegenOptions UnityEngine.Bindings.NativeTypeAttribute::<CodegenOptions>k__BackingField
@@ -1460,6 +2141,13 @@ public:
 
 public:
 	inline static int32_t get_offset_of_U3CHeaderU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(NativeTypeAttribute_t13DB73C52788E49FFE842918C50B9D79C352B831, ___U3CHeaderU3Ek__BackingField_0)); }
+=======
+	// UnityEngine.Bindings.CodegenOptions UnityEngine.Bindings.NativeTypeAttribute::<CodegenOptions>k__BackingField
+	int32_t ___U3CCodegenOptionsU3Ek__BackingField_1;
+
+public:
+	inline static int32_t get_offset_of_U3CHeaderU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(NativeTypeAttribute_t2250406315, ___U3CHeaderU3Ek__BackingField_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline String_t* get_U3CHeaderU3Ek__BackingField_0() const { return ___U3CHeaderU3Ek__BackingField_0; }
 	inline String_t** get_address_of_U3CHeaderU3Ek__BackingField_0() { return &___U3CHeaderU3Ek__BackingField_0; }
 	inline void set_U3CHeaderU3Ek__BackingField_0(String_t* value)
@@ -1468,6 +2156,7 @@ public:
 		Il2CppCodeGenWriteBarrier((&___U3CHeaderU3Ek__BackingField_0), value);
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_U3CIntermediateScriptingStructNameU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(NativeTypeAttribute_t13DB73C52788E49FFE842918C50B9D79C352B831, ___U3CIntermediateScriptingStructNameU3Ek__BackingField_1)); }
 	inline String_t* get_U3CIntermediateScriptingStructNameU3Ek__BackingField_1() const { return ___U3CIntermediateScriptingStructNameU3Ek__BackingField_1; }
 	inline String_t** get_address_of_U3CIntermediateScriptingStructNameU3Ek__BackingField_1() { return &___U3CIntermediateScriptingStructNameU3Ek__BackingField_1; }
@@ -1483,15 +2172,29 @@ public:
 	inline void set_U3CCodegenOptionsU3Ek__BackingField_2(int32_t value)
 	{
 		___U3CCodegenOptionsU3Ek__BackingField_2 = value;
+=======
+	inline static int32_t get_offset_of_U3CCodegenOptionsU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(NativeTypeAttribute_t2250406315, ___U3CCodegenOptionsU3Ek__BackingField_1)); }
+	inline int32_t get_U3CCodegenOptionsU3Ek__BackingField_1() const { return ___U3CCodegenOptionsU3Ek__BackingField_1; }
+	inline int32_t* get_address_of_U3CCodegenOptionsU3Ek__BackingField_1() { return &___U3CCodegenOptionsU3Ek__BackingField_1; }
+	inline void set_U3CCodegenOptionsU3Ek__BackingField_1(int32_t value)
+	{
+		___U3CCodegenOptionsU3Ek__BackingField_1 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // NATIVETYPEATTRIBUTE_T13DB73C52788E49FFE842918C50B9D79C352B831_H
 #ifndef STATICACCESSORATTRIBUTE_TE507394A59220DFDF5DBE62DD94B6A00AA01D1F2_H
 #define STATICACCESSORATTRIBUTE_TE507394A59220DFDF5DBE62DD94B6A00AA01D1F2_H
+=======
+#endif // NATIVETYPEATTRIBUTE_T2250406315_H
+#ifndef STATICACCESSORATTRIBUTE_T2432663902_H
+#define STATICACCESSORATTRIBUTE_T2432663902_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1499,7 +2202,11 @@ public:
 #endif
 
 // UnityEngine.Bindings.StaticAccessorAttribute
+<<<<<<< HEAD
 struct  StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2  : public Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74
+=======
+struct  StaticAccessorAttribute_t2432663902  : public Attribute_t861562559
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.String UnityEngine.Bindings.StaticAccessorAttribute::<Name>k__BackingField
@@ -1508,7 +2215,11 @@ public:
 	int32_t ___U3CTypeU3Ek__BackingField_1;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_U3CNameU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2, ___U3CNameU3Ek__BackingField_0)); }
+=======
+	inline static int32_t get_offset_of_U3CNameU3Ek__BackingField_0() { return static_cast<int32_t>(offsetof(StaticAccessorAttribute_t2432663902, ___U3CNameU3Ek__BackingField_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline String_t* get_U3CNameU3Ek__BackingField_0() const { return ___U3CNameU3Ek__BackingField_0; }
 	inline String_t** get_address_of_U3CNameU3Ek__BackingField_0() { return &___U3CNameU3Ek__BackingField_0; }
 	inline void set_U3CNameU3Ek__BackingField_0(String_t* value)
@@ -1517,7 +2228,11 @@ public:
 		Il2CppCodeGenWriteBarrier((&___U3CNameU3Ek__BackingField_0), value);
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_U3CTypeU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2, ___U3CTypeU3Ek__BackingField_1)); }
+=======
+	inline static int32_t get_offset_of_U3CTypeU3Ek__BackingField_1() { return static_cast<int32_t>(offsetof(StaticAccessorAttribute_t2432663902, ___U3CTypeU3Ek__BackingField_1)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_U3CTypeU3Ek__BackingField_1() const { return ___U3CTypeU3Ek__BackingField_1; }
 	inline int32_t* get_address_of_U3CTypeU3Ek__BackingField_1() { return &___U3CTypeU3Ek__BackingField_1; }
 	inline void set_U3CTypeU3Ek__BackingField_1(int32_t value)
@@ -1529,6 +2244,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // STATICACCESSORATTRIBUTE_TE507394A59220DFDF5DBE62DD94B6A00AA01D1F2_H
 // System.String[]
 struct StringU5BU5D_t933FB07893230EA91C40FF900D5400665E87B14E  : public RuntimeArray
@@ -1569,6 +2285,31 @@ public:
 };
 // System.Object[]
 struct ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A  : public RuntimeArray
+=======
+#endif // STATICACCESSORATTRIBUTE_T2432663902_H
+#ifndef ARGUMENTNULLEXCEPTION_T1615371798_H
+#define ARGUMENTNULLEXCEPTION_T1615371798_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.ArgumentNullException
+struct  ArgumentNullException_t1615371798  : public ArgumentException_t132251570
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // ARGUMENTNULLEXCEPTION_T1615371798_H
+// System.Object[]
+struct ObjectU5BU5D_t2843939325  : public RuntimeArray
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	ALIGN_FIELD (8) RuntimeObject * m_Items[1];
@@ -1607,6 +2348,7 @@ public:
 
 
 
+<<<<<<< HEAD
 // System.Void System.Attribute::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0 (Attribute_tF048C13FB3C8CFCC53F82290E4A3F621089F9A74 * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor()
@@ -1695,6 +2437,46 @@ extern "C" IL2CPP_METHOD_ATTR void AssetFileNameExtensionAttribute__ctor_m49EB0E
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+=======
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m3134540192 (NativeMethodAttribute_t4187428193 * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::set_IsFreeFunction(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsFreeFunction_m1931350581 (NativeMethodAttribute_t4187428193 * __this, bool ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor(System.String,System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m3056337369 (NativeMethodAttribute_t4187428193 * __this, String_t* ___name0, bool ___isFreeFunction1, const RuntimeMethod* method);
+// System.Void System.Attribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void Attribute__ctor_m1529526131 (Attribute_t861562559 * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeConditionalAttribute::set_Condition(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Condition_m607771195 (NativeConditionalAttribute_t2439539374 * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeConditionalAttribute::set_Enabled(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Enabled_m2378894961 (NativeConditionalAttribute_t2439539374 * __this, bool ___value0, const RuntimeMethod* method);
+// System.Void System.ArgumentNullException::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void ArgumentNullException__ctor_m1170824041 (ArgumentNullException_t1615371798 * __this, String_t* p0, const RuntimeMethod* method);
+// System.Boolean System.String::op_Equality(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR bool String_op_Equality_m920492651 (RuntimeObject * __this /* static, unused */, String_t* p0, String_t* p1, const RuntimeMethod* method);
+// System.Void System.ArgumentException::.ctor(System.String,System.String)
+extern "C" IL2CPP_METHOD_ATTR void ArgumentException__ctor_m1216717135 (ArgumentException_t132251570 * __this, String_t* p0, String_t* p1, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeHeaderAttribute::set_Header(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute_set_Header_m3310668383 (NativeHeaderAttribute_t5261382 * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::set_Name(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_Name_m1946475768 (NativeMethodAttribute_t4187428193 * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m2941746701 (NativeMethodAttribute_t4187428193 * __this, String_t* ___name0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeNameAttribute::set_Name(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute_set_Name_m3579254766 (NativeNameAttribute_t3268151526 * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeTypeAttribute::set_CodegenOptions(UnityEngine.Bindings.CodegenOptions)
+extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_CodegenOptions_m3839252515 (NativeTypeAttribute_t2250406315 * __this, int32_t ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeTypeAttribute::set_Header(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_Header_m48420006 (NativeTypeAttribute_t2250406315 * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.StaticAccessorAttribute::set_Name(System.String)
+extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Name_m2926172476 (StaticAccessorAttribute_t2432663902 * __this, String_t* ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.StaticAccessorAttribute::set_Type(UnityEngine.Bindings.StaticAccessorType)
+extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Type_m2333258271 (StaticAccessorAttribute_t2432663902 * __this, int32_t ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::set_IsThreadSafe(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsThreadSafe_m2457033065 (NativeMethodAttribute_t4187428193 * __this, bool ___value0, const RuntimeMethod* method);
+// System.String System.String::Format(System.String,System.Object[])
+extern "C" IL2CPP_METHOD_ATTR String_t* String_Format_m630303134 (RuntimeObject * __this /* static, unused */, String_t* p0, ObjectU5BU5D_t2843939325* p1, const RuntimeMethod* method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1708,6 +2490,7 @@ extern "C" IL2CPP_METHOD_ATTR void AssetFileNameExtensionAttribute__ctor_m49EB0E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.Bindings.FreeFunctionAttribute::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void FreeFunctionAttribute__ctor_m69E4EBDD649729C9473BA68585097AF48D06B83D (FreeFunctionAttribute_tE41160023E316B5E3DF87DA36BDDA9639DD835AE * __this, const RuntimeMethod* method)
 {
@@ -1736,6 +2519,8 @@ extern "C" IL2CPP_METHOD_ATTR void FreeFunctionAttribute__ctor_m54898E27CB626075
 		return;
 	}
 }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -1744,6 +2529,7 @@ extern "C" IL2CPP_METHOD_ATTR void FreeFunctionAttribute__ctor_m54898E27CB626075
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.Bindings.IgnoreAttribute::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void IgnoreAttribute__ctor_m4B78BE44704DA9040A683AC928187E1DAE6BC885 (IgnoreAttribute_tD849E806CA1C75980B97B047908DE57D156B775F * __this, const RuntimeMethod* method)
 {
@@ -1758,6 +2544,23 @@ extern "C" IL2CPP_METHOD_ATTR void IgnoreAttribute_set_DoesNotContributeToSize_m
 	{
 		bool L_0 = ___value0;
 		__this->set_U3CDoesNotContributeToSizeU3Ek__BackingField_0(L_0);
+=======
+// System.Void UnityEngine.Bindings.FreeFunctionAttribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void FreeFunctionAttribute__ctor_m225850777 (FreeFunctionAttribute_t2020741617 * __this, const RuntimeMethod* method)
+{
+	{
+		NativeMethodAttribute__ctor_m3134540192(__this, /*hidden argument*/NULL);
+		NativeMethodAttribute_set_IsFreeFunction_m1931350581(__this, (bool)1, /*hidden argument*/NULL);
+		return;
+	}
+}
+// System.Void UnityEngine.Bindings.FreeFunctionAttribute::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void FreeFunctionAttribute__ctor_m3967403258 (FreeFunctionAttribute_t2020741617 * __this, String_t* ___name0, const RuntimeMethod* method)
+{
+	{
+		String_t* L_0 = ___name0;
+		NativeMethodAttribute__ctor_m3056337369(__this, L_0, (bool)1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -1770,6 +2573,7 @@ extern "C" IL2CPP_METHOD_ATTR void IgnoreAttribute_set_DoesNotContributeToSize_m
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Bindings.NativeConditionalAttribute::.ctor(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute__ctor_mBF34AC3E165A50B3BE9F49520DDE1851DC7CFF13 (NativeConditionalAttribute_t8F72026EC5B1194F1D82D72E0C76C51D7D7FBD2E * __this, String_t* ___condition0, const RuntimeMethod* method)
 {
 	{
@@ -1777,11 +2581,24 @@ extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute__ctor_mBF34AC3E165
 		String_t* L_0 = ___condition0;
 		NativeConditionalAttribute_set_Condition_m0BD35F77FDBCC278203543FB3CAC35A8227474B5(__this, L_0, /*hidden argument*/NULL);
 		NativeConditionalAttribute_set_Enabled_m3584B9F0F4BD7F3F8B8C49595D1900EF01B3C1E0(__this, (bool)1, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute__ctor_m1745668596 (NativeConditionalAttribute_t2439539374 * __this, String_t* ___condition0, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+		String_t* L_0 = ___condition0;
+		NativeConditionalAttribute_set_Condition_m607771195(__this, L_0, /*hidden argument*/NULL);
+		NativeConditionalAttribute_set_Enabled_m2378894961(__this, (bool)1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeConditionalAttribute::set_Condition(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Condition_m0BD35F77FDBCC278203543FB3CAC35A8227474B5 (NativeConditionalAttribute_t8F72026EC5B1194F1D82D72E0C76C51D7D7FBD2E * __this, String_t* ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Condition_m607771195 (NativeConditionalAttribute_t2439539374 * __this, String_t* ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		String_t* L_0 = ___value0;
@@ -1790,7 +2607,11 @@ extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Condition_m0BD
 	}
 }
 // System.Void UnityEngine.Bindings.NativeConditionalAttribute::set_Enabled(System.Boolean)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Enabled_m3584B9F0F4BD7F3F8B8C49595D1900EF01B3C1E0 (NativeConditionalAttribute_t8F72026EC5B1194F1D82D72E0C76C51D7D7FBD2E * __this, bool ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Enabled_m2378894961 (NativeConditionalAttribute_t2439539374 * __this, bool ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		bool L_0 = ___value0;
@@ -1807,16 +2628,28 @@ extern "C" IL2CPP_METHOD_ATTR void NativeConditionalAttribute_set_Enabled_m3584B
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Bindings.NativeHeaderAttribute::.ctor(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute__ctor_m490124694FDBCB4336CBA29D2E24A27FF3451A0E (NativeHeaderAttribute_t5C38607694D73834F0B9EB2AB0E575D3FD6D0D8B * __this, String_t* ___header0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute__ctor_m457462113 (NativeHeaderAttribute_t5261382 * __this, String_t* ___header0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (NativeHeaderAttribute__ctor_m490124694FDBCB4336CBA29D2E24A27FF3451A0E_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+		il2cpp_codegen_initialize_method (NativeHeaderAttribute__ctor_m457462113_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		String_t* L_0 = ___header0;
 		if (L_0)
 		{
@@ -1824,35 +2657,59 @@ extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute__ctor_m490124694FDBCB43
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD * L_1 = (ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD *)il2cpp_codegen_object_new(ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_il2cpp_TypeInfo_var);
 		ArgumentNullException__ctor_mEE0C0D6FCB2D08CD7967DBB1329A0854BBED49ED(L_1, _stringLiteral594FD1615A341C77829E83ED988F137E1BA96231, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, NativeHeaderAttribute__ctor_m490124694FDBCB4336CBA29D2E24A27FF3451A0E_RuntimeMethod_var);
+=======
+		ArgumentNullException_t1615371798 * L_1 = (ArgumentNullException_t1615371798 *)il2cpp_codegen_object_new(ArgumentNullException_t1615371798_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m1170824041(L_1, _stringLiteral3529812190, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1,NativeHeaderAttribute__ctor_m457462113_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0018:
 	{
 		String_t* L_2 = ___header0;
+<<<<<<< HEAD
 		bool L_3 = String_op_Equality_m139F0E4195AE2F856019E63B241F36F016997FCE(L_2, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, /*hidden argument*/NULL);
+=======
+		bool L_3 = String_op_Equality_m920492651(NULL /*static, unused*/, L_2, _stringLiteral757602046, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		if (!L_3)
 		{
 			goto IL_0038;
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 * L_4 = (ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 *)il2cpp_codegen_object_new(ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m26DC3463C6F3C98BF33EA39598DD2B32F0249CA8(L_4, _stringLiteral00F1751BBAD144F9A705A5D34DE53F8993F5F75F, _stringLiteral594FD1615A341C77829E83ED988F137E1BA96231, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, NULL, NativeHeaderAttribute__ctor_m490124694FDBCB4336CBA29D2E24A27FF3451A0E_RuntimeMethod_var);
+=======
+		ArgumentException_t132251570 * L_4 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
+		ArgumentException__ctor_m1216717135(L_4, _stringLiteral2581250844, _stringLiteral3529812190, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4,NativeHeaderAttribute__ctor_m457462113_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0038:
 	{
 		String_t* L_5 = ___header0;
+<<<<<<< HEAD
 		NativeHeaderAttribute_set_Header_m4DBF0E38BD79721921158F6B12B9AF58316C6778(__this, L_5, /*hidden argument*/NULL);
+=======
+		NativeHeaderAttribute_set_Header_m3310668383(__this, L_5, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeHeaderAttribute::set_Header(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute_set_Header_m4DBF0E38BD79721921158F6B12B9AF58316C6778 (NativeHeaderAttribute_t5C38607694D73834F0B9EB2AB0E575D3FD6D0D8B * __this, String_t* ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute_set_Header_m3310668383 (NativeHeaderAttribute_t5261382 * __this, String_t* ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		String_t* L_0 = ___value0;
@@ -1869,24 +2726,43 @@ extern "C" IL2CPP_METHOD_ATTR void NativeHeaderAttribute_set_Header_m4DBF0E38BD7
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_mE26CCBB6FA1CF524CDF21471D4D513E7DE1C5B43 (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, const RuntimeMethod* method)
 {
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m3134540192 (NativeMethodAttribute_t4187428193 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m1A8CC57006916ACBBBCB515C26224392E8711A22 (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, String_t* ___name0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m2941746701 (NativeMethodAttribute_t4187428193 * __this, String_t* ___name0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (NativeMethodAttribute__ctor_m1A8CC57006916ACBBBCB515C26224392E8711A22_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+		il2cpp_codegen_initialize_method (NativeMethodAttribute__ctor_m2941746701_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		String_t* L_0 = ___name0;
 		if (L_0)
 		{
@@ -1894,34 +2770,55 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m1A8CC57006916ACB
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD * L_1 = (ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD *)il2cpp_codegen_object_new(ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_il2cpp_TypeInfo_var);
 		ArgumentNullException__ctor_mEE0C0D6FCB2D08CD7967DBB1329A0854BBED49ED(L_1, _stringLiteral6AE999552A0D2DCA14D62E2BC8B764D377B1DD6C, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, NativeMethodAttribute__ctor_m1A8CC57006916ACBBBCB515C26224392E8711A22_RuntimeMethod_var);
+=======
+		ArgumentNullException_t1615371798 * L_1 = (ArgumentNullException_t1615371798 *)il2cpp_codegen_object_new(ArgumentNullException_t1615371798_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m1170824041(L_1, _stringLiteral62725243, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1,NativeMethodAttribute__ctor_m2941746701_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0018:
 	{
 		String_t* L_2 = ___name0;
+<<<<<<< HEAD
 		bool L_3 = String_op_Equality_m139F0E4195AE2F856019E63B241F36F016997FCE(L_2, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, /*hidden argument*/NULL);
+=======
+		bool L_3 = String_op_Equality_m920492651(NULL /*static, unused*/, L_2, _stringLiteral757602046, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		if (!L_3)
 		{
 			goto IL_0038;
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 * L_4 = (ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 *)il2cpp_codegen_object_new(ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m26DC3463C6F3C98BF33EA39598DD2B32F0249CA8(L_4, _stringLiteralE603ACC092BAF5342CBBBABD96FF616A275F364E, _stringLiteral6AE999552A0D2DCA14D62E2BC8B764D377B1DD6C, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, NULL, NativeMethodAttribute__ctor_m1A8CC57006916ACBBBCB515C26224392E8711A22_RuntimeMethod_var);
+=======
+		ArgumentException_t132251570 * L_4 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
+		ArgumentException__ctor_m1216717135(L_4, _stringLiteral648666413, _stringLiteral62725243, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4,NativeMethodAttribute__ctor_m2941746701_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0038:
 	{
 		String_t* L_5 = ___name0;
+<<<<<<< HEAD
 		NativeMethodAttribute_set_Name_mBC4CF088461DE9830E85F6E68B462DE9CC48574C(__this, L_5, /*hidden argument*/NULL);
+=======
+		NativeMethodAttribute_set_Name_m1946475768(__this, L_5, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::.ctor(System.String,System.Boolean)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m34B386D374A17251F14912F04256860E57DF559F (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, String_t* ___name0, bool ___isFreeFunction1, const RuntimeMethod* method)
 {
 	{
@@ -1941,11 +2838,24 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m793B5D7530F92DC0
 		NativeMethodAttribute__ctor_m34B386D374A17251F14912F04256860E57DF559F(__this, L_0, L_1, /*hidden argument*/NULL);
 		bool L_2 = ___isThreadSafe2;
 		NativeMethodAttribute_set_IsThreadSafe_m11B322FBC460DD97E27F24B6686F5D8C4077F7E6(__this, L_2, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute__ctor_m3056337369 (NativeMethodAttribute_t4187428193 * __this, String_t* ___name0, bool ___isFreeFunction1, const RuntimeMethod* method)
+{
+	{
+		String_t* L_0 = ___name0;
+		NativeMethodAttribute__ctor_m2941746701(__this, L_0, /*hidden argument*/NULL);
+		bool L_1 = ___isFreeFunction1;
+		NativeMethodAttribute_set_IsFreeFunction_m1931350581(__this, L_1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::set_Name(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_Name_mBC4CF088461DE9830E85F6E68B462DE9CC48574C (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, String_t* ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_Name_m1946475768 (NativeMethodAttribute_t4187428193 * __this, String_t* ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		String_t* L_0 = ___value0;
@@ -1954,7 +2864,11 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_Name_mBC4CF088461DE
 	}
 }
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::set_IsThreadSafe(System.Boolean)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsThreadSafe_m11B322FBC460DD97E27F24B6686F5D8C4077F7E6 (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, bool ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsThreadSafe_m2457033065 (NativeMethodAttribute_t4187428193 * __this, bool ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		bool L_0 = ___value0;
@@ -1963,7 +2877,11 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsThreadSafe_m11B32
 	}
 }
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::set_IsFreeFunction(System.Boolean)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsFreeFunction_m4A2C3A5DE2D0CCAC8FFFB6660BAD55A044EFFDDF (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, bool ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsFreeFunction_m1931350581 (NativeMethodAttribute_t4187428193 * __this, bool ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		bool L_0 = ___value0;
@@ -1971,6 +2889,7 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_IsFreeFunction_m4A2
 		return;
 	}
 }
+<<<<<<< HEAD
 // System.Void UnityEngine.Bindings.NativeMethodAttribute::set_ThrowsException(System.Boolean)
 extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_ThrowsException_m923834F65F9D355EE8E6F8FC760DB6F9C94F22F1 (NativeMethodAttribute_tB1AB33D5877AD8417C7E646A48AF1941283DC309 * __this, bool ___value0, const RuntimeMethod* method)
 {
@@ -1986,6 +2905,14 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_HasExplicitThis_mA9
 	{
 		bool L_0 = ___value0;
 		__this->set_U3CHasExplicitThisU3Ek__BackingField_4(L_0);
+=======
+// System.Void UnityEngine.Bindings.NativeMethodAttribute::set_HasExplicitThis(System.Boolean)
+extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_HasExplicitThis_m2961870915 (NativeMethodAttribute_t4187428193 * __this, bool ___value0, const RuntimeMethod* method)
+{
+	{
+		bool L_0 = ___value0;
+		__this->set_U3CHasExplicitThisU3Ek__BackingField_3(L_0);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -1997,6 +2924,7 @@ extern "C" IL2CPP_METHOD_ATTR void NativeMethodAttribute_set_HasExplicitThis_mA9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.Bindings.NativeNameAttribute::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute__ctor_m2FE8ED45CC9A5C5E7D8F5D4264BAA59B2B1A1DA1 (NativeNameAttribute_t16D90ABD66BD1E0081A2D037FE91ECF220E797F9 * __this, const RuntimeMethod* method)
 {
@@ -2007,15 +2935,27 @@ extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute__ctor_m2FE8ED45CC9A5C5E7D
 }
 // System.Void UnityEngine.Bindings.NativeNameAttribute::.ctor(System.String)
 extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute__ctor_m85D49395E6305D8C6CFA8C39A83653F36A8FC9BA (NativeNameAttribute_t16D90ABD66BD1E0081A2D037FE91ECF220E797F9 * __this, String_t* ___name0, const RuntimeMethod* method)
+=======
+// System.Void UnityEngine.Bindings.NativeNameAttribute::.ctor(System.String)
+extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute__ctor_m3296876808 (NativeNameAttribute_t3268151526 * __this, String_t* ___name0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (NativeNameAttribute__ctor_m85D49395E6305D8C6CFA8C39A83653F36A8FC9BA_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+		il2cpp_codegen_initialize_method (NativeNameAttribute__ctor_m3296876808_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		String_t* L_0 = ___name0;
 		if (L_0)
 		{
@@ -2023,35 +2963,59 @@ extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute__ctor_m85D49395E6305D8C6C
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD * L_1 = (ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD *)il2cpp_codegen_object_new(ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_il2cpp_TypeInfo_var);
 		ArgumentNullException__ctor_mEE0C0D6FCB2D08CD7967DBB1329A0854BBED49ED(L_1, _stringLiteral6AE999552A0D2DCA14D62E2BC8B764D377B1DD6C, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, NativeNameAttribute__ctor_m85D49395E6305D8C6CFA8C39A83653F36A8FC9BA_RuntimeMethod_var);
+=======
+		ArgumentNullException_t1615371798 * L_1 = (ArgumentNullException_t1615371798 *)il2cpp_codegen_object_new(ArgumentNullException_t1615371798_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m1170824041(L_1, _stringLiteral62725243, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1,NativeNameAttribute__ctor_m3296876808_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0018:
 	{
 		String_t* L_2 = ___name0;
+<<<<<<< HEAD
 		bool L_3 = String_op_Equality_m139F0E4195AE2F856019E63B241F36F016997FCE(L_2, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, /*hidden argument*/NULL);
+=======
+		bool L_3 = String_op_Equality_m920492651(NULL /*static, unused*/, L_2, _stringLiteral757602046, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		if (!L_3)
 		{
 			goto IL_0038;
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 * L_4 = (ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 *)il2cpp_codegen_object_new(ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m26DC3463C6F3C98BF33EA39598DD2B32F0249CA8(L_4, _stringLiteralE603ACC092BAF5342CBBBABD96FF616A275F364E, _stringLiteral6AE999552A0D2DCA14D62E2BC8B764D377B1DD6C, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, NULL, NativeNameAttribute__ctor_m85D49395E6305D8C6CFA8C39A83653F36A8FC9BA_RuntimeMethod_var);
+=======
+		ArgumentException_t132251570 * L_4 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
+		ArgumentException__ctor_m1216717135(L_4, _stringLiteral648666413, _stringLiteral62725243, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4,NativeNameAttribute__ctor_m3296876808_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0038:
 	{
 		String_t* L_5 = ___name0;
+<<<<<<< HEAD
 		NativeNameAttribute_set_Name_m8559126FDC09CB14ADF9AF9D03E6102908738FD3(__this, L_5, /*hidden argument*/NULL);
+=======
+		NativeNameAttribute_set_Name_m3579254766(__this, L_5, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeNameAttribute::set_Name(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute_set_Name_m8559126FDC09CB14ADF9AF9D03E6102908738FD3 (NativeNameAttribute_t16D90ABD66BD1E0081A2D037FE91ECF220E797F9 * __this, String_t* ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute_set_Name_m3579254766 (NativeNameAttribute_t3268151526 * __this, String_t* ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		String_t* L_0 = ___value0;
@@ -2067,6 +3031,7 @@ extern "C" IL2CPP_METHOD_ATTR void NativeNameAttribute_set_Name_m8559126FDC09CB1
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 // System.Void UnityEngine.Bindings.NativePropertyAttribute::.ctor()
 extern "C" IL2CPP_METHOD_ATTR void NativePropertyAttribute__ctor_mC9AA5DB9519961A6AA76C71968B7E4F9649235FF (NativePropertyAttribute_tD231CE0D66BEF2B7C0E5D3FF92B02E4FD0365C61 * __this, const RuntimeMethod* method)
 {
@@ -2155,20 +3120,40 @@ extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute__ctor_m51D3D691AF2587E97E
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
 		int32_t L_0 = ___codegenOptions0;
 		NativeTypeAttribute_set_CodegenOptions_m25EC23287090E27AA2344F376BABD52DE4D4A23D(__this, L_0, /*hidden argument*/NULL);
+=======
+// System.Void UnityEngine.Bindings.NativeTypeAttribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute__ctor_m2993484825 (NativeTypeAttribute_t2250406315 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+		NativeTypeAttribute_set_CodegenOptions_m3839252515(__this, 0, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeTypeAttribute::.ctor(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute__ctor_m7ACA25C054E933120D16DC7BBDE17734194454B6 (NativeTypeAttribute_t13DB73C52788E49FFE842918C50B9D79C352B831 * __this, String_t* ___header0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute__ctor_m133676646 (NativeTypeAttribute_t2250406315 * __this, String_t* ___header0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (NativeTypeAttribute__ctor_m7ACA25C054E933120D16DC7BBDE17734194454B6_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+		il2cpp_codegen_initialize_method (NativeTypeAttribute__ctor_m133676646_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		String_t* L_0 = ___header0;
 		if (L_0)
 		{
@@ -2176,28 +3161,45 @@ extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute__ctor_m7ACA25C054E933120D
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD * L_1 = (ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD *)il2cpp_codegen_object_new(ArgumentNullException_t581DF992B1F3E0EC6EFB30CC5DC43519A79B27AD_il2cpp_TypeInfo_var);
 		ArgumentNullException__ctor_mEE0C0D6FCB2D08CD7967DBB1329A0854BBED49ED(L_1, _stringLiteral594FD1615A341C77829E83ED988F137E1BA96231, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1, NULL, NativeTypeAttribute__ctor_m7ACA25C054E933120D16DC7BBDE17734194454B6_RuntimeMethod_var);
+=======
+		ArgumentNullException_t1615371798 * L_1 = (ArgumentNullException_t1615371798 *)il2cpp_codegen_object_new(ArgumentNullException_t1615371798_il2cpp_TypeInfo_var);
+		ArgumentNullException__ctor_m1170824041(L_1, _stringLiteral3529812190, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_1,NativeTypeAttribute__ctor_m133676646_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0018:
 	{
 		String_t* L_2 = ___header0;
+<<<<<<< HEAD
 		bool L_3 = String_op_Equality_m139F0E4195AE2F856019E63B241F36F016997FCE(L_2, _stringLiteralDA39A3EE5E6B4B0D3255BFEF95601890AFD80709, /*hidden argument*/NULL);
+=======
+		bool L_3 = String_op_Equality_m920492651(NULL /*static, unused*/, L_2, _stringLiteral757602046, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		if (!L_3)
 		{
 			goto IL_0038;
 		}
 	}
 	{
+<<<<<<< HEAD
 		ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 * L_4 = (ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1 *)il2cpp_codegen_object_new(ArgumentException_tEDCD16F20A09ECE461C3DA766C16EDA8864057D1_il2cpp_TypeInfo_var);
 		ArgumentException__ctor_m26DC3463C6F3C98BF33EA39598DD2B32F0249CA8(L_4, _stringLiteral00F1751BBAD144F9A705A5D34DE53F8993F5F75F, _stringLiteral594FD1615A341C77829E83ED988F137E1BA96231, /*hidden argument*/NULL);
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4, NULL, NativeTypeAttribute__ctor_m7ACA25C054E933120D16DC7BBDE17734194454B6_RuntimeMethod_var);
+=======
+		ArgumentException_t132251570 * L_4 = (ArgumentException_t132251570 *)il2cpp_codegen_object_new(ArgumentException_t132251570_il2cpp_TypeInfo_var);
+		ArgumentException__ctor_m1216717135(L_4, _stringLiteral2581250844, _stringLiteral3529812190, /*hidden argument*/NULL);
+		IL2CPP_RAISE_MANAGED_EXCEPTION(L_4,NativeTypeAttribute__ctor_m133676646_RuntimeMethod_var);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 
 IL_0038:
 	{
+<<<<<<< HEAD
 		NativeTypeAttribute_set_CodegenOptions_m25EC23287090E27AA2344F376BABD52DE4D4A23D(__this, 0, /*hidden argument*/NULL);
 		String_t* L_5 = ___header0;
 		NativeTypeAttribute_set_Header_m1CC3A47E66E54E5E7A87C5C5911B8EE9D0E8657B(__this, L_5, /*hidden argument*/NULL);
@@ -2212,11 +3214,20 @@ extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute__ctor_mF0E347C64A5AAF78A6
 		NativeTypeAttribute__ctor_m51D3D691AF2587E97E54787810199664922210DE(__this, L_0, /*hidden argument*/NULL);
 		String_t* L_1 = ___intermediateStructName1;
 		NativeTypeAttribute_set_IntermediateScriptingStructName_m6409CEAAEE1D910DE284325904215DAE9104DDFE(__this, L_1, /*hidden argument*/NULL);
+=======
+		NativeTypeAttribute_set_CodegenOptions_m3839252515(__this, 0, /*hidden argument*/NULL);
+		String_t* L_5 = ___header0;
+		NativeTypeAttribute_set_Header_m48420006(__this, L_5, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.NativeTypeAttribute::set_Header(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_Header_m1CC3A47E66E54E5E7A87C5C5911B8EE9D0E8657B (NativeTypeAttribute_t13DB73C52788E49FFE842918C50B9D79C352B831 * __this, String_t* ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_Header_m48420006 (NativeTypeAttribute_t2250406315 * __this, String_t* ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		String_t* L_0 = ___value0;
@@ -2224,6 +3235,7 @@ extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_Header_m1CC3A47E66E54
 		return;
 	}
 }
+<<<<<<< HEAD
 // System.Void UnityEngine.Bindings.NativeTypeAttribute::set_IntermediateScriptingStructName(System.String)
 extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_IntermediateScriptingStructName_m6409CEAAEE1D910DE284325904215DAE9104DDFE (NativeTypeAttribute_t13DB73C52788E49FFE842918C50B9D79C352B831 * __this, String_t* ___value0, const RuntimeMethod* method)
 {
@@ -2281,6 +3293,14 @@ extern "C" IL2CPP_METHOD_ATTR void NotNullAttribute__ctor_m8F88B3030D52285AA1033
 {
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+// System.Void UnityEngine.Bindings.NativeTypeAttribute::set_CodegenOptions(UnityEngine.Bindings.CodegenOptions)
+extern "C" IL2CPP_METHOD_ATTR void NativeTypeAttribute_set_CodegenOptions_m3839252515 (NativeTypeAttribute_t2250406315 * __this, int32_t ___value0, const RuntimeMethod* method)
+{
+	{
+		int32_t L_0 = ___value0;
+		__this->set_U3CCodegenOptionsU3Ek__BackingField_1(L_0);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2293,16 +3313,26 @@ extern "C" IL2CPP_METHOD_ATTR void NotNullAttribute__ctor_m8F88B3030D52285AA1033
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Bindings.StaticAccessorAttribute::.ctor(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute__ctor_m6698A0204830E258A0D9881AFA7368196C179782 (StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2 * __this, String_t* ___name0, const RuntimeMethod* method)
 {
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
 		String_t* L_0 = ___name0;
 		StaticAccessorAttribute_set_Name_mBFD8EFC09BA63B0CE005B306037E564B530377D0(__this, L_0, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute__ctor_m1713503113 (StaticAccessorAttribute_t2432663902 * __this, String_t* ___name0, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+		String_t* L_0 = ___name0;
+		StaticAccessorAttribute_set_Name_m2926172476(__this, L_0, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.StaticAccessorAttribute::.ctor(System.String,UnityEngine.Bindings.StaticAccessorType)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute__ctor_m8F492CF3D710FAE0D63BB8C2640D271264C84448 (StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2 * __this, String_t* ___name0, int32_t ___type1, const RuntimeMethod* method)
 {
 	{
@@ -2311,11 +3341,25 @@ extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute__ctor_m8F492CF3D710FA
 		StaticAccessorAttribute_set_Name_mBFD8EFC09BA63B0CE005B306037E564B530377D0(__this, L_0, /*hidden argument*/NULL);
 		int32_t L_1 = ___type1;
 		StaticAccessorAttribute_set_Type_m85233B66B145700BD66145EB0AA31D0960896AE2(__this, L_1, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute__ctor_m2905272167 (StaticAccessorAttribute_t2432663902 * __this, String_t* ___name0, int32_t ___type1, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+		String_t* L_0 = ___name0;
+		StaticAccessorAttribute_set_Name_m2926172476(__this, L_0, /*hidden argument*/NULL);
+		int32_t L_1 = ___type1;
+		StaticAccessorAttribute_set_Type_m2333258271(__this, L_1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Bindings.StaticAccessorAttribute::set_Name(System.String)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Name_mBFD8EFC09BA63B0CE005B306037E564B530377D0 (StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2 * __this, String_t* ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Name_m2926172476 (StaticAccessorAttribute_t2432663902 * __this, String_t* ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		String_t* L_0 = ___value0;
@@ -2324,7 +3368,11 @@ extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Name_mBFD8EFC09BA
 	}
 }
 // System.Void UnityEngine.Bindings.StaticAccessorAttribute::set_Type(UnityEngine.Bindings.StaticAccessorType)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Type_m85233B66B145700BD66145EB0AA31D0960896AE2 (StaticAccessorAttribute_tE507394A59220DFDF5DBE62DD94B6A00AA01D1F2 * __this, int32_t ___value0, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Type_m2333258271 (StaticAccessorAttribute_t2432663902 * __this, int32_t ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		int32_t L_0 = ___value0;
@@ -2348,6 +3396,7 @@ extern "C" IL2CPP_METHOD_ATTR void StaticAccessorAttribute_set_Type_m85233B66B14
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+<<<<<<< HEAD
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -2362,6 +3411,14 @@ extern "C" IL2CPP_METHOD_ATTR void ThreadSafeAttribute__ctor_mC3058002BD52E2EB84
 	{
 		NativeMethodAttribute__ctor_mE26CCBB6FA1CF524CDF21471D4D513E7DE1C5B43(__this, /*hidden argument*/NULL);
 		NativeMethodAttribute_set_IsThreadSafe_m11B322FBC460DD97E27F24B6686F5D8C4077F7E6(__this, (bool)1, /*hidden argument*/NULL);
+=======
+// System.Void UnityEngine.Bindings.ThreadSafeAttribute::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void ThreadSafeAttribute__ctor_m601575521 (ThreadSafeAttribute_t3376653515 * __this, const RuntimeMethod* method)
+{
+	{
+		NativeMethodAttribute__ctor_m3134540192(__this, /*hidden argument*/NULL);
+		NativeMethodAttribute_set_IsThreadSafe_m2457033065(__this, (bool)1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2374,6 +3431,7 @@ extern "C" IL2CPP_METHOD_ATTR void ThreadSafeAttribute__ctor_mC3058002BD52E2EB84
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Bindings.UnmarshalledAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void UnmarshalledAttribute__ctor_m7E224B875755FD7109EDFB2CBA2A2F7F617A1191 (UnmarshalledAttribute_tAAB7B6FBEEA7672AE8DB6EC9676CA8911A422B3A * __this, const RuntimeMethod* method)
 {
 	{
@@ -2459,6 +3517,12 @@ extern "C" IL2CPP_METHOD_ATTR void NativeClassAttribute_set_Declaration_m2C63063
 	{
 		String_t* L_0 = ___value0;
 		__this->set_U3CDeclarationU3Ek__BackingField_1(L_0);
+=======
+extern "C" IL2CPP_METHOD_ATTR void UnmarshalledAttribute__ctor_m534761184 (UnmarshalledAttribute_t1517743549 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2471,10 +3535,17 @@ extern "C" IL2CPP_METHOD_ATTR void NativeClassAttribute_set_Declaration_m2C63063
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Scripting.GeneratedByOldBindingsGeneratorAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void GeneratedByOldBindingsGeneratorAttribute__ctor_m16915B4C437B4BE69681DD9A0A368FCD6155EB81 (GeneratedByOldBindingsGeneratorAttribute_tF3386E1746F60B4E1D77C2167915FBB4B89BBA86 * __this, const RuntimeMethod* method)
 {
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void GeneratedByOldBindingsGeneratorAttribute__ctor_m3683043001 (GeneratedByOldBindingsGeneratorAttribute_t433318409 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2487,6 +3558,7 @@ extern "C" IL2CPP_METHOD_ATTR void GeneratedByOldBindingsGeneratorAttribute__cto
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Scripting.RequiredByNativeCodeAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void RequiredByNativeCodeAttribute__ctor_mD8B976753773E00BB7E1E63DF6C23A1EB3054422 (RequiredByNativeCodeAttribute_t949320E827C2BD269B3E686FE317A18835670AAE * __this, const RuntimeMethod* method)
 {
 	{
@@ -2528,6 +3600,12 @@ extern "C" IL2CPP_METHOD_ATTR void RequiredByNativeCodeAttribute_set_GeneratePro
 	{
 		bool L_0 = ___value0;
 		__this->set_U3CGenerateProxyU3Ek__BackingField_2(L_0);
+=======
+extern "C" IL2CPP_METHOD_ATTR void RequiredByNativeCodeAttribute__ctor_m119855101 (RequiredByNativeCodeAttribute_t4130846357 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2540,6 +3618,7 @@ extern "C" IL2CPP_METHOD_ATTR void RequiredByNativeCodeAttribute_set_GeneratePro
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Scripting.UsedByNativeCodeAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void UsedByNativeCodeAttribute__ctor_m599B42E9BBC333CDA57CD8154C902AB7594B80AD (UsedByNativeCodeAttribute_t923F9A140847AF2F193AD1AB33143B8774797912 * __this, const RuntimeMethod* method)
 {
 	{
@@ -2563,6 +3642,12 @@ extern "C" IL2CPP_METHOD_ATTR void UsedByNativeCodeAttribute_set_Name_m5AF6F7B56
 	{
 		String_t* L_0 = ___value0;
 		__this->set_U3CNameU3Ek__BackingField_0(L_0);
+=======
+extern "C" IL2CPP_METHOD_ATTR void UsedByNativeCodeAttribute__ctor_m2647015777 (UsedByNativeCodeAttribute_t1703770351 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2575,6 +3660,7 @@ extern "C" IL2CPP_METHOD_ATTR void UsedByNativeCodeAttribute_set_Name_m5AF6F7B56
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.ThreadAndSerializationSafeAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void ThreadAndSerializationSafeAttribute__ctor_mCB8D8FEED836D6472A4FB90C69969F0D99C39619 (ThreadAndSerializationSafeAttribute_tC7AAA73802AAF871C176CF59656C030E5BFA87AA * __this, const RuntimeMethod* method)
 {
 	{
@@ -2595,6 +3681,12 @@ extern "C" IL2CPP_METHOD_ATTR void UnityEngineModuleAssembly__ctor_m791D74EDFEF6
 {
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void ThreadAndSerializationSafeAttribute__ctor_m3739981144 (ThreadAndSerializationSafeAttribute_t363116225 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -2607,13 +3699,22 @@ extern "C" IL2CPP_METHOD_ATTR void UnityEngineModuleAssembly__ctor_m791D74EDFEF6
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.String UnityEngine.UnityString::Format(System.String,System.Object[])
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR String_t* UnityString_Format_m415056ECF8DA7B3EC6A8456E299D0C2002177387 (String_t* ___fmt0, ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* ___args1, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR String_t* UnityString_Format_m261690510 (RuntimeObject * __this /* static, unused */, String_t* ___fmt0, ObjectU5BU5D_t2843939325* ___args1, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	String_t* V_0 = NULL;
 	{
 		String_t* L_0 = ___fmt0;
+<<<<<<< HEAD
 		ObjectU5BU5D_t3C9242B5C88A48B2A5BD9FDA6CD0024E792AF08A* L_1 = ___args1;
 		String_t* L_2 = String_Format_mA3AC3FE7B23D97F3A5BAA082D25B0E01B341A865(L_0, L_1, /*hidden argument*/NULL);
+=======
+		ObjectU5BU5D_t2843939325* L_1 = ___args1;
+		String_t* L_2 = String_Format_m630303134(NULL /*static, unused*/, L_0, L_1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		V_0 = L_2;
 		goto IL_000e;
 	}
@@ -2633,10 +3734,17 @@ IL_000e:
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.WritableAttribute::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void WritableAttribute__ctor_m58A5D24131EC67D50A7BF2804568DCB607BD97D6 (WritableAttribute_tAEE55CD07B2C5AD9CDBAD9FAF35FBB94AD8DE9BD * __this, const RuntimeMethod* method)
 {
 	{
 		Attribute__ctor_m45CAD4B01265CC84CC5A84F62EE2DBE85DE89EC0(__this, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void WritableAttribute__ctor_m1991076220 (WritableAttribute_t812406054 * __this, const RuntimeMethod* method)
+{
+	{
+		Attribute__ctor_m1529526131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }

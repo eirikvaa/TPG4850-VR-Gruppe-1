@@ -27,7 +27,11 @@ namespace Reflection
         size_t index = 0;
         for (vm::TypeVector::const_iterator type = types.begin(); type != types.end(); ++type)
         {
+<<<<<<< HEAD
             Il2CppReflectionType* reflectionType = vm::Reflection::GetTypeObject(&(*type)->byval_arg);
+=======
+            Il2CppReflectionType* reflectionType = vm::Reflection::GetTypeObject((*type)->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             il2cpp_array_set(result, Il2CppReflectionType*, index, reflectionType);
             index++;
         }
@@ -42,7 +46,11 @@ namespace Reflection
 
     intptr_t Module::GetHINSTANCE(mscorlib_System_Reflection_Module * thisPtr)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Module::GetHINSTANCE);
+=======
+        NOT_IMPLEMENTED_ICALL(Module::GetHINSTANCE);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return intptr_t();
     }
 

@@ -13,7 +13,11 @@ namespace System
 {
     intptr_t RuntimeMethodHandle::GetFunctionPointer(intptr_t m)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(RuntimeMethodHandle::GetFunctionPointer);
+=======
+        NOT_IMPLEMENTED_ICALL(RuntimeMethodHandle::GetFunctionPointer);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return 0;
     }

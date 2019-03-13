@@ -35,7 +35,11 @@ namespace CompilerServices
         FieldInfo* field_handle = (FieldInfo*)ptr;
         Il2CppClass *klass = array->klass;
         uint32_t size = Array::GetElementSize(klass);
+<<<<<<< HEAD
         const Il2CppType *type = Type::GetUnderlyingType(&klass->element_class->byval_arg);
+=======
+        const Il2CppType *type = Type::GetUnderlyingType(klass->element_class->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         const char *field_data;
 
@@ -55,7 +59,11 @@ namespace CompilerServices
         size *= ARRAY_LENGTH_AS_INT32(array->max_length);
         field_data = Field::GetData(field_handle);
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(RuntimeHelpers::InitializeArray, "Check type size");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(RuntimeHelpers::InitializeArray, "Check type size");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         //int align;
         //if (size > mono_type_size (field_handle->type, &align)) {
         //  MonoException *exc = mono_get_exception_argument("field_handle",
@@ -63,7 +71,11 @@ namespace CompilerServices
         //  mono_raise_exception (exc);
         //}
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(RuntimeHelpers::InitializeArray, "Ignoring Endianess");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(RuntimeHelpers::InitializeArray, "Ignoring Endianess");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         memcpy(il2cpp_array_addr(array, char, 0), field_data, size);
     }
 

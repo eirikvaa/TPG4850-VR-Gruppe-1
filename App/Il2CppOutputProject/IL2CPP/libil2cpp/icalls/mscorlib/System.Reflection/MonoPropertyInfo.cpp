@@ -22,6 +22,7 @@ namespace Reflection
     void MonoPropertyInfo::get_property_info(Il2CppReflectionProperty *property, Il2CppPropertyInfo *info, PInfo req_info)
     {
         if ((req_info & PInfo_ReflectedType) != 0)
+<<<<<<< HEAD
             IL2CPP_STRUCT_SETREF(info, parent, vm::Reflection::GetTypeObject(&property->klass->byval_arg));
         else if ((req_info & PInfo_DeclaringType) != 0)
         {
@@ -29,6 +30,15 @@ namespace Reflection
             IL2CPP_STRUCT_SETREF(info, parent, vm::Reflection::GetTypeObject(&property->property->parent->byval_arg));
 #else
             IL2CPP_STRUCT_SETREF(info, declaringType, vm::Reflection::GetTypeObject(&property->property->parent->byval_arg));
+=======
+            IL2CPP_STRUCT_SETREF(info, parent, vm::Reflection::GetTypeObject(property->klass->byval_arg));
+        else if ((req_info & PInfo_DeclaringType) != 0)
+        {
+#if !NET_4_0
+            IL2CPP_STRUCT_SETREF(info, parent, vm::Reflection::GetTypeObject(property->property->parent->byval_arg));
+#else
+            IL2CPP_STRUCT_SETREF(info, declaringType, vm::Reflection::GetTypeObject(property->property->parent->byval_arg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
         }
 
@@ -61,7 +71,11 @@ namespace Reflection
 #if NET_4_0
     Il2CppObject* MonoPropertyInfo::get_default_value(Il2CppReflectionProperty* prop)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(MonoPropertyInfo::get_default_value);
+=======
+        NOT_IMPLEMENTED_ICALL(MonoPropertyInfo::get_default_value);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }

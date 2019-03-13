@@ -56,11 +56,19 @@ STATIC void GC_clear_bl(word *);
 
 GC_INNER void GC_default_print_heap_obj_proc(ptr_t p)
 {
+<<<<<<< HEAD
     ptr_t base = (ptr_t)GC_base(p);
     int kind = HDR(base)->hb_obj_kind;
 
     GC_err_printf("object at %p of appr. %lu bytes (%s)\n",
                   (void *)base, (unsigned long)GC_size(base),
+=======
+    ptr_t base = GC_base(p);
+    int kind = HDR(base)->hb_obj_kind;
+
+    GC_err_printf("object at %p of appr. %lu bytes (%s)\n",
+                  base, (unsigned long)GC_size(base),
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                   kind == PTRFREE ? "atomic" :
                     IS_UNCOLLECTABLE(kind) ? "uncollectable" : "composite");
 }
@@ -71,11 +79,19 @@ GC_INNER void (*GC_print_heap_obj)(ptr_t p) = GC_default_print_heap_obj_proc;
   STATIC void GC_print_blacklisted_ptr(word p, ptr_t source,
                                        const char *kind_str)
   {
+<<<<<<< HEAD
     ptr_t base = (ptr_t)GC_base(source);
 
     if (0 == base) {
         GC_err_printf("Black listing (%s) %p referenced from %p in %s\n",
                       kind_str, (void *)p, (void *)source,
+=======
+    ptr_t base = GC_base(source);
+
+    if (0 == base) {
+        GC_err_printf("Black listing (%s) %p referenced from %p in %s\n",
+                      kind_str, (ptr_t)p, source,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                       NULL != source ? "root set" : "register");
     } else {
         /* FIXME: We can't call the debug version of GC_print_heap_obj  */
@@ -83,8 +99,13 @@ GC_INNER void (*GC_print_heap_obj)(ptr_t p) = GC_default_print_heap_obj_proc;
         /* the world is stopped.                                        */
         GC_err_printf("Black listing (%s) %p referenced from %p in"
                       " object at %p of appr. %lu bytes\n",
+<<<<<<< HEAD
                       kind_str, (void *)p, (void *)source,
                       (void *)base, (unsigned long)GC_size(base));
+=======
+                      kind_str, (ptr_t)p, source,
+                      base, (unsigned long)GC_size(base));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
   }
 #endif /* PRINT_BLACK_LIST */
@@ -109,7 +130,10 @@ GC_INNER void GC_bl_init(void)
     if (!GC_all_interior_pointers) {
       GC_bl_init_no_interiors();
     }
+<<<<<<< HEAD
     GC_ASSERT(NULL == GC_old_stack_bl && NULL == GC_incomplete_stack_bl);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     GC_old_stack_bl = (word *)GC_scratch_alloc(sizeof(page_hash_table));
     GC_incomplete_stack_bl = (word *)GC_scratch_alloc(sizeof(page_hash_table));
     if (GC_old_stack_bl == 0 || GC_incomplete_stack_bl == 0) {
@@ -125,9 +149,15 @@ STATIC void GC_clear_bl(word *doomed)
     BZERO(doomed, sizeof(page_hash_table));
 }
 
+<<<<<<< HEAD
 STATIC void GC_copy_bl(word *old, word *dest)
 {
     BCOPY(old, dest, sizeof(page_hash_table));
+=======
+STATIC void GC_copy_bl(word *old, word *new)
+{
+    BCOPY(old, new, sizeof(page_hash_table));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 static word total_stack_black_listed(void);
@@ -193,7 +223,11 @@ GC_INNER void GC_unpromote_black_lists(void)
           GC_print_blacklisted_ptr(p, source, "normal");
         }
 #     endif
+<<<<<<< HEAD
       set_pht_entry_from_index_concurrent(GC_incomplete_normal_bl, index);
+=======
+      set_pht_entry_from_index(GC_incomplete_normal_bl, index);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     } /* else this is probably just an interior pointer to an allocated */
       /* object, and isn't worth black listing.                         */
   }
@@ -214,7 +248,11 @@ GC_INNER void GC_unpromote_black_lists(void)
         GC_print_blacklisted_ptr(p, source, "stack");
       }
 #   endif
+<<<<<<< HEAD
     set_pht_entry_from_index_concurrent(GC_incomplete_stack_bl, index);
+=======
+    set_pht_entry_from_index(GC_incomplete_stack_bl, index);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   }
 }
 
@@ -263,7 +301,11 @@ struct hblk * GC_is_black_listed(struct hblk *h, word len)
 STATIC word GC_number_stack_black_listed(struct hblk *start,
                                          struct hblk *endp1)
 {
+<<<<<<< HEAD
     struct hblk * h;
+=======
+    register struct hblk * h;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     word result = 0;
 
     for (h = start; (word)h < (word)endp1; h++) {
@@ -277,12 +319,20 @@ STATIC word GC_number_stack_black_listed(struct hblk *start,
 /* Return the total number of (stack) black-listed bytes. */
 static word total_stack_black_listed(void)
 {
+<<<<<<< HEAD
     unsigned i;
+=======
+    register unsigned i;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     word total = 0;
 
     for (i = 0; i < GC_n_heap_sects; i++) {
         struct hblk * start = (struct hblk *) GC_heap_sects[i].hs_start;
+<<<<<<< HEAD
         struct hblk * endp1 = start + divHBLKSZ(GC_heap_sects[i].hs_bytes);
+=======
+        struct hblk * endp1 = start + GC_heap_sects[i].hs_bytes/HBLKSIZE;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         total += GC_number_stack_black_listed(start, endp1);
     }

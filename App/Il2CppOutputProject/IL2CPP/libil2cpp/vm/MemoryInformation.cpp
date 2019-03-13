@@ -56,7 +56,11 @@ namespace MemoryInformation
 
         for (AssemblyVector::const_iterator it = allAssemblies->begin(); it != allAssemblies->end(); it++)
         {
+<<<<<<< HEAD
             const Il2CppImage& image = *(*it)->image;
+=======
+            const Il2CppImage& image = *MetadataCache::GetImageFromIndex((*it)->imageIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             for (uint32_t i = 0; i < image.typeCount; i++)
             {
@@ -89,7 +93,11 @@ namespace MemoryInformation
             }
             else
             {
+<<<<<<< HEAD
                 type.flags = (typeInfo->valuetype || typeInfo->byval_arg.type == IL2CPP_TYPE_PTR) ? kValueType : kNone;
+=======
+                type.flags = (typeInfo->valuetype || typeInfo->byval_arg->type == IL2CPP_TYPE_PTR) ? kValueType : kNone;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 type.fieldCount = 0;
 
                 if (typeInfo->field_count > 0)
@@ -130,9 +138,15 @@ namespace MemoryInformation
                 type.baseOrElementTypeIndex = baseType != NULL ? FindTypeInfoIndexInMap(allTypes, baseType) : -1;
             }
 
+<<<<<<< HEAD
             type.assemblyName = typeInfo->image->assembly->aname.name;
 
             std::string typeName = Type::GetName(&typeInfo->byval_arg, IL2CPP_TYPE_NAME_FORMAT_IL);
+=======
+            type.assemblyName = MetadataCache::GetStringFromIndex(MetadataCache::GetAssemblyFromIndex(typeInfo->image->assemblyIndex)->aname.nameIndex);
+
+            std::string typeName = Type::GetName(typeInfo->byval_arg, IL2CPP_TYPE_NAME_FORMAT_IL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             type.name = static_cast<char*>(IL2CPP_CALLOC(typeName.length() + 1, sizeof(char)));
             memcpy(type.name, typeName.c_str(), typeName.length() + 1);
 

@@ -25,7 +25,11 @@
 
 #ifndef SMALL_CONFIG
   /* Build a free list for size 2 (words) cleared objects inside        */
+<<<<<<< HEAD
   /* hblk h.  Set the last link to be ofl.  Return a pointer to the     */
+=======
+  /* hblk h.  Set the last link to be ofl.  Return a pointer tpo the    */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   /* first free list entry.                                             */
   STATIC ptr_t GC_build_fl_clear2(struct hblk *h, ptr_t ofl)
   {
@@ -58,7 +62,11 @@
     p[3] = 0;
     p += 4;
     for (; (word)p < (word)lim; p += 4) {
+<<<<<<< HEAD
         GC_PREFETCH_FOR_WRITE((ptr_t)(p + 64));
+=======
+        PREFETCH_FOR_WRITE((ptr_t)(p+64));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         p[0] = (word)(p-4);
         p[1] = 0;
         CLEAR_DOUBLE(p+2);
@@ -92,7 +100,11 @@
     p[4] = (word)p;
     p += 8;
     for (; (word)p < (word)lim; p += 8) {
+<<<<<<< HEAD
         GC_PREFETCH_FOR_WRITE((ptr_t)(p + 64));
+=======
+        PREFETCH_FOR_WRITE((ptr_t)(p+64));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         p[0] = (word)(p-4);
         p[4] = (word)p;
     };
@@ -116,10 +128,17 @@ GC_INNER ptr_t GC_build_fl(struct hblk *h, size_t sz, GC_bool clear,
   /* If we were more serious about it, these should go inside   */
   /* the loops.  But write prefetches usually don't seem to     */
   /* matter much.                                               */
+<<<<<<< HEAD
     GC_PREFETCH_FOR_WRITE((ptr_t)h);
     GC_PREFETCH_FOR_WRITE((ptr_t)h + 128);
     GC_PREFETCH_FOR_WRITE((ptr_t)h + 256);
     GC_PREFETCH_FOR_WRITE((ptr_t)h + 378);
+=======
+    PREFETCH_FOR_WRITE((ptr_t)h);
+    PREFETCH_FOR_WRITE((ptr_t)h + 128);
+    PREFETCH_FOR_WRITE((ptr_t)h + 256);
+    PREFETCH_FOR_WRITE((ptr_t)h + 378);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # ifndef SMALL_CONFIG
     /* Handle small objects sizes more efficiently.  For larger objects */
     /* the difference is less significant.                              */
@@ -187,5 +206,9 @@ GC_INNER void GC_new_hblk(size_t gran, int kind)
   /* Build the free list */
       GC_obj_kinds[kind].ok_freelist[gran] =
         GC_build_fl(h, GRANULES_TO_WORDS(gran), clear,
+<<<<<<< HEAD
                     (ptr_t)GC_obj_kinds[kind].ok_freelist[gran]);
+=======
+                    GC_obj_kinds[kind].ok_freelist[gran]);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }

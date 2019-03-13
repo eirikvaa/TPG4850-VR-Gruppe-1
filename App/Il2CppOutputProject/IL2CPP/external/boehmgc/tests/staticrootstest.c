@@ -23,9 +23,15 @@ struct treenode *root[10] = { NULL };
 
 /* Same as "root" variable but initialized to some non-zero value (to   */
 /* be placed to .data section instead of .bss).                         */
+<<<<<<< HEAD
 struct treenode *root_nz[10] = { (struct treenode *)(GC_word)1 };
 
 static char *staticroot; /* intentionally static */
+=======
+struct treenode *root_nz[10] = { (void *)(GC_word)1 };
+
+static char *staticroot = 0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 GC_TEST_IMPORT_API struct treenode * libsrl_mktree(int i);
 GC_TEST_IMPORT_API void * libsrl_init(void);
@@ -33,6 +39,7 @@ GC_TEST_IMPORT_API struct treenode ** libsrl_getpelem(int i, int j);
 
 GC_TEST_IMPORT_API struct treenode ** libsrl_getpelem2(int i, int j);
 
+<<<<<<< HEAD
 void init_staticroot(void)
 {
   /* Intentionally put staticroot initialization in a function other    */
@@ -41,6 +48,8 @@ void init_staticroot(void)
   staticroot = (char *)libsrl_init();
 }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 int main(void)
 {
   int i, j;
@@ -48,7 +57,11 @@ int main(void)
 # ifdef STATICROOTSLIB_INIT_IN_MAIN
     GC_INIT();
 # endif
+<<<<<<< HEAD
   init_staticroot();
+=======
+  staticroot = libsrl_init();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   if (NULL == staticroot) {
     fprintf(stderr, "GC_malloc returned NULL\n");
     return 2;

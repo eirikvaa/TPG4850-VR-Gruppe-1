@@ -13,6 +13,7 @@
 
 # include "gc.h"    /* For GC_INIT() only */
 # include "cord.h"
+<<<<<<< HEAD
 
 # include <stdarg.h>
 # include <string.h>
@@ -35,6 +36,17 @@
 # undef CORD_pos_valid
 # undef CORD_prev
 #endif
+=======
+# include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
+/* This is a very incomplete test of the cord package.  It knows about  */
+/* a few internals of the package (e.g. when C strings are returned)    */
+/* that real clients shouldn't rely on.                 */
+
+# define ABORT(string) \
+    { int x = 0; fprintf(stderr, "FAILED: %s\n", string); x = 1 / x; abort(); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 int count;
 
@@ -65,7 +77,12 @@ char id_cord_fn(size_t i, void * client_data)
 void test_basics(void)
 {
     CORD x = CORD_from_char_star("ab");
+<<<<<<< HEAD
     int i;
+=======
+    register int i;
+    char c;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     CORD y;
     CORD_pos p;
 
@@ -126,6 +143,7 @@ void test_basics(void)
     i = 0;
     CORD_set_pos(p, y, i);
     while(CORD_pos_valid(p)) {
+<<<<<<< HEAD
         char c = CORD_pos_fetch(p);
 
         if(c != i) ABORT("Traversal of function node failed");
@@ -142,16 +160,30 @@ void test_basics(void)
         (void)CORD_riter(CORD_EMPTY, test_fn, NULL);
         CORD_dump(y);
 #   endif
+=======
+        c = CORD_pos_fetch(p);
+        if(c != i) ABORT("Traversal of function node failed");
+    CORD_next(p); i++;
+    }
+    if (i != 13) ABORT("Bad apparent length for function node");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 void test_extras(void)
 {
 #   define FNAME1 "cordtst1.tmp" /* short name (8+3) for portability */
 #   define FNAME2 "cordtst2.tmp"
+<<<<<<< HEAD
     int i;
     CORD y = "abcdefghijklmnopqrstuvwxyz0123456789";
     CORD x = "{}";
     CORD u, w, z;
+=======
+    register int i;
+    CORD y = "abcdefghijklmnopqrstuvwxyz0123456789";
+    CORD x = "{}";
+    CORD w, z;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     FILE *f;
     FILE *f1a, *f1b, *f2;
 
@@ -203,9 +235,13 @@ void test_extras(void)
         ABORT("file substr wrong");
     if (strcmp(CORD_to_char_star(CORD_substr(w, 1000*36, 36)), y) != 0)
         ABORT("char * file substr wrong");
+<<<<<<< HEAD
     u = CORD_substr(w, 1000*36, 2);
     if (!u) ABORT("CORD_substr returned NULL");
     if (strcmp(u, "ab") != 0)
+=======
+    if (strcmp(CORD_substr(w, 1000*36, 2), "ab") != 0)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         ABORT("short file substr wrong");
     if (CORD_str(x,1,"9a") != 35) ABORT("CORD_str failed 1");
     if (CORD_str(x,0,"9abcdefghijk") != 35) ABORT("CORD_str failed 2");
@@ -222,6 +258,7 @@ void test_extras(void)
     if (remove(FNAME1) != 0) {
         /* On some systems, e.g. OS2, this may fail if f1 is still open. */
         /* But we cannot call fclose as it might lead to double close.   */
+<<<<<<< HEAD
         fprintf(stderr, "WARNING: remove failed: " FNAME1 "\n");
     }
     if (remove(FNAME2) != 0) {
@@ -266,6 +303,15 @@ int wrap_vfprintf(FILE * f, CORD format, ...)
 # endif
 #endif
 
+=======
+        fprintf(stderr, "WARNING: remove(FNAME1) failed\n");
+    }
+    if (remove(FNAME2) != 0) {
+        fprintf(stderr, "WARNING: remove(FNAME2) failed\n");
+    }
+}
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 void test_printf(void)
 {
     CORD result;
@@ -288,6 +334,7 @@ void test_printf(void)
     x = CORD_cat(x,x);
     if (CORD_sprintf(&result, "->%-120.78r!\n", x) != 124)
         ABORT("CORD_sprintf failed 3");
+<<<<<<< HEAD
 #   ifdef GC_SNPRINTF
         (void)GC_SNPRINTF(result2, sizeof(result2), "->%-120.78s!\n",
                           CORD_to_char_star(x));
@@ -300,6 +347,12 @@ void test_printf(void)
     (void)CORD_printf(CORD_EMPTY);
     (void)wrap_vfprintf(stdout, CORD_EMPTY);
     (void)wrap_vprintf(CORD_EMPTY);
+=======
+    (void)snprintf(result2, sizeof(result2), "->%-120.78s!\n",
+                   CORD_to_char_star(x));
+    result2[sizeof(result2) - 1] = '\0';
+    if (CORD_cmp(result, result2) != 0)ABORT("CORD_sprintf goofed 5");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 int main(void)

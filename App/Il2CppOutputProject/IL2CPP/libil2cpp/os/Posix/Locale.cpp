@@ -35,6 +35,7 @@ namespace os
         if (posix_locale == NULL)
             return std::string();
 
+<<<<<<< HEAD
 #if IL2CPP_TARGET_JAVASCRIPT
         // This code is here due to a few factors:
         //   1. Emscripten gives us a "C" locale (the POSIX default).
@@ -48,6 +49,8 @@ namespace os
             posix_locale = "en-us";
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if ((strcmp("C", posix_locale) == 0) || (strchr(posix_locale, ' ') != NULL)
             || (strchr(posix_locale, '/') != NULL))
         {

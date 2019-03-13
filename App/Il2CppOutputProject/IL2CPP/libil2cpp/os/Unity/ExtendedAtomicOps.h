@@ -68,6 +68,12 @@ enum memory_order_seq_cst_t { memory_order_seq_cst = 5 };
 
     // extensions to the C++0x11 standard:
 
+<<<<<<< HEAD
+=======
+    // spinning hint for the processor
+    void atomic_pause ();
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     // atomic increment with relaxed semantic
     void atomic_retain (volatile int *p);
 
@@ -93,10 +99,13 @@ enum memory_order_seq_cst_t { memory_order_seq_cst = 5 };
 
 #   include "os/ExtendedAtomicOps.h"
 
+<<<<<<< HEAD
 #elif UNITY_ATOMIC_USE_GCC_ATOMICS || UNITY_ATOMIC_USE_CLANG_ATOMICS
 
 #   include "ExtendedAtomicOps-clang-gcc.h"
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #elif defined(__x86_64__) || defined(_M_X64)
 
 #   include "ExtendedAtomicOps-x86-64.h"

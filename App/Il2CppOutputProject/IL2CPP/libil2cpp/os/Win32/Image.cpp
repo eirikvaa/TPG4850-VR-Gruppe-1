@@ -12,6 +12,7 @@ namespace os
 {
 namespace Image
 {
+<<<<<<< HEAD
 #if IL2CPP_PLATFORM_SUPPORTS_CUSTOM_SECTIONS
     static void* s_ManagedSectionStart = NULL;
     static void* s_ManagedSectionEnd = NULL;
@@ -38,12 +39,17 @@ namespace Image
 #if IL2CPP_PLATFORM_SUPPORTS_CUSTOM_SECTIONS
         InitializeManagedSection();
 #endif
+=======
+    void Initialize()
+    {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void* GetImageBase()
     {
         return &__ImageBase;
     }
+<<<<<<< HEAD
 
 #if IL2CPP_PLATFORM_SUPPORTS_CUSTOM_SECTIONS
     bool IsInManagedSection(void* ip)
@@ -53,6 +59,8 @@ namespace Image
     }
 
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 }
 }

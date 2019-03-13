@@ -18,6 +18,7 @@
 #ifndef GC_PTHREAD_STOP_WORLD_H
 #define GC_PTHREAD_STOP_WORLD_H
 
+<<<<<<< HEAD
 EXTERN_C_BEGIN
 
 struct thread_stop_info {
@@ -29,6 +30,14 @@ struct thread_stop_info {
 #     endif
                         /* The value of GC_stop_count when the thread   */
                         /* last successfully handled a suspend signal.  */
+=======
+
+struct thread_stop_info {
+#   ifndef GC_OPENBSD_UTHREADS
+      word last_stop_count;     /* GC_last_stop_count value when thread */
+                                /* last successfully handled a suspend  */
+                                /* signal.                              */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #   endif
 
     ptr_t stack_ptr;            /* Valid only when stopped.             */
@@ -40,6 +49,7 @@ struct thread_stop_info {
       /* saved registers, they may be pushed to the stack much earlier. */
       /* Also, on amd64 'push' puts 8 bytes on the stack even though    */
       /* our pointers are 4 bytes.                                      */
+<<<<<<< HEAD
 #     ifdef ARM32
         /* Space for r4-r8, r10-r12, r14.       */
 #       define NACL_GC_REG_STORAGE_SIZE 9
@@ -52,11 +62,23 @@ struct thread_stop_info {
 #if defined(SN_TARGET_ORBIS)
 #   define ORBIS_GC_REG_STORAGE_SIZE 27
     __uint64_t registers[ORBIS_GC_REG_STORAGE_SIZE];
+=======
+#     define NACL_GC_REG_STORAGE_SIZE 20
+      ptr_t reg_storage[NACL_GC_REG_STORAGE_SIZE];
+#   endif
+
+#if defined(SN_TARGET_ORBIS) 
+#		define ORBIS_GC_REG_STORAGE_SIZE 27
+	  __uint64_t registers[ORBIS_GC_REG_STORAGE_SIZE];
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 };
 
 GC_INNER void GC_stop_init(void);
 
+<<<<<<< HEAD
 EXTERN_C_END
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif

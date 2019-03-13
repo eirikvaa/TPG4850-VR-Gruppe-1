@@ -6,8 +6,11 @@
 #include "gc_wrapper.h"
 #include "GarbageCollector.h"
 #include "vm/Profiler.h"
+<<<<<<< HEAD
 #include "utils/Il2CppHashMap.h"
 #include "utils/HashUtils.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 static bool s_GCInitialized = false;
 
@@ -17,6 +20,7 @@ static bool s_PendingGC = false;
 
 #if IL2CPP_ENABLE_PROFILER
 using il2cpp::vm::Profiler;
+<<<<<<< HEAD
 static void on_gc_event(GC_EventType eventType);
 static void on_heap_resize(GC_word newSize);
 #endif
@@ -27,6 +31,12 @@ static RootMap s_Roots;
 
 static void push_other_roots(void);
 
+=======
+static void on_gc_event(GCEventType eventType);
+static void on_heap_resize(GC_word newSize);
+#endif
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 void
 il2cpp::gc::GarbageCollector::Initialize()
 {
@@ -37,6 +47,7 @@ il2cpp::gc::GarbageCollector::Initialize()
     // Call this before GC_INIT since the initialization logic uses this value.
     GC_set_no_dls(1);
 
+<<<<<<< HEAD
 #if IL2CPP_ENABLE_WRITE_BARRIERS
     GC_enable_incremental();
 #endif
@@ -46,6 +57,10 @@ il2cpp::gc::GarbageCollector::Initialize()
 
 #if IL2CPP_ENABLE_PROFILER
     GC_set_on_collection_event(&on_gc_event);
+=======
+#if IL2CPP_ENABLE_PROFILER
+    GC_set_on_event(&on_gc_event);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     GC_set_on_heap_resize(&on_heap_resize);
 #endif
 
@@ -108,6 +123,7 @@ il2cpp::gc::GarbageCollector::CollectALittle()
 #endif
 }
 
+<<<<<<< HEAD
 #if IL2CPP_ENABLE_WRITE_BARRIERS
 void
 il2cpp::gc::GarbageCollector::SetWriteBarrier(void **ptr)
@@ -117,6 +133,8 @@ il2cpp::gc::GarbageCollector::SetWriteBarrier(void **ptr)
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 int64_t
 il2cpp::gc::GarbageCollector::GetUsedHeapSize(void)
 {
@@ -142,12 +160,15 @@ il2cpp::gc::GarbageCollector::Enable()
 }
 
 bool
+<<<<<<< HEAD
 il2cpp::gc::GarbageCollector::IsDisabled()
 {
     return GC_is_disabled();
 }
 
 bool
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 il2cpp::gc::GarbageCollector::RegisterThread(void *baseptr)
 {
 #if defined(GC_THREADS)
@@ -304,7 +325,11 @@ il2cpp::gc::GarbageCollector::HasPendingFinalizers()
 
 #if IL2CPP_ENABLE_PROFILER
 
+<<<<<<< HEAD
 void on_gc_event(GC_EventType eventType)
+=======
+void on_gc_event(GCEventType eventType)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
     Profiler::GCEvent((Il2CppGCEvent)eventType);
 }
@@ -331,6 +356,7 @@ void* il2cpp::gc::GarbageCollector::CallWithAllocLockHeld(GCCallWithAllocLockCal
     return GC_call_with_alloc_lock(callback, user_data);
 }
 
+<<<<<<< HEAD
 typedef struct
 {
     char *start;
@@ -375,4 +401,6 @@ push_other_roots(void)
         default_push_other_roots();
 }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif

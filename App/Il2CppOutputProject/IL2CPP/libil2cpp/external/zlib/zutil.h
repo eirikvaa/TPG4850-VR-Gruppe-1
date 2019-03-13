@@ -1,5 +1,9 @@
 /* zutil.h -- internal interface and configuration of the compression library
+<<<<<<< HEAD
  * Copyright (C) 1995-2016 Jean-loup Gailly, Mark Adler
+=======
+ * Copyright (C) 1995-2006 Jean-loup Gailly.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
 
@@ -13,6 +17,7 @@
 #ifndef ZUTIL_H
 #define ZUTIL_H
 
+<<<<<<< HEAD
 #ifdef HAVE_HIDDEN
 #  define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
 #else
@@ -23,22 +28,48 @@
 
 #if defined(STDC) && !defined(Z_SOLO)
 #  if !(defined(_WIN32_WCE) && defined(_MSC_VER))
+=======
+#define ZLIB_INTERNAL
+#include "zlib.h"
+
+#ifdef STDC
+#  ifndef _WIN32_WCE
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #    include <stddef.h>
 #  endif
 #  include <string.h>
 #  include <stdlib.h>
 #endif
+<<<<<<< HEAD
 
 #ifdef Z_SOLO
    typedef long ptrdiff_t;  /* guess -- will be caught if guess is wrong */
+=======
+#if defined(NO_ERRNO_H) || defined(_WIN32_WCE)
+#   ifdef _WIN32_WCE
+      /* The Microsoft C Run-Time Library for Windows CE doesn't have
+       * errno.  We define it as a global variable to simplify porting.
+       * Its value is always 0 and should not be used.  We rename it to
+       * avoid conflict with other libraries that use the same workaround.
+       */
+#     define errno z_errno
+#   endif
+    extern int errno;
+#else
+#   include <errno.h>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 #ifndef local
 #  define local static
 #endif
+<<<<<<< HEAD
 /* since "static" is used to mean two completely different things in C, we
    define "local" for the non-static meaning of "static", for readability
    (compile with -Dlocal if your debugger can't find static symbols) */
+=======
+/* compile with -Dlocal if your debugger can't find static symbols */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 typedef unsigned char  uch;
 typedef uch FAR uchf;
@@ -46,13 +77,21 @@ typedef unsigned short ush;
 typedef ush FAR ushf;
 typedef unsigned long  ulg;
 
+<<<<<<< HEAD
 extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
+=======
+extern const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* (size given to avoid silly warnings with Visual C++) */
 
 #define ERR_MSG(err) z_errmsg[Z_NEED_DICT-(err)]
 
 #define ERR_RETURN(strm,err) \
+<<<<<<< HEAD
   return (strm->msg = ERR_MSG(err), (err))
+=======
+  return (strm->msg = (char*)ERR_MSG(err), (err))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* To be used only when the state is known to be valid */
 
         /* common constants */
@@ -84,6 +123,7 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 
 #if defined(MSDOS) || (defined(WINDOWS) && !defined(WIN32))
 #  define OS_CODE  0x00
+<<<<<<< HEAD
 #  ifndef Z_SOLO
 #    if defined(__TURBOC__) || defined(__BORLANDC__)
 #      if (__STDC__ == 1) && (defined(__LARGE__) || defined(__COMPACT__))
@@ -96,19 +136,40 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #    else /* MSC or DJGPP */
 #      include <malloc.h>
 #    endif
+=======
+#  if defined(__TURBOC__) || defined(__BORLANDC__)
+#    if(__STDC__ == 1) && (defined(__LARGE__) || defined(__COMPACT__))
+       /* Allow compilation with ANSI keywords only enabled */
+       void _Cdecl farfree( void *block );
+       void *_Cdecl farmalloc( unsigned long nbytes );
+#    else
+#      include <alloc.h>
+#    endif
+#  else /* MSC or DJGPP */
+#    include <malloc.h>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  endif
 #endif
 
 #ifdef AMIGA
+<<<<<<< HEAD
 #  define OS_CODE  1
 #endif
 
 #if defined(VAXC) || defined(VMS)
 #  define OS_CODE  2
+=======
+#  define OS_CODE  0x01
+#endif
+
+#if defined(VAXC) || defined(VMS)
+#  define OS_CODE  0x02
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define F_OPEN(name, mode) \
      fopen((name), (mode), "mbc=60", "ctx=stm", "rfm=fix", "mrs=512")
 #endif
 
+<<<<<<< HEAD
 #ifdef __370__
 #  if __TARGET_LIB__ < 0x20000000
 #    define OS_CODE 4
@@ -127,10 +188,21 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #  define OS_CODE  6
 #  if defined(M_I86) && !defined(Z_SOLO)
 #    include <malloc.h>
+=======
+#if defined(ATARI) || defined(atarist)
+#  define OS_CODE  0x05
+#endif
+
+#ifdef OS2
+#  define OS_CODE  0x06
+#  ifdef M_I86
+     #include <malloc.h>
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  endif
 #endif
 
 #if defined(MACOS) || defined(TARGET_OS_MAC)
+<<<<<<< HEAD
 #  define OS_CODE  7
 #  ifndef Z_SOLO
 #    if defined(__MWERKS__) && __dest_os != __be_os && __dest_os != __win32_os
@@ -139,10 +211,19 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #      ifndef fdopen
 #        define fdopen(fd,mode) NULL /* No fdopen() */
 #      endif
+=======
+#  define OS_CODE  0x07
+#  if defined(__MWERKS__) && __dest_os != __be_os && __dest_os != __win32_os
+#    include <unix.h> /* for fdopen */
+#  else
+#    ifndef fdopen
+#      define fdopen(fd,mode) NULL /* No fdopen() */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #    endif
 #  endif
 #endif
 
+<<<<<<< HEAD
 #ifdef __acorn
 #  define OS_CODE 13
 #endif
@@ -161,6 +242,20 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 
 #ifdef __APPLE__
 #  define OS_CODE 19
+=======
+#ifdef TOPS20
+#  define OS_CODE  0x0a
+#endif
+
+#ifdef WIN32
+#  ifndef __CYGWIN__  /* Cygwin is Unix, not Win32 */
+#    define OS_CODE  0x0b
+#  endif
+#endif
+
+#ifdef __50SERIES /* Prime/PRIMOS */
+#  define OS_CODE  0x0f
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 #if defined(_BEOS_) || defined(RISCOS)
@@ -179,6 +274,7 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #  endif
 #endif
 
+<<<<<<< HEAD
 #if defined(__BORLANDC__) && !defined(MSDOS)
   #pragma warn -8004
   #pragma warn -8008
@@ -190,21 +286,79 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
     (!defined(_LARGEFILE64_SOURCE) || _LFS64_LARGEFILE-0 == 0)
     ZEXTERN uLong ZEXPORT adler32_combine64 OF((uLong, uLong, z_off_t));
     ZEXTERN uLong ZEXPORT crc32_combine64 OF((uLong, uLong, z_off_t));
+=======
+#if defined(__BORLANDC__)
+#pragma warn -8004
+#pragma warn -8008
+#pragma warn -8066
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
         /* common defaults */
 
 #ifndef OS_CODE
+<<<<<<< HEAD
 #  define OS_CODE  3     /* assume Unix */
+=======
+#  define OS_CODE  0x03  /* assume Unix */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 #ifndef F_OPEN
 #  define F_OPEN(name, mode) fopen((name), (mode))
 #endif
 
+<<<<<<< HEAD
          /* functions */
 
 #if defined(pyr) || defined(Z_SOLO)
+=======
+#ifdef _LARGEFILE64_SOURCE
+#  define F_OPEN64(name, mode) fopen64((name), (mode))
+#else
+#  define F_OPEN64(name, mode) fopen((name), (mode))
+#endif
+
+         /* functions */
+
+#if defined(STDC99) || (defined(__TURBOC__) && __TURBOC__ >= 0x550)
+#  ifndef HAVE_VSNPRINTF
+#    define HAVE_VSNPRINTF
+#  endif
+#endif
+#if defined (_MSC_VER) && (_MSC_VER > 1800)
+#   define HAVE_VSNPRINTF
+#endif
+#if defined(__CYGWIN__)
+#  ifndef HAVE_VSNPRINTF
+#    define HAVE_VSNPRINTF
+#  endif
+#endif
+#ifndef HAVE_VSNPRINTF
+#  ifdef MSDOS
+     /* vsnprintf may exist on some MS-DOS compilers (DJGPP?),
+        but for now we just assume it doesn't. */
+#    define NO_vsnprintf
+#  endif
+#  ifdef __TURBOC__
+#    define NO_vsnprintf
+#  endif
+#  ifdef WIN32
+     /* In Win32, vsnprintf is available as the "non-ANSI" _vsnprintf. */
+#    if !defined(vsnprintf) && !defined(NO_vsnprintf)
+#      define vsnprintf _vsnprintf
+#    endif
+#  endif
+#  ifdef __SASC
+#    define NO_vsnprintf
+#  endif
+#endif
+#ifdef VMS
+#  define NO_vsnprintf
+#endif
+
+#if defined(pyr)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define NO_MEMCPY
 #endif
 #if defined(SMALL_MEDIUM) && !defined(_MSC_VER) && !defined(__SC__)
@@ -228,6 +382,7 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #    define zmemzero(dest, len) memset(dest, 0, len)
 #  endif
 #else
+<<<<<<< HEAD
    void ZLIB_INTERNAL zmemcpy OF((Bytef* dest, const Bytef* source, uInt len));
    int ZLIB_INTERNAL zmemcmp OF((const Bytef* s1, const Bytef* s2, uInt len));
    void ZLIB_INTERNAL zmemzero OF((Bytef* dest, uInt len));
@@ -238,6 +393,23 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #  include <stdio.h>
    extern int ZLIB_INTERNAL z_verbose;
    extern void ZLIB_INTERNAL z_error OF((char *m));
+=======
+   extern void zmemcpy  OF((Bytef* dest, const Bytef* source, uInt len));
+   extern int  zmemcmp  OF((const Bytef* s1, const Bytef* s2, uInt len));
+   extern void zmemzero OF((Bytef* dest, uInt len));
+#endif
+
+#if Z_PREFIX
+#  define z_verbose il2cpp_z__verbose
+#  define z_error   il2cpp_z__error
+#endif
+
+/* Diagnostic functions */
+#ifdef DEBUG
+#  include <stdio.h>
+   extern int z_verbose;
+   extern void z_error    OF((char *m));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  define Assert(cond,msg) {if(!(cond)) z_error(msg);}
 #  define Trace(x) {if (z_verbose>=0) fprintf x ;}
 #  define Tracev(x) {if (z_verbose>0) fprintf x ;}
@@ -253,19 +425,28 @@ extern z_const char * const z_errmsg[10]; /* indexed by 2-zlib_error */
 #  define Tracecv(c,x)
 #endif
 
+<<<<<<< HEAD
 #ifndef Z_SOLO
    voidpf ZLIB_INTERNAL zcalloc OF((voidpf opaque, unsigned items,
                                     unsigned size));
    void ZLIB_INTERNAL zcfree  OF((voidpf opaque, voidpf ptr));
 #endif
+=======
+
+voidpf zcalloc OF((voidpf opaque, unsigned items, unsigned size));
+void   zcfree  OF((voidpf opaque, voidpf ptr));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #define ZALLOC(strm, items, size) \
            (*((strm)->zalloc))((strm)->opaque, (items), (size))
 #define ZFREE(strm, addr)  (*((strm)->zfree))((strm)->opaque, (voidpf)(addr))
 #define TRY_FREE(s, p) {if (p) ZFREE(s, p);}
 
+<<<<<<< HEAD
 /* Reverse the bytes in a 32-bit value */
 #define ZSWAP32(q) ((((q) >> 24) & 0xff) + (((q) >> 8) & 0xff00) + \
                     (((q) & 0xff00) << 8) + (((q) & 0xff) << 24))
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif /* ZUTIL_H */

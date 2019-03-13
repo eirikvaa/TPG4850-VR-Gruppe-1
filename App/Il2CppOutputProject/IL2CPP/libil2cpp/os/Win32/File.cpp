@@ -80,8 +80,12 @@ namespace os
 
         return true;
 #else
+<<<<<<< HEAD
         IL2CPP_VM_NOT_SUPPORTED("CreatePipe", "Pipes are not supported on WinRT based platforms.");
         return false;
+=======
+        vm::Exception::Raise(vm::Exception::GetNotSupportedException("Pipes are not supported on WinRT based platforms."));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
     }
 
@@ -252,6 +256,7 @@ namespace os
             case kFileAccessWrite:
                 return GENERIC_WRITE;
 
+<<<<<<< HEAD
             case kFileAccessExecute:
                 return GENERIC_EXECUTE;
 
@@ -261,6 +266,11 @@ namespace os
             case kFileAccessReadWriteExecute:
                 return GENERIC_READ | GENERIC_WRITE | GENERIC_EXECUTE;
 
+=======
+            case kFileAccessReadWrite:
+                return GENERIC_READ | GENERIC_WRITE;
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             default:
                 return 0;
         }

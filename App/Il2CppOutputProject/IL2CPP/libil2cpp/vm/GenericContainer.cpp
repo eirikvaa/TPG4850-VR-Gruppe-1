@@ -9,7 +9,11 @@ namespace vm
     Il2CppClass* GenericContainer::GetDeclaringType(const Il2CppGenericContainer* genericContainer)
     {
         if (genericContainer->is_method)
+<<<<<<< HEAD
             return MetadataCache::GetMethodInfoFromMethodDefinitionIndex(genericContainer->ownerIndex)->klass;
+=======
+            return MetadataCache::GetMethodInfoFromMethodDefinitionIndex(genericContainer->ownerIndex)->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return MetadataCache::GetTypeInfoFromTypeDefinitionIndex(genericContainer->ownerIndex);
     }

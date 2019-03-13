@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 #include "os/c-api/il2cpp-config-platforms.h"
 #include "os/c-api/Semaphore-c-api.h"
+=======
+#include "os/c-api/Semaphore-c-api.h"
+#include "il2cpp-config.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "os/Semaphore.h"
 
 extern "C"

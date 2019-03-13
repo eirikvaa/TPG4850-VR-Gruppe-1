@@ -11,7 +11,10 @@
 
 #include "os/Process.h"
 #include "vm/Exception.h"
+<<<<<<< HEAD
 #include "il2cpp-vm-support.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 struct ProcessHandle
 {
@@ -53,7 +56,11 @@ namespace os
 
         return std::string(buf, length);
 #else
+<<<<<<< HEAD
         IL2CPP_VM_NOT_SUPPORTED(Process::GetProcessName, "GetProcessName is not supported for non-Windows/OSX desktop platforms");
+=======
+        NOT_SUPPORTED_IL2CPP(Process::GetProcessName, "GetProcessName is not supported for non-Windows/OSX desktop platforms");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return std::string();
 #endif
     }

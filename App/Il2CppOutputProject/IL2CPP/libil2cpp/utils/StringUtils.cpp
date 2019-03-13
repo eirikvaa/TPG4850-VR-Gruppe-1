@@ -159,7 +159,11 @@ namespace utils
         if ((result = (char*)IL2CPP_MALLOC(length)))
 #if IL2CPP_COMPILER_MSVC
             strcpy_s(result, length, strSource);
+<<<<<<< HEAD
 #elif IL2CPP_TARGET_LINUX
+=======
+#elif IL2CPP_TARGET_LINUX || IL2CPP_TARGET_TIZEN
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             strncpy(result, strSource, length);
 #else
             strlcpy(result, strSource, length);

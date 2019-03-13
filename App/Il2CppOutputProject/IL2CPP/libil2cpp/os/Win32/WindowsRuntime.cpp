@@ -169,11 +169,14 @@ namespace os
 #endif
     }
 
+<<<<<<< HEAD
     const Il2CppNativeChar* WindowsRuntime::GetNativeHStringBuffer(Il2CppHString hstring, uint32_t* length)
     {
         return GetHStringBuffer(hstring, length);
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppString* WindowsRuntime::HStringToManagedString(Il2CppHString hstring)
     {
         if (hstring == NULL)
@@ -184,6 +187,7 @@ namespace os
         return IL2CPP_VM_STRING_NEW_UTF16(ptr, length);
     }
 
+<<<<<<< HEAD
     il2cpp_hresult_t WindowsRuntime::PreallocateHStringBuffer(uint32_t length, Il2CppNativeChar** mutableBuffer, void** bufferHandle)
     {
 #if LINK_TO_WINDOWSRUNTIME_LIBS
@@ -244,6 +248,8 @@ namespace os
 #endif
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppIRestrictedErrorInfo* WindowsRuntime::GetRestrictedErrorInfo()
     {
         Il2CppIRestrictedErrorInfo* errorInfo;

@@ -141,7 +141,11 @@ namespace Globalization
         cultureInfo->text_info_data = &ci->text_info;
 
 #if NET_4_0
+<<<<<<< HEAD
         IL2CPP_OBJECT_SETREF(cultureInfo, native_calendar_names, create_names_array_idx(ci->native_calendar_names, NUM_CALENDARS));
+=======
+        IL2CPP_OBJECT_SETREF(cultureInfo, native_calendar_names, create_names_array_idx(ci->native_calendar_names, NUM_OPT_CALS));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         cultureInfo->default_calendar_type = ci->calendar_type;
 #endif
 

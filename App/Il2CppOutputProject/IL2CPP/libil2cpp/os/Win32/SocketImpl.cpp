@@ -19,7 +19,10 @@
 #include "os/ErrorCodes.h"
 #include "os/Win32/SocketImpl.h"
 #include "utils/StringUtils.h"
+<<<<<<< HEAD
 #include "utils/Memory.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #include "il2cpp-vm-support.h"
 
@@ -31,6 +34,7 @@ namespace os
 {
     static bool is_loopback(int32_t family, uint8_t *addr)
     {
+<<<<<<< HEAD
         if (family == AF_INET)
             return addr[0] == 127;
 #if IL2CPP_SUPPORT_IPV6
@@ -38,6 +42,9 @@ namespace os
             return (IN6_IS_ADDR_LOOPBACK((struct in6_addr *)addr));
 #endif
         return false;
+=======
+        return ((family) == AF_INET ? ((addr)[0] == 127) : false);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     static struct in_addr *get_local_ips(int32_t family, int32_t *nips)
@@ -47,7 +54,11 @@ namespace os
         return 0;
     }
 
+<<<<<<< HEAD
     static bool hostent_get_info(struct hostent *he, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addresses)
+=======
+    static bool hostent_get_info(struct hostent *he, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         if (he == NULL)
             return false;
@@ -66,14 +77,26 @@ namespace os
             for (int32_t i = 0; he->h_addr_list[i] != NULL; ++i)
             {
                 addr.s_addr = *(u_long*)he->h_addr_list[i];
+<<<<<<< HEAD
                 addresses.push_back(inet_ntoa(addr));
             }
         }
+=======
+                addr_list.push_back(inet_ntoa(addr));
+            }
+        }
+        // TODO(gab): add support for IPv6
+        //else if(he->h_addrtype == AF_INET6)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return true;
     }
 
+<<<<<<< HEAD
     static bool hostent_get_info_with_local_ips(struct hostent *he, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addresses)
+=======
+    static bool hostent_get_info_with_local_ips(struct hostent *he, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         int32_t i = 0;
         int32_t nlocal_in = 0;
@@ -94,14 +117,22 @@ namespace os
         if (nlocal_in)
         {
             for (int32_t i = 0; i < nlocal_in; ++i)
+<<<<<<< HEAD
                 addresses.push_back(inet_ntoa(local_in[i]));
+=======
+                addr_list.push_back(inet_ntoa(local_in[i]));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             free(local_in);
         }
         else if (he == NULL)
         {
             // If requesting "" and there are no other interfaces up, MS returns 127.0.0.1
+<<<<<<< HEAD
             addresses.push_back("127.0.0.1");
+=======
+            addr_list.push_back("127.0.0.1");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return true;
         }
 
@@ -113,9 +144,17 @@ namespace os
                 for (int32_t i = 0; he->h_addr_list[i] != NULL; ++i)
                 {
                     addr.s_addr = *(u_long*)he->h_addr_list[i];
+<<<<<<< HEAD
                     addresses.push_back(inet_ntoa(addr));
                 }
             }
+=======
+                    addr_list.push_back(inet_ntoa(addr));
+                }
+            }
+            // TODO(gab): add support for IPv6
+            //else if(he->h_addrtype == AF_INET6)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return true;
@@ -156,6 +195,7 @@ namespace os
         return c_flags;
     }
 
+<<<<<<< HEAD
 #if IL2CPP_SUPPORT_IPV6
     static void AddrinfoGetAddresses(struct addrinfo *info, std::string& name, bool add_local_ips,
         std::vector<std::string> &addr_list)
@@ -257,6 +297,12 @@ namespace os
     static WaitStatus GetHostByAddrIPv4(const std::string &address, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
     {
         struct in_addr inaddr;
+=======
+    WaitStatus SocketImpl::GetHostByAddr(const std::string &address, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
+    {
+        struct in_addr inaddr;
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (inet_pton(AF_INET, address.c_str(), &inaddr) <= 0)
             return kWaitStatusFailure;
 
@@ -275,6 +321,7 @@ namespace os
             : kWaitStatusFailure;
     }
 
+<<<<<<< HEAD
     WaitStatus SocketImpl::GetHostByAddr(const std::string &address, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
     {
 #if IL2CPP_SUPPORT_IPV6
@@ -327,6 +374,9 @@ namespace os
     }
 
     WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addresses)
+=======
+    WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
         char this_hostname[256] = {0};
 
@@ -347,12 +397,18 @@ namespace os
             return kWaitStatusFailure;
 
         return (add_local_ips
+<<<<<<< HEAD
                 ? hostent_get_info_with_local_ips(he, name, aliases, addresses)
                 : hostent_get_info(he, name, aliases, addresses))
+=======
+                ? hostent_get_info_with_local_ips(he, name, aliases, addr_list)
+                : hostent_get_info(he, name, aliases, addr_list))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             ? kWaitStatusSuccess
             : kWaitStatusFailure;
     }
 
+<<<<<<< HEAD
     WaitStatus SocketImpl::GetHostByName(const std::string &host, std::string &name, int32_t &family, std::vector<std::string> &aliases, std::vector<void*> &addr_list, int32_t &addr_size)
     {
         std::vector<std::string> addresses;
@@ -375,6 +431,8 @@ namespace os
         return result;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     void SocketImpl::Startup()
     {
         WSADATA wsadata;
@@ -446,10 +504,15 @@ namespace os
             case kAddressFamilyAppleTalk:
                 return AF_APPLETALK;
 
+<<<<<<< HEAD
 #if IL2CPP_SUPPORT_IPV6
             case kAddressFamilyInterNetworkV6:
                 return AF_INET6;
 #endif
+=======
+            case kAddressFamilyInterNetworkV6:
+                return AF_INET6;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef AF_IRDA
             case kAddressFamilyIrda:
@@ -711,6 +774,7 @@ namespace os
         *sa = *((struct sockaddr*)&sa_in);
     }
 
+<<<<<<< HEAD
 #if IL2CPP_SUPPORT_IPV6
     static void sockaddr_from_address(uint8_t address[ipv6AddressSize], uint32_t scope, uint16_t port, sockaddr_in6* sa, socklen_t *sa_size)
     {
@@ -724,6 +788,8 @@ namespace os
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     static bool socketaddr_to_endpoint_info(const struct sockaddr *address, socklen_t address_len, EndPointInfo &info)
     {
         info.family = (os::AddressFamily)address->sa_family;
@@ -824,6 +890,7 @@ namespace os
 
     WaitStatus SocketImpl::Bind(uint8_t address[ipv6AddressSize], uint32_t scope, uint16_t port)
     {
+<<<<<<< HEAD
         struct sockaddr_in6 sa = { 0 };
         socklen_t sa_size = 0;
 
@@ -836,6 +903,10 @@ namespace os
         }
 
         return kWaitStatusSuccess;
+=======
+        IL2CPP_VM_NOT_SUPPORTED(SocketImpl::Bind, "We don't have IPv6 support on Windows yet.");
+        return kWaitStatusFailure;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     WaitStatus SocketImpl::ConnectInternal(struct sockaddr *sa, int32_t sa_size)
@@ -914,12 +985,17 @@ namespace os
 
     WaitStatus SocketImpl::Connect(uint8_t address[ipv6AddressSize], uint32_t scope, uint16_t port)
     {
+<<<<<<< HEAD
         struct sockaddr_in6 sa = { 0 };
         socklen_t sa_size = 0;
 
         sockaddr_from_address(address, scope, htons(port), &sa, &sa_size);
 
         return ConnectInternal((struct sockaddr *)&sa, sa_size);
+=======
+        IL2CPP_VM_NOT_SUPPORTED(SocketImpl::Connect, "We don't have IPv6 support on Windows yet.");
+        return kWaitStatusFailure;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     WaitStatus SocketImpl::GetLocalEndPointInfo(EndPointInfo &info)
@@ -1416,13 +1492,21 @@ namespace os
 
     WaitStatus SocketImpl::SendTo(const char *path, const uint8_t *data, int32_t count, os::SocketFlags flags, int32_t *len)
     {
+<<<<<<< HEAD
         // NOTE: not supported on Windows.
+=======
+        // NOTE(gab): not supported on Windows.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return kWaitStatusFailure;
     }
 
     WaitStatus SocketImpl::SendTo(uint8_t address[ipv6AddressSize], uint32_t scope, uint16_t port, const uint8_t *data, int32_t count, os::SocketFlags flags, int32_t *len)
     {
+<<<<<<< HEAD
         // NOTE: not supported on Windows.
+=======
+        IL2CPP_VM_NOT_SUPPORTED(SocketImpl::SendTo, "We don't have IPv6 support on Windows yet.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return kWaitStatusFailure;
     }
 
@@ -1468,13 +1552,21 @@ namespace os
 
     WaitStatus SocketImpl::RecvFrom(const char *path, const uint8_t *data, int32_t count, os::SocketFlags flags, int32_t *len, os::EndPointInfo &ep)
     {
+<<<<<<< HEAD
         // NOTE: not supported on Windows.
+=======
+        // NOTE(gab): not supported on Windows.
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return kWaitStatusFailure;
     }
 
     WaitStatus SocketImpl::RecvFrom(uint8_t address[ipv6AddressSize], uint32_t scope, uint16_t port, const uint8_t *data, int32_t count, os::SocketFlags flags, int32_t *len, os::EndPointInfo &ep)
     {
+<<<<<<< HEAD
         // NOTE: not supported on Windows.
+=======
+        IL2CPP_VM_NOT_SUPPORTED(SocketImpl::RecvFrom, "We don't have IPv6 support on Windows yet.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return kWaitStatusFailure;
     }
 
@@ -1999,7 +2091,11 @@ namespace os
             // Mono does this as well and the threadpool-ms-io-poll code depends on this behavior
             if (*error == WSAENOTSOCK)
             {
+<<<<<<< HEAD
                 *error = os::kInvalidHandle;
+=======
+                *error = os::SocketError::kInvalidHandle;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             }
 
             return kWaitStatusFailure;
@@ -2206,6 +2302,7 @@ namespace os
 #if IL2CPP_SUPPORT_IPV6
     WaitStatus SocketImpl::SetSocketOptionMembership(SocketOptionLevel level, SocketOptionName name, IPv6Address ipv6, uint64_t interfaceOffset)
     {
+<<<<<<< HEAD
         int32_t system_level = 0;
         int32_t system_name = 0;
 
@@ -2230,6 +2327,10 @@ namespace os
         mreq6.ipv6mr_interface = (ULONG)interfaceOffset;
 
         return SetSocketOptionInternal(system_level, system_name, &mreq6, sizeof(mreq6));
+=======
+        IL2CPP_VM_NOT_SUPPORTED(SocketImpl::SetSocketOptionMembership, "We don't have IPv6 support on Windows yet.");
+        return kWaitStatusFailure;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 #endif

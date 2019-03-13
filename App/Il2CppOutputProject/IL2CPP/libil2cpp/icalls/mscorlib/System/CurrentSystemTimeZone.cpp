@@ -19,6 +19,7 @@ namespace mscorlib
 {
 namespace System
 {
+<<<<<<< HEAD
 #if NET_4_0
     bool CurrentSystemTimeZone::GetTimeZoneData40(int year, Il2CppArray** data, Il2CppArray** names, bool* daylight_inverted)
 #else
@@ -26,6 +27,11 @@ namespace System
 #endif
     {
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(CurrentSystemTimeZone::GetTimeZoneData, "Check arguments and write barriers");
+=======
+    bool CurrentSystemTimeZone::GetTimeZoneData(int year, Il2CppArray** data, Il2CppArray** names)
+    {
+        NOT_IMPLEMENTED_NO_ASSERT(CurrentSystemTimeZone::GetTimeZoneData, "Check arguments and write barriers");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         int64_t dataTemp[4] = {0};
         std::string namesTemp[2];
         IL2CPP_CHECK_ARG_NULL(data);
@@ -35,11 +41,16 @@ namespace System
         //mono_gc_wbarrier_generic_store (data, Array::New (il2cpp_defaults.int64_class, 4));
         *names = Array::New(il2cpp_defaults.string_class, 2);
         //mono_gc_wbarrier_generic_store (names, Array::New (il2cpp_defaults.string_class, 2));
+<<<<<<< HEAD
 #if NET_4_0
         if (!TimeZone::GetTimeZoneData(year, dataTemp, namesTemp, daylight_inverted))
 #else
         if (!TimeZone::GetTimeZoneData(year, dataTemp, namesTemp))
 #endif
+=======
+
+        if (!TimeZone::GetTimeZoneData(year, dataTemp, namesTemp))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return false;
 
         for (int i = 0; i < 4; i++)

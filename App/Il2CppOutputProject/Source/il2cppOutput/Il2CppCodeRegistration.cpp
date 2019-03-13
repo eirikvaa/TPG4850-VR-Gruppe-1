@@ -6,7 +6,10 @@
 # include <malloc.h>
 #endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -27,6 +30,10 @@
 
 
 extern const Il2CppMethodPointer g_MethodPointers[];
+<<<<<<< HEAD
+=======
+extern const Il2CppMethodPointer g_ReversePInvokeWrapperPointers[];
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 extern const Il2CppMethodPointer g_Il2CppGenericMethodPointers[];
 extern const InvokerMethod g_Il2CppInvokerPointers[];
 extern const CustomAttributesCacheGenerator g_AttributeGenerators[];
@@ -34,6 +41,7 @@ extern const Il2CppMethodPointer g_UnresolvedVirtualMethodPointers[];
 extern Il2CppInteropData g_Il2CppInteropData[];
 extern const Il2CppCodeRegistration g_CodeRegistration = 
 {
+<<<<<<< HEAD
 	14265,
 	g_MethodPointers,
 	0,
@@ -47,12 +55,31 @@ extern const Il2CppCodeRegistration g_CodeRegistration =
 	359,
 	g_UnresolvedVirtualMethodPointers,
 	263,
+=======
+	24210,
+	g_MethodPointers,
+	2,
+	g_ReversePInvokeWrapperPointers,
+	8967,
+	g_Il2CppGenericMethodPointers,
+	2937,
+	g_Il2CppInvokerPointers,
+	4972,
+	g_AttributeGenerators,
+	465,
+	g_UnresolvedVirtualMethodPointers,
+	277,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	g_Il2CppInteropData,
 };
 extern const Il2CppMetadataRegistration g_MetadataRegistration;
 static const Il2CppCodeGenOptions s_Il2CppCodeGenOptions = 
 {
+<<<<<<< HEAD
 	true,
+=======
+	false,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 };
 void s_Il2CppCodegenRegistration()
 {

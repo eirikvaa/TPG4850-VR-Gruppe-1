@@ -15,10 +15,13 @@
 #if !defined(CORD_POSITION_H) && defined(CORD_H)
 #define CORD_POSITION_H
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   extern "C" {
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /* The representation of CORD_position.  This is private to the */
 /* implementation, but the size is known to clients.  Also      */
 /* the implementation of some exported macros relies on it.     */
@@ -121,8 +124,11 @@ CORD_API void CORD__prev(CORD_pos);
         (p)[0].cur_leaf + ((p)[0].cur_pos - (p)[0].cur_start)
         /* address of current character in cache.       */
 
+<<<<<<< HEAD
 #ifdef __cplusplus
   } /* extern "C" */
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif

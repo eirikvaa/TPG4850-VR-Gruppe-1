@@ -29,7 +29,11 @@ namespace System
     public:
         static Il2CppObject* ToObject(void* /* System.TypedReference */ value);
 #if NET_4_0
+<<<<<<< HEAD
         static Il2CppObject* InternalToObject(Il2CppTypedRef* typedRef);
+=======
+        static Il2CppObject* InternalToObject(void* value);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static Il2CppTypedRef MakeTypedReferenceInternal(Il2CppObject* target, Il2CppArray* fields);
 #endif
     };

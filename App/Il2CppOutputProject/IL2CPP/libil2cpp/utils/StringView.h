@@ -1,5 +1,8 @@
 #pragma once
+<<<<<<< HEAD
 #include <limits>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <string>
 
 namespace il2cpp
@@ -84,6 +87,7 @@ namespace utils
             return StringView<CharType>();
         }
 
+<<<<<<< HEAD
         inline size_t Find(CharType c, size_t startIndex = 0) const
         {
             const CharType* end = m_String + m_Length;
@@ -99,6 +103,11 @@ namespace utils
         inline size_t RFind(CharType c) const
         {
             for (const CharType* ptr = m_String + m_Length; ptr-- > m_String;)
+=======
+        inline size_t RFind(CharType c) const
+        {
+            for (const CharType* ptr = m_String + m_Length - 1; ptr >= m_String; ptr--)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 if (*ptr == c)
                     return ptr - m_String;
@@ -107,6 +116,7 @@ namespace utils
             return NPos();
         }
 
+<<<<<<< HEAD
         inline StringView<CharType> SubStr(size_t startIndex, size_t length)
         {
             return StringView<CharType>(*this, startIndex, length);
@@ -117,10 +127,13 @@ namespace utils
             return StringView<CharType>(*this, startIndex, Length() - startIndex);
         }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         inline static size_t NPos()
         {
             return static_cast<size_t>(-1);
         }
+<<<<<<< HEAD
 
         inline bool TryParseAsInt(int& outResult)
         {
@@ -166,6 +179,8 @@ namespace utils
 
             return true;
         }
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 
 #define StringViewAsNullTerminatedStringOf(CharType, stringView, variableName) \

@@ -1,5 +1,10 @@
 #if ENABLE_UNIT_TESTS
 
+<<<<<<< HEAD
+=======
+#include "il2cpp-config.h"
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "UnitTest++.h"
 
 #include "../Time-c-api.h"

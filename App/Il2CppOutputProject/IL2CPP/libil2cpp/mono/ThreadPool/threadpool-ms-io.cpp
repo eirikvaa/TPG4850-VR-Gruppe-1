@@ -13,9 +13,13 @@
 
 #ifndef DISABLE_SOCKETS
 
+<<<<<<< HEAD
 #ifndef IL2CPP_USE_PIPES_FOR_WAKEUP
 #define IL2CPP_USE_PIPES_FOR_WAKEUP !(IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2)
 #endif
+=======
+#define IL2CPP_USE_PIPES_FOR_WAKEUP !(IL2CPP_TARGET_WINDOWS || IL2CPP_TARGET_XBOXONE || IL2CPP_TARGET_PS4 || IL2CPP_TARGET_PSP2)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #if !IL2CPP_USE_PIPES_FOR_WAKEUP
 #include "os/Win32/WindowsHeaders.h"
@@ -242,7 +246,11 @@ static void filter_jobs_for_domain (void* key, void* value, void* user_data)
 	//}
 
 	//mono_g_hash_table_replace (states, key, list);
+<<<<<<< HEAD
 	IL2CPP_NOT_IMPLEMENTED("TODO");
+=======
+	NOT_IMPLEMENTED("TODO");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 static void wait_callback (int fd, int events, void* user_data)
@@ -598,7 +606,11 @@ void ves_icall_System_IOSelector_Add (intptr_t handle, Il2CppIOSelectorJob *job)
 {
 	ThreadPoolIOUpdate *update;
 
+<<<<<<< HEAD
 	IL2CPP_ASSERT(handle != 0);
+=======
+	IL2CPP_ASSERT(handle >= 0);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 	IL2CPP_ASSERT((job->operation == EVENT_IN) ^ (job->operation == EVENT_OUT));
 	IL2CPP_ASSERT(job->callback);

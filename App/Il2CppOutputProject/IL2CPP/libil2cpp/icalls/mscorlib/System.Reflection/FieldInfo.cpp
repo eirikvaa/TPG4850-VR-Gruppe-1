@@ -28,7 +28,11 @@ namespace Reflection
 
     Il2CppReflectionMarshal* FieldInfo::GetUnmanagedMarshal(Il2CppReflectionField* field)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(FieldInfo::GetUnmanagedMarshal, "This should only be needed for types with a MarshalAsAttribute");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(FieldInfo::GetUnmanagedMarshal, "This should only be needed for types with a MarshalAsAttribute");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return NULL;
     }
 
@@ -52,7 +56,11 @@ namespace Reflection
 #if NET_4_0
     Il2CppObject* FieldInfo::get_marshal_info(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(FieldInfo::get_marshal_info, "We currently don't store marshal information in metadata");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(FieldInfo::get_marshal_info, "We currently don't store marshal information in metadata");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return NULL;
     }
 

@@ -12,11 +12,19 @@
 #ifdef PARALLEL_MARK
 # define AO_REQUIRE_CAS
 #endif
+<<<<<<< HEAD
 #include "private/gc_atomic_ops.h"
 
 #include <stdio.h>
 
 #ifdef AO_HAVE_fetch_and_add1
+=======
+#include "atomic_ops.h"
+
+#include <stdio.h>
+
+#ifdef AO_HAVE_fetch_and_add
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #ifdef GC_PTHREADS
 # include <pthread.h>
@@ -24,6 +32,7 @@
 # include <windows.h>
 #endif
 
+<<<<<<< HEAD
 #if defined(__HAIKU__)
 # include <errno.h>
 #endif
@@ -36,6 +45,13 @@
 #endif
 
 #ifndef MAX_SUBTHREAD_DEPTH
+=======
+#include <stdlib.h>
+#include <string.h>
+
+#ifndef MAX_SUBTHREAD_DEPTH
+# define INITIAL_THREAD_COUNT 31
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 # define MAX_ALIVE_THREAD_COUNT 55
 # define MAX_SUBTHREAD_DEPTH 7
 # define MAX_SUBTHREAD_COUNT 200
@@ -55,17 +71,26 @@ volatile AO_t thread_ended_cnt = 0;
   DWORD WINAPI entry(LPVOID arg)
 #endif
 {
+<<<<<<< HEAD
     int thread_num = AO_fetch_and_add1(&thread_created_cnt);
+=======
+    int thread_num = AO_fetch_and_add(&thread_created_cnt, 1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     GC_word my_depth = (GC_word)arg + 1;
 
     if (my_depth <= MAX_SUBTHREAD_DEPTH
             && thread_num < MAX_SUBTHREAD_COUNT
             && (thread_num % DECAY_DENOM) < DECAY_NUMER
+<<<<<<< HEAD
             && thread_num - (int)AO_load(&thread_ended_cnt)
+=======
+            && (int)(thread_num - AO_load(&thread_ended_cnt))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 <= MAX_ALIVE_THREAD_COUNT) {
 # ifdef GC_PTHREADS
         int err;
         pthread_t th;
+<<<<<<< HEAD
 
         err = pthread_create(&th, NULL, entry, (void *)my_depth);
         if (err != 0) {
@@ -76,13 +101,21 @@ volatile AO_t thread_ended_cnt = 0;
         err = pthread_detach(th);
         if (err != 0) {
             fprintf(stderr, "Thread #%d detach failed: %s\n", thread_num,
+=======
+        err = pthread_create(&th, NULL, entry, (void *)my_depth);
+        if (err) {
+            fprintf(stderr, "Thread #%d creation failed: %s", thread_num,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     strerror(err));
             exit(2);
         }
 # else
         HANDLE th;
         DWORD thread_id;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         th = CreateThread(NULL, 0, entry, (LPVOID)my_depth, 0, &thread_id);
         if (th == NULL) {
             fprintf(stderr, "Thread #%d creation failed: %d\n", thread_num,
@@ -93,12 +126,17 @@ volatile AO_t thread_ended_cnt = 0;
 # endif
     }
 
+<<<<<<< HEAD
     (void)AO_fetch_and_add1(&thread_ended_cnt);
+=======
+    AO_fetch_and_add(&thread_ended_cnt, 1);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     return 0;
 }
 
 int main(void)
 {
+<<<<<<< HEAD
 #if NTHREADS > 0
     int i;
 # ifdef GC_PTHREADS
@@ -114,6 +152,22 @@ int main(void)
         err = pthread_create(&th[i], NULL, entry, 0);
         if (err) {
             fprintf(stderr, "Thread creation failed: %s\n", strerror(err));
+=======
+    int i;
+# ifdef GC_PTHREADS
+    int err;
+    pthread_t th[INITIAL_THREAD_COUNT];
+# else
+    HANDLE th[INITIAL_THREAD_COUNT];
+# endif
+
+    GC_INIT();
+    for (i = 0; i < INITIAL_THREAD_COUNT; ++i) {
+#     ifdef GC_PTHREADS
+        err = pthread_create(&th[i], NULL, entry, 0);
+        if (err) {
+            fprintf(stderr, "Thread creation failed: %s", strerror(err));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             exit(1);
         }
 #     else
@@ -127,11 +181,16 @@ int main(void)
 #     endif
     }
 
+<<<<<<< HEAD
     for (i = 0; i < NTHREADS; ++i) {
+=======
+    for (i = 0; i < INITIAL_THREAD_COUNT; ++i) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #     ifdef GC_PTHREADS
         void *res;
         err = pthread_join(th[i], &res);
         if (err) {
+<<<<<<< HEAD
             fprintf(stderr, "Failed to join thread: %s\n", strerror(err));
 #           if defined(__HAIKU__)
                 /* The error is just ignored (and the test is ended) to */
@@ -139,6 +198,9 @@ int main(void)
                 /* TODO: The thread is not deleted from GC_threads.     */
                 if (ESRCH == err) break;
 #           endif
+=======
+            fprintf(stderr, "Failed to join thread: %s", strerror(err));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             exit(1);
         }
 #     else
@@ -151,7 +213,10 @@ int main(void)
         CloseHandle(th[i]);
 #     endif
     }
+<<<<<<< HEAD
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
   printf("subthread_create: created %d threads (%d ended)\n",
          (int)AO_load(&thread_created_cnt), (int)AO_load(&thread_ended_cnt));
   return 0;
@@ -165,4 +230,8 @@ int main(void)
   return 0;
 }
 
+<<<<<<< HEAD
 #endif /* !AO_HAVE_fetch_and_add1 */
+=======
+#endif /* !AO_HAVE_fetch_and_add */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

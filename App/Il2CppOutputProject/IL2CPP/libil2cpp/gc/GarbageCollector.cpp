@@ -144,7 +144,11 @@ namespace gc
 
     void GarbageCollector::RunFinalizer(void *obj, void *data)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_NO_ASSERT(GarbageCollector::RunFinalizer, "Compare to mono implementation special cases");
+=======
+        NOT_IMPLEMENTED_NO_ASSERT(GarbageCollector::RunFinalizer, "Compare to mono implementation special cases");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         Il2CppException *exc = NULL;
         Il2CppObject *o;
@@ -315,6 +319,7 @@ namespace gc
         return result;
     }
 
+<<<<<<< HEAD
 #if IL2CPP_ENABLE_WRITE_BARRIERS
     void il2cpp::gc::GarbageCollector::SetWriteBarrier(void **ptr, size_t size)
     {
@@ -328,6 +333,8 @@ namespace gc
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if NET_4_0
     void il2cpp::gc::GarbageCollector::SetSkipThread(bool skip)
     {

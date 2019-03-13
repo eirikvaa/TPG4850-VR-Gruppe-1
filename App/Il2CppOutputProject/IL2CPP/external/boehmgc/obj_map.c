@@ -51,13 +51,21 @@ GC_INNER void GC_register_displacement_inner(size_t offset)
   GC_INNER GC_bool GC_add_map_entry(size_t granules)
   {
     unsigned displ;
+<<<<<<< HEAD
     unsigned short * new_map;
+=======
+    short * new_map;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     if (granules > BYTES_TO_GRANULES(MAXOBJBYTES)) granules = 0;
     if (GC_obj_map[granules] != 0) {
         return(TRUE);
     }
+<<<<<<< HEAD
     new_map = (unsigned short *)GC_scratch_alloc(MAP_LEN * sizeof(short));
+=======
+    new_map = (short *)GC_scratch_alloc(MAP_LEN * sizeof(short));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if (new_map == 0) return(FALSE);
     GC_COND_LOG_PRINTF(
                 "Adding block map for size of %u granules (%u bytes)\n",
@@ -68,7 +76,11 @@ GC_INNER void GC_register_displacement_inner(size_t offset)
       }
     } else {
       for (displ = 0; displ < BYTES_TO_GRANULES(HBLKSIZE); displ++) {
+<<<<<<< HEAD
         new_map[displ] = (unsigned short)(displ % granules);
+=======
+        new_map[displ] = (short)(displ % granules);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
       }
     }
     GC_obj_map[granules] = new_map;

@@ -101,10 +101,17 @@ typedef struct GC_ms_entry * (*GC_mark_proc)(GC_word * /* addr */,
                | (proc_index)) << GC_DS_TAG_BITS) | GC_DS_PROC)
 #define GC_DS_PER_OBJECT 3  /* The real descriptor is at the            */
                         /* byte displacement from the beginning of the  */
+<<<<<<< HEAD
                         /* object given by descr & ~GC_DS_TAGS.         */
                         /* If the descriptor is negative, the real      */
                         /* descriptor is at (*<object_start>) -         */
                         /* (descr&~GC_DS_TAGS) - GC_INDIR_PER_OBJ_BIAS  */
+=======
+                        /* object given by descr & ~DS_TAGS             */
+                        /* If the descriptor is negative, the real      */
+                        /* descriptor is at (*<object_start>) -         */
+                        /* (descr & ~DS_TAGS) - GC_INDIR_PER_OBJ_BIAS   */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                         /* The latter alternative can be used if each   */
                         /* object contains a type descriptor in the     */
                         /* first word.                                  */
@@ -193,6 +200,7 @@ GC_API unsigned GC_CALL GC_new_proc_inner(GC_mark_proc);
 /* the descriptor is not correct.  Even in the single-threaded case,    */
 /* we need to be sure that cleared objects on a free list don't         */
 /* cause a GC crash if they are accidentally traced.                    */
+<<<<<<< HEAD
 GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL GC_generic_malloc(
                                                             size_t /* lb */,
                                                             int /* knd */);
@@ -200,10 +208,18 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL GC_generic_malloc(
 GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
                                         GC_generic_malloc_ignore_off_page(
                                             size_t /* lb */, int /* knd */);
+=======
+GC_API GC_ATTR_MALLOC void * GC_CALL GC_generic_malloc(size_t /* lb */,
+                                                       int /* k */);
+
+GC_API GC_ATTR_MALLOC void * GC_CALL GC_generic_malloc_ignore_off_page(
+                                        size_t /* lb */, int /* k */);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                                 /* As above, but pointers to past the   */
                                 /* first page of the resulting object   */
                                 /* are ignored.                         */
 
+<<<<<<< HEAD
 /* Generalized version of GC_malloc_[atomic_]uncollectable.     */
 GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
                                         GC_generic_malloc_uncollectable(
@@ -233,6 +249,8 @@ GC_API GC_ATTR_MALLOC GC_ATTR_ALLOC_SIZE(1) void * GC_CALL
 GC_API int GC_CALL GC_get_kind_and_size(const void *, size_t * /* psize */)
                                                         GC_ATTR_NONNULL(1);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 typedef void (GC_CALLBACK * GC_describe_type_fn)(void * /* p */,
                                                  char * /* out_buf */);
                                 /* A procedure which                    */
@@ -279,6 +297,7 @@ GC_API void GC_CALL GC_set_mark_bit(const void *) GC_ATTR_NONNULL(1);
 
 /* Push everything in the given range onto the mark stack.              */
 /* (GC_push_conditional pushes either all or only dirty pages depending */
+<<<<<<< HEAD
 /* on the third argument.)  GC_push_all_eager also ensures that stack   */
 /* is scanned immediately, not just scheduled for scanning.             */
 GC_API void GC_CALL GC_push_all(void * /* bottom */, void * /* top */);
@@ -286,6 +305,12 @@ GC_API void GC_CALL GC_push_all_eager(void * /* bottom */, void * /* top */);
 GC_API void GC_CALL GC_push_conditional(void * /* bottom */, void * /* top */,
                                         int /* bool all */);
 GC_API void GC_CALL GC_push_finalizer_structures(void);
+=======
+/* on the third argument.)                                              */
+GC_API void GC_CALL GC_push_all(char * /* bottom */, char * /* top */);
+GC_API void GC_CALL GC_push_conditional(char * /* bottom */, char * /* top */,
+                                        int /* bool all */);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* Set and get the client push-other-roots procedure.  A client         */
 /* supplied procedure should also call the original procedure.          */
@@ -295,6 +320,7 @@ typedef void (GC_CALLBACK * GC_push_other_roots_proc)(void);
 GC_API void GC_CALL GC_set_push_other_roots(GC_push_other_roots_proc);
 GC_API GC_push_other_roots_proc GC_CALL GC_get_push_other_roots(void);
 
+<<<<<<< HEAD
 /* Walk the GC heap visiting all reachable objects.  Assume the caller  */
 /* holds the allocation lock.  Object base pointer, object size and     */
 /* client custom data are passed to the callback (holding the lock).    */
@@ -312,6 +338,10 @@ GC_API void GC_CALL GC_print_trace_inner(GC_word /* gc_no */);
 
 #ifdef __cplusplus
   } /* extern "C" */
+=======
+#ifdef __cplusplus
+  } /* end of extern "C" */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 #endif /* GC_MARK_H */

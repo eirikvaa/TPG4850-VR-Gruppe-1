@@ -227,7 +227,11 @@ namespace System
     {
         Il2CppClass* klass = Class::FromIl2CppType(type->type);
 
+<<<<<<< HEAD
         return il2cpp::vm::Reflection::GetAssemblyObject(klass->image->assembly);
+=======
+        return il2cpp::vm::Reflection::GetAssemblyObject(MetadataCache::GetAssemblyFromIndex(klass->image->assemblyIndex));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     int MonoType::get_attributes(Il2CppReflectionType *type)
@@ -300,7 +304,11 @@ namespace System
     {
         Il2CppClass* klass = Class::FromIl2CppType(type->type);
 
+<<<<<<< HEAD
         return klass->parent ? il2cpp::vm::Reflection::GetTypeObject(&klass->parent->byval_arg) : NULL;
+=======
+        return klass->parent ? il2cpp::vm::Reflection::GetTypeObject(klass->parent->byval_arg) : NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppArray* MonoType::GetConstructors_internal(Il2CppReflectionType* type, int32_t bflags, Il2CppReflectionType *reftype)
@@ -368,6 +376,15 @@ namespace System
         return res;
     }
 
+<<<<<<< HEAD
+=======
+    mscorlib_System_Reflection_MethodInfo *  MonoType::GetCorrespondingInflatedMethod(Il2CppReflectionMonoType *, Il2CppReflectionMonoType *)
+    {
+        NOT_SUPPORTED_IL2CPP(MonoType::GetCorrespondingInflatedMethod, "This icall is only used by System.Reflection.Emit.TypeBuilder.");
+        return 0;
+    }
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppReflectionType* MonoType::GetElementType(Il2CppReflectionType * type)
     {
         Il2CppClass *klass;
@@ -377,11 +394,19 @@ namespace System
         // GetElementType should only return a type for:
         // Array Pointer PassedByRef
         if (type->type->byref)
+<<<<<<< HEAD
             return il2cpp::vm::Reflection::GetTypeObject(&klass->byval_arg);
         else if (klass->element_class && IL2CPP_CLASS_IS_ARRAY(klass))
             return il2cpp::vm::Reflection::GetTypeObject(&klass->element_class->byval_arg);
         else if (klass->element_class && type->type->type == IL2CPP_TYPE_PTR)
             return il2cpp::vm::Reflection::GetTypeObject(&klass->element_class->byval_arg);
+=======
+            return il2cpp::vm::Reflection::GetTypeObject(klass->byval_arg);
+        else if (klass->element_class && IL2CPP_CLASS_IS_ARRAY(klass))
+            return il2cpp::vm::Reflection::GetTypeObject(klass->element_class->byval_arg);
+        else if (klass->element_class && type->type->type == IL2CPP_TYPE_PTR)
+            return il2cpp::vm::Reflection::GetTypeObject(klass->element_class->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         else
             return NULL;
     }
@@ -553,7 +578,11 @@ namespace System
         Il2CppArray* res = Array::New(il2cpp_defaults.systemtype_class, (il2cpp_array_size_t)itfs.size());
         int i = 0;
         for (InterfaceVector::const_iterator iter = itfs.begin(); iter != itfs.end(); ++iter, ++i)
+<<<<<<< HEAD
             il2cpp_array_setref(res, i, Reflection::GetTypeObject(&(*iter)->byval_arg));
+=======
+            il2cpp_array_setref(res, i, Reflection::GetTypeObject((*iter)->byval_arg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return res;
     }
@@ -884,6 +913,15 @@ namespace System
         NOT_SUPPORTED_IL2CPP(MonoType::type_from_obj, "This icall is only used by System.MonoType constructor, which throws NotImplementedException right after this call.");
     }
 
+<<<<<<< HEAD
+=======
+    void* /* System.Reflection.ConstructorInfo */ MonoType::GetCorrespondingInflatedConstructor(void* /* System.MonoType */ self, void* /* System.Reflection.ConstructorInfo */ genericInfo)
+    {
+        NOT_SUPPORTED_IL2CPP(MonoType::GetCorrespondingInflatedConstructor, "This icall is only used by System.Reflection.Emit.TypeBuilder.");
+        return 0;
+    }
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     static inline bool CheckNestedTypeMatch(Il2CppClass* nestedType, BindingFlags bindingFlags)
     {
         uint32_t accessFlag = (nestedType->flags & TYPE_ATTRIBUTE_VISIBILITY_MASK) == TYPE_ATTRIBUTE_NESTED_PUBLIC ? BFLAGS_Public : BFLAGS_NonPublic;
@@ -897,7 +935,11 @@ namespace System
         while (Il2CppClass* nestedType = Class::GetNestedTypes(typeInfo, &iter))
         {
             if (CheckNestedTypeMatch(nestedType, bindingFlags) && nameFilter(nestedType->name))
+<<<<<<< HEAD
                 return Reflection::GetTypeObject(&nestedType->byval_arg);
+=======
+                return Reflection::GetTypeObject(nestedType->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return NULL;
@@ -957,7 +999,11 @@ namespace System
 
         for (size_t i = 0; i < nestedTypeCount; i++)
         {
+<<<<<<< HEAD
             il2cpp_array_setref(result, i, Reflection::GetTypeObject(&nestedTypes[i]->byval_arg));
+=======
+            il2cpp_array_setref(result, i, Reflection::GetTypeObject(nestedTypes[i]->byval_arg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return result;
@@ -984,7 +1030,11 @@ namespace System
 
     void* /* System.Reflection.MethodBase */ MonoType::get_DeclaringMethod(void* /* System.MonoType */ self)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(MonoType::get_DeclaringMethod);
+=======
+        NOT_IMPLEMENTED_ICALL(MonoType::get_DeclaringMethod);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return 0;
     }

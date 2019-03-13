@@ -50,7 +50,11 @@ namespace System
         Il2CppMulticastDelegate *ret = (Il2CppMulticastDelegate*)il2cpp::vm::Object::New(d->object.klass);
 
         Il2CppMethodPointer func = d->method_ptr;
+<<<<<<< HEAD
         il2cpp::vm::Type::ConstructDelegate(&ret->delegate, NULL, func, d->method);
+=======
+        il2cpp::vm::Type::ConstructDelegate(&ret->delegate, &d->object, func, d->method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         const MethodInfo* invokeMethod = il2cpp::vm::Runtime::GetDelegateInvoke(d->object.klass);
         ret->delegate.invoke_impl = invokeMethod->invoker_method;
@@ -60,7 +64,11 @@ namespace System
 
     Il2CppObject* Delegate::GetVirtualMethod_internal(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Delegate::GetVirtualMethod_internal);
+=======
+        NOT_IMPLEMENTED_ICALL(Delegate::GetVirtualMethod_internal);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return NULL;
     }

@@ -57,7 +57,10 @@ namespace os
         ThreadPriority GetPriority();
 
         void SetStackSize(size_t stackSize);
+<<<<<<< HEAD
         static int GetMaxStackSize();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         void SetCleanupFunction(CleanupFunc cleanupFunc, void* arg)
         {

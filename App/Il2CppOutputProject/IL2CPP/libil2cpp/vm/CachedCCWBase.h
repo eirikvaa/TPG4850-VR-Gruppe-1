@@ -1,9 +1,13 @@
 #pragma once
 
 #include "gc/GCHandle.h"
+<<<<<<< HEAD
 #include "vm/Atomic.h"
 #include "vm/ComObjectBase.h"
 #include "utils/Memory.h"
+=======
+#include "vm/ComObjectBase.h"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/TemplateUtils.h"
 
 namespace il2cpp

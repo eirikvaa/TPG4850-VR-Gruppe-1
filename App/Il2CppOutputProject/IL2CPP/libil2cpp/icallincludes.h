@@ -6,8 +6,11 @@
 
 #include "icalls/mscorlib/Mono.Security.Cryptography/KeyPairPersistence.h"
 
+<<<<<<< HEAD
 #include "icalls/mscorlib/Mono.Unity/UnityTls.h"
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "icalls/mscorlib/System/__ComObject.h"
 
 #include "icalls/mscorlib/System/Activator.h"

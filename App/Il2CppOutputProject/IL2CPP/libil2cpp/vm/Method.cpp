@@ -19,7 +19,11 @@ namespace vm
 
     Il2CppClass *Method::GetDeclaringType(const MethodInfo* method)
     {
+<<<<<<< HEAD
         return method->klass;
+=======
+        return method->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     const char* Method::GetName(const MethodInfo *method)
@@ -27,6 +31,7 @@ namespace vm
         return method->name;
     }
 
+<<<<<<< HEAD
     std::string Method::GetNameWithGenericTypes(const MethodInfo* method)
     {
         std::string str;
@@ -52,6 +57,8 @@ namespace vm
         return str;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     bool Method::IsGeneric(const MethodInfo *method)
     {
         return method->is_generic;
@@ -77,6 +84,7 @@ namespace vm
         return method->parameters_count;
     }
 
+<<<<<<< HEAD
     uint32_t Method::GetGenericParamCount(const MethodInfo *method)
     {
         if (IsGeneric(method) && method->genericContainer != NULL)
@@ -84,6 +92,8 @@ namespace vm
         return 0;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     const Il2CppType* Method::GetParam(const MethodInfo *method, uint32_t index)
     {
         if (index < method->parameters_count)
@@ -104,7 +114,11 @@ namespace vm
 
     Il2CppClass* Method::GetClass(const MethodInfo *method)
     {
+<<<<<<< HEAD
         return method->klass;
+=======
+        return method->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Method::HasAttribute(const MethodInfo *method, Il2CppClass *attr_class)
@@ -277,9 +291,15 @@ namespace vm
     std::string Method::GetFullName(const MethodInfo* method)
     {
         std::string str;
+<<<<<<< HEAD
         str += Type::GetName(&method->klass->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME);
         str += "::";
         str += Method::GetNameWithGenericTypes(method);
+=======
+        str += Type::GetName(method->declaring_type->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME);
+        str += "::";
+        str += Method::GetName(method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return str;
     }

@@ -35,6 +35,7 @@ namespace os
         return IL2CPP_COR_E_PLATFORMNOTSUPPORTED;
     }
 
+<<<<<<< HEAD
 #if !IL2CPP_TARGET_WINDOWS // Il2CppChar and Il2CppNativeChar are the same on Windows
     il2cpp_hresult_t WindowsRuntime::CreateHString(const utils::StringView<Il2CppNativeChar>& str, Il2CppHString* hstring)
     {
@@ -45,6 +46,8 @@ namespace os
 
 #endif
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     il2cpp_hresult_t WindowsRuntime::DeleteHString(Il2CppHString hstring)
     {
         NO_UNUSED_WARNING(hstring);
@@ -59,6 +62,7 @@ namespace os
         return NULL;
     }
 
+<<<<<<< HEAD
     const Il2CppNativeChar* WindowsRuntime::GetNativeHStringBuffer(Il2CppHString hstring, uint32_t* length)
     {
         NO_UNUSED_WARNING(hstring);
@@ -67,6 +71,8 @@ namespace os
         return NULL;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppString* WindowsRuntime::HStringToManagedString(Il2CppHString hstring)
     {
         NO_UNUSED_WARNING(hstring);
@@ -74,6 +80,7 @@ namespace os
         return NULL;
     }
 
+<<<<<<< HEAD
     il2cpp_hresult_t WindowsRuntime::PreallocateHStringBuffer(uint32_t length, Il2CppNativeChar** mutableBuffer, void** bufferHandle)
     {
         NO_UNUSED_WARNING(length);
@@ -95,6 +102,8 @@ namespace os
         return IL2CPP_COR_E_PLATFORMNOTSUPPORTED;
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     Il2CppIRestrictedErrorInfo* WindowsRuntime::GetRestrictedErrorInfo()
     {
         return NULL;

@@ -15,7 +15,11 @@ namespace IO
 {
     int32_t FAMWatcher::InternalFAMNextEvent(FAMConnection* fc, Il2CppString** filename, int32_t* code, int32_t* reqnum)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(FAMWatcher::InternalFAMNextEvent);
+=======
+        NOT_IMPLEMENTED_ICALL(FAMWatcher::InternalFAMNextEvent);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return 0;
     }

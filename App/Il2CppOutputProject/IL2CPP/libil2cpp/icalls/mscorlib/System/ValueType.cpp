@@ -6,7 +6,10 @@
 #include "il2cpp-object-internals.h"
 #include "gc/WriteBarrier.h"
 #include "utils/StringUtils.h"
+<<<<<<< HEAD
 #include "utils/HashUtils.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "vm/Array.h"
 #include "vm/Class.h"
 #include "vm/Exception.h"
@@ -92,10 +95,13 @@ namespace System
                     if (*(double*)((uint8_t*)thisPtr + field->offset) != *(double*)((uint8_t*)that + field->offset))
                         return false;
                     break;
+<<<<<<< HEAD
                 case IL2CPP_TYPE_PTR:
                     if (*(void**)((uint8_t*)thisPtr + field->offset) != *(void**)((uint8_t*)that + field->offset))
                         return false;
                     break;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 case IL2CPP_TYPE_STRING:
                     Il2CppString *s1, *s2;
                     uint32_t s1len, s2len;
@@ -180,9 +186,12 @@ namespace System
                         result ^= String::GetHash(s);
                     break;
                 }
+<<<<<<< HEAD
                 case IL2CPP_TYPE_PTR:
                     result ^= il2cpp::utils::HashUtils::AlignedPointerHash(*(void**)((uint8_t*)obj + field->offset));
                     break;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 default:
                     if (!values)
                         values = (Il2CppObject**)alloca(sizeof(Il2CppObject*) * Class::GetNumFields(klass));

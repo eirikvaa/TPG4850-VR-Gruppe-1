@@ -5,7 +5,10 @@
 #include <algorithm>
 #include <ctype.h>
 
+<<<<<<< HEAD
 #include "metadata/Il2CppTypeCompare.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "utils/StringUtils.h"
 #include "vm/Assembly.h"
 #include "vm/AssemblyName.h"
@@ -16,7 +19,10 @@
 #include "vm/Reflection.h"
 #include "vm/String.h"
 #include "vm/Type.h"
+<<<<<<< HEAD
 #include "vm-utils/VmStringUtils.h"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "il2cpp-class-internals.h"
 #include "il2cpp-object-internals.h"
 #include "il2cpp-tabledefs.h"
@@ -38,7 +44,11 @@ namespace il2cpp
 {
 namespace vm
 {
+<<<<<<< HEAD
     TypeNameParser::TypeNameParser(const std::string &name, TypeNameParseInfo &info, bool is_nested) :
+=======
+    TypeNameParser::TypeNameParser(std::string &name, TypeNameParseInfo &info, bool is_nested) :
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         _info(info),
         _is_nested(is_nested),
         _accept_assembly_name(true),
@@ -366,7 +376,10 @@ namespace vm
             std::string::const_iterator begin = _p;
             ConsumePropertyIdentifier();
             std::string propertyName(begin, _p);
+<<<<<<< HEAD
             utils::VmStringUtils::CaseInsensitiveComparer propertyNameComparer;
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
             if (!CurrentIs('='))
                 return false;
@@ -378,11 +391,16 @@ namespace vm
             ConsumePropertyValue();
             std::string propertyValue(begin, _p);
 
+<<<<<<< HEAD
             if (propertyNameComparer(propertyName, "version"))
+=======
+            if (propertyName == "Version")
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 if (!ParseVersion(propertyValue, _info._assembly_name.major, _info._assembly_name.minor, _info._assembly_name.build, _info._assembly_name.revision))
                     return false;
             }
+<<<<<<< HEAD
             else if (propertyNameComparer(propertyName.c_str(), "publickey"))
             {
                 if (!propertyNameComparer(propertyValue, "null"))
@@ -391,12 +409,23 @@ namespace vm
             else if (propertyNameComparer(propertyName.c_str(), "publickeytoken"))
             {
                 if (!propertyNameComparer(propertyValue, "null"))
+=======
+            else if (propertyName == "PublicKey")
+            {
+                if (propertyValue != "null")
+                    _info._assembly_name.public_key = propertyValue;
+            }
+            else if (propertyName == "PublicKeyToken")
+            {
+                if (propertyValue != "null")
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 {
                     if ((kPublicKeyTokenLength - 1) != propertyValue.size())
                         return false;
                     strncpy(_info._assembly_name.public_key_token, propertyValue.c_str(), kPublicKeyTokenLength);
                 }
             }
+<<<<<<< HEAD
             else if (propertyNameComparer(propertyName.c_str(), "culture"))
             {
                 _info._assembly_name.culture = propertyValue;
@@ -407,6 +436,12 @@ namespace vm
                 if (propertyNameComparer(propertyValue, "windowsruntime") && !propertyNameComparer(_info._assembly_name.name.c_str(), "windowsruntimemetadata"))
                     _info._assembly_name.name = "WindowsRuntimeMetadata";
             }
+=======
+            else if (propertyName == "Culture")
+            {
+                _info._assembly_name.culture = propertyValue;
+            }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             else
             {
                 return false;
@@ -597,7 +632,11 @@ namespace vm
                 Il2CppClass* elementClass = Class::GetElementClass(arrayClass);
                 Type::GetNameInternal(
                     str,
+<<<<<<< HEAD
                     &elementClass->byval_arg,
+=======
+                    elementClass->byval_arg,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     format == IL2CPP_TYPE_NAME_FORMAT_ASSEMBLY_QUALIFIED ? IL2CPP_TYPE_NAME_FORMAT_FULL_NAME : format,
                     false);
 
@@ -616,7 +655,11 @@ namespace vm
 
                 if (format == IL2CPP_TYPE_NAME_FORMAT_ASSEMBLY_QUALIFIED)
                 {
+<<<<<<< HEAD
                     const Il2CppAssembly *ta = elementClass->image->assembly;
+=======
+                    const Il2CppAssembly *ta = MetadataCache::GetAssemblyFromIndex(elementClass->image->assemblyIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     str += ", " + vm::AssemblyName::AssemblyNameToString(ta->aname);
                 }
 
@@ -628,7 +671,11 @@ namespace vm
                 Il2CppClass* elementClass = Class::FromIl2CppType(type->data.type);
                 Type::GetNameInternal(
                     str,
+<<<<<<< HEAD
                     &elementClass->byval_arg,
+=======
+                    elementClass->byval_arg,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     format == IL2CPP_TYPE_NAME_FORMAT_ASSEMBLY_QUALIFIED ? IL2CPP_TYPE_NAME_FORMAT_FULL_NAME : format,
                     false);
 
@@ -639,7 +686,11 @@ namespace vm
 
                 if (format == IL2CPP_TYPE_NAME_FORMAT_ASSEMBLY_QUALIFIED)
                 {
+<<<<<<< HEAD
                     const Il2CppAssembly *ta = elementClass->image->assembly;
+=======
+                    const Il2CppAssembly *ta = MetadataCache::GetAssemblyFromIndex(elementClass->image->assemblyIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     str += ", " + vm::AssemblyName::AssemblyNameToString(ta->aname);
                 }
                 break;
@@ -660,7 +711,11 @@ namespace vm
 
                 if (format == IL2CPP_TYPE_NAME_FORMAT_ASSEMBLY_QUALIFIED)
                 {
+<<<<<<< HEAD
                     const Il2CppAssembly *ta = Class::FromIl2CppType(type->data.type)->image->assembly;
+=======
+                    const Il2CppAssembly *ta = MetadataCache::GetAssemblyFromIndex(Class::FromIl2CppType(type->data.type)->image->assemblyIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     str += ", " + vm::AssemblyName::AssemblyNameToString(ta->aname);
                 }
                 break;
@@ -682,7 +737,11 @@ namespace vm
                 Il2CppClass* declaringType = Class::GetDeclaringType(klass);
                 if (declaringType)
                 {
+<<<<<<< HEAD
                     Type::GetNameInternal(str, &declaringType->byval_arg, format, true);
+=======
+                    Type::GetNameInternal(str, declaringType->byval_arg, format, true);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     str += (format == IL2CPP_TYPE_NAME_FORMAT_IL ? '.' : '+');
                 }
                 else if (*klass->namespaze)
@@ -751,7 +810,11 @@ namespace vm
 
                 if ((format == IL2CPP_TYPE_NAME_FORMAT_ASSEMBLY_QUALIFIED) && (type->type != IL2CPP_TYPE_VAR) && (type->type != IL2CPP_TYPE_MVAR))
                 {
+<<<<<<< HEAD
                     const Il2CppAssembly *ta = klass->image->assembly;
+=======
+                    const Il2CppAssembly *ta = MetadataCache::GetAssemblyFromIndex(klass->image->assemblyIndex);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     str += ", " + vm::AssemblyName::AssemblyNameToString(ta->aname);
                 }
                 break;
@@ -816,7 +879,11 @@ namespace vm
             typeInfo = Class::GetDeclaringType(Class::FromIl2CppType(type));
         }
 
+<<<<<<< HEAD
         return typeInfo ? Reflection::GetTypeObject(&typeInfo->byval_arg) : NULL;
+=======
+        return typeInfo ? Reflection::GetTypeObject(typeInfo->byval_arg) : NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppArray* Type::GetGenericArgumentsInternal(Il2CppReflectionType* type, bool runtimeArray)
@@ -839,7 +906,11 @@ namespace vm
             for (int32_t i = 0; i < container->type_argc; ++i)
             {
                 pklass = Class::FromGenericParameter(GenericContainer::GetGenericParameter(container, i));
+<<<<<<< HEAD
                 il2cpp_array_setref(res, i, Reflection::GetTypeObject(&pklass->byval_arg));
+=======
+                il2cpp_array_setref(res, i, Reflection::GetTypeObject(pklass->byval_arg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             }
         }
         else if (klass->generic_class)
@@ -856,11 +927,14 @@ namespace vm
         return res;
     }
 
+<<<<<<< HEAD
     bool Type::IsEqualToType(const Il2CppType *type, const Il2CppType *otherType)
     {
         return ::il2cpp::metadata::Il2CppTypeEqualityComparer::AreEqual(type, otherType);
     }
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     uint32_t Type::GetToken(const Il2CppType *type)
     {
         if (IsGenericInstance(type))

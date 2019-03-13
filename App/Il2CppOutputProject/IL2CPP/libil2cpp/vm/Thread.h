@@ -2,7 +2,10 @@
 
 #include <stdint.h>
 #include <vector>
+<<<<<<< HEAD
 #include <string>
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "il2cpp-config.h"
 #include "utils/NonCopyable.h"
 
@@ -47,9 +50,13 @@ namespace vm
     class LIBIL2CPP_CODEGEN_API Thread
     {
     public:
+<<<<<<< HEAD
 #if NET_4_0
         static std::string GetName(Il2CppInternalThread* thread);
 #endif
+=======
+        static char *GetName(uint32_t *len);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static void SetName(Il2CppThread* thread, Il2CppString* name);
         static void SetName(Il2CppInternalThread* thread, Il2CppString* name);
         static Il2CppThread* Current();
@@ -60,10 +67,13 @@ namespace vm
         static void KillAllBackgroundThreadsAndWaitForForegroundThreads();
         static Il2CppThread* Main();
         static bool IsVmThread(Il2CppThread *thread);
+<<<<<<< HEAD
         static uint64_t GetId(Il2CppThread *thread);
 #if NET_4_0
         static uint64_t GetId(Il2CppInternalThread* thread);
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         static void RequestInterrupt(Il2CppThread* thread);
         static void CheckCurrentThreadForInterruptAndThrowIfNecessary();
@@ -73,7 +83,10 @@ namespace vm
         static void ResetAbort(Il2CppThread* thread);
 #if NET_4_0
         static bool RequestAbort(Il2CppInternalThread* thread);
+<<<<<<< HEAD
         static void ResetAbort(Il2CppInternalThread* thread);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static void SetPriority(Il2CppThread* thread, int32_t priority);
         static int32_t GetPriority(Il2CppThread* thread);
 #endif
@@ -89,10 +102,13 @@ namespace vm
         static int32_t AllocThreadStaticData(int32_t size);
         static void FreeThreadStaticData(Il2CppThread *thread);
         static void* GetThreadStaticData(int32_t offset);
+<<<<<<< HEAD
         static void* GetThreadStaticDataForThread(int32_t offset, Il2CppThread* thread);
 #if NET_4_0
         static void* GetThreadStaticDataForThread(int32_t offset, Il2CppInternalThread* thread);
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         static void Register(Il2CppThread *thread);
         static void Unregister(Il2CppThread *thread);

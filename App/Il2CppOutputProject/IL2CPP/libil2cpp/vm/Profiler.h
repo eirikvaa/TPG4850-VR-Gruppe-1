@@ -20,7 +20,10 @@ namespace vm
         static void InstallAllocation(Il2CppProfileAllocFunc callback);
         static void InstallGC(Il2CppProfileGCFunc callback, Il2CppProfileGCResizeFunc heap_resize_callback);
         static void InstallFileIO(Il2CppProfileFileIOFunc callback);
+<<<<<<< HEAD
         static void InstallThread(Il2CppProfileThreadFunc start, Il2CppProfileThreadFunc end);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 // internal
     public:
@@ -30,8 +33,11 @@ namespace vm
         static void GCEvent(Il2CppGCEvent eventType);
         static void GCHeapResize(int64_t newSize);
         static void FileIO(Il2CppProfileFileIOKind kind, int count);
+<<<<<<< HEAD
         static void ThreadStart(unsigned long tid);
         static void ThreadEnd(unsigned long tid);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         static Il2CppProfileFlags s_profilerEvents;
 
@@ -45,8 +51,11 @@ namespace vm
             return (s_profilerEvents & IL2CPP_PROFILE_FILEIO) != 0;
         }
 
+<<<<<<< HEAD
         static void Shutdown();
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     private:
     };
 

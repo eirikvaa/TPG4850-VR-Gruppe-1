@@ -82,6 +82,7 @@ namespace Threading
         return SignalAndWait_Internal(toSignal, toWaitOn, ms, false) ? 0 : 1;
     }
 
+<<<<<<< HEAD
 #define MANAGED_WAIT_FAILED 0x7fffffff
 #define MANAGED_WAIT_OBJECT_0 0x00000000
 #define MANAGED_WAIT_TIMEOUT 258
@@ -123,6 +124,21 @@ namespace Threading
         }
         else
             return os::Handle::WaitAny(osWaitHandles, timeouts);
+=======
+    int32_t WaitHandle::WaitAll_internal40(Il2CppArray* handles, int32_t ms)
+    {
+        return WaitAll_internal(handles, ms, false) ? 0 : 258;
+    }
+
+    int32_t WaitHandle::WaitAny_internal40(Il2CppArray* handles, int32_t ms)
+    {
+        return WaitAny_internal(handles, ms, false);
+    }
+
+    int32_t WaitHandle::WaitOne_internal40(intptr_t handle, int32_t ms)
+    {
+        return WaitOne_internal(NULL, handle, ms, false) ? 0 : 258;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 #endif

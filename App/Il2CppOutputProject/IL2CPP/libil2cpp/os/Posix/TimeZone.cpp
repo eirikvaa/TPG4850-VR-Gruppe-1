@@ -38,6 +38,7 @@ namespace os
 #endif
     }
 
+<<<<<<< HEAD
 #if NET_4_0
     bool TimeZone::GetTimeZoneData(int32_t year, int64_t data[4], std::string names[2], bool* daylight_inverted)
     {
@@ -164,6 +165,8 @@ namespace os
     }
 
 #else
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     bool TimeZone::GetTimeZoneData(int32_t year, int64_t data[4], std::string names[2])
     {
         struct tm start, tt;
@@ -266,8 +269,11 @@ namespace os
 
         return true;
     }
+<<<<<<< HEAD
 
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 }
 

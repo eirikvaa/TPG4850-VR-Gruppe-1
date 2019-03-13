@@ -6,7 +6,10 @@
 # include <malloc.h>
 #endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -19,6 +22,7 @@
 #include "codegen/il2cpp-codegen.h"
 #include "il2cpp-object-internals.h"
 
+<<<<<<< HEAD
 template <typename T1, typename T2, typename T3>
 struct VirtActionInvoker3
 {
@@ -75,6 +79,42 @@ struct SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7;
 
 #ifndef U3CMODULEU3E_T140A63E1069F1772D5238396CDA7CE5372253E44_H
 #define U3CMODULEU3E_T140A63E1069F1772D5238396CDA7CE5372253E44_H
+=======
+
+// UnityEngine.Tilemaps.ITilemap
+struct ITilemap_t3496540090;
+// UnityEngine.Tilemaps.Tilemap
+struct Tilemap_t1578933799;
+// UnityEngine.Tilemaps.Tile
+struct Tile_t1378929773;
+// UnityEngine.Tilemaps.TileBase
+struct TileBase_t3985733243;
+// UnityEngine.Sprite
+struct Sprite_t280657092;
+// UnityEngine.GameObject
+struct GameObject_t1113636619;
+// UnityEngine.ScriptableObject
+struct ScriptableObject_t2528358522;
+// System.Char[]
+struct CharU5BU5D_t3528271667;
+// System.String
+struct String_t;
+// UnityEngine.Sprite[]
+struct SpriteU5BU5D_t2581906349;
+// System.Void
+struct Void_t1185182177;
+
+extern RuntimeClass* ITilemap_t3496540090_il2cpp_TypeInfo_var;
+extern const uint32_t ITilemap_CreateInstance_m2624613551_MetadataUsageId;
+extern RuntimeClass* Matrix4x4_t1817901843_il2cpp_TypeInfo_var;
+extern const uint32_t Tile__ctor_m646807577_MetadataUsageId;
+
+struct SpriteU5BU5D_t2581906349;
+
+
+#ifndef U3CMODULEU3E_T692745544_H
+#define U3CMODULEU3E_T692745544_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -82,7 +122,11 @@ struct SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7;
 #endif
 
 // <Module>
+<<<<<<< HEAD
 struct  U3CModuleU3E_t140A63E1069F1772D5238396CDA7CE5372253E44 
+=======
+struct  U3CModuleU3E_t692745544 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -92,7 +136,11 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // U3CMODULEU3E_T140A63E1069F1772D5238396CDA7CE5372253E44_H
+=======
+#endif // U3CMODULEU3E_T692745544_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
 #ifdef __clang__
@@ -122,8 +170,13 @@ struct Il2CppArrayBounds;
 #pragma clang diagnostic pop
 #endif
 #endif // RUNTIMEARRAY_H
+<<<<<<< HEAD
 #ifndef VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
 #define VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
+=======
+#ifndef VALUETYPE_T3640485471_H
+#define VALUETYPE_T3640485471_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -131,7 +184,11 @@ struct Il2CppArrayBounds;
 #endif
 
 // System.ValueType
+<<<<<<< HEAD
 struct  ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF  : public RuntimeObject
+=======
+struct  ValueType_t3640485471  : public RuntimeObject
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -142,6 +199,7 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of System.ValueType
+<<<<<<< HEAD
 struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_pinvoke
 {
 };
@@ -152,6 +210,18 @@ struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
 #endif // VALUETYPE_T4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_H
 #ifndef ITILEMAP_T784A442A8BD2283058F44E8C0FE5257168459BE3_H
 #define ITILEMAP_T784A442A8BD2283058F44E8C0FE5257168459BE3_H
+=======
+struct ValueType_t3640485471_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.ValueType
+struct ValueType_t3640485471_marshaled_com
+{
+};
+#endif // VALUETYPE_T3640485471_H
+#ifndef ITILEMAP_T3496540090_H
+#define ITILEMAP_T3496540090_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -159,6 +229,7 @@ struct ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF_marshaled_com
 #endif
 
 // UnityEngine.Tilemaps.ITilemap
+<<<<<<< HEAD
 struct  ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3  : public RuntimeObject
 {
 public:
@@ -170,12 +241,26 @@ public:
 	inline Tilemap_t0F92148668211805A631B93488D4A629EC378B10 * get_m_Tilemap_1() const { return ___m_Tilemap_1; }
 	inline Tilemap_t0F92148668211805A631B93488D4A629EC378B10 ** get_address_of_m_Tilemap_1() { return &___m_Tilemap_1; }
 	inline void set_m_Tilemap_1(Tilemap_t0F92148668211805A631B93488D4A629EC378B10 * value)
+=======
+struct  ITilemap_t3496540090  : public RuntimeObject
+{
+public:
+	// UnityEngine.Tilemaps.Tilemap UnityEngine.Tilemaps.ITilemap::m_Tilemap
+	Tilemap_t1578933799 * ___m_Tilemap_1;
+
+public:
+	inline static int32_t get_offset_of_m_Tilemap_1() { return static_cast<int32_t>(offsetof(ITilemap_t3496540090, ___m_Tilemap_1)); }
+	inline Tilemap_t1578933799 * get_m_Tilemap_1() const { return ___m_Tilemap_1; }
+	inline Tilemap_t1578933799 ** get_address_of_m_Tilemap_1() { return &___m_Tilemap_1; }
+	inline void set_m_Tilemap_1(Tilemap_t1578933799 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___m_Tilemap_1 = value;
 		Il2CppCodeGenWriteBarrier((&___m_Tilemap_1), value);
 	}
 };
 
+<<<<<<< HEAD
 struct ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3_StaticFields
 {
 public:
@@ -187,6 +272,19 @@ public:
 	inline ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * get_s_Instance_0() const { return ___s_Instance_0; }
 	inline ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 ** get_address_of_s_Instance_0() { return &___s_Instance_0; }
 	inline void set_s_Instance_0(ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * value)
+=======
+struct ITilemap_t3496540090_StaticFields
+{
+public:
+	// UnityEngine.Tilemaps.ITilemap UnityEngine.Tilemaps.ITilemap::s_Instance
+	ITilemap_t3496540090 * ___s_Instance_0;
+
+public:
+	inline static int32_t get_offset_of_s_Instance_0() { return static_cast<int32_t>(offsetof(ITilemap_t3496540090_StaticFields, ___s_Instance_0)); }
+	inline ITilemap_t3496540090 * get_s_Instance_0() const { return ___s_Instance_0; }
+	inline ITilemap_t3496540090 ** get_address_of_s_Instance_0() { return &___s_Instance_0; }
+	inline void set_s_Instance_0(ITilemap_t3496540090 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_Instance_0 = value;
 		Il2CppCodeGenWriteBarrier((&___s_Instance_0), value);
@@ -196,6 +294,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // ITILEMAP_T784A442A8BD2283058F44E8C0FE5257168459BE3_H
 #ifndef BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
 #define BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
@@ -256,6 +355,11 @@ public:
 #endif // BOOLEAN_TB53F6830F670160873277339AA58F15CAED4399C_H
 #ifndef ENUM_T2AF27C02B8653AE29442467390005ABC74D8F521_H
 #define ENUM_T2AF27C02B8653AE29442467390005ABC74D8F521_H
+=======
+#endif // ITILEMAP_T3496540090_H
+#ifndef ENUM_T4135868527_H
+#define ENUM_T4135868527_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -263,13 +367,18 @@ public:
 #endif
 
 // System.Enum
+<<<<<<< HEAD
 struct  Enum_t2AF27C02B8653AE29442467390005ABC74D8F521  : public ValueType_t4D0C27076F7C36E76190FB3328E232BCB1CD1FFF
+=======
+struct  Enum_t4135868527  : public ValueType_t3640485471
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
 public:
 };
 
+<<<<<<< HEAD
 struct Enum_t2AF27C02B8653AE29442467390005ABC74D8F521_StaticFields
 {
 public:
@@ -281,6 +390,19 @@ public:
 	inline CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
 	inline CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
 	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t4CC6ABF0AD71BEC97E3C2F1E9C5677E46D3A75C2* value)
+=======
+struct Enum_t4135868527_StaticFields
+{
+public:
+	// System.Char[] System.Enum::enumSeperatorCharArray
+	CharU5BU5D_t3528271667* ___enumSeperatorCharArray_0;
+
+public:
+	inline static int32_t get_offset_of_enumSeperatorCharArray_0() { return static_cast<int32_t>(offsetof(Enum_t4135868527_StaticFields, ___enumSeperatorCharArray_0)); }
+	inline CharU5BU5D_t3528271667* get_enumSeperatorCharArray_0() const { return ___enumSeperatorCharArray_0; }
+	inline CharU5BU5D_t3528271667** get_address_of_enumSeperatorCharArray_0() { return &___enumSeperatorCharArray_0; }
+	inline void set_enumSeperatorCharArray_0(CharU5BU5D_t3528271667* value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___enumSeperatorCharArray_0 = value;
 		Il2CppCodeGenWriteBarrier((&___enumSeperatorCharArray_0), value);
@@ -291,6 +413,7 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of System.Enum
+<<<<<<< HEAD
 struct Enum_t2AF27C02B8653AE29442467390005ABC74D8F521_marshaled_pinvoke
 {
 };
@@ -432,6 +555,18 @@ public:
 #endif // COLOR_T119BCA590009762C7223FDD3AF9706653AC84ED2_H
 #ifndef MATRIX4X4_T6BF60F70C9169DF14C9D2577672A44224B236ECA_H
 #define MATRIX4X4_T6BF60F70C9169DF14C9D2577672A44224B236ECA_H
+=======
+struct Enum_t4135868527_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of System.Enum
+struct Enum_t4135868527_marshaled_com
+{
+};
+#endif // ENUM_T4135868527_H
+#ifndef MATRIX4X4_T1817901843_H
+#define MATRIX4X4_T1817901843_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -439,7 +574,11 @@ public:
 #endif
 
 // UnityEngine.Matrix4x4
+<<<<<<< HEAD
 struct  Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA 
+=======
+struct  Matrix4x4_t1817901843 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Single UnityEngine.Matrix4x4::m00
@@ -476,7 +615,11 @@ public:
 	float ___m33_15;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m00_0() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m00_0)); }
+=======
+	inline static int32_t get_offset_of_m00_0() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m00_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m00_0() const { return ___m00_0; }
 	inline float* get_address_of_m00_0() { return &___m00_0; }
 	inline void set_m00_0(float value)
@@ -484,7 +627,11 @@ public:
 		___m00_0 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m10_1() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m10_1)); }
+=======
+	inline static int32_t get_offset_of_m10_1() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m10_1)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m10_1() const { return ___m10_1; }
 	inline float* get_address_of_m10_1() { return &___m10_1; }
 	inline void set_m10_1(float value)
@@ -492,7 +639,11 @@ public:
 		___m10_1 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m20_2() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m20_2)); }
+=======
+	inline static int32_t get_offset_of_m20_2() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m20_2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m20_2() const { return ___m20_2; }
 	inline float* get_address_of_m20_2() { return &___m20_2; }
 	inline void set_m20_2(float value)
@@ -500,7 +651,11 @@ public:
 		___m20_2 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m30_3() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m30_3)); }
+=======
+	inline static int32_t get_offset_of_m30_3() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m30_3)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m30_3() const { return ___m30_3; }
 	inline float* get_address_of_m30_3() { return &___m30_3; }
 	inline void set_m30_3(float value)
@@ -508,7 +663,11 @@ public:
 		___m30_3 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m01_4() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m01_4)); }
+=======
+	inline static int32_t get_offset_of_m01_4() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m01_4)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m01_4() const { return ___m01_4; }
 	inline float* get_address_of_m01_4() { return &___m01_4; }
 	inline void set_m01_4(float value)
@@ -516,7 +675,11 @@ public:
 		___m01_4 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m11_5() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m11_5)); }
+=======
+	inline static int32_t get_offset_of_m11_5() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m11_5)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m11_5() const { return ___m11_5; }
 	inline float* get_address_of_m11_5() { return &___m11_5; }
 	inline void set_m11_5(float value)
@@ -524,7 +687,11 @@ public:
 		___m11_5 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m21_6() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m21_6)); }
+=======
+	inline static int32_t get_offset_of_m21_6() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m21_6)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m21_6() const { return ___m21_6; }
 	inline float* get_address_of_m21_6() { return &___m21_6; }
 	inline void set_m21_6(float value)
@@ -532,7 +699,11 @@ public:
 		___m21_6 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m31_7() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m31_7)); }
+=======
+	inline static int32_t get_offset_of_m31_7() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m31_7)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m31_7() const { return ___m31_7; }
 	inline float* get_address_of_m31_7() { return &___m31_7; }
 	inline void set_m31_7(float value)
@@ -540,7 +711,11 @@ public:
 		___m31_7 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m02_8() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m02_8)); }
+=======
+	inline static int32_t get_offset_of_m02_8() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m02_8)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m02_8() const { return ___m02_8; }
 	inline float* get_address_of_m02_8() { return &___m02_8; }
 	inline void set_m02_8(float value)
@@ -548,7 +723,11 @@ public:
 		___m02_8 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m12_9() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m12_9)); }
+=======
+	inline static int32_t get_offset_of_m12_9() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m12_9)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m12_9() const { return ___m12_9; }
 	inline float* get_address_of_m12_9() { return &___m12_9; }
 	inline void set_m12_9(float value)
@@ -556,7 +735,11 @@ public:
 		___m12_9 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m22_10() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m22_10)); }
+=======
+	inline static int32_t get_offset_of_m22_10() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m22_10)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m22_10() const { return ___m22_10; }
 	inline float* get_address_of_m22_10() { return &___m22_10; }
 	inline void set_m22_10(float value)
@@ -564,7 +747,11 @@ public:
 		___m22_10 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m32_11() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m32_11)); }
+=======
+	inline static int32_t get_offset_of_m32_11() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m32_11)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m32_11() const { return ___m32_11; }
 	inline float* get_address_of_m32_11() { return &___m32_11; }
 	inline void set_m32_11(float value)
@@ -572,7 +759,11 @@ public:
 		___m32_11 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m03_12() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m03_12)); }
+=======
+	inline static int32_t get_offset_of_m03_12() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m03_12)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m03_12() const { return ___m03_12; }
 	inline float* get_address_of_m03_12() { return &___m03_12; }
 	inline void set_m03_12(float value)
@@ -580,7 +771,11 @@ public:
 		___m03_12 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m13_13() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m13_13)); }
+=======
+	inline static int32_t get_offset_of_m13_13() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m13_13)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m13_13() const { return ___m13_13; }
 	inline float* get_address_of_m13_13() { return &___m13_13; }
 	inline void set_m13_13(float value)
@@ -588,7 +783,11 @@ public:
 		___m13_13 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m23_14() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m23_14)); }
+=======
+	inline static int32_t get_offset_of_m23_14() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m23_14)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m23_14() const { return ___m23_14; }
 	inline float* get_address_of_m23_14() { return &___m23_14; }
 	inline void set_m23_14(float value)
@@ -596,7 +795,11 @@ public:
 		___m23_14 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m33_15() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA, ___m33_15)); }
+=======
+	inline static int32_t get_offset_of_m33_15() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843, ___m33_15)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m33_15() const { return ___m33_15; }
 	inline float* get_address_of_m33_15() { return &___m33_15; }
 	inline void set_m33_15(float value)
@@ -605,6 +808,7 @@ public:
 	}
 };
 
+<<<<<<< HEAD
 struct Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA_StaticFields
 {
 public:
@@ -618,14 +822,36 @@ public:
 	inline Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  get_zeroMatrix_16() const { return ___zeroMatrix_16; }
 	inline Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA * get_address_of_zeroMatrix_16() { return &___zeroMatrix_16; }
 	inline void set_zeroMatrix_16(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  value)
+=======
+struct Matrix4x4_t1817901843_StaticFields
+{
+public:
+	// UnityEngine.Matrix4x4 UnityEngine.Matrix4x4::zeroMatrix
+	Matrix4x4_t1817901843  ___zeroMatrix_16;
+	// UnityEngine.Matrix4x4 UnityEngine.Matrix4x4::identityMatrix
+	Matrix4x4_t1817901843  ___identityMatrix_17;
+
+public:
+	inline static int32_t get_offset_of_zeroMatrix_16() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843_StaticFields, ___zeroMatrix_16)); }
+	inline Matrix4x4_t1817901843  get_zeroMatrix_16() const { return ___zeroMatrix_16; }
+	inline Matrix4x4_t1817901843 * get_address_of_zeroMatrix_16() { return &___zeroMatrix_16; }
+	inline void set_zeroMatrix_16(Matrix4x4_t1817901843  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___zeroMatrix_16 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_identityMatrix_17() { return static_cast<int32_t>(offsetof(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA_StaticFields, ___identityMatrix_17)); }
 	inline Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  get_identityMatrix_17() const { return ___identityMatrix_17; }
 	inline Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA * get_address_of_identityMatrix_17() { return &___identityMatrix_17; }
 	inline void set_identityMatrix_17(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  value)
+=======
+	inline static int32_t get_offset_of_identityMatrix_17() { return static_cast<int32_t>(offsetof(Matrix4x4_t1817901843_StaticFields, ___identityMatrix_17)); }
+	inline Matrix4x4_t1817901843  get_identityMatrix_17() const { return ___identityMatrix_17; }
+	inline Matrix4x4_t1817901843 * get_address_of_identityMatrix_17() { return &___identityMatrix_17; }
+	inline void set_identityMatrix_17(Matrix4x4_t1817901843  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___identityMatrix_17 = value;
 	}
@@ -634,9 +860,72 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // MATRIX4X4_T6BF60F70C9169DF14C9D2577672A44224B236ECA_H
 #ifndef TILEANIMATIONDATA_T2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_H
 #define TILEANIMATIONDATA_T2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_H
+=======
+#endif // MATRIX4X4_T1817901843_H
+#ifndef BOOLEAN_T97287965_H
+#define BOOLEAN_T97287965_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Boolean
+struct  Boolean_t97287965 
+{
+public:
+	// System.Boolean System.Boolean::m_value
+	bool ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(Boolean_t97287965, ___m_value_0)); }
+	inline bool get_m_value_0() const { return ___m_value_0; }
+	inline bool* get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(bool value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+struct Boolean_t97287965_StaticFields
+{
+public:
+	// System.String System.Boolean::TrueString
+	String_t* ___TrueString_5;
+	// System.String System.Boolean::FalseString
+	String_t* ___FalseString_6;
+
+public:
+	inline static int32_t get_offset_of_TrueString_5() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___TrueString_5)); }
+	inline String_t* get_TrueString_5() const { return ___TrueString_5; }
+	inline String_t** get_address_of_TrueString_5() { return &___TrueString_5; }
+	inline void set_TrueString_5(String_t* value)
+	{
+		___TrueString_5 = value;
+		Il2CppCodeGenWriteBarrier((&___TrueString_5), value);
+	}
+
+	inline static int32_t get_offset_of_FalseString_6() { return static_cast<int32_t>(offsetof(Boolean_t97287965_StaticFields, ___FalseString_6)); }
+	inline String_t* get_FalseString_6() const { return ___FalseString_6; }
+	inline String_t** get_address_of_FalseString_6() { return &___FalseString_6; }
+	inline void set_FalseString_6(String_t* value)
+	{
+		___FalseString_6 = value;
+		Il2CppCodeGenWriteBarrier((&___FalseString_6), value);
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // BOOLEAN_T97287965_H
+#ifndef TILEANIMATIONDATA_T649120048_H
+#define TILEANIMATIONDATA_T649120048_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -644,27 +933,46 @@ public:
 #endif
 
 // UnityEngine.Tilemaps.TileAnimationData
+<<<<<<< HEAD
 struct  TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8 
 {
 public:
 	// UnityEngine.Sprite[] UnityEngine.Tilemaps.TileAnimationData::m_AnimatedSprites
 	SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7* ___m_AnimatedSprites_0;
+=======
+struct  TileAnimationData_t649120048 
+{
+public:
+	// UnityEngine.Sprite[] UnityEngine.Tilemaps.TileAnimationData::m_AnimatedSprites
+	SpriteU5BU5D_t2581906349* ___m_AnimatedSprites_0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	// System.Single UnityEngine.Tilemaps.TileAnimationData::m_AnimationSpeed
 	float ___m_AnimationSpeed_1;
 	// System.Single UnityEngine.Tilemaps.TileAnimationData::m_AnimationStartTime
 	float ___m_AnimationStartTime_2;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_AnimatedSprites_0() { return static_cast<int32_t>(offsetof(TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8, ___m_AnimatedSprites_0)); }
 	inline SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7* get_m_AnimatedSprites_0() const { return ___m_AnimatedSprites_0; }
 	inline SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7** get_address_of_m_AnimatedSprites_0() { return &___m_AnimatedSprites_0; }
 	inline void set_m_AnimatedSprites_0(SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7* value)
+=======
+	inline static int32_t get_offset_of_m_AnimatedSprites_0() { return static_cast<int32_t>(offsetof(TileAnimationData_t649120048, ___m_AnimatedSprites_0)); }
+	inline SpriteU5BU5D_t2581906349* get_m_AnimatedSprites_0() const { return ___m_AnimatedSprites_0; }
+	inline SpriteU5BU5D_t2581906349** get_address_of_m_AnimatedSprites_0() { return &___m_AnimatedSprites_0; }
+	inline void set_m_AnimatedSprites_0(SpriteU5BU5D_t2581906349* value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___m_AnimatedSprites_0 = value;
 		Il2CppCodeGenWriteBarrier((&___m_AnimatedSprites_0), value);
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_AnimationSpeed_1() { return static_cast<int32_t>(offsetof(TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8, ___m_AnimationSpeed_1)); }
+=======
+	inline static int32_t get_offset_of_m_AnimationSpeed_1() { return static_cast<int32_t>(offsetof(TileAnimationData_t649120048, ___m_AnimationSpeed_1)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m_AnimationSpeed_1() const { return ___m_AnimationSpeed_1; }
 	inline float* get_address_of_m_AnimationSpeed_1() { return &___m_AnimationSpeed_1; }
 	inline void set_m_AnimationSpeed_1(float value)
@@ -672,11 +980,18 @@ public:
 		___m_AnimationSpeed_1 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_AnimationStartTime_2() { return static_cast<int32_t>(offsetof(TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8, ___m_AnimationStartTime_2)); }
+=======
+	inline static int32_t get_offset_of_m_AnimationStartTime_2() { return static_cast<int32_t>(offsetof(TileAnimationData_t649120048, ___m_AnimationStartTime_2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline float get_m_AnimationStartTime_2() const { return ___m_AnimationStartTime_2; }
 	inline float* get_address_of_m_AnimationStartTime_2() { return &___m_AnimationStartTime_2; }
 	inline void set_m_AnimationStartTime_2(float value)
 	{
+<<<<<<< HEAD
+		___m_AnimationStartTime_2 = value;
+=======
 		___m_AnimationStartTime_2 = value;
 	}
 };
@@ -684,6 +999,94 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+// Native definition for P/Invoke marshalling of UnityEngine.Tilemaps.TileAnimationData
+struct TileAnimationData_t649120048_marshaled_pinvoke
+{
+	SpriteU5BU5D_t2581906349* ___m_AnimatedSprites_0;
+	float ___m_AnimationSpeed_1;
+	float ___m_AnimationStartTime_2;
+};
+// Native definition for COM marshalling of UnityEngine.Tilemaps.TileAnimationData
+struct TileAnimationData_t649120048_marshaled_com
+{
+	SpriteU5BU5D_t2581906349* ___m_AnimatedSprites_0;
+	float ___m_AnimationSpeed_1;
+	float ___m_AnimationStartTime_2;
+};
+#endif // TILEANIMATIONDATA_T649120048_H
+#ifndef VOID_T1185182177_H
+#define VOID_T1185182177_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Void
+struct  Void_t1185182177 
+{
+public:
+	union
+	{
+		struct
+		{
+		};
+		uint8_t Void_t1185182177__padding[1];
+	};
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // VOID_T1185182177_H
+#ifndef INTPTR_T_H
+#define INTPTR_T_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.IntPtr
+struct  IntPtr_t 
+{
+public:
+	// System.Void* System.IntPtr::m_value
+	void* ___m_value_0;
+
+public:
+	inline static int32_t get_offset_of_m_value_0() { return static_cast<int32_t>(offsetof(IntPtr_t, ___m_value_0)); }
+	inline void* get_m_value_0() const { return ___m_value_0; }
+	inline void** get_address_of_m_value_0() { return &___m_value_0; }
+	inline void set_m_value_0(void* value)
+	{
+		___m_value_0 = value;
+	}
+};
+
+struct IntPtr_t_StaticFields
+{
+public:
+	// System.IntPtr System.IntPtr::Zero
+	intptr_t ___Zero_1;
+
+public:
+	inline static int32_t get_offset_of_Zero_1() { return static_cast<int32_t>(offsetof(IntPtr_t_StaticFields, ___Zero_1)); }
+	inline intptr_t get_Zero_1() const { return ___Zero_1; }
+	inline intptr_t* get_address_of_Zero_1() { return &___Zero_1; }
+	inline void set_Zero_1(intptr_t value)
+	{
+		___Zero_1 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
 // Native definition for P/Invoke marshalling of UnityEngine.Tilemaps.TileAnimationData
 struct TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshaled_pinvoke
 {
@@ -701,6 +1104,11 @@ struct TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshaled_com
 #endif // TILEANIMATIONDATA_T2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_H
 #ifndef VECTOR3INT_TA843C5F8C2EB42492786C5AF82C3E1F4929942B4_H
 #define VECTOR3INT_TA843C5F8C2EB42492786C5AF82C3E1F4929942B4_H
+=======
+#endif // INTPTR_T_H
+#ifndef VECTOR3INT_T741115188_H
+#define VECTOR3INT_T741115188_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -708,7 +1116,11 @@ struct TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshaled_com
 #endif
 
 // UnityEngine.Vector3Int
+<<<<<<< HEAD
 struct  Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 
+=======
+struct  Vector3Int_t741115188 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Vector3Int::m_X
@@ -719,7 +1131,11 @@ public:
 	int32_t ___m_Z_2;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_X_0() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4, ___m_X_0)); }
+=======
+	inline static int32_t get_offset_of_m_X_0() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188, ___m_X_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_m_X_0() const { return ___m_X_0; }
 	inline int32_t* get_address_of_m_X_0() { return &___m_X_0; }
 	inline void set_m_X_0(int32_t value)
@@ -727,7 +1143,11 @@ public:
 		___m_X_0 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_Y_1() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4, ___m_Y_1)); }
+=======
+	inline static int32_t get_offset_of_m_Y_1() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188, ___m_Y_1)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_m_Y_1() const { return ___m_Y_1; }
 	inline int32_t* get_address_of_m_Y_1() { return &___m_Y_1; }
 	inline void set_m_Y_1(int32_t value)
@@ -735,7 +1155,11 @@ public:
 		___m_Y_1 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_Z_2() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4, ___m_Z_2)); }
+=======
+	inline static int32_t get_offset_of_m_Z_2() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188, ___m_Z_2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_m_Z_2() const { return ___m_Z_2; }
 	inline int32_t* get_address_of_m_Z_2() { return &___m_Z_2; }
 	inline void set_m_Z_2(int32_t value)
@@ -744,6 +1168,7 @@ public:
 	}
 };
 
+<<<<<<< HEAD
 struct Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4_StaticFields
 {
 public:
@@ -765,46 +1190,104 @@ public:
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  get_s_Zero_3() const { return ___s_Zero_3; }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * get_address_of_s_Zero_3() { return &___s_Zero_3; }
 	inline void set_s_Zero_3(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  value)
+=======
+struct Vector3Int_t741115188_StaticFields
+{
+public:
+	// UnityEngine.Vector3Int UnityEngine.Vector3Int::s_Zero
+	Vector3Int_t741115188  ___s_Zero_3;
+	// UnityEngine.Vector3Int UnityEngine.Vector3Int::s_One
+	Vector3Int_t741115188  ___s_One_4;
+	// UnityEngine.Vector3Int UnityEngine.Vector3Int::s_Up
+	Vector3Int_t741115188  ___s_Up_5;
+	// UnityEngine.Vector3Int UnityEngine.Vector3Int::s_Down
+	Vector3Int_t741115188  ___s_Down_6;
+	// UnityEngine.Vector3Int UnityEngine.Vector3Int::s_Left
+	Vector3Int_t741115188  ___s_Left_7;
+	// UnityEngine.Vector3Int UnityEngine.Vector3Int::s_Right
+	Vector3Int_t741115188  ___s_Right_8;
+
+public:
+	inline static int32_t get_offset_of_s_Zero_3() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188_StaticFields, ___s_Zero_3)); }
+	inline Vector3Int_t741115188  get_s_Zero_3() const { return ___s_Zero_3; }
+	inline Vector3Int_t741115188 * get_address_of_s_Zero_3() { return &___s_Zero_3; }
+	inline void set_s_Zero_3(Vector3Int_t741115188  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_Zero_3 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_s_One_4() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4_StaticFields, ___s_One_4)); }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  get_s_One_4() const { return ___s_One_4; }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * get_address_of_s_One_4() { return &___s_One_4; }
 	inline void set_s_One_4(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  value)
+=======
+	inline static int32_t get_offset_of_s_One_4() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188_StaticFields, ___s_One_4)); }
+	inline Vector3Int_t741115188  get_s_One_4() const { return ___s_One_4; }
+	inline Vector3Int_t741115188 * get_address_of_s_One_4() { return &___s_One_4; }
+	inline void set_s_One_4(Vector3Int_t741115188  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_One_4 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_s_Up_5() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4_StaticFields, ___s_Up_5)); }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  get_s_Up_5() const { return ___s_Up_5; }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * get_address_of_s_Up_5() { return &___s_Up_5; }
 	inline void set_s_Up_5(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  value)
+=======
+	inline static int32_t get_offset_of_s_Up_5() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188_StaticFields, ___s_Up_5)); }
+	inline Vector3Int_t741115188  get_s_Up_5() const { return ___s_Up_5; }
+	inline Vector3Int_t741115188 * get_address_of_s_Up_5() { return &___s_Up_5; }
+	inline void set_s_Up_5(Vector3Int_t741115188  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_Up_5 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_s_Down_6() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4_StaticFields, ___s_Down_6)); }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  get_s_Down_6() const { return ___s_Down_6; }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * get_address_of_s_Down_6() { return &___s_Down_6; }
 	inline void set_s_Down_6(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  value)
+=======
+	inline static int32_t get_offset_of_s_Down_6() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188_StaticFields, ___s_Down_6)); }
+	inline Vector3Int_t741115188  get_s_Down_6() const { return ___s_Down_6; }
+	inline Vector3Int_t741115188 * get_address_of_s_Down_6() { return &___s_Down_6; }
+	inline void set_s_Down_6(Vector3Int_t741115188  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_Down_6 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_s_Left_7() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4_StaticFields, ___s_Left_7)); }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  get_s_Left_7() const { return ___s_Left_7; }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * get_address_of_s_Left_7() { return &___s_Left_7; }
 	inline void set_s_Left_7(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  value)
+=======
+	inline static int32_t get_offset_of_s_Left_7() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188_StaticFields, ___s_Left_7)); }
+	inline Vector3Int_t741115188  get_s_Left_7() const { return ___s_Left_7; }
+	inline Vector3Int_t741115188 * get_address_of_s_Left_7() { return &___s_Left_7; }
+	inline void set_s_Left_7(Vector3Int_t741115188  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_Left_7 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_s_Right_8() { return static_cast<int32_t>(offsetof(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4_StaticFields, ___s_Right_8)); }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  get_s_Right_8() const { return ___s_Right_8; }
 	inline Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * get_address_of_s_Right_8() { return &___s_Right_8; }
 	inline void set_s_Right_8(Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  value)
+=======
+	inline static int32_t get_offset_of_s_Right_8() { return static_cast<int32_t>(offsetof(Vector3Int_t741115188_StaticFields, ___s_Right_8)); }
+	inline Vector3Int_t741115188  get_s_Right_8() const { return ___s_Right_8; }
+	inline Vector3Int_t741115188 * get_address_of_s_Right_8() { return &___s_Right_8; }
+	inline void set_s_Right_8(Vector3Int_t741115188  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___s_Right_8 = value;
 	}
@@ -813,9 +1296,74 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // VECTOR3INT_TA843C5F8C2EB42492786C5AF82C3E1F4929942B4_H
 #ifndef OBJECT_TAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_H
 #define OBJECT_TAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_H
+=======
+#endif // VECTOR3INT_T741115188_H
+#ifndef COLOR_T2555686324_H
+#define COLOR_T2555686324_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Color
+struct  Color_t2555686324 
+{
+public:
+	// System.Single UnityEngine.Color::r
+	float ___r_0;
+	// System.Single UnityEngine.Color::g
+	float ___g_1;
+	// System.Single UnityEngine.Color::b
+	float ___b_2;
+	// System.Single UnityEngine.Color::a
+	float ___a_3;
+
+public:
+	inline static int32_t get_offset_of_r_0() { return static_cast<int32_t>(offsetof(Color_t2555686324, ___r_0)); }
+	inline float get_r_0() const { return ___r_0; }
+	inline float* get_address_of_r_0() { return &___r_0; }
+	inline void set_r_0(float value)
+	{
+		___r_0 = value;
+	}
+
+	inline static int32_t get_offset_of_g_1() { return static_cast<int32_t>(offsetof(Color_t2555686324, ___g_1)); }
+	inline float get_g_1() const { return ___g_1; }
+	inline float* get_address_of_g_1() { return &___g_1; }
+	inline void set_g_1(float value)
+	{
+		___g_1 = value;
+	}
+
+	inline static int32_t get_offset_of_b_2() { return static_cast<int32_t>(offsetof(Color_t2555686324, ___b_2)); }
+	inline float get_b_2() const { return ___b_2; }
+	inline float* get_address_of_b_2() { return &___b_2; }
+	inline void set_b_2(float value)
+	{
+		___b_2 = value;
+	}
+
+	inline static int32_t get_offset_of_a_3() { return static_cast<int32_t>(offsetof(Color_t2555686324, ___a_3)); }
+	inline float get_a_3() const { return ___a_3; }
+	inline float* get_address_of_a_3() { return &___a_3; }
+	inline void set_a_3(float value)
+	{
+		___a_3 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // COLOR_T2555686324_H
+#ifndef OBJECT_T631007953_H
+#define OBJECT_T631007953_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -823,14 +1371,22 @@ public:
 #endif
 
 // UnityEngine.Object
+<<<<<<< HEAD
 struct  Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0  : public RuntimeObject
+=======
+struct  Object_t631007953  : public RuntimeObject
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.IntPtr UnityEngine.Object::m_CachedPtr
 	intptr_t ___m_CachedPtr_0;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0, ___m_CachedPtr_0)); }
+=======
+	inline static int32_t get_offset_of_m_CachedPtr_0() { return static_cast<int32_t>(offsetof(Object_t631007953, ___m_CachedPtr_0)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline intptr_t get_m_CachedPtr_0() const { return ___m_CachedPtr_0; }
 	inline intptr_t* get_address_of_m_CachedPtr_0() { return &___m_CachedPtr_0; }
 	inline void set_m_CachedPtr_0(intptr_t value)
@@ -839,14 +1395,22 @@ public:
 	}
 };
 
+<<<<<<< HEAD
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_StaticFields
+=======
+struct Object_t631007953_StaticFields
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Object::OffsetOfInstanceIDInCPlusPlusObject
 	int32_t ___OffsetOfInstanceIDInCPlusPlusObject_1;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
+=======
+	inline static int32_t get_offset_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return static_cast<int32_t>(offsetof(Object_t631007953_StaticFields, ___OffsetOfInstanceIDInCPlusPlusObject_1)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_OffsetOfInstanceIDInCPlusPlusObject_1() const { return ___OffsetOfInstanceIDInCPlusPlusObject_1; }
 	inline int32_t* get_address_of_OffsetOfInstanceIDInCPlusPlusObject_1() { return &___OffsetOfInstanceIDInCPlusPlusObject_1; }
 	inline void set_OffsetOfInstanceIDInCPlusPlusObject_1(int32_t value)
@@ -859,11 +1423,16 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of UnityEngine.Object
+<<<<<<< HEAD
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_pinvoke
+=======
+struct Object_t631007953_marshaled_pinvoke
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	intptr_t ___m_CachedPtr_0;
 };
 // Native definition for COM marshalling of UnityEngine.Object
+<<<<<<< HEAD
 struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_com
 {
 	intptr_t ___m_CachedPtr_0;
@@ -871,6 +1440,15 @@ struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_com
 #endif // OBJECT_TAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_H
 #ifndef COLLIDERTYPE_TCF48B308BF04CE1D262A726D500126E8C8859F2B_H
 #define COLLIDERTYPE_TCF48B308BF04CE1D262A726D500126E8C8859F2B_H
+=======
+struct Object_t631007953_marshaled_com
+{
+	intptr_t ___m_CachedPtr_0;
+};
+#endif // OBJECT_T631007953_H
+#ifndef COLLIDERTYPE_T2056028780_H
+#define COLLIDERTYPE_T2056028780_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -878,14 +1456,22 @@ struct Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_com
 #endif
 
 // UnityEngine.Tilemaps.Tile/ColliderType
+<<<<<<< HEAD
 struct  ColliderType_tCF48B308BF04CE1D262A726D500126E8C8859F2B 
+=======
+struct  ColliderType_t2056028780 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Tilemaps.Tile/ColliderType::value__
 	int32_t ___value___2;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(ColliderType_tCF48B308BF04CE1D262A726D500126E8C8859F2B, ___value___2)); }
+=======
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(ColliderType_t2056028780, ___value___2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_value___2() const { return ___value___2; }
 	inline int32_t* get_address_of_value___2() { return &___value___2; }
 	inline void set_value___2(int32_t value)
@@ -897,9 +1483,15 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // COLLIDERTYPE_TCF48B308BF04CE1D262A726D500126E8C8859F2B_H
 #ifndef TILEFLAGS_TBD601639E3CC4B4BA675548F3B8F17B709A974AF_H
 #define TILEFLAGS_TBD601639E3CC4B4BA675548F3B8F17B709A974AF_H
+=======
+#endif // COLLIDERTYPE_T2056028780_H
+#ifndef TILEFLAGS_T2429973456_H
+#define TILEFLAGS_T2429973456_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -907,14 +1499,22 @@ public:
 #endif
 
 // UnityEngine.Tilemaps.TileFlags
+<<<<<<< HEAD
 struct  TileFlags_tBD601639E3CC4B4BA675548F3B8F17B709A974AF 
+=======
+struct  TileFlags_t2429973456 
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 	// System.Int32 UnityEngine.Tilemaps.TileFlags::value__
 	int32_t ___value___2;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TileFlags_tBD601639E3CC4B4BA675548F3B8F17B709A974AF, ___value___2)); }
+=======
+	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(TileFlags_t2429973456, ___value___2)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_value___2() const { return ___value___2; }
 	inline int32_t* get_address_of_value___2() { return &___value___2; }
 	inline void set_value___2(int32_t value)
@@ -926,6 +1526,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // TILEFLAGS_TBD601639E3CC4B4BA675548F3B8F17B709A974AF_H
 #ifndef COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
 #define COMPONENT_T05064EF382ABCAF4B8C94F8A350EA85184C26621_H
@@ -969,6 +1570,11 @@ public:
 #endif // GAMEOBJECT_TBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F_H
 #ifndef SCRIPTABLEOBJECT_TAB015486CEAB714DA0D5C1BA389B84FB90427734_H
 #define SCRIPTABLEOBJECT_TAB015486CEAB714DA0D5C1BA389B84FB90427734_H
+=======
+#endif // TILEFLAGS_T2429973456_H
+#ifndef SCRIPTABLEOBJECT_T2528358522_H
+#define SCRIPTABLEOBJECT_T2528358522_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -976,7 +1582,11 @@ public:
 #endif
 
 // UnityEngine.ScriptableObject
+<<<<<<< HEAD
 struct  ScriptableObject_tAB015486CEAB714DA0D5C1BA389B84FB90427734  : public Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0
+=======
+struct  ScriptableObject_t2528358522  : public Object_t631007953
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -987,6 +1597,7 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of UnityEngine.ScriptableObject
+<<<<<<< HEAD
 struct ScriptableObject_tAB015486CEAB714DA0D5C1BA389B84FB90427734_marshaled_pinvoke : public Object_tAE11E5E46CD5C37C9F3E8950C00CD8B45666A2D0_marshaled_pinvoke
 {
 };
@@ -1017,6 +1628,18 @@ public:
 #endif // SPRITE_TCA09498D612D08DE668653AF1E9C12BF53434198_H
 #ifndef TILEDATA_T8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_H
 #define TILEDATA_T8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_H
+=======
+struct ScriptableObject_t2528358522_marshaled_pinvoke : public Object_t631007953_marshaled_pinvoke
+{
+};
+// Native definition for COM marshalling of UnityEngine.ScriptableObject
+struct ScriptableObject_t2528358522_marshaled_com : public Object_t631007953_marshaled_com
+{
+};
+#endif // SCRIPTABLEOBJECT_T2528358522_H
+#ifndef TILEDATA_T2042394239_H
+#define TILEDATA_T2042394239_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1024,6 +1647,7 @@ public:
 #endif
 
 // UnityEngine.Tilemaps.TileData
+<<<<<<< HEAD
 struct  TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 
 {
 public:
@@ -1035,47 +1659,92 @@ public:
 	Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  ___m_Transform_2;
 	// UnityEngine.GameObject UnityEngine.Tilemaps.TileData::m_GameObject
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___m_GameObject_3;
+=======
+struct  TileData_t2042394239 
+{
+public:
+	// UnityEngine.Sprite UnityEngine.Tilemaps.TileData::m_Sprite
+	Sprite_t280657092 * ___m_Sprite_0;
+	// UnityEngine.Color UnityEngine.Tilemaps.TileData::m_Color
+	Color_t2555686324  ___m_Color_1;
+	// UnityEngine.Matrix4x4 UnityEngine.Tilemaps.TileData::m_Transform
+	Matrix4x4_t1817901843  ___m_Transform_2;
+	// UnityEngine.GameObject UnityEngine.Tilemaps.TileData::m_GameObject
+	GameObject_t1113636619 * ___m_GameObject_3;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	// UnityEngine.Tilemaps.TileFlags UnityEngine.Tilemaps.TileData::m_Flags
 	int32_t ___m_Flags_4;
 	// UnityEngine.Tilemaps.Tile/ColliderType UnityEngine.Tilemaps.TileData::m_ColliderType
 	int32_t ___m_ColliderType_5;
 
 public:
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_Sprite_0() { return static_cast<int32_t>(offsetof(TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5, ___m_Sprite_0)); }
 	inline Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * get_m_Sprite_0() const { return ___m_Sprite_0; }
 	inline Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 ** get_address_of_m_Sprite_0() { return &___m_Sprite_0; }
 	inline void set_m_Sprite_0(Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * value)
+=======
+	inline static int32_t get_offset_of_m_Sprite_0() { return static_cast<int32_t>(offsetof(TileData_t2042394239, ___m_Sprite_0)); }
+	inline Sprite_t280657092 * get_m_Sprite_0() const { return ___m_Sprite_0; }
+	inline Sprite_t280657092 ** get_address_of_m_Sprite_0() { return &___m_Sprite_0; }
+	inline void set_m_Sprite_0(Sprite_t280657092 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___m_Sprite_0 = value;
 		Il2CppCodeGenWriteBarrier((&___m_Sprite_0), value);
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_Color_1() { return static_cast<int32_t>(offsetof(TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5, ___m_Color_1)); }
 	inline Color_t119BCA590009762C7223FDD3AF9706653AC84ED2  get_m_Color_1() const { return ___m_Color_1; }
 	inline Color_t119BCA590009762C7223FDD3AF9706653AC84ED2 * get_address_of_m_Color_1() { return &___m_Color_1; }
 	inline void set_m_Color_1(Color_t119BCA590009762C7223FDD3AF9706653AC84ED2  value)
+=======
+	inline static int32_t get_offset_of_m_Color_1() { return static_cast<int32_t>(offsetof(TileData_t2042394239, ___m_Color_1)); }
+	inline Color_t2555686324  get_m_Color_1() const { return ___m_Color_1; }
+	inline Color_t2555686324 * get_address_of_m_Color_1() { return &___m_Color_1; }
+	inline void set_m_Color_1(Color_t2555686324  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___m_Color_1 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_Transform_2() { return static_cast<int32_t>(offsetof(TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5, ___m_Transform_2)); }
 	inline Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  get_m_Transform_2() const { return ___m_Transform_2; }
 	inline Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA * get_address_of_m_Transform_2() { return &___m_Transform_2; }
 	inline void set_m_Transform_2(Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  value)
+=======
+	inline static int32_t get_offset_of_m_Transform_2() { return static_cast<int32_t>(offsetof(TileData_t2042394239, ___m_Transform_2)); }
+	inline Matrix4x4_t1817901843  get_m_Transform_2() const { return ___m_Transform_2; }
+	inline Matrix4x4_t1817901843 * get_address_of_m_Transform_2() { return &___m_Transform_2; }
+	inline void set_m_Transform_2(Matrix4x4_t1817901843  value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___m_Transform_2 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_GameObject_3() { return static_cast<int32_t>(offsetof(TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5, ___m_GameObject_3)); }
 	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * get_m_GameObject_3() const { return ___m_GameObject_3; }
 	inline GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F ** get_address_of_m_GameObject_3() { return &___m_GameObject_3; }
 	inline void set_m_GameObject_3(GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * value)
+=======
+	inline static int32_t get_offset_of_m_GameObject_3() { return static_cast<int32_t>(offsetof(TileData_t2042394239, ___m_GameObject_3)); }
+	inline GameObject_t1113636619 * get_m_GameObject_3() const { return ___m_GameObject_3; }
+	inline GameObject_t1113636619 ** get_address_of_m_GameObject_3() { return &___m_GameObject_3; }
+	inline void set_m_GameObject_3(GameObject_t1113636619 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		___m_GameObject_3 = value;
 		Il2CppCodeGenWriteBarrier((&___m_GameObject_3), value);
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_Flags_4() { return static_cast<int32_t>(offsetof(TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5, ___m_Flags_4)); }
+=======
+	inline static int32_t get_offset_of_m_Flags_4() { return static_cast<int32_t>(offsetof(TileData_t2042394239, ___m_Flags_4)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_m_Flags_4() const { return ___m_Flags_4; }
 	inline int32_t* get_address_of_m_Flags_4() { return &___m_Flags_4; }
 	inline void set_m_Flags_4(int32_t value)
@@ -1083,7 +1752,11 @@ public:
 		___m_Flags_4 = value;
 	}
 
+<<<<<<< HEAD
 	inline static int32_t get_offset_of_m_ColliderType_5() { return static_cast<int32_t>(offsetof(TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5, ___m_ColliderType_5)); }
+=======
+	inline static int32_t get_offset_of_m_ColliderType_5() { return static_cast<int32_t>(offsetof(TileData_t2042394239, ___m_ColliderType_5)); }
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	inline int32_t get_m_ColliderType_5() const { return ___m_ColliderType_5; }
 	inline int32_t* get_address_of_m_ColliderType_5() { return &___m_ColliderType_5; }
 	inline void set_m_ColliderType_5(int32_t value)
@@ -1096,16 +1769,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 // Native definition for P/Invoke marshalling of UnityEngine.Tilemaps.TileData
+<<<<<<< HEAD
 struct TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_marshaled_pinvoke
 {
 	Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * ___m_Sprite_0;
 	Color_t119BCA590009762C7223FDD3AF9706653AC84ED2  ___m_Color_1;
 	Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  ___m_Transform_2;
 	GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___m_GameObject_3;
+=======
+struct TileData_t2042394239_marshaled_pinvoke
+{
+	Sprite_t280657092 * ___m_Sprite_0;
+	Color_t2555686324  ___m_Color_1;
+	Matrix4x4_t1817901843  ___m_Transform_2;
+	GameObject_t1113636619 * ___m_GameObject_3;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	int32_t ___m_Flags_4;
 	int32_t ___m_ColliderType_5;
 };
 // Native definition for COM marshalling of UnityEngine.Tilemaps.TileData
+<<<<<<< HEAD
 struct TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_marshaled_com
 {
 	Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * ___m_Sprite_0;
@@ -1118,6 +1801,106 @@ struct TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_marshaled_com
 #endif // TILEDATA_T8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_H
 #ifndef BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
 #define BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
+=======
+struct TileData_t2042394239_marshaled_com
+{
+	Sprite_t280657092 * ___m_Sprite_0;
+	Color_t2555686324  ___m_Color_1;
+	Matrix4x4_t1817901843  ___m_Transform_2;
+	GameObject_t1113636619 * ___m_GameObject_3;
+	int32_t ___m_Flags_4;
+	int32_t ___m_ColliderType_5;
+};
+#endif // TILEDATA_T2042394239_H
+#ifndef COMPONENT_T1923634451_H
+#define COMPONENT_T1923634451_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+<<<<<<< HEAD
+// UnityEngine.Behaviour
+struct  Behaviour_tBDC7E9C3C898AD8348891B82D3E345801D920CA8  : public Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621
+=======
+// UnityEngine.Component
+struct  Component_t1923634451  : public Object_t631007953
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
+#endif // BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
+#ifndef TILEBASE_TD2158024AAA28EB0EC62F253FA1D1A76BC50F85E_H
+#define TILEBASE_TD2158024AAA28EB0EC62F253FA1D1A76BC50F85E_H
+=======
+#endif // COMPONENT_T1923634451_H
+#ifndef GAMEOBJECT_T1113636619_H
+#define GAMEOBJECT_T1113636619_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+<<<<<<< HEAD
+// UnityEngine.Tilemaps.TileBase
+struct  TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E  : public ScriptableObject_tAB015486CEAB714DA0D5C1BA389B84FB90427734
+=======
+// UnityEngine.GameObject
+struct  GameObject_t1113636619  : public Object_t631007953
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
+#endif // TILEBASE_TD2158024AAA28EB0EC62F253FA1D1A76BC50F85E_H
+#ifndef GRIDLAYOUT_T271F88A0992C64FE8E229D03480E3862B22D57F9_H
+#define GRIDLAYOUT_T271F88A0992C64FE8E229D03480E3862B22D57F9_H
+=======
+#endif // GAMEOBJECT_T1113636619_H
+#ifndef SPRITE_T280657092_H
+#define SPRITE_T280657092_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+<<<<<<< HEAD
+// UnityEngine.GridLayout
+struct  GridLayout_t271F88A0992C64FE8E229D03480E3862B22D57F9  : public Behaviour_tBDC7E9C3C898AD8348891B82D3E345801D920CA8
+=======
+// UnityEngine.Sprite
+struct  Sprite_t280657092  : public Object_t631007953
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SPRITE_T280657092_H
+#ifndef BEHAVIOUR_T1437897464_H
+#define BEHAVIOUR_T1437897464_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1125,7 +1908,7 @@ struct TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_marshaled_com
 #endif
 
 // UnityEngine.Behaviour
-struct  Behaviour_tBDC7E9C3C898AD8348891B82D3E345801D920CA8  : public Component_t05064EF382ABCAF4B8C94F8A350EA85184C26621
+struct  Behaviour_t1437897464  : public Component_t1923634451
 {
 public:
 
@@ -1135,9 +1918,9 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // BEHAVIOUR_TBDC7E9C3C898AD8348891B82D3E345801D920CA8_H
-#ifndef TILEBASE_TD2158024AAA28EB0EC62F253FA1D1A76BC50F85E_H
-#define TILEBASE_TD2158024AAA28EB0EC62F253FA1D1A76BC50F85E_H
+#endif // BEHAVIOUR_T1437897464_H
+#ifndef TILEBASE_T3985733243_H
+#define TILEBASE_T3985733243_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1145,7 +1928,8 @@ public:
 #endif
 
 // UnityEngine.Tilemaps.TileBase
-struct  TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E  : public ScriptableObject_tAB015486CEAB714DA0D5C1BA389B84FB90427734
+struct  TileBase_t3985733243  : public ScriptableObject_t2528358522
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 public:
 
@@ -1155,29 +1939,15 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // TILEBASE_TD2158024AAA28EB0EC62F253FA1D1A76BC50F85E_H
-#ifndef GRIDLAYOUT_T271F88A0992C64FE8E229D03480E3862B22D57F9_H
-#define GRIDLAYOUT_T271F88A0992C64FE8E229D03480E3862B22D57F9_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// UnityEngine.GridLayout
-struct  GridLayout_t271F88A0992C64FE8E229D03480E3862B22D57F9  : public Behaviour_tBDC7E9C3C898AD8348891B82D3E345801D920CA8
-{
-public:
-
-public:
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
+<<<<<<< HEAD
 #endif // GRIDLAYOUT_T271F88A0992C64FE8E229D03480E3862B22D57F9_H
 #ifndef TILE_T275C7CE9C854F2912C851F345CCC00C45EDDE7AE_H
 #define TILE_T275C7CE9C854F2912C851F345CCC00C45EDDE7AE_H
+=======
+#endif // TILEBASE_T3985733243_H
+#ifndef TILE_T1378929773_H
+#define TILE_T1378929773_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1185,6 +1955,7 @@ public:
 #endif
 
 // UnityEngine.Tilemaps.Tile
+<<<<<<< HEAD
 struct  Tile_t275C7CE9C854F2912C851F345CCC00C45EDDE7AE  : public TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E
 {
 public:
@@ -1250,23 +2021,95 @@ public:
 	inline void set_m_ColliderType_9(int32_t value)
 	{
 		___m_ColliderType_9 = value;
+=======
+struct  Tile_t1378929773  : public TileBase_t3985733243
+{
+public:
+	// UnityEngine.Sprite UnityEngine.Tilemaps.Tile::m_Sprite
+	Sprite_t280657092 * ___m_Sprite_2;
+	// UnityEngine.Color UnityEngine.Tilemaps.Tile::m_Color
+	Color_t2555686324  ___m_Color_3;
+	// UnityEngine.Matrix4x4 UnityEngine.Tilemaps.Tile::m_Transform
+	Matrix4x4_t1817901843  ___m_Transform_4;
+	// UnityEngine.GameObject UnityEngine.Tilemaps.Tile::m_InstancedGameObject
+	GameObject_t1113636619 * ___m_InstancedGameObject_5;
+	// UnityEngine.Tilemaps.TileFlags UnityEngine.Tilemaps.Tile::m_Flags
+	int32_t ___m_Flags_6;
+	// UnityEngine.Tilemaps.Tile/ColliderType UnityEngine.Tilemaps.Tile::m_ColliderType
+	int32_t ___m_ColliderType_7;
+
+public:
+	inline static int32_t get_offset_of_m_Sprite_2() { return static_cast<int32_t>(offsetof(Tile_t1378929773, ___m_Sprite_2)); }
+	inline Sprite_t280657092 * get_m_Sprite_2() const { return ___m_Sprite_2; }
+	inline Sprite_t280657092 ** get_address_of_m_Sprite_2() { return &___m_Sprite_2; }
+	inline void set_m_Sprite_2(Sprite_t280657092 * value)
+	{
+		___m_Sprite_2 = value;
+		Il2CppCodeGenWriteBarrier((&___m_Sprite_2), value);
+	}
+
+	inline static int32_t get_offset_of_m_Color_3() { return static_cast<int32_t>(offsetof(Tile_t1378929773, ___m_Color_3)); }
+	inline Color_t2555686324  get_m_Color_3() const { return ___m_Color_3; }
+	inline Color_t2555686324 * get_address_of_m_Color_3() { return &___m_Color_3; }
+	inline void set_m_Color_3(Color_t2555686324  value)
+	{
+		___m_Color_3 = value;
+	}
+
+	inline static int32_t get_offset_of_m_Transform_4() { return static_cast<int32_t>(offsetof(Tile_t1378929773, ___m_Transform_4)); }
+	inline Matrix4x4_t1817901843  get_m_Transform_4() const { return ___m_Transform_4; }
+	inline Matrix4x4_t1817901843 * get_address_of_m_Transform_4() { return &___m_Transform_4; }
+	inline void set_m_Transform_4(Matrix4x4_t1817901843  value)
+	{
+		___m_Transform_4 = value;
+	}
+
+	inline static int32_t get_offset_of_m_InstancedGameObject_5() { return static_cast<int32_t>(offsetof(Tile_t1378929773, ___m_InstancedGameObject_5)); }
+	inline GameObject_t1113636619 * get_m_InstancedGameObject_5() const { return ___m_InstancedGameObject_5; }
+	inline GameObject_t1113636619 ** get_address_of_m_InstancedGameObject_5() { return &___m_InstancedGameObject_5; }
+	inline void set_m_InstancedGameObject_5(GameObject_t1113636619 * value)
+	{
+		___m_InstancedGameObject_5 = value;
+		Il2CppCodeGenWriteBarrier((&___m_InstancedGameObject_5), value);
+	}
+
+	inline static int32_t get_offset_of_m_Flags_6() { return static_cast<int32_t>(offsetof(Tile_t1378929773, ___m_Flags_6)); }
+	inline int32_t get_m_Flags_6() const { return ___m_Flags_6; }
+	inline int32_t* get_address_of_m_Flags_6() { return &___m_Flags_6; }
+	inline void set_m_Flags_6(int32_t value)
+	{
+		___m_Flags_6 = value;
+	}
+
+	inline static int32_t get_offset_of_m_ColliderType_7() { return static_cast<int32_t>(offsetof(Tile_t1378929773, ___m_ColliderType_7)); }
+	inline int32_t get_m_ColliderType_7() const { return ___m_ColliderType_7; }
+	inline int32_t* get_address_of_m_ColliderType_7() { return &___m_ColliderType_7; }
+	inline void set_m_ColliderType_7(int32_t value)
+	{
+		___m_ColliderType_7 = value;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+<<<<<<< HEAD
 #endif // TILE_T275C7CE9C854F2912C851F345CCC00C45EDDE7AE_H
 #ifndef TILEMAP_T0F92148668211805A631B93488D4A629EC378B10_H
 #define TILEMAP_T0F92148668211805A631B93488D4A629EC378B10_H
+=======
+#endif // TILE_T1378929773_H
+#ifndef GRIDLAYOUT_T754322041_H
+#define GRIDLAYOUT_T754322041_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// UnityEngine.Tilemaps.Tilemap
-struct  Tilemap_t0F92148668211805A631B93488D4A629EC378B10  : public GridLayout_t271F88A0992C64FE8E229D03480E3862B22D57F9
+// UnityEngine.GridLayout
+struct  GridLayout_t754322041  : public Behaviour_t1437897464
 {
 public:
 
@@ -1276,6 +2119,32 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
+#endif // GRIDLAYOUT_T754322041_H
+#ifndef TILEMAP_T1578933799_H
+#define TILEMAP_T1578933799_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Tilemaps.Tilemap
+<<<<<<< HEAD
+struct  Tilemap_t0F92148668211805A631B93488D4A629EC378B10  : public GridLayout_t271F88A0992C64FE8E229D03480E3862B22D57F9
+=======
+struct  Tilemap_t1578933799  : public GridLayout_t754322041
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+<<<<<<< HEAD
 #endif // TILEMAP_T0F92148668211805A631B93488D4A629EC378B10_H
 // UnityEngine.Sprite[]
 struct SpriteU5BU5D_tF94AD07E062BC08ECD019A21E7A7B861654905F7  : public RuntimeArray
@@ -1285,21 +2154,41 @@ public:
 
 public:
 	inline Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * GetAt(il2cpp_array_size_t index) const
+=======
+#endif // TILEMAP_T1578933799_H
+// UnityEngine.Sprite[]
+struct SpriteU5BU5D_t2581906349  : public RuntimeArray
+{
+public:
+	ALIGN_FIELD (8) Sprite_t280657092 * m_Items[1];
+
+public:
+	inline Sprite_t280657092 * GetAt(il2cpp_array_size_t index) const
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		return m_Items[index];
 	}
+<<<<<<< HEAD
 	inline Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 ** GetAddressAt(il2cpp_array_size_t index)
+=======
+	inline Sprite_t280657092 ** GetAddressAt(il2cpp_array_size_t index)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		return m_Items + index;
 	}
+<<<<<<< HEAD
 	inline void SetAt(il2cpp_array_size_t index, Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * value)
+=======
+	inline void SetAt(il2cpp_array_size_t index, Sprite_t280657092 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		IL2CPP_ARRAY_BOUNDS_CHECK(index, (uint32_t)(this)->max_length);
 		m_Items[index] = value;
 		Il2CppCodeGenWriteBarrier(m_Items + index, value);
 	}
+<<<<<<< HEAD
 	inline Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * GetAtUnchecked(il2cpp_array_size_t index) const
 	{
 		return m_Items[index];
@@ -1309,6 +2198,17 @@ public:
 		return m_Items + index;
 	}
 	inline void SetAtUnchecked(il2cpp_array_size_t index, Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * value)
+=======
+	inline Sprite_t280657092 * GetAtUnchecked(il2cpp_array_size_t index) const
+	{
+		return m_Items[index];
+	}
+	inline Sprite_t280657092 ** GetAddressAtUnchecked(il2cpp_array_size_t index)
+	{
+		return m_Items + index;
+	}
+	inline void SetAtUnchecked(il2cpp_array_size_t index, Sprite_t280657092 * value)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	{
 		m_Items[index] = value;
 		Il2CppCodeGenWriteBarrier(m_Items + index, value);
@@ -1318,6 +2218,7 @@ public:
 
 
 // System.Void System.Object::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0 (RuntimeObject * __this, const RuntimeMethod* method);
 // System.Void UnityEngine.Tilemaps.Tilemap::RefreshTile(UnityEngine.Vector3Int)
 extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_m9F32ACD729A4C9D843662E956B38BB91351E01EA (Tilemap_t0F92148668211805A631B93488D4A629EC378B10 * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, const RuntimeMethod* method);
@@ -1347,6 +2248,37 @@ extern "C" IL2CPP_METHOD_ATTR void ScriptableObject__ctor_m6E2B3821A4A361556FC12
 extern "C" IL2CPP_METHOD_ATTR void ITilemap_RefreshTile_mA824B41C2B9791C91FC5FB3AA93DDD478713564C (ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, const RuntimeMethod* method);
 // System.Void UnityEngine.Tilemaps.Tilemap::RefreshTile_Injected(UnityEngine.Vector3Int&)
 extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_Injected_m71B01A4DDE057FE002AE5BEC5ACB38F04BC64792 (Tilemap_t0F92148668211805A631B93488D4A629EC378B10 * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * ___position0, const RuntimeMethod* method);
+=======
+extern "C" IL2CPP_METHOD_ATTR void Object__ctor_m297566312 (RuntimeObject * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.Tilemap::RefreshTile(UnityEngine.Vector3Int)
+extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_m1116399155 (Tilemap_t1578933799 * __this, Vector3Int_t741115188  ___position0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.ITilemap::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void ITilemap__ctor_m1535076762 (ITilemap_t3496540090 * __this, const RuntimeMethod* method);
+// UnityEngine.Color UnityEngine.Color::get_white()
+extern "C" IL2CPP_METHOD_ATTR Color_t2555686324  Color_get_white_m332174077 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
+// UnityEngine.Matrix4x4 UnityEngine.Matrix4x4::get_identity()
+extern "C" IL2CPP_METHOD_ATTR Matrix4x4_t1817901843  Matrix4x4_get_identity_m1406790249 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileBase::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void TileBase__ctor_m587868030 (TileBase_t3985733243 * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileData::set_sprite(UnityEngine.Sprite)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_sprite_m2765088979 (TileData_t2042394239 * __this, Sprite_t280657092 * ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileData::set_color(UnityEngine.Color)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_color_m2031655830 (TileData_t2042394239 * __this, Color_t2555686324  ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileData::set_transform(UnityEngine.Matrix4x4)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_transform_m1036780625 (TileData_t2042394239 * __this, Matrix4x4_t1817901843  ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileData::set_gameObject(UnityEngine.GameObject)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_gameObject_m4268609905 (TileData_t2042394239 * __this, GameObject_t1113636619 * ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileData::set_flags(UnityEngine.Tilemaps.TileFlags)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_flags_m4161876872 (TileData_t2042394239 * __this, int32_t ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.TileData::set_colliderType(UnityEngine.Tilemaps.Tile/ColliderType)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_colliderType_m1558905503 (TileData_t2042394239 * __this, int32_t ___value0, const RuntimeMethod* method);
+// System.Void UnityEngine.ScriptableObject::.ctor()
+extern "C" IL2CPP_METHOD_ATTR void ScriptableObject__ctor_m1310743131 (ScriptableObject_t2528358522 * __this, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.ITilemap::RefreshTile(UnityEngine.Vector3Int)
+extern "C" IL2CPP_METHOD_ATTR void ITilemap_RefreshTile_m959177989 (ITilemap_t3496540090 * __this, Vector3Int_t741115188  ___position0, const RuntimeMethod* method);
+// System.Void UnityEngine.Tilemaps.Tilemap::RefreshTile_Injected(UnityEngine.Vector3Int&)
+extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_Injected_m3594480345 (Tilemap_t1578933799 * __this, Vector3Int_t741115188 * ___position0, const RuntimeMethod* method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -1361,14 +2293,22 @@ extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_Injected_m71B01A4DDE057FE
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Tilemaps.ITilemap::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void ITilemap__ctor_m35D698BF933B4EF8217C29617B9F81E0E8826B7A (ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * __this, const RuntimeMethod* method)
 {
 	{
 		Object__ctor_m925ECA5E85CA100E3FB86A4F9E15C120E9A184C0(__this, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void ITilemap__ctor_m1535076762 (ITilemap_t3496540090 * __this, const RuntimeMethod* method)
+{
+	{
+		Object__ctor_m297566312(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Tilemaps.ITilemap::RefreshTile(UnityEngine.Vector3Int)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void ITilemap_RefreshTile_mA824B41C2B9791C91FC5FB3AA93DDD478713564C (ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, const RuntimeMethod* method)
 {
 	{
@@ -1376,15 +2316,29 @@ extern "C" IL2CPP_METHOD_ATTR void ITilemap_RefreshTile_mA824B41C2B9791C91FC5FB3
 		Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  L_1 = ___position0;
 		NullCheck(L_0);
 		Tilemap_RefreshTile_m9F32ACD729A4C9D843662E956B38BB91351E01EA(L_0, L_1, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void ITilemap_RefreshTile_m959177989 (ITilemap_t3496540090 * __this, Vector3Int_t741115188  ___position0, const RuntimeMethod* method)
+{
+	{
+		Tilemap_t1578933799 * L_0 = __this->get_m_Tilemap_1();
+		Vector3Int_t741115188  L_1 = ___position0;
+		NullCheck(L_0);
+		Tilemap_RefreshTile_m1116399155(L_0, L_1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // UnityEngine.Tilemaps.ITilemap UnityEngine.Tilemaps.ITilemap::CreateInstance()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ITilemap_CreateInstance_m3DD29D9D393B923E0901DB830E0FE9170757AF9E (const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR ITilemap_t3496540090 * ITilemap_CreateInstance_m2624613551 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (ITilemap_CreateInstance_m3DD29D9D393B923E0901DB830E0FE9170757AF9E_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -1394,13 +2348,28 @@ extern "C" IL2CPP_METHOD_ATTR ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3
 		ITilemap__ctor_m35D698BF933B4EF8217C29617B9F81E0E8826B7A(L_0, /*hidden argument*/NULL);
 		((ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3_StaticFields*)il2cpp_codegen_static_fields_for(ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3_il2cpp_TypeInfo_var))->set_s_Instance_0(L_0);
 		ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * L_1 = ((ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3_StaticFields*)il2cpp_codegen_static_fields_for(ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3_il2cpp_TypeInfo_var))->get_s_Instance_0();
+=======
+		il2cpp_codegen_initialize_method (ITilemap_CreateInstance_m2624613551_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	ITilemap_t3496540090 * V_0 = NULL;
+	{
+		ITilemap_t3496540090 * L_0 = (ITilemap_t3496540090 *)il2cpp_codegen_object_new(ITilemap_t3496540090_il2cpp_TypeInfo_var);
+		ITilemap__ctor_m1535076762(L_0, /*hidden argument*/NULL);
+		((ITilemap_t3496540090_StaticFields*)il2cpp_codegen_static_fields_for(ITilemap_t3496540090_il2cpp_TypeInfo_var))->set_s_Instance_0(L_0);
+		ITilemap_t3496540090 * L_1 = ((ITilemap_t3496540090_StaticFields*)il2cpp_codegen_static_fields_for(ITilemap_t3496540090_il2cpp_TypeInfo_var))->get_s_Instance_0();
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		V_0 = L_1;
 		goto IL_0016;
 	}
 
 IL_0016:
 	{
+<<<<<<< HEAD
 		ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * L_2 = V_0;
+=======
+		ITilemap_t3496540090 * L_2 = V_0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return L_2;
 	}
 }
@@ -1413,11 +2382,16 @@ IL_0016:
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Tilemaps.Tile::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void Tile__ctor_mCF182CC986391B7BC36D0C543E7D422F492FA445 (Tile_t275C7CE9C854F2912C851F345CCC00C45EDDE7AE * __this, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void Tile__ctor_m646807577 (Tile_t1378929773 * __this, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+<<<<<<< HEAD
 		il2cpp_codegen_initialize_method (Tile__ctor_mCF182CC986391B7BC36D0C543E7D422F492FA445_MetadataUsageId);
 		s_Il2CppMethodInitialized = true;
 	}
@@ -1582,10 +2556,25 @@ extern "C" IL2CPP_METHOD_ATTR void Tile_set_colliderType_mEE9420C62F7500856CB48E
 	{
 		int32_t L_0 = ___value0;
 		__this->set_m_ColliderType_9(L_0);
+=======
+		il2cpp_codegen_initialize_method (Tile__ctor_m646807577_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Color_t2555686324  L_0 = Color_get_white_m332174077(NULL /*static, unused*/, /*hidden argument*/NULL);
+		__this->set_m_Color_3(L_0);
+		IL2CPP_RUNTIME_CLASS_INIT(Matrix4x4_t1817901843_il2cpp_TypeInfo_var);
+		Matrix4x4_t1817901843  L_1 = Matrix4x4_get_identity_m1406790249(NULL /*static, unused*/, /*hidden argument*/NULL);
+		__this->set_m_Transform_4(L_1);
+		__this->set_m_Flags_6(1);
+		__this->set_m_ColliderType_7(1);
+		TileBase__ctor_m587868030(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Tilemaps.Tile::GetTileData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileData&)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void Tile_GetTileData_m370E5271B8270137DB62EF7890FA4AA7C7C71541 (Tile_t275C7CE9C854F2912C851F345CCC00C45EDDE7AE * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * ___tileData2, const RuntimeMethod* method)
 {
 	{
@@ -1607,6 +2596,29 @@ extern "C" IL2CPP_METHOD_ATTR void Tile_GetTileData_m370E5271B8270137DB62EF7890F
 		TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * L_10 = ___tileData2;
 		int32_t L_11 = __this->get_m_ColliderType_9();
 		TileData_set_colliderType_mC23D9C79557D9C0D41F507D4F8B427B843E5C11B((TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *)L_10, L_11, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void Tile_GetTileData_m1811823766 (Tile_t1378929773 * __this, Vector3Int_t741115188  ___position0, ITilemap_t3496540090 * ___tilemap1, TileData_t2042394239 * ___tileData2, const RuntimeMethod* method)
+{
+	{
+		TileData_t2042394239 * L_0 = ___tileData2;
+		Sprite_t280657092 * L_1 = __this->get_m_Sprite_2();
+		TileData_set_sprite_m2765088979(L_0, L_1, /*hidden argument*/NULL);
+		TileData_t2042394239 * L_2 = ___tileData2;
+		Color_t2555686324  L_3 = __this->get_m_Color_3();
+		TileData_set_color_m2031655830(L_2, L_3, /*hidden argument*/NULL);
+		TileData_t2042394239 * L_4 = ___tileData2;
+		Matrix4x4_t1817901843  L_5 = __this->get_m_Transform_4();
+		TileData_set_transform_m1036780625(L_4, L_5, /*hidden argument*/NULL);
+		TileData_t2042394239 * L_6 = ___tileData2;
+		GameObject_t1113636619 * L_7 = __this->get_m_InstancedGameObject_5();
+		TileData_set_gameObject_m4268609905(L_6, L_7, /*hidden argument*/NULL);
+		TileData_t2042394239 * L_8 = ___tileData2;
+		int32_t L_9 = __this->get_m_Flags_6();
+		TileData_set_flags_m4161876872(L_8, L_9, /*hidden argument*/NULL);
+		TileData_t2042394239 * L_10 = ___tileData2;
+		int32_t L_11 = __this->get_m_ColliderType_7();
+		TileData_set_colliderType_m1558905503(L_10, L_11, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
@@ -1627,6 +2639,7 @@ extern "C" IL2CPP_METHOD_ATTR void Tile_GetTileData_m370E5271B8270137DB62EF7890F
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // Conversion methods for marshalling of: UnityEngine.Tilemaps.TileAnimationData
+<<<<<<< HEAD
 extern "C" void TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshal_pinvoke(const TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8& unmarshaled, TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshaled_pinvoke& marshaled)
 {
 	Exception_t* ___m_AnimatedSprites_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_AnimatedSprites' of type 'TileAnimationData': Reference type field marshaling is not supported.");
@@ -1654,6 +2667,35 @@ extern "C" void TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_mars
 }
 // Conversion method for clean up from marshalling of: UnityEngine.Tilemaps.TileAnimationData
 extern "C" void TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshal_com_cleanup(TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_marshaled_com& marshaled)
+=======
+extern "C" void TileAnimationData_t649120048_marshal_pinvoke(const TileAnimationData_t649120048& unmarshaled, TileAnimationData_t649120048_marshaled_pinvoke& marshaled)
+{
+	Exception_t* ___m_AnimatedSprites_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_AnimatedSprites' of type 'TileAnimationData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_AnimatedSprites_0Exception,NULL);
+}
+extern "C" void TileAnimationData_t649120048_marshal_pinvoke_back(const TileAnimationData_t649120048_marshaled_pinvoke& marshaled, TileAnimationData_t649120048& unmarshaled)
+{
+	Exception_t* ___m_AnimatedSprites_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_AnimatedSprites' of type 'TileAnimationData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_AnimatedSprites_0Exception,NULL);
+}
+// Conversion method for clean up from marshalling of: UnityEngine.Tilemaps.TileAnimationData
+extern "C" void TileAnimationData_t649120048_marshal_pinvoke_cleanup(TileAnimationData_t649120048_marshaled_pinvoke& marshaled)
+{
+}
+// Conversion methods for marshalling of: UnityEngine.Tilemaps.TileAnimationData
+extern "C" void TileAnimationData_t649120048_marshal_com(const TileAnimationData_t649120048& unmarshaled, TileAnimationData_t649120048_marshaled_com& marshaled)
+{
+	Exception_t* ___m_AnimatedSprites_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_AnimatedSprites' of type 'TileAnimationData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_AnimatedSprites_0Exception,NULL);
+}
+extern "C" void TileAnimationData_t649120048_marshal_com_back(const TileAnimationData_t649120048_marshaled_com& marshaled, TileAnimationData_t649120048& unmarshaled)
+{
+	Exception_t* ___m_AnimatedSprites_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_AnimatedSprites' of type 'TileAnimationData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_AnimatedSprites_0Exception,NULL);
+}
+// Conversion method for clean up from marshalling of: UnityEngine.Tilemaps.TileAnimationData
+extern "C" void TileAnimationData_t649120048_marshal_com_cleanup(TileAnimationData_t649120048_marshaled_com& marshaled)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 }
 #ifdef __clang__
@@ -1665,14 +2707,22 @@ extern "C" void TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8_mars
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Tilemaps.TileBase::.ctor()
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void TileBase__ctor_m24A60EEED10D8C5667B24C8FB486087662417720 (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, const RuntimeMethod* method)
 {
 	{
 		ScriptableObject__ctor_m6E2B3821A4A361556FC12E9B1C71E1D5DC002C5B(__this, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void TileBase__ctor_m587868030 (TileBase_t3985733243 * __this, const RuntimeMethod* method)
+{
+	{
+		ScriptableObject__ctor_m1310743131(__this, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Tilemaps.TileBase::RefreshTile(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void TileBase_RefreshTile_m3094382B655073ED6F59FAC838C6BACEE05BE131 (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, const RuntimeMethod* method)
 {
 	{
@@ -1680,16 +2730,30 @@ extern "C" IL2CPP_METHOD_ATTR void TileBase_RefreshTile_m3094382B655073ED6F59FAC
 		Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  L_1 = ___position0;
 		NullCheck(L_0);
 		ITilemap_RefreshTile_mA824B41C2B9791C91FC5FB3AA93DDD478713564C(L_0, L_1, /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void TileBase_RefreshTile_m2649746093 (TileBase_t3985733243 * __this, Vector3Int_t741115188  ___position0, ITilemap_t3496540090 * ___tilemap1, const RuntimeMethod* method)
+{
+	{
+		ITilemap_t3496540090 * L_0 = ___tilemap1;
+		Vector3Int_t741115188  L_1 = ___position0;
+		NullCheck(L_0);
+		ITilemap_RefreshTile_m959177989(L_0, L_1, /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Tilemaps.TileBase::GetTileData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileData&)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void TileBase_GetTileData_m3A1CE78996D8498F5EEB3FE0F16BF82BB903D331 (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * ___tileData2, const RuntimeMethod* method)
+=======
+extern "C" IL2CPP_METHOD_ATTR void TileBase_GetTileData_m1994442890 (TileBase_t3985733243 * __this, Vector3Int_t741115188  ___position0, ITilemap_t3496540090 * ___tilemap1, TileData_t2042394239 * ___tileData2, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		return;
 	}
 }
+<<<<<<< HEAD
 // UnityEngine.Tilemaps.TileData UnityEngine.Tilemaps.TileBase::GetTileDataNoRef(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap)
 extern "C" IL2CPP_METHOD_ATTR TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5  TileBase_GetTileDataNoRef_m669665FCC7CE24E81D803944D1F319DDC72B889F (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, const RuntimeMethod* method)
 {
@@ -1715,6 +2779,10 @@ IL_001a:
 }
 // System.Boolean UnityEngine.Tilemaps.TileBase::GetTileAnimationData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileAnimationData&)
 extern "C" IL2CPP_METHOD_ATTR bool TileBase_GetTileAnimationData_m674999CD0CD7208F960DDC3B618CD95D5CE2626F (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8 * ___tileAnimationData2, const RuntimeMethod* method)
+=======
+// System.Boolean UnityEngine.Tilemaps.TileBase::GetTileAnimationData(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.Tilemaps.TileAnimationData&)
+extern "C" IL2CPP_METHOD_ATTR bool TileBase_GetTileAnimationData_m904755430 (TileBase_t3985733243 * __this, Vector3Int_t741115188  ___position0, ITilemap_t3496540090 * ___tilemap1, TileAnimationData_t649120048 * ___tileAnimationData2, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	bool V_0 = false;
 	{
@@ -1728,6 +2796,7 @@ IL_0008:
 		return L_0;
 	}
 }
+<<<<<<< HEAD
 // UnityEngine.Tilemaps.TileAnimationData UnityEngine.Tilemaps.TileBase::GetTileAnimationDataNoRef(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap)
 extern "C" IL2CPP_METHOD_ATTR TileAnimationData_t2A9C81AD1F3E916C2DE292A6F3953FC8C38EFDA8  TileBase_GetTileAnimationDataNoRef_mE10FEDA60DC93F3282482EB66BAE99236CACFBB3 (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, const RuntimeMethod* method)
 {
@@ -1753,6 +2822,10 @@ IL_001b:
 }
 // System.Boolean UnityEngine.Tilemaps.TileBase::StartUp(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.GameObject)
 extern "C" IL2CPP_METHOD_ATTR bool TileBase_StartUp_m17522434C955AB943A4C3C0AA0C701BBE39757E2 (TileBase_tD2158024AAA28EB0EC62F253FA1D1A76BC50F85E * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, ITilemap_t784A442A8BD2283058F44E8C0FE5257168459BE3 * ___tilemap1, GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___go2, const RuntimeMethod* method)
+=======
+// System.Boolean UnityEngine.Tilemaps.TileBase::StartUp(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.GameObject)
+extern "C" IL2CPP_METHOD_ATTR bool TileBase_StartUp_m4197002915 (TileBase_t3985733243 * __this, Vector3Int_t741115188  ___position0, ITilemap_t3496540090 * ___tilemap1, GameObject_t1113636619 * ___go2, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	bool V_0 = false;
 	{
@@ -1775,6 +2848,7 @@ IL_0008:
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // Conversion methods for marshalling of: UnityEngine.Tilemaps.TileData
+<<<<<<< HEAD
 extern "C" void TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_marshal_pinvoke(const TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5& unmarshaled, TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5_marshaled_pinvoke& marshaled)
 {
 	Exception_t* ___m_Sprite_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Sprite' of type 'TileData': Reference type field marshaling is not supported.");
@@ -1809,10 +2883,47 @@ extern "C" IL2CPP_METHOD_ATTR void TileData_set_sprite_m8E47803AAA5DA51504EF24A5
 {
 	{
 		Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * L_0 = ___value0;
+=======
+extern "C" void TileData_t2042394239_marshal_pinvoke(const TileData_t2042394239& unmarshaled, TileData_t2042394239_marshaled_pinvoke& marshaled)
+{
+	Exception_t* ___m_Sprite_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Sprite' of type 'TileData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Sprite_0Exception,NULL);
+}
+extern "C" void TileData_t2042394239_marshal_pinvoke_back(const TileData_t2042394239_marshaled_pinvoke& marshaled, TileData_t2042394239& unmarshaled)
+{
+	Exception_t* ___m_Sprite_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Sprite' of type 'TileData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Sprite_0Exception,NULL);
+}
+// Conversion method for clean up from marshalling of: UnityEngine.Tilemaps.TileData
+extern "C" void TileData_t2042394239_marshal_pinvoke_cleanup(TileData_t2042394239_marshaled_pinvoke& marshaled)
+{
+}
+// Conversion methods for marshalling of: UnityEngine.Tilemaps.TileData
+extern "C" void TileData_t2042394239_marshal_com(const TileData_t2042394239& unmarshaled, TileData_t2042394239_marshaled_com& marshaled)
+{
+	Exception_t* ___m_Sprite_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Sprite' of type 'TileData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Sprite_0Exception,NULL);
+}
+extern "C" void TileData_t2042394239_marshal_com_back(const TileData_t2042394239_marshaled_com& marshaled, TileData_t2042394239& unmarshaled)
+{
+	Exception_t* ___m_Sprite_0Exception = il2cpp_codegen_get_marshal_directive_exception("Cannot marshal field 'm_Sprite' of type 'TileData': Reference type field marshaling is not supported.");
+	IL2CPP_RAISE_MANAGED_EXCEPTION(___m_Sprite_0Exception,NULL);
+}
+// Conversion method for clean up from marshalling of: UnityEngine.Tilemaps.TileData
+extern "C" void TileData_t2042394239_marshal_com_cleanup(TileData_t2042394239_marshaled_com& marshaled)
+{
+}
+// System.Void UnityEngine.Tilemaps.TileData::set_sprite(UnityEngine.Sprite)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_sprite_m2765088979 (TileData_t2042394239 * __this, Sprite_t280657092 * ___value0, const RuntimeMethod* method)
+{
+	{
+		Sprite_t280657092 * L_0 = ___value0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		__this->set_m_Sprite_0(L_0);
 		return;
 	}
 }
+<<<<<<< HEAD
 extern "C"  void TileData_set_sprite_m8E47803AAA5DA51504EF24A57EC2432D53B9CCB0_AdjustorThunk (RuntimeObject * __this, Sprite_tCA09498D612D08DE668653AF1E9C12BF53434198 * ___value0, const RuntimeMethod* method)
 {
 	TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * _thisAdjusted = reinterpret_cast<TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *>(__this + 1);
@@ -1823,10 +2934,23 @@ extern "C" IL2CPP_METHOD_ATTR void TileData_set_color_m518FDC6D6A2287BB1C69BA55F
 {
 	{
 		Color_t119BCA590009762C7223FDD3AF9706653AC84ED2  L_0 = ___value0;
+=======
+extern "C"  void TileData_set_sprite_m2765088979_AdjustorThunk (RuntimeObject * __this, Sprite_t280657092 * ___value0, const RuntimeMethod* method)
+{
+	TileData_t2042394239 * _thisAdjusted = reinterpret_cast<TileData_t2042394239 *>(__this + 1);
+	TileData_set_sprite_m2765088979(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Tilemaps.TileData::set_color(UnityEngine.Color)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_color_m2031655830 (TileData_t2042394239 * __this, Color_t2555686324  ___value0, const RuntimeMethod* method)
+{
+	{
+		Color_t2555686324  L_0 = ___value0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		__this->set_m_Color_1(L_0);
 		return;
 	}
 }
+<<<<<<< HEAD
 extern "C"  void TileData_set_color_m518FDC6D6A2287BB1C69BA55FE8C02977A55EA4C_AdjustorThunk (RuntimeObject * __this, Color_t119BCA590009762C7223FDD3AF9706653AC84ED2  ___value0, const RuntimeMethod* method)
 {
 	TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * _thisAdjusted = reinterpret_cast<TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *>(__this + 1);
@@ -1837,10 +2961,23 @@ extern "C" IL2CPP_METHOD_ATTR void TileData_set_transform_m4F98BB7795C0837AE119F
 {
 	{
 		Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  L_0 = ___value0;
+=======
+extern "C"  void TileData_set_color_m2031655830_AdjustorThunk (RuntimeObject * __this, Color_t2555686324  ___value0, const RuntimeMethod* method)
+{
+	TileData_t2042394239 * _thisAdjusted = reinterpret_cast<TileData_t2042394239 *>(__this + 1);
+	TileData_set_color_m2031655830(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Tilemaps.TileData::set_transform(UnityEngine.Matrix4x4)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_transform_m1036780625 (TileData_t2042394239 * __this, Matrix4x4_t1817901843  ___value0, const RuntimeMethod* method)
+{
+	{
+		Matrix4x4_t1817901843  L_0 = ___value0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		__this->set_m_Transform_2(L_0);
 		return;
 	}
 }
+<<<<<<< HEAD
 extern "C"  void TileData_set_transform_m4F98BB7795C0837AE119FE7C629E14238184422A_AdjustorThunk (RuntimeObject * __this, Matrix4x4_t6BF60F70C9169DF14C9D2577672A44224B236ECA  ___value0, const RuntimeMethod* method)
 {
 	TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * _thisAdjusted = reinterpret_cast<TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *>(__this + 1);
@@ -1851,10 +2988,23 @@ extern "C" IL2CPP_METHOD_ATTR void TileData_set_gameObject_m1E8E839859E84C9E578E
 {
 	{
 		GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * L_0 = ___value0;
+=======
+extern "C"  void TileData_set_transform_m1036780625_AdjustorThunk (RuntimeObject * __this, Matrix4x4_t1817901843  ___value0, const RuntimeMethod* method)
+{
+	TileData_t2042394239 * _thisAdjusted = reinterpret_cast<TileData_t2042394239 *>(__this + 1);
+	TileData_set_transform_m1036780625(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Tilemaps.TileData::set_gameObject(UnityEngine.GameObject)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_gameObject_m4268609905 (TileData_t2042394239 * __this, GameObject_t1113636619 * ___value0, const RuntimeMethod* method)
+{
+	{
+		GameObject_t1113636619 * L_0 = ___value0;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		__this->set_m_GameObject_3(L_0);
 		return;
 	}
 }
+<<<<<<< HEAD
 extern "C"  void TileData_set_gameObject_m1E8E839859E84C9E578E8C5F23CD343BD7933C49_AdjustorThunk (RuntimeObject * __this, GameObject_tBD1244AD56B4E59AAD76E5E7C9282EC5CE434F0F * ___value0, const RuntimeMethod* method)
 {
 	TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * _thisAdjusted = reinterpret_cast<TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *>(__this + 1);
@@ -1862,6 +3012,15 @@ extern "C"  void TileData_set_gameObject_m1E8E839859E84C9E578E8C5F23CD343BD7933C
 }
 // System.Void UnityEngine.Tilemaps.TileData::set_flags(UnityEngine.Tilemaps.TileFlags)
 extern "C" IL2CPP_METHOD_ATTR void TileData_set_flags_m7817AC2D2183D25550281C3F868DAD2D4BCDB425 (TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * __this, int32_t ___value0, const RuntimeMethod* method)
+=======
+extern "C"  void TileData_set_gameObject_m4268609905_AdjustorThunk (RuntimeObject * __this, GameObject_t1113636619 * ___value0, const RuntimeMethod* method)
+{
+	TileData_t2042394239 * _thisAdjusted = reinterpret_cast<TileData_t2042394239 *>(__this + 1);
+	TileData_set_gameObject_m4268609905(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Tilemaps.TileData::set_flags(UnityEngine.Tilemaps.TileFlags)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_flags_m4161876872 (TileData_t2042394239 * __this, int32_t ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		int32_t L_0 = ___value0;
@@ -1869,6 +3028,7 @@ extern "C" IL2CPP_METHOD_ATTR void TileData_set_flags_m7817AC2D2183D25550281C3F8
 		return;
 	}
 }
+<<<<<<< HEAD
 extern "C"  void TileData_set_flags_m7817AC2D2183D25550281C3F868DAD2D4BCDB425_AdjustorThunk (RuntimeObject * __this, int32_t ___value0, const RuntimeMethod* method)
 {
 	TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * _thisAdjusted = reinterpret_cast<TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *>(__this + 1);
@@ -1876,6 +3036,15 @@ extern "C"  void TileData_set_flags_m7817AC2D2183D25550281C3F868DAD2D4BCDB425_Ad
 }
 // System.Void UnityEngine.Tilemaps.TileData::set_colliderType(UnityEngine.Tilemaps.Tile/ColliderType)
 extern "C" IL2CPP_METHOD_ATTR void TileData_set_colliderType_mC23D9C79557D9C0D41F507D4F8B427B843E5C11B (TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * __this, int32_t ___value0, const RuntimeMethod* method)
+=======
+extern "C"  void TileData_set_flags_m4161876872_AdjustorThunk (RuntimeObject * __this, int32_t ___value0, const RuntimeMethod* method)
+{
+	TileData_t2042394239 * _thisAdjusted = reinterpret_cast<TileData_t2042394239 *>(__this + 1);
+	TileData_set_flags_m4161876872(_thisAdjusted, ___value0, method);
+}
+// System.Void UnityEngine.Tilemaps.TileData::set_colliderType(UnityEngine.Tilemaps.Tile/ColliderType)
+extern "C" IL2CPP_METHOD_ATTR void TileData_set_colliderType_m1558905503 (TileData_t2042394239 * __this, int32_t ___value0, const RuntimeMethod* method)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 {
 	{
 		int32_t L_0 = ___value0;
@@ -1883,10 +3052,17 @@ extern "C" IL2CPP_METHOD_ATTR void TileData_set_colliderType_mC23D9C79557D9C0D41
 		return;
 	}
 }
+<<<<<<< HEAD
 extern "C"  void TileData_set_colliderType_mC23D9C79557D9C0D41F507D4F8B427B843E5C11B_AdjustorThunk (RuntimeObject * __this, int32_t ___value0, const RuntimeMethod* method)
 {
 	TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 * _thisAdjusted = reinterpret_cast<TileData_t8A50A35CAFD87C12E27D7E596D968C9114A4CBB5 *>(__this + 1);
 	TileData_set_colliderType_mC23D9C79557D9C0D41F507D4F8B427B843E5C11B(_thisAdjusted, ___value0, method);
+=======
+extern "C"  void TileData_set_colliderType_m1558905503_AdjustorThunk (RuntimeObject * __this, int32_t ___value0, const RuntimeMethod* method)
+{
+	TileData_t2042394239 * _thisAdjusted = reinterpret_cast<TileData_t2042394239 *>(__this + 1);
+	TileData_set_colliderType_m1558905503(_thisAdjusted, ___value0, method);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 #ifdef __clang__
 #pragma clang diagnostic pop
@@ -1905,20 +3081,36 @@ extern "C"  void TileData_set_colliderType_mC23D9C79557D9C0D41F507D4F8B427B843E5
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 // System.Void UnityEngine.Tilemaps.Tilemap::RefreshTile(UnityEngine.Vector3Int)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_m9F32ACD729A4C9D843662E956B38BB91351E01EA (Tilemap_t0F92148668211805A631B93488D4A629EC378B10 * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4  ___position0, const RuntimeMethod* method)
 {
 	{
 		Tilemap_RefreshTile_Injected_m71B01A4DDE057FE002AE5BEC5ACB38F04BC64792(__this, (Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 *)(&___position0), /*hidden argument*/NULL);
+=======
+extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_m1116399155 (Tilemap_t1578933799 * __this, Vector3Int_t741115188  ___position0, const RuntimeMethod* method)
+{
+	{
+		Tilemap_RefreshTile_Injected_m3594480345(__this, (&___position0), /*hidden argument*/NULL);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 		return;
 	}
 }
 // System.Void UnityEngine.Tilemaps.Tilemap::RefreshTile_Injected(UnityEngine.Vector3Int&)
+<<<<<<< HEAD
 extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_Injected_m71B01A4DDE057FE002AE5BEC5ACB38F04BC64792 (Tilemap_t0F92148668211805A631B93488D4A629EC378B10 * __this, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 * ___position0, const RuntimeMethod* method)
 {
 	typedef void (*Tilemap_RefreshTile_Injected_m71B01A4DDE057FE002AE5BEC5ACB38F04BC64792_ftn) (Tilemap_t0F92148668211805A631B93488D4A629EC378B10 *, Vector3Int_tA843C5F8C2EB42492786C5AF82C3E1F4929942B4 *);
 	static Tilemap_RefreshTile_Injected_m71B01A4DDE057FE002AE5BEC5ACB38F04BC64792_ftn _il2cpp_icall_func;
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Tilemap_RefreshTile_Injected_m71B01A4DDE057FE002AE5BEC5ACB38F04BC64792_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Tilemaps.Tilemap::RefreshTile_Injected(UnityEngine.Vector3Int&)");
+=======
+extern "C" IL2CPP_METHOD_ATTR void Tilemap_RefreshTile_Injected_m3594480345 (Tilemap_t1578933799 * __this, Vector3Int_t741115188 * ___position0, const RuntimeMethod* method)
+{
+	typedef void (*Tilemap_RefreshTile_Injected_m3594480345_ftn) (Tilemap_t1578933799 *, Vector3Int_t741115188 *);
+	static Tilemap_RefreshTile_Injected_m3594480345_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Tilemap_RefreshTile_Injected_m3594480345_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Tilemaps.Tilemap::RefreshTile_Injected(UnityEngine.Vector3Int&)");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 	_il2cpp_icall_func(__this, ___position0);
 }
 #ifdef __clang__

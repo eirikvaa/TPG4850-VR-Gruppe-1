@@ -27,6 +27,7 @@
 /* for GC and the client otherwise GC_thread_exit_proc() is not         */
 /* guaranteed to be invoked (see the comments in pthread_start.c).      */
 
+<<<<<<< HEAD
 #ifndef __cplusplus
   /* static is desirable here for more efficient linkage.               */
   /* TODO: Enable this in case of the compilation as C++ code.          */
@@ -34,6 +35,12 @@
 # define GC_EXTERN GC_INNER
                 /* STATIC is defined in gcconfig.h. */
 #endif
+=======
+
+#define GC_INNER STATIC
+#define GC_EXTERN GC_INNER
+                /* STATIC is defined in gcconfig.h. */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* Small files go first... */
 #include "../backgraph.c"
@@ -41,17 +48,29 @@
 #include "../checksums.c"
 #include "../gcj_mlc.c"
 #include "../headers.c"
+<<<<<<< HEAD
 #include "../new_hblk.c"
 #include "../obj_map.c"
 #include "../ptr_chck.c"
 
 #include "gc_inline.h"
+=======
+#include "../malloc.c"
+#include "../new_hblk.c"
+#include "../obj_map.c"
+#include "../ptr_chck.c"
+#include "../stubborn.c"
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "../allchblk.c"
 #include "../alloc.c"
 #include "../dbg_mlc.c"
 #include "../finalize.c"
 #include "../fnlz_mlc.c"
+<<<<<<< HEAD
 #include "../malloc.c"
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "../mallocx.c"
 #include "../mark.c"
 #include "../mark_rts.c"
@@ -70,6 +89,10 @@
 #include "../dyn_load.c"
 #include "../gc_dlopen.c"
 #include "../mach_dep.c"
+<<<<<<< HEAD
+=======
+#include "../pcr_interface.c"
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #include "../pthread_stop_world.c"
 #include "../pthread_support.c"
 #include "../specific.c"
@@ -84,8 +107,15 @@
 /* This is only useful if directly included from application    */
 /* (instead of linking gc).                                     */
 #ifndef GC_NO_THREAD_REDIRECTS
+<<<<<<< HEAD
 # define GC_PTHREAD_REDIRECTS_ONLY
 # include "gc_pthread_redirects.h"
 #endif
 
 /* The files from "extra" folder are not included. */
+=======
+# include "gc_pthread_redirects.h"
+#endif
+
+/* real_malloc.c, extra/MacOS.c, extra/msvc_dbg.c are not included. */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

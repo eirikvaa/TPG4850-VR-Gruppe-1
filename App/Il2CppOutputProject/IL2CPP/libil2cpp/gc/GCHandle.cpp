@@ -109,9 +109,12 @@ namespace gc
                 void* *entries;
                 entries = (void**)GarbageCollector::AllocateFixed(sizeof(void*) * new_size, NULL);
                 memcpy(entries, handles->entries, sizeof(void*) * handles->size);
+<<<<<<< HEAD
 
                 GarbageCollector::SetWriteBarrier(entries, sizeof(void*) * handles->size);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 void** previous_entries = handles->entries;
                 handles->entries = entries;
                 GarbageCollector::FreeFixed(previous_entries);
@@ -154,8 +157,11 @@ namespace gc
         handles->bitmap[slot] |= 1 << i;
         slot = slot * 32 + i;
         handles->entries[slot] = obj;
+<<<<<<< HEAD
         GarbageCollector::SetWriteBarrier(handles->entries + slot);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         if (handles->type <= HANDLE_WEAK_TRACK)
         {
             if (obj)
@@ -179,7 +185,11 @@ namespace gc
 
 #ifndef HAVE_SGEN_GC
         if (track_resurrection)
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED(GCHandle::NewWeakref);
+=======
+            NOT_IMPLEMENTED(GCHandle::NewWeakref);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
         return handle;
@@ -258,7 +268,11 @@ namespace gc
 
 #ifndef HAVE_SGEN_GC
         if (type == HANDLE_WEAK_TRACK)
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED(il2cpp_gchandle_set_target);
+=======
+            NOT_IMPLEMENTED(il2cpp_gchandle_set_target);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
     }
 
@@ -271,7 +285,11 @@ namespace gc
             return;
 #ifndef HAVE_SGEN_GC
         if (type == HANDLE_WEAK_TRACK)
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED(GCHandle::Free);
+=======
+            NOT_IMPLEMENTED(GCHandle::Free);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
         lock_handles(handles);

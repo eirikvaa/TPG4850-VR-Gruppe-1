@@ -46,7 +46,11 @@ namespace System
     {
         Il2CppClass *klass;
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoType::get_IsGenericTypeDefinition, "Check for custom Type implementations");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoType::get_IsGenericTypeDefinition, "Check for custom Type implementations");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         //if (!IS_MONOTYPE (type))
         //  return FALSE;
 
@@ -61,7 +65,11 @@ namespace System
     {
         Il2CppClass *klass;
 
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoType::get_IsGenericTypeDefinition, "Check for custom Type implementations");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoType::get_IsGenericTypeDefinition, "Check for custom Type implementations");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         //if (!IS_MONOTYPE (type))
         //  return FALSE;
 
@@ -94,7 +102,11 @@ namespace System
         if (klass->generic_class)
         {
             Il2CppClass *generic_class = GenericClass::GetTypeDefinition(klass->generic_class);
+<<<<<<< HEAD
             return Reflection::GetTypeObject(&generic_class->byval_arg);
+=======
+            return Reflection::GetTypeObject(generic_class->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return NULL;
@@ -207,12 +219,20 @@ namespace System
         const Il2CppType* type = (const Il2CppType*)ptr;
         Il2CppClass *klass = Class::FromIl2CppType(type);
 
+<<<<<<< HEAD
         return il2cpp::vm::Reflection::GetTypeObject(&klass->byval_arg);
+=======
+        return il2cpp::vm::Reflection::GetTypeObject(klass->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
 #define CHECK_IF_NULL(v)    \
     if ( (v) == NULL && throwOnError ) \
+<<<<<<< HEAD
         Exception::Raise (Exception::GetTypeLoadException (info)); \
+=======
+        Exception::Raise (Exception::GetTypeLoadException ()); \
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     if ( (v) == NULL ) \
         return NULL;
 
@@ -231,6 +251,7 @@ namespace System
                 return NULL;
         }
 
+<<<<<<< HEAD
         vm::TypeSearchFlags searchFlags = kTypeSearchFlagNone;
 
         if (throwOnError)
@@ -240,6 +261,9 @@ namespace System
             searchFlags = static_cast<vm::TypeSearchFlags>(searchFlags | kTypeSearchFlagIgnoreCase);
 
         const Il2CppType *type = vm::Class::il2cpp_type_from_type_info(info, searchFlags);
+=======
+        const Il2CppType *type = vm::Class::il2cpp_type_from_type_info(info, throwOnError, ignoreCase);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         CHECK_IF_NULL(type);
 
@@ -248,7 +272,11 @@ namespace System
 
     bool Type::IsArrayImpl(Il2CppReflectionType *t)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Type::IsArrayImpl, "Faulty implementation?");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(Type::IsArrayImpl, "Faulty implementation?");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         Il2CppClass* typeInfo = Class::FromSystemType(t);
         return typeInfo->rank > 0;
@@ -299,7 +327,11 @@ namespace System
         else
             arrayClass = il2cpp_bounded_array_class_get(klass, rank, true);
 
+<<<<<<< HEAD
         return arrayClass != NULL ? Reflection::GetTypeObject(&arrayClass->byval_arg) : NULL;
+=======
+        return arrayClass != NULL ? Reflection::GetTypeObject(arrayClass->byval_arg) : NULL;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     static std::string FormatExceptionMessageForNonConstructableGenericType(const Il2CppType* type, const Il2CppTypeVector& genericArguments)
@@ -345,7 +377,11 @@ namespace System
             return NULL;
         }
 
+<<<<<<< HEAD
         return Reflection::GetTypeObject(&genericInstanceTypeClass->byval_arg);
+=======
+        return Reflection::GetTypeObject(genericInstanceTypeClass->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Type::type_is_assignable_from(Il2CppReflectionType * type, Il2CppReflectionType * c)
@@ -387,14 +423,22 @@ namespace System
 
         klass = Class::FromIl2CppType(type->type);
 
+<<<<<<< HEAD
         return il2cpp::vm::Reflection::GetTypeObject(&klass->this_arg);
+=======
+        return il2cpp::vm::Reflection::GetTypeObject(klass->this_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppReflectionType * Type::MakePointerType(Il2CppReflectionType* type)
     {
         Il2CppClass* pointerType = Class::GetPtrClass(type->type);
 
+<<<<<<< HEAD
         return Reflection::GetTypeObject(&pointerType->byval_arg);
+=======
+        return Reflection::GetTypeObject(pointerType->byval_arg);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     void Type::GetInterfaceMapData(Il2CppReflectionType* type, Il2CppReflectionType* iface, Il2CppArray** targets, Il2CppArray** methods)
@@ -471,7 +515,11 @@ namespace System
 
     void Type::GetPacking(Il2CppReflectionType* type, int32_t* packing, int32_t* size)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(Type::GetPacking, "In progress, need this function to not assert to test other aspects of StructLayout attribute");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(Type::GetPacking, "In progress, need this function to not assert to test other aspects of StructLayout attribute");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         *packing = 8;
         *size = 0;
     }

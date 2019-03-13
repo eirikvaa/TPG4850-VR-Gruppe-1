@@ -59,7 +59,11 @@ namespace Threading
 #if NET_4_0
     bool Monitor::Monitor_test_owner(Il2CppObject* obj)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Monitor::Monitor_test_owner);
+=======
+        NOT_IMPLEMENTED_ICALL(Monitor::Monitor_test_owner);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
     }
 

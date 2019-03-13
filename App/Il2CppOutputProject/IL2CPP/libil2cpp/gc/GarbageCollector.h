@@ -9,13 +9,18 @@ namespace il2cpp
 {
 namespace gc
 {
+<<<<<<< HEAD
     class LIBIL2CPP_CODEGEN_API GarbageCollector
+=======
+    class GarbageCollector
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     {
     public:
         static void Collect(int maxGeneration);
         static int32_t CollectALittle();
         static int32_t GetCollectionCount(int32_t generation);
         static int64_t GetUsedHeapSize();
+<<<<<<< HEAD
 #if IL2CPP_ENABLE_WRITE_BARRIERS
         static void SetWriteBarrier(void **ptr);
         static void SetWriteBarrier(void **ptr, size_t numBytes);
@@ -23,6 +28,8 @@ namespace gc
         static inline void SetWriteBarrier(void **ptr) {}
         static inline void SetWriteBarrier(void **ptr, size_t numBytes) {}
 #endif
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
     public:
         // internal
@@ -48,7 +55,10 @@ namespace gc
         static void Initialize();
         static void Enable();
         static void Disable();
+<<<<<<< HEAD
         static bool IsDisabled();
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         static FinalizerCallback RegisterFinalizerWithCallback(Il2CppObject* obj, FinalizerCallback callback);
 
@@ -82,9 +92,12 @@ namespace gc
         typedef void* (*GCCallWithAllocLockCallback)(void* user_data);
         static void* CallWithAllocLockHeld(GCCallWithAllocLockCallback callback, void* user_data);
 
+<<<<<<< HEAD
         static void RegisterRoot(char *start, size_t size);
         static void UnregisterRoot(char* start);
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if NET_4_0
         static void SetSkipThread(bool skip);
 #endif

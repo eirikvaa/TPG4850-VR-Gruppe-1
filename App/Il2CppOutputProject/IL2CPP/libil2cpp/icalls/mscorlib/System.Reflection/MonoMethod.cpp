@@ -35,7 +35,11 @@ namespace Reflection
     Il2CppReflectionMethod* MonoMethod::get_base_definition(Il2CppReflectionMethod *m)
     {
         const MethodInfo *method = m->method;
+<<<<<<< HEAD
         Il2CppClass *klass = method->klass;
+=======
+        Il2CppClass *klass = method->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (klass == NULL)
             return m;
@@ -53,7 +57,11 @@ namespace Reflection
             klass = parent;
         }
 
+<<<<<<< HEAD
         if (klass == method->klass)
+=======
+        if (klass == method->declaring_type)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             return m;
 
         il2cpp::vm::Class::Init(klass);
@@ -134,7 +142,11 @@ namespace Reflection
             }
 
             // method is inflated because it's owner is a generic instance type, extract method definition out of the method
+<<<<<<< HEAD
             IL2CPP_ASSERT(methodInfo->is_generic || methodInfo->is_inflated);
+=======
+            IL2CPP_ASSERT(methodInfo->is_generic);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             methodInfo = methodInfo->genericMethod->methodDefinition;
         }
 
@@ -147,7 +159,11 @@ namespace Reflection
         {
             const Il2CppGenericParameter *param = GenericContainer::GetGenericParameter(container, i);
             Il2CppClass *pklass = Class::FromGenericParameter(param);
+<<<<<<< HEAD
             il2cpp_array_setref(res, i, il2cpp::vm::Reflection::GetTypeObject(&pklass->byval_arg));
+=======
+            il2cpp_array_setref(res, i, il2cpp::vm::Reflection::GetTypeObject(pklass->byval_arg));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return res;
@@ -155,7 +171,11 @@ namespace Reflection
 
     Il2CppObject * MonoMethod::InternalInvoke(Il2CppReflectionMethod * method, Il2CppObject * thisPtr, Il2CppArray * params, Il2CppObject * * exc)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoMethod::InternalInvoke, "Audit and look over commented code. Work in progress.");
+=======
+        NOT_IMPLEMENTED_ICALL_NO_ASSERT(MonoMethod::InternalInvoke, "Audit and look over commented code. Work in progress.");
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 /*
      * Invoke from reflection is supposed to always be a virtual call (the API
      * is stupid), mono_runtime_invoke_*() calls the provided method, allowing
@@ -176,7 +196,11 @@ namespace Reflection
                 //  return NULL;
                 //}
 
+<<<<<<< HEAD
                 if (!Object::IsInst(thisPtr, m->klass))
+=======
+                if (!Object::IsInst(thisPtr, m->declaring_type))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 {
                     IL2CPP_ASSERT(0);
                     //mono_gc_wbarrier_generic_store (exc, (MonoObject*) mono_exception_from_name_msg (mono_defaults.corlib, "System.Reflection", "TargetException", "Object does not match target type."));
@@ -203,12 +227,20 @@ namespace Reflection
         }
 
         // TODO: Add check for abstract once types have flags
+<<<<<<< HEAD
         //if ((m->klass->flags & TYPE_ATTRIBUTE_ABSTRACT) && !strcmp (m->name, ".ctor") && !this) {
+=======
+        //if ((m->declaring_type->flags & TYPE_ATTRIBUTE_ABSTRACT) && !strcmp (m->name, ".ctor") && !this) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         //  mono_gc_wbarrier_generic_store (exc, (MonoObject*) mono_exception_from_name_msg (mono_defaults.corlib, "System.Reflection", "TargetException", "Cannot invoke constructor of an abstract class."));
         //  return NULL;
         //}
 
+<<<<<<< HEAD
         if (m->klass->rank && !strcmp(m->name, ".ctor"))
+=======
+        if (m->declaring_type->rank && !strcmp(m->name, ".ctor"))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         {
             int i;
             il2cpp_array_size_t *lengths;
@@ -218,13 +250,18 @@ namespace Reflection
             for (i = 0; i < pcount; ++i)
                 lengths[i] = *(il2cpp_array_size_t*)((char*)il2cpp_array_get(params, void*, i) + sizeof(Il2CppObject));
 
+<<<<<<< HEAD
             if (m->klass->rank == pcount)
+=======
+            if (m->declaring_type->rank == pcount)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
             {
                 /* Only lengths provided. */
                 lower_bounds = NULL;
             }
             else
             {
+<<<<<<< HEAD
                 IL2CPP_ASSERT(pcount == (m->klass->rank * 2));
                 /* lower bounds are first. */
                 lower_bounds = lengths;
@@ -232,6 +269,15 @@ namespace Reflection
             }
 
             return (Il2CppObject*)il2cpp::vm::Array::NewFull(m->klass, lengths, lower_bounds);
+=======
+                IL2CPP_ASSERT(pcount == (m->declaring_type->rank * 2));
+                /* lower bounds are first. */
+                lower_bounds = lengths;
+                lengths += m->declaring_type->rank;
+            }
+
+            return (Il2CppObject*)il2cpp::vm::Array::NewFull(m->declaring_type, lengths, lower_bounds);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         // If a managed exception was thrown, we need raise it here because Runtime::Invoke catches the exception and returns a pointer to it.
@@ -254,7 +300,11 @@ namespace Reflection
     {
         std::string message;
         message += "Failed to construct generic method '";
+<<<<<<< HEAD
         message += Type::GetName(&method->klass->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME);
+=======
+        message += Type::GetName(method->declaring_type->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         message += "::";
         message += Method::GetName(method);
         message += "' with generic arguments [";
@@ -273,7 +323,11 @@ namespace Reflection
     {
         std::string message;
         message += "The method '";
+<<<<<<< HEAD
         message += Type::GetName(&method->klass->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME);
+=======
+        message += Type::GetName(method->declaring_type->byval_arg, IL2CPP_TYPE_NAME_FORMAT_FULL_NAME);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         message += "::";
         message += Method::GetName(method);
         message += "' is not a generic method.";
@@ -329,7 +383,11 @@ namespace Reflection
 
         if (methodContext->class_inst)
         {
+<<<<<<< HEAD
             IL2CPP_NOT_IMPLEMENTED_ICALL(MonoMethod::GetGenericMethodDefinition_impl);
+=======
+            NOT_IMPLEMENTED_ICALL(MonoMethod::GetGenericMethodDefinition_impl);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         return il2cpp::vm::Reflection::GetMethodObject(const_cast<MethodInfo*>(methodDefinition), NULL);
@@ -338,7 +396,11 @@ namespace Reflection
 #if NET_4_0
     int32_t MonoMethod::get_core_clr_security_level(Il2CppObject* _this)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(MonoMethod::get_core_clr_security_level);
+=======
+        NOT_IMPLEMENTED_ICALL(MonoMethod::get_core_clr_security_level);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return 0;
     }
@@ -352,7 +414,11 @@ namespace Reflection
         // only be called by some GetCustomAttributes(true) calls.  There is only a small difference in the behavior of this method
         // when definition is false.
         const MethodInfo *method2 = method->method;
+<<<<<<< HEAD
         Il2CppClass *klass = method2->klass;
+=======
+        Il2CppClass *klass = method2->declaring_type;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         if (klass == NULL)
             return method;
@@ -363,6 +429,7 @@ namespace Reflection
         /*if(klass->generic_class)
         klass = klass->generic_class->container_class;*/
 
+<<<<<<< HEAD
         const MethodInfo *result;
         bool found = true;
 
@@ -414,6 +481,46 @@ namespace Reflection
             }
         }
         while (!found);
+=======
+        if (definition)
+        {
+            for (Il2CppClass* parent = klass->parent; parent != NULL; parent = parent->parent)
+            {
+                if (parent->vtable_count <= method2->slot)
+                    break;
+                klass = parent;
+            }
+        }
+        else
+        {
+            if (!klass->parent)
+            {
+                IL2CPP_ASSERT(klass == il2cpp_defaults.object_class);
+                return method;
+            }
+
+            klass = klass->parent;
+        }
+
+        if (klass == method2->declaring_type)
+            return method;
+
+        il2cpp::vm::Class::Init(klass);
+
+        const MethodInfo *result = klass->vtable[method2->slot].method;
+
+        if (result == NULL)
+        {
+            void *iterator = NULL;
+
+            for (result = Class::GetMethods(klass, &iterator); result != NULL; result = Class::GetMethods(klass, &iterator))
+                if (result->slot == method2->slot)
+                    break;
+        }
+
+        if (result == NULL)
+            return method;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
         return il2cpp::vm::Reflection::GetMethodObject(result, klass);
     }

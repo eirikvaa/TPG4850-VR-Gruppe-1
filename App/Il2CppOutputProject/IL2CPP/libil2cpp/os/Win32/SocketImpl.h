@@ -99,8 +99,12 @@ namespace os
         static WaitStatus Poll(PollRequest& request, int32_t timeout, int32_t *result, int32_t *error);
 
         static WaitStatus GetHostName(std::string &name);
+<<<<<<< HEAD
         static WaitStatus GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addresses);
         static WaitStatus GetHostByName(const std::string &host, std::string &name, int32_t &family, std::vector<std::string> &aliases, std::vector<void*> &addr_list, int32_t &addr_size);
+=======
+        static WaitStatus GetHostByName(const std::string &host, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static WaitStatus GetHostByAddr(const std::string &address, std::string &name, std::vector<std::string> &aliases, std::vector<std::string> &addr_list);
 
         static void Startup();

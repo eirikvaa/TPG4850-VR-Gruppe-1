@@ -28,6 +28,7 @@
 int LINES = 0;
 int COLS = 0;
 
+<<<<<<< HEAD
 #define szAppName TEXT("DE")
 
 HWND        hwnd;
@@ -36,6 +37,18 @@ void de_error(const char *s)
 {
     (void)MessageBoxA(hwnd, s, "Demonstration Editor",
                       MB_ICONINFORMATION | MB_OK);
+=======
+char       szAppName[]     = "DE";
+char       FullAppName[]   = "Demonstration Editor";
+
+HWND        hwnd;
+
+void de_error(char *s)
+{
+    MessageBox( hwnd, (LPSTR) s,
+                (LPSTR) FullAppName,
+                MB_ICONINFORMATION | MB_OK );
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     InvalidateRect(hwnd, NULL, TRUE);
 }
 
@@ -44,11 +57,19 @@ int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
 {
    MSG         msg;
    WNDCLASS    wndclass;
+<<<<<<< HEAD
    HACCEL      hAccel;
 
    GC_INIT();
 #  if defined(CPPCHECK)
      GC_noop1((GC_word)&WinMain);
+=======
+   HANDLE      hAccel;
+
+#  ifdef THREAD_LOCAL_ALLOC
+     GC_INIT();  /* Required if GC is built with THREAD_LOCAL_ALLOC     */
+                 /* Always safe, but this is used as a GC test.         */
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #  endif
 
    if (!hPrevInstance)
@@ -60,12 +81,25 @@ int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
       wndclass.hInstance      = hInstance;
       wndclass.hIcon          = LoadIcon (hInstance, szAppName);
       wndclass.hCursor        = LoadCursor (NULL, IDC_ARROW);
+<<<<<<< HEAD
       wndclass.hbrBackground  = (HBRUSH)GetStockObject(WHITE_BRUSH);
       wndclass.lpszMenuName   = TEXT("DE");
       wndclass.lpszClassName  = szAppName;
 
       if (RegisterClass (&wndclass) == 0) {
           de_error("RegisterClass error");
+=======
+      wndclass.hbrBackground  = GetStockObject(WHITE_BRUSH);
+      wndclass.lpszMenuName   = "DE";
+      wndclass.lpszClassName  = szAppName;
+
+      if (RegisterClass (&wndclass) == 0) {
+          char buf[50];
+
+          sprintf(buf, "RegisterClass: error code: 0x%X",
+                  (unsigned)GetLastError());
+          de_error(buf);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
           return(0);
       }
    }
@@ -83,14 +117,22 @@ int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
    } else {
         char *p = command_line;
 
+<<<<<<< HEAD
         while (*p != 0 && !isspace(*(unsigned char *)p))
             p++;
+=======
+        while (*p != 0 && !isspace(*p)) p++;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         arg_file_name = CORD_to_char_star(
                             CORD_substr(command_line, 0, p - command_line));
    }
 
    hwnd = CreateWindow (szAppName,
+<<<<<<< HEAD
                         TEXT("Demonstration Editor"),
+=======
+                        FullAppName,
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                         WS_OVERLAPPEDWINDOW | WS_CAPTION, /* Window style */
                         CW_USEDEFAULT, 0, /* default pos. */
                         CW_USEDEFAULT, 0, /* default width, height */
@@ -98,7 +140,15 @@ int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
                         NULL,   /* Window class menu */
                         hInstance, NULL);
    if (hwnd == NULL) {
+<<<<<<< HEAD
         de_error("CreateWindow error");
+=======
+        char buf[50];
+
+        sprintf(buf, "CreateWindow: error code: 0x%X",
+                (unsigned)GetLastError());
+        de_error(buf);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         return(0);
    }
 
@@ -114,18 +164,30 @@ int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance,
          DispatchMessage (&msg);
       }
    }
+<<<<<<< HEAD
    return (int)msg.wParam;
+=======
+   return msg.wParam;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 }
 
 /* Return the argument with all control characters replaced by blanks.  */
 char * plain_chars(char * text, size_t len)
 {
+<<<<<<< HEAD
     char * result = (char *)GC_MALLOC_ATOMIC(len + 1);
     size_t i;
 
     if (NULL == result) return NULL;
     for (i = 0; i < len; i++) {
        if (iscntrl(((unsigned char *)text)[i])) {
+=======
+    char * result = GC_MALLOC_ATOMIC(len + 1);
+    register size_t i;
+
+    for (i = 0; i < len; i++) {
+       if (iscntrl(text[i])) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
            result[i] = ' ';
        } else {
            result[i] = text[i];
@@ -139,12 +201,20 @@ char * plain_chars(char * text, size_t len)
 /* blank, and all control characters c replaced by c + 32.              */
 char * control_chars(char * text, size_t len)
 {
+<<<<<<< HEAD
     char * result = (char *)GC_MALLOC_ATOMIC(len + 1);
     size_t i;
 
     if (NULL == result) return NULL;
     for (i = 0; i < len; i++) {
        if (iscntrl(((unsigned char *)text)[i])) {
+=======
+    char * result = GC_MALLOC_ATOMIC(len + 1);
+    register size_t i;
+
+    for (i = 0; i < len; i++) {
+       if (iscntrl(text[i])) {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
            result[i] = text[i] + 0x40;
        } else {
            result[i] = ' ';
@@ -159,7 +229,11 @@ int char_height;
 
 void get_line_rect(int line, int win_width, RECT * rectp)
 {
+<<<<<<< HEAD
     rectp -> top = line * (LONG)char_height;
+=======
+    rectp -> top = line * char_height;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     rectp -> bottom = rectp->top + char_height;
     rectp -> left = 0;
     rectp -> right = win_width;
@@ -201,14 +275,22 @@ INT_PTR CALLBACK AboutBoxCallback( HWND hDlg, UINT message,
 LRESULT CALLBACK WndProc (HWND hwnd, UINT message,
                           WPARAM wParam, LPARAM lParam)
 {
+<<<<<<< HEAD
    static HINSTANCE hInstance;
+=======
+   static HANDLE  hInstance;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
    HDC dc;
    PAINTSTRUCT ps;
    RECT client_area;
    RECT this_line;
    RECT dummy;
    TEXTMETRIC tm;
+<<<<<<< HEAD
    int i;
+=======
+   register int i;
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
    int id;
 
    switch (message)
@@ -253,8 +335,12 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message,
                unsigned xpos = LOWORD(lParam);  /* From left    */
                unsigned ypos = HIWORD(lParam);  /* from top */
 
+<<<<<<< HEAD
                set_position(xpos / (unsigned)char_width,
                             ypos / (unsigned)char_height);
+=======
+               set_position( xpos/char_width, ypos/char_height );
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                return(0);
            }
 
@@ -271,7 +357,11 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message,
                   return( 0 );
 
                case IDM_HELPABOUT:
+<<<<<<< HEAD
                   if( DialogBox( hInstance, TEXT("ABOUTBOX"),
+=======
+                  if( DialogBox( hInstance, "ABOUTBOX",
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                                  hwnd, AboutBoxCallback ) )
                      InvalidateRect( hwnd, NULL, TRUE );
                   return( 0 );
@@ -311,14 +401,18 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message,
                    char * blanks = CORD_to_char_star(CORD_chars(' ',
                                                                 COLS - len));
                    char * control = control_chars(text, len);
+<<<<<<< HEAD
                    if (NULL == plain || NULL == control)
                        de_error("Out of memory!");
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #                  define RED RGB(255,0,0)
 
                    SetBkMode(dc, OPAQUE);
                    SetTextColor(dc, GetSysColor(COLOR_WINDOWTEXT));
 
+<<<<<<< HEAD
                    if (plain != NULL)
                        TextOutA(dc, this_line.left, this_line.top,
                                 plain, (int)len);
@@ -330,6 +424,17 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message,
                    if (control != NULL)
                        TextOutA(dc, this_line.left, this_line.top,
                                 control, (int)strlen(control));
+=======
+                   TextOut(dc, this_line.left, this_line.top,
+                           plain, (int)len);
+                   TextOut(dc, this_line.left + (int)len * char_width,
+                           this_line.top,
+                           blanks, (int)(COLS - len));
+                   SetBkMode(dc, TRANSPARENT);
+                   SetTextColor(dc, RED);
+                   TextOut(dc, this_line.left, this_line.top,
+                           control, (int)strlen(control));
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                }
            }
            EndPaint(hwnd, &ps);

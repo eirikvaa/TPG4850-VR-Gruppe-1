@@ -19,14 +19,23 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+<<<<<<< HEAD
 
 #ifndef GC_MSVC_DBG_H
 #define GC_MSVC_DBG_H
+=======
+#ifndef _MSVC_DBG_H
+#define _MSVC_DBG_H
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 #include <stdlib.h>
 
 #ifdef __cplusplus
+<<<<<<< HEAD
   extern "C" {
+=======
+extern "C" {
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #endif
 
 #if !MSVC_DBG_DLL
@@ -64,7 +73,14 @@ MSVC_DBG_EXPORT int    backtrace(void* addresses[], int count);
 MSVC_DBG_EXPORT char** backtrace_symbols(void*const addresses[], int count);
 
 #ifdef __cplusplus
+<<<<<<< HEAD
   } /* extern "C" */
 #endif
 
 #endif /* GC_MSVC_DBG_H */
+=======
+}
+#endif
+
+#endif/*_MSVC_DBG_H*/
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa

@@ -44,7 +44,15 @@
 /* Windows UI stuff     */
 
 LRESULT CALLBACK WndProc (HWND hwnd, UINT message,
+<<<<<<< HEAD
                           WPARAM wParam, LPARAM lParam);
+=======
+                          UINT wParam, LONG lParam);
+
+LRESULT CALLBACK AboutBox( HWND hDlg, UINT message,
+                           UINT wParam, LONG lParam );
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 
 /* Screen dimensions.  Maintained by de_win.c.  */
 extern int LINES;
@@ -93,5 +101,9 @@ void move_cursor(int column, int line);
 void invalidate_line(int line);
                         /* Invalidate line i on the screen.     */
 
+<<<<<<< HEAD
 void de_error(const char *s);
+=======
+void de_error(char *s);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                         /* Display error message.       */

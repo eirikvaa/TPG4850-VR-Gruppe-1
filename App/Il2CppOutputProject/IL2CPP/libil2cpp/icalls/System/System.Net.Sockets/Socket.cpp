@@ -710,10 +710,13 @@ namespace Sockets
 
         requests.push_back(request);
 
+<<<<<<< HEAD
         // The timeout from managed code is in microseconds. Convert it to milliseconds
         // for the poll implementation.
         timeout = (timeout >= 0) ? (timeout / 1000) : -1;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         int32_t results = 0;
         const os::WaitStatus result = os::Socket::Poll(requests, timeout, &results, error);
 
@@ -1454,13 +1457,18 @@ namespace Sockets
 
     bool Socket::SupportsPortReuse(ProtocolType proto)
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(Socket::SupportsPortReuse);
+=======
+        NOT_IMPLEMENTED_ICALL(Socket::SupportsPortReuse);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return false;
     }
 
     int32_t Socket::IOControl_internal(intptr_t sock, int32_t ioctl_code, Il2CppArray* input, Il2CppArray* output, int32_t* error)
     {
+<<<<<<< HEAD
         return WSAIoctl(sock, ioctl_code, input, output, error);
     }
 
@@ -1628,6 +1636,21 @@ namespace Sockets
         }
 
         return len;
+=======
+        NOT_IMPLEMENTED_ICALL(Socket::IOControl_internal);
+        IL2CPP_UNREACHABLE;
+        return 0;
+    }
+
+    int32_t Socket::ReceiveFrom_internal(intptr_t sock, Il2CppArray* buffer, int32_t offset, int32_t count, int32_t flags, Il2CppSocketAddress** sockaddr, int32_t* error, bool blocking)
+    {
+        return RecvFrom(sock, buffer, offset, count, static_cast<SocketFlags>(flags), sockaddr, error);
+    }
+
+    int32_t Socket::SendTo_internal(intptr_t sock, Il2CppArray* buffer, int32_t offset, int32_t count, int32_t flags, Il2CppSocketAddress* sa, int32_t* error, bool blocking)
+    {
+        return SendTo(sock, buffer, offset, count, static_cast<SocketFlags>(flags), sa, error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     Il2CppSocketAddress* Socket::LocalEndPoint_internal(intptr_t socket, int32_t family, int32_t* error)
@@ -1651,7 +1674,11 @@ namespace Sockets
     {
         Il2CppThread* t = reinterpret_cast<Il2CppThread*>(thread);
         t->internal_thread->handle->QueueUserAPC(abort_apc, NULL);
+<<<<<<< HEAD
         // IL2CPP_NOT_IMPLEMENTED_ICALL(Socket::cancel_blocking_socket_operation);
+=======
+        // NOT_IMPLEMENTED_ICALL(Socket::cancel_blocking_socket_operation);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         //IL2CPP_UNREACHABLE;
     }
 
@@ -1660,6 +1687,7 @@ namespace Sockets
         Connect(sock, sa, error);
     }
 
+<<<<<<< HEAD
     bool Socket::Duplicate_internal(intptr_t handle, int32_t targetProcessId, intptr_t *duplicate_handle, int32_t *werror)
     {
         IL2CPP_NOT_IMPLEMENTED_ICALL(Socket::Duplicate_internal);
@@ -1747,6 +1775,26 @@ namespace Sockets
             *error = socketHandle->GetLastError();
 
         return len;
+=======
+    int32_t Socket::ReceiveArray40(intptr_t socket, Il2CppArray *buffers, SocketFlags flags, int32_t *error, bool blocking)
+    {
+        return ReceiveArray(socket, buffers, flags, error);
+    }
+
+    int32_t Socket::Receive40(intptr_t socket, Il2CppArray *buffer, int32_t offset, int32_t count, SocketFlags flags, int32_t *error, bool blocking)
+    {
+        return Receive(socket, buffer, offset, count, flags, error);
+    }
+
+    int32_t Socket::SendArray40(intptr_t socket, Il2CppArray *buffers, SocketFlags flags, int32_t *error, bool blocking)
+    {
+        return SendArray(socket, buffers, flags, error);
+    }
+
+    int32_t Socket::Send40(intptr_t socket, Il2CppArray *buffer, int32_t offset, int32_t count, SocketFlags flags, int32_t *error, bool blocking)
+    {
+        return Send(socket, buffer, offset, count, flags, error);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     }
 
     bool Socket::IsProtocolSupported_internal(int32_t networkInterface)

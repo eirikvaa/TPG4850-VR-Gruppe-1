@@ -16,7 +16,11 @@ namespace Versioning
 {
     int32_t VersioningHelper::GetRuntimeId()
     {
+<<<<<<< HEAD
         IL2CPP_NOT_IMPLEMENTED_ICALL(VersioningHelper::GetRuntimeId);
+=======
+        NOT_IMPLEMENTED_ICALL(VersioningHelper::GetRuntimeId);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         IL2CPP_UNREACHABLE;
         return 0;
     }

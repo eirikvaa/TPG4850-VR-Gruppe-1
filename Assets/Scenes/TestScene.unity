@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   from: 0
-  to: 5
+  to: 1
   translated: {fileID: 804815921}
 --- !u!1 &755519748
 GameObject:

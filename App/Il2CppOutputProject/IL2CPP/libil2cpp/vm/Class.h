@@ -36,6 +36,7 @@ namespace vm
 {
     class TypeNameParseInfo;
 
+<<<<<<< HEAD
     enum TypeSearchFlags
     {
         kTypeSearchFlagNone = 0x0,
@@ -44,6 +45,8 @@ namespace vm
         kTypeSearchFlagDontUseExecutingImage = 0x4
     };
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     class LIBIL2CPP_CODEGEN_API Class
     {
     public:
@@ -96,8 +99,11 @@ namespace vm
         static const char *GetAssemblyName(const Il2CppClass *klass);
         static const char *GetAssemblyNameNoExtension(const Il2CppClass *klass);
 
+<<<<<<< HEAD
         static const int IgnoreNumberOfArguments;
 
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     public:
         //internal
         static FORCE_INLINE const VirtualInvokeData& GetInterfaceInvokeDataFromVTable(const Il2CppObject* obj, const Il2CppClass* itf, Il2CppMethodSlot slot)
@@ -120,6 +126,7 @@ namespace vm
             return GetInterfaceInvokeDataFromVTableSlowPath(obj, itf, slot);
         }
 
+<<<<<<< HEAD
         static FORCE_INLINE const VirtualInvokeData* GetInterfaceInvokeDataFromVTable(const Il2CppClass* klass, const Il2CppClass* itf, Il2CppMethodSlot slot)
         {
             IL2CPP_ASSERT(klass->initialized);
@@ -150,6 +157,10 @@ namespace vm
             return InitFromCodegenSlow(klass);
         }
 
+=======
+        static bool Init(Il2CppClass *klass);
+
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         static Il2CppClass* GetArrayClass(Il2CppClass *element_class, uint32_t rank);
         static Il2CppClass* GetBoundedArrayClass(Il2CppClass *element_class, uint32_t rank, bool bounded);
         static Il2CppClass* GetInflatedGenericInstanceClass(Il2CppClass* klass, const metadata::Il2CppTypeVector& types);
@@ -157,9 +168,15 @@ namespace vm
         static Il2CppClass* InflateGenericClass(Il2CppClass* klass, Il2CppGenericContext *context);
         static const Il2CppType* InflateGenericType(const Il2CppType* type, Il2CppGenericContext *context);
 
+<<<<<<< HEAD
         static Il2CppClass* GetArrayClassCached(Il2CppClass *element_class, uint32_t rank, bool bounded)
         {
             return GetBoundedArrayClass(element_class, rank, bounded);
+=======
+        static Il2CppClass* GetArrayClassCached(Il2CppClass *element_class, uint32_t rank)
+        {
+            return GetArrayClass(element_class, rank);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
         }
 
         static const Il2CppGenericContainer* GetGenericContainer(Il2CppClass *klass);
@@ -182,6 +199,7 @@ namespace vm
         static size_t GetBitmapSize(const Il2CppClass* klass);
         static void GetBitmap(Il2CppClass* klass, size_t* bitmap, size_t& maxSetBit);
 
+<<<<<<< HEAD
         static const Il2CppType* il2cpp_type_from_type_info(const TypeNameParseInfo& info, TypeSearchFlags searchFlags);
 
         static Il2CppClass* GetDeclaringType(Il2CppClass* klass);
@@ -191,6 +209,12 @@ namespace vm
     private:
         static IL2CPP_NO_INLINE bool InitFromCodegenSlow(Il2CppClass *klass);
 
+=======
+        static const Il2CppType* il2cpp_type_from_type_info(const TypeNameParseInfo& info, bool throwOnError, bool ignoreCase);
+
+        static Il2CppClass* GetDeclaringType(Il2CppClass* klass);
+    private:
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
 #if NET_4_0
         static FORCE_INLINE bool IsGenericClassAssignableFrom(const Il2CppClass* klass, const Il2CppClass* oklass, const Il2CppGenericContainer* genericContainer)
         {
@@ -211,23 +235,39 @@ namespace vm
             for (int32_t i = 0; i < genericParameterCount; ++i)
             {
                 const Il2CppGenericParameter* genericParameter = MetadataCache::GetGenericParameterFromIndex(genericContainer->genericParameterStart + i);
+<<<<<<< HEAD
                 const int32_t parameterVariance = genericParameter->flags & IL2CPP_GENERIC_PARAMETER_ATTRIBUTE_VARIANCE_MASK;
                 Il2CppClass* genericParameterType = Class::FromIl2CppType(genericInst->type_argv[i]);
                 Il2CppClass* oGenericParameterType = Class::FromIl2CppType(oGenericInst->type_argv[i]);
 
                 if (parameterVariance == IL2CPP_GENERIC_PARAMETER_ATTRIBUTE_NON_VARIANT || Class::IsValuetype(genericParameterType) || Class::IsValuetype(oGenericParameterType))
+=======
+                const int32_t parameterVariance = genericParameter->flags & GENERIC_PARAMETER_ATTRIBUTE_VARIANCE_MASK;
+                Il2CppClass* genericParameterType = Class::FromIl2CppType(genericInst->type_argv[i]);
+                Il2CppClass* oGenericParameterType = Class::FromIl2CppType(oGenericInst->type_argv[i]);
+
+                if (parameterVariance == GENERIC_PARAMETER_ATTRIBUTE_NON_VARIANT || Class::IsValuetype(genericParameterType) || Class::IsValuetype(oGenericParameterType))
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 {
                     if (genericParameterType != oGenericParameterType)
                         return false;
                 }
+<<<<<<< HEAD
                 else if (parameterVariance == IL2CPP_GENERIC_PARAMETER_ATTRIBUTE_COVARIANT)
+=======
+                else if (parameterVariance == GENERIC_PARAMETER_ATTRIBUTE_COVARIANT)
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                 {
                     if (!Class::IsAssignableFrom(genericParameterType, oGenericParameterType))
                         return false;
                 }
                 else
                 {
+<<<<<<< HEAD
                     IL2CPP_ASSERT(parameterVariance == IL2CPP_GENERIC_PARAMETER_ATTRIBUTE_CONTRAVARIANT);
+=======
+                    IL2CPP_ASSERT(parameterVariance == GENERIC_PARAMETER_ATTRIBUTE_CONTRAVARIANT);
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
                     if (!Class::IsAssignableFrom(oGenericParameterType, genericParameterType))
                         return false;
                 }
@@ -240,7 +280,10 @@ namespace vm
 
         // we don't want this method to get inlined because that makes GetInterfaceInvokeDataFromVTable method itself very large and performance suffers
         static IL2CPP_NO_INLINE const VirtualInvokeData& GetInterfaceInvokeDataFromVTableSlowPath(const Il2CppObject* obj, const Il2CppClass* itf, Il2CppMethodSlot slot);
+<<<<<<< HEAD
         static IL2CPP_NO_INLINE const VirtualInvokeData* GetInterfaceInvokeDataFromVTableSlowPath(const Il2CppClass* klass, const Il2CppClass* itf, Il2CppMethodSlot slot);
+=======
+>>>>>>> d22b281df45436acc97ea9eef7af086557c838aa
     };
 } /* namespace vm */
 } /* namespace il2cpp */
