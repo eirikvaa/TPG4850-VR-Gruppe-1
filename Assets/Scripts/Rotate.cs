@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour {
 
+    //  This simple script continuously rotates the GameObject it is attached to.
+    //  Currently it is only attached to the thinking icon for better visual experience.
+
     float z;
 
 	// Use this for initialization

@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class SpriteFader : MonoBehaviour
 {
 
+    //  This script fades in any GameObject it is attached to after being enabled.
+    //  Currently used on the icons.
+
     Image img;
     float fade = 1;
     public float fadeSpeed = 0.02f;
