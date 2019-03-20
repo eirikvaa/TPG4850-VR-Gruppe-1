@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using UnityEngine.XR.WSA.Input;
+using System.IO;
+using System;
 
 public class MicrophoneManager : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class MicrophoneManager : MonoBehaviour
     private bool restarting = false;
     private float timer = 0;
     private float restartTimer = 0;
+    private string path = @"C:\Users\chrec\Documents\School\EiT\TPG4850-VR-Gruppe-1\Assets\Scripts\log.txt";
 
 
     //  Runs when script awakes
@@ -42,6 +45,15 @@ public class MicrophoneManager : MonoBehaviour
         //  Update text and log sucessful start
         this._subtitle.text = "Start complete";
         Debug.Log("init complete");
+
+        //  Start log
+        using (StreamWriter sw = File.AppendText(path))
+        {
+            string timeStamp = DateTime.UtcNow.ToString();
+            string text = "============================== Session start ==============================";
+            string log = timeStamp + ": " + text + "\n";
+            sw.WriteLine(log);
+        }
     }
 
 
@@ -70,6 +82,16 @@ public class MicrophoneManager : MonoBehaviour
         //  Update regular subtitle
         this._subtitle.text = text;
 
+        //  Get time stamp for text
+        string timeStamp = DateTime.UtcNow.ToString();
+        string log = timeStamp + ": " + text + "\n";
+
+        //  Write result to log
+        using (StreamWriter sw = File.AppendText(path))
+        {
+            sw.WriteLine(log);
+        }
+
         //  Log result and confidence
         Debug.Log("Displaying result");
         Debug.Log(confidence);
@@ -91,6 +113,19 @@ public class MicrophoneManager : MonoBehaviour
 
         //  Log information
         Debug.Log("Thinking...");
+    }
+
+
+    //  Close and save log on quit
+    void OnApplicationQuit()
+    {
+        using (StreamWriter sw = File.AppendText(path))
+        {
+            string timeStamp = DateTime.UtcNow.ToString();
+            string text = "============================== Session closed ==============================";
+            string log = timeStamp + ": " + text + "\n\n\n";
+            sw.WriteLine(log);
+        }
     }
 
     // Update is called once per frame
