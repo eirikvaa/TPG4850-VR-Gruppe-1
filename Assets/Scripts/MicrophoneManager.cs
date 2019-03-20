@@ -30,7 +30,7 @@ public class MicrophoneManager : MonoBehaviour
 
         _dr.DictationResult += _dr_result;
 
-        _dr.DictationComplete += _dr_dictationComplete;
+        //_dr.DictationComplete += _dr_dictationComplete;
 
         _dr.Start();
 
@@ -53,6 +53,7 @@ public class MicrophoneManager : MonoBehaviour
         _loading.gameObject.SetActive(false);
         this._subtitle.text = text;
         Debug.Log("Displaying result");
+        Debug.Log(confidence);
 
         _loading.gameObject.SetActive(false);
         _complete.gameObject.SetActive(true);
@@ -74,8 +75,11 @@ public class MicrophoneManager : MonoBehaviour
         if (thinking)
         {
             timer += Time.deltaTime;
-            if (timer > 5)
+            if (timer > 10)
             {
+                _loading.gameObject.SetActive(false);
+                _complete.gameObject.SetActive(false);
+                this._subtitle.text = "Failed to process, try again :)";
                 restarting = true;
                 thinking = false;
                 _dr.Stop();
@@ -85,7 +89,7 @@ public class MicrophoneManager : MonoBehaviour
         } else if (restarting)
         {
             restartTimer += Time.deltaTime;
-            if (restartTimer > 1)
+            if (restartTimer > 1.5)
             {
                 restarting = false;
                 _dr.Start();
